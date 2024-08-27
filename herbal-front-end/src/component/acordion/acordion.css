@@ -1,0 +1,29 @@
+
+.acodion_wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.collapse_item{
+    width: 100%;
+    padding: 1.3rem;
+    background-color: white;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.inner_acodion{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    transition: all 1s ease-in-out;
+    border-radius: 1.3;
+}
+
+@media all and (max-width: 900px) {
+    
+}

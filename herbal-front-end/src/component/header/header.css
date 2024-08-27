@@ -1,0 +1,185 @@
+.navigation{
+    width: 100%;
+   
+}
+.logo{
+    width: 40%;
+    height: 2.4rem;
+  position: relative;
+  left: 10rem;
+}
+#search_input{
+    width: 100%;
+    padding: 6.6px;
+    padding-left: 30px;
+    border-radius: 1rem;
+    background-color: rgb(234, 230, 230);
+}
+#search_input::placeholder{
+    padding: 40px;
+    font-size: .8rem;
+   
+    text-align: center;
+    color: #3c3f3c;
+}
+
+.header_nav{
+    width: 60rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+   
+    margin-left: -9rem;
+ 
+}
+.header_nav section{
+    display: flex;
+    width: 33%;
+    gap: 3.4rem;
+    
+}
+
+i{
+    font-size: 100px;
+}
+.header_nav .left_header{
+    width: 35%;
+    
+}
+.home_btn{
+    width: 4.6rem;
+    background-color: #008103;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    border-radius: .5rem;
+    height: 2.3rem;
+}
+.left_header{
+    gap: 0;
+}
+.nav_header_info{
+    width: 60%;
+    margin-left: -2rem;
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 300;
+}
+.header_nav .center_header{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.header_nav .center_header form{
+    width: 100%;
+}
+.serch_icon{
+    
+    margin-top: 10px;
+    animation-name: serch_iconanim;
+    animation-duration: 10s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes serch_iconanim{
+    form{
+        font-size: 20px;
+    }
+
+    to{
+        font-size: 30px;
+        color: #008103;
+    }
+}
+.header_nav .right_header{
+    width: 28%;
+    display: flex;
+    justify-content: end;
+    gap: 1.3rem;
+}
+.cart_header_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+
+@media all and (max-width: 900px) {
+    .header_nav{
+        position: relative;
+        left: 10rem;
+        width: 20rem;
+       
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap: 0;
+       font-size: 1.5rem;
+    }
+    .header_nav form{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav_header_info,.left_header{
+   width: 100%;
+        flex-direction: column;
+
+    }
+    #search_input{
+        width: 20rem;
+        display: none;
+    }
+    .serch_icon{
+        display: none;
+    }
+    .search_mobile{
+        left: -10rem;
+    }
+    .right_header{
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        gap: 0;
+    }
+    .cart_header_btn{
+        width: 20rem;
+        margin-left: -9rem;
+    }
+
+    .dropdown{
+        margin-top: -1rem;
+        margin-left: -2rem;
+    }
+    .nav_header_info{
+        margin-top: -2rem;
+    }
+    .home_btn{
+        width: 17rem;
+        margin-left: -6rem;
+    }
+    .logo{
+        left: -4rem;
+    }
+}
+
+@media all and (max-width: 340px) {
+    .header_nav{
+        flex-direction: column;
+     }
+     .header_nav section{
+         flex-direction: column;
+ 
+     }
+    
+}

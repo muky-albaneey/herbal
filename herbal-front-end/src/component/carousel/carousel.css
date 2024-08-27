@@ -1,0 +1,136 @@
+
+
+.carousel{
+    width: 100%;
+    /* height: 30rem; */
+}
+
+#item{
+    width: 100%;
+    height: 50rem;
+    margin: 0;
+    background-size: 100% 100%; /* Makes the image cover the full width while maintaining its aspect ratio */
+    background-position: top center; /* Positions the image at the top center */
+ 
+    color: rgb(2, 27, 7);
+}
+
+.item-1{
+    
+    background: url(../../../public/IMG_7860.JPG) no-repeat center;
+   
+}
+.item-2{
+    
+    background: url(../../../public/IMG_7871.JPG) no-repeat center;
+   
+}
+.item-3{
+    
+    background: url(../../../public/IMG_7867.JPG) no-repeat center;
+   
+}
+.item-4{
+    
+    background: url(../../../public/IMG_7861.JPG) no-repeat center;
+   
+}
+#items_con{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#items_con .item_content{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    color: white;
+    font-weight: bold;
+}
+.item_content h1{
+    font-size: 5em;
+    font-variant: small-caps;
+    font-family: sans-serif;
+    font-family: monospace;
+    font-weight: bold;
+}
+.item_content p{
+    width: 40%;
+    display: flex;
+   flex-direction: column;
+   font-variant: small-caps;
+   font-family: sans-serif;
+}
+.text_typing{
+    /* font-size: 7em; */
+    font-variant: small-caps;
+    font-family: sans-serif;
+}
+
+.item_content button{
+    width: 10rem;
+    padding: 1.3rem;
+    background-color: #04620a;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2px;
+}
+/* Customizing dot colors */
+.ant-carousel .slick-dots li button {
+    background-color: #0af10a; /* Inactive dot color */
+    font-weight: bold;
+    font-size: 12rem;
+  }
+  
+  .ant-carousel .slick-dots li.slick-active button {
+    background-color: #010c05; /* Active dot color */
+  }
+  
+  /* Customizing arrow colors */
+  .ant-carousel .slick-prev, 
+  .ant-carousel .slick-next {
+    color: #033b07; /* Arrow color */
+    font-size: 54px; /* Adjust arrow size */
+    z-index: 10; /* Ensure arrows are above content */
+  }
+  
+  /* Optionally, customize the hover state */
+  .ant-carousel .slick-prev:hover, 
+  .ant-carousel .slick-next:hover {
+    color: #031e03; /* Arrow hover color */
+  }
+  
+
+    @media all and (max-width: 900px) {
+        #item{
+            /* height: 43rem; */
+        }
+        .item_content h1{
+            font-size: 3em;
+            font-variant: small-caps;
+            font-family: sans-serif;
+        }
+        .item_content p{
+            width: 100%;
+            
+        }
+        .carousel{
+            width: 100%;
+            /* height: 30rem; */
+        }
+    }
+
+
+    @media all and (max-width: 390px) {
+        #item{
+            
+        }
+    }
