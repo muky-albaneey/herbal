@@ -39,7 +39,7 @@ function App() {
               }}
               element={<ProductPageComponent />} errorElement={<ErrorElement />} />
               <Route 
-              path='admin' loader={async ()=>{
+                 path='admin' loader={async ()=>{
                 return null
               }}
               element={<Admin />} errorElement={<ErrorElement />} />
