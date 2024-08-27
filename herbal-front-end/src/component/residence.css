@@ -127,6 +127,7 @@
     
     }
 } */
+
 .r-wrapper {
     width: 100%;
 }
@@ -150,8 +151,7 @@
 
 .cardCon {
     height: 18rem;
-    width: 43rem;
-    padding: 1rem;
+    width: 23rem;
 }
 
 .cardItemInfo {
@@ -227,12 +227,12 @@
 @media (max-width: 640px) {
     .r-card {
         padding: 0.5rem;
-        max-width: 90%; /* Adjust the max-width to reduce the card size */
+        max-width: 90%;
     }
 
     .cardCon {
-        height: 12rem; /* Reduce height */
-        width: 18rem; /* Reduce width */
+        height: 24rem; /* Increase height for better visibility on mobile */
+        width: 20rem;  /* Slightly reduce width for better fit */
     }
 
     .cardItemInfo {
@@ -240,16 +240,16 @@
     }
 
     .cardItemInfo article {
-        width: 100%; /* Ensure it still takes full width */
+        width: 100%;
     }
 
     .r-buttons {
-        top: -2rem;
-        right: 1rem; /* Adjust button positioning */
+        top: 1rem; /* Adjust button positioning */
+        right: 1rem;
     }
 
     .r-button {
-        top: -2rem;
-        left: 1rem; /* Adjust button positioning */
+        top: 1rem; /* Adjust button positioning */
+        left: 1rem;
     }
 }
