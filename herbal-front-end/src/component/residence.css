@@ -113,6 +113,13 @@
   }
   
 @media (max-width: 640px) {
+    .r-container{
+        justify-content: center;
+        align-items: center;
+    }
+    .r-container a{
+        margin: 0 auto;
+    }
     .r-card {
         padding: 0.5rem;
         max-width: 90%;
