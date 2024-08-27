@@ -245,12 +245,16 @@
     }
 
     .r-buttons {
-        top: 1rem; /* Adjust button positioning */
-        right: 1rem;
+    
+        top: -2rem;
+        right: 38rem;
+    
     }
-
+    
     .r-button {
-        top: 1rem; /* Adjust button positioning */
-        left: 1rem;
+    
+        top: -2rem;
+        left: 38rem;
+    
     }
 }
