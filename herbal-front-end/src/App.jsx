@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } 
 import CarouselComponent from './component/carousel/Carousel'
 import HomeComponent from './component/Home'
 import ProductPageComponent from './pages/product/ProductPage'
+import Admin from './pages/admin_dashboard/AdminCom'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,6 +38,11 @@ function App() {
                 return null
               }}
               element={<ProductPageComponent />} errorElement={<ErrorElement />} />
+              <Route 
+              path='admin' loader={async ()=>{
+                return null
+              }}
+              element={<Admin />} errorElement={<ErrorElement />} />
           {/* <Route
             index
             errorElement={<ErrorElement />}
