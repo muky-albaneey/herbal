@@ -119,6 +119,7 @@
     }
 
     .cardCon {
+        margin: 0 auto;
         height: 24rem; /* Increase height for better visibility on mobile */
         width: 20rem;  /* Slightly reduce width for better fit */
     }
