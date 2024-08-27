@@ -151,6 +151,7 @@
 .cardCon {
     height: 18rem;
     width: 43rem;
+    padding: 1rem;
 }
 
 .cardItemInfo {
