@@ -99,38 +99,7 @@ let product_info = [
                 </Swiper>
             </div>
         </section>
-        {/* <section className="r-wrapper">
-            <div className="r-container">
-             {
-              product_info.map((item)=>(
-                <div className="popular_info r-card">
-                <Card
-                    hoverable
-                    className='cardCon'
-                    cover={<img src={item.img} alt={''} loading="lazy" />}
-                >
-                    <div className="cardItemInfo">
-                      <article>
-                        <h4>
-                           <span> wwww</span> <br />
-                            <span>12000</span>
-                        </h4>
-                      
-                      </article>
-                      <div className="add-to-cart">
-                        <ImCart />
-                      </div>
-                    </div>
-                </Card>
-            </div>
-              ))
-             }
-                    
-                          
-                    
-               
-            </div>
-        </section> */}
+       
         </section>
     </div>
   );
