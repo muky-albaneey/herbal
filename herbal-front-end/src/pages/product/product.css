@@ -6,6 +6,7 @@
 .product_wrapper h1{
     font-weight: bold;
     font-size: 2.4rem;
+    margin-left: 3rem;
 }
 .product_top_con{
     width: 100%;
@@ -99,6 +100,7 @@
 }
 .place_order h1{
     font-weight: bold;
+    margin-left: 3trem;
 }
 
 .popular_info{
