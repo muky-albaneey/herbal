@@ -124,6 +124,11 @@
         height: 24rem; /* Increase height for better visibility on mobile */
         width: 20rem;  /* Slightly reduce width for better fit */
     }
+    .r-buttons button {
+        font-size: 1.2rem;
+        padding: 0.3rem .4rem;
+       
+    }
     .r-buttons {
     
         top: -2rem;
