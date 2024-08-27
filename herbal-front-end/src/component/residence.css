@@ -116,6 +116,7 @@
     .r-card {
         padding: 0.5rem;
         max-width: 90%;
+        margin: 0 auto;
     }
 
     .cardCon {
