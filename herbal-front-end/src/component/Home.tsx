@@ -9,35 +9,37 @@ import type { CollapseProps } from 'antd';
 import { Card, Collapse } from 'antd';
 import AccodionComponent from './acordion/Accodion';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { sliderSettings } from "./utills/common";
-
+import { sliderSettings } from "../utills/common";
+import { Trans, useTranslation } from 'react-i18next'
 // import IMG_7863 from '../../public/IMG_7863.JPG';
 
+export default function HomeComponent() {
 
+const { t } = useTranslation();
 const testimony = [
     {
-        id:1,
-        comment: 'I’ve been using this sleep aid for two weeks, and it has significantly improved my sleep. However, I find the capsules a bit too large to swallow easily.',
-        icon: <BsQuote className="icon_testimony"/>,
-        name:'James Smith',
-        title:'Trader'
+      id: 1,
+      comment: t('testimonials.0.comment'),
+      icon: <BsQuote className="icon_testimony" />,
+      name: t('testimonials.0.name'),
+      title: t('testimonials.0.title')
     },
     {
-        id:2,
-        comment: 'I’ve been using this sleep aid for two weeks, and it has significantly improved my sleep. However, I find the capsules a bit too large to swallow easily.',
-        icon: <BsQuote className="icon_testimony"/>,
-         name:'James Smith',
-        title:'Trader'
+      id: 2,
+      comment: t('testimonials.1.comment'),
+      icon: <BsQuote className="icon_testimony" />,
+      name: t('testimonials.1.name'),
+      title: t('testimonials.1.title')
     },
     {
-        id:3,
-        comment: 'I’ve been using this sleep aid for two weeks, and it has significantly improved my sleep. However, I find the capsules a bit too large to swallow easily.',
-        icon: <BsQuote className="icon_testimony"/>,
-         name:'James Smith',
-        title:'Trader'
+      id: 3,
+      comment: t('testimonials.2.comment'),
+      icon: <BsQuote className="icon_testimony" />,
+      name: t('testimonials.2.name'),
+      title: t('testimonials.2.title')
     }
-]
-export default function HomeComponent() {
+  ];
+
   return (
     <div className='wrapper'>
         <CarouselComponent />
@@ -46,16 +48,11 @@ export default function HomeComponent() {
             <aside className="about_con_right">
                 <header className="about_header">
                     <div className='line'></div>
-                    <h4>About Us</h4>
+                    <h4>{t('realty.heading')}</h4>
                 </header>
                 <article>
-                    <p>
-                    Sunnyvale Realty has been serving the community for over 20 years, offering top-notch real estate services. Our team of expert agents is dedicated to helping you find your perfect home. Whether you're buying your first home, upgrading, or looking for an investment, we have the perfect listings for you. 
-                    </p>
-
-                    <p>
-                    We have in-depth knowledge of the local market trends, neighborhoods, and amenities. We'll use this expertise to help you find the perfect property or sell your home for the best possible price.
-                    </p>
+                <p>{t('realty.part1')}</p>
+                <p>{t('realty.part2')}</p>
                 </article>
             </aside>
         </section>
@@ -100,16 +97,10 @@ export default function HomeComponent() {
         <section className="achievement">
             <aside className='achivement_one'>
                 <h1>
-                     Our Achivement 
+                {t('achievement.heading')} 
                 </h1>
-                <p>
-                Thanks to valuable feedback from our community, we've enhanced the scent of our lavender sleep aid supplement, making it even more relaxing and enjoyable to use. We're thrilled to share that since this improvement, 92% of customers have reported a more satisfying bedtime routine. Your input makes a difference, and we're committed to continuously improving our products based on what you need.
-
-                </p>
-                <p>
-
-                By effectively highlighting and celebrating these achievements, you not only strengthen your relationship with customers but also reinforce the value of their feedback, driving further engagement and loyalty.
-                </p>
+                <p>{t('feedback.part1')}</p>
+                 <p>{t('feedback.part2')}</p>
             </aside>
             <aside className="hide_achiement">
                 <img src='./IMG_7863.JPG' alt="" />
@@ -118,15 +109,13 @@ export default function HomeComponent() {
 
         <section className="accodion">
             
-            <h1>
-                FREQUENTLY ASKED QUESTIONS
-            </h1>
+        <h1>{t('faq_heading')}</h1>
             <div className="acodion_con">
                 <AccodionComponent />
             </div>
         </section>
         <section className="testimony">
-    <h1>CUSTOMER TESTIMONIAL</h1>
+    <h1>{t('customer_testimonial.heading')}</h1>
     <Swiper {...sliderSettings}>
         {testimony.map((item, i) => (
             <SwiperSlide key={i} className="swiper-slide">

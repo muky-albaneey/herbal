@@ -1,0 +1,49 @@
+{
+    "message": "Welcome to React and react-i18next",
+    "carousel": {
+        "description": "These are traditional remedies that often combine several herbs to target specific health issues like colds, flu, or digestive problems.",
+        "shop_now": "SHOP NOW"
+      },
+      "item_1_heading": "KENZY NATURALS",
+      "item_2_heading": "KENZY NATURALS",
+    "testimonials": [
+      {
+        "comment": "I’ve been using this sleep aid for two weeks, and it has significantly improved my sleep. However, I find the capsules a bit too large to swallow easily.",
+        "name": "James Smith",
+        "title": "Trader"
+      },
+      {
+        "comment": "I’ve been using this sleep aid for two weeks, and it has significantly improved my sleep. However, I find the capsules a bit too large to swallow easily.",
+        "name": "Jane Doe",
+        "title": "Developer"
+      },
+      {
+        "comment": "I’ve been using this sleep aid for two weeks, and it has significantly improved my sleep. However, I find the capsules a bit too large to swallow easily.",
+        "name": "James Smith",
+        "title": "Trader"
+      }
+    ],
+    "feedback": {
+      "part1": "Thanks to valuable feedback from our community, we've enhanced the scent of our lavender sleep aid supplement, making it even more relaxing and enjoyable to use. We're thrilled to share that since this improvement, 92% of customers have reported a more satisfying bedtime routine. Your input makes a difference, and we're committed to continuously improving our products based on what you need.",
+      "part2": "By effectively highlighting and celebrating these achievements, you not only strengthen your relationship with customers but also reinforce the value of their feedback, driving further engagement and loyalty."
+    },
+    "realty": {
+      "heading": "About Us",
+      "part1": "Sunnyvale Realty has been serving the community for over 20 years, offering top-notch real estate services. Our team of expert agents is dedicated to helping you find your perfect home. Whether you're buying your first home, upgrading, or looking for an investment, we have the perfect listings for you.",
+      "part2": "We have in-depth knowledge of the local market trends, neighborhoods, and amenities. We'll use this expertise to help you find the perfect property or sell your home for the best possible price."
+    },
+    "achievement": {
+      "heading": "Our Achievement",
+      "part1": "Thanks to valuable feedback from our community, we've enhanced the scent of our lavender sleep aid supplement, making it even more relaxing and enjoyable to use. We're thrilled to share that since this improvement, 92% of customers have reported a more satisfying bedtime routine. Your input makes a difference, and we're committed to continuously improving our products based on what you need.",
+      "part2": "By effectively highlighting and celebrating these achievements, you not only strengthen your relationship with customers but also reinforce the value of their feedback, driving further engagement and loyalty."
+    },
+    "customer_testimonial": {
+      "heading": "CUSTOMER TESTIMONIAL"
+    },
+    "faq_heading": "FREQUENTLY ASKED QUESTIONS",
+    "text": "A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.",
+    "collapse": {
+    "label": "This is panel header 1"
+  }
+  }
+  

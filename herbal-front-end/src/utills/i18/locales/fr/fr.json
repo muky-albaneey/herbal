@@ -1,0 +1,49 @@
+{
+    "message": "Bienvenue à React et react-i18next",
+    "carousel": {
+    "description": "Ce sont des remèdes traditionnels qui combinent souvent plusieurs herbes pour cibler des problèmes de santé spécifiques tels que les rhumes, la grippe ou les problèmes digestifs.",
+    "shop_now": "ACHETEZ MAINTENANT"
+  },
+  "item_1_heading": "KENZY NATURALS",
+  "item_2_heading": "KENZY NATURALS",
+    "testimonials": [
+      {
+        "comment": "J'utilise cette aide au sommeil depuis deux semaines et elle a considérablement amélioré mon sommeil. Cependant, je trouve les capsules un peu trop grosses à avaler facilement.",
+        "name": "James Smith",
+        "title": "Commerçant"
+      },
+      {
+        "comment": "J'utilise cette aide au sommeil depuis deux semaines et elle a considérablement amélioré mon sommeil. Cependant, je trouve les capsules un peu trop grosses à avaler facilement.",
+        "name": "Jane Doe",
+        "title": "Développeur"
+      },
+      {
+        "comment": "J'utilise cette aide au sommeil depuis deux semaines et elle a considérablement amélioré mon sommeil. Cependant, je trouve les capsules un peu trop grosses à avaler facilement.",
+        "name": "James Smith",
+        "title": "Commerçant"
+      }
+    ],
+    "feedback": {
+      "part1": "Grâce aux précieux retours de notre communauté, nous avons amélioré le parfum de notre complément de sommeil à la lavande, le rendant encore plus relaxant et agréable à utiliser. Nous sommes ravis de partager que depuis cette amélioration, 92% des clients ont signalé une routine de coucher plus satisfaisante. Vos retours font la différence, et nous nous engageons à améliorer continuellement nos produits en fonction de vos besoins.",
+      "part2": "En mettant en valeur et en célébrant ces réalisations, vous renforcez non seulement votre relation avec les clients, mais vous renforcez également la valeur de leurs retours, stimulant ainsi un engagement et une fidélité accrus."
+    },
+    "realty": {
+      "heading": "À propos de nous",
+      "part1": "Sunnyvale Realty sert la communauté depuis plus de 20 ans, offrant des services immobiliers de premier ordre. Notre équipe d'agents experts est dédiée à vous aider à trouver la maison de vos rêves. Que vous achetiez votre première maison, que vous envisagiez de déménager ou que vous cherchiez un investissement, nous avons les annonces parfaites pour vous.",
+      "part2": "Nous avons une connaissance approfondie des tendances du marché local, des quartiers et des commodités. Nous utiliserons cette expertise pour vous aider à trouver la propriété idéale ou à vendre votre maison au meilleur prix possible."
+    },
+    "achievement": {
+      "heading": "Notre Réalisation",
+      "part1": "Grâce aux précieux retours de notre communauté, nous avons amélioré le parfum de notre complément de sommeil à la lavande, le rendant encore plus relaxant et agréable à utiliser. Nous sommes ravis de partager que depuis cette amélioration, 92% des clients ont signalé une routine de coucher plus satisfaisante. Vos retours font la différence, et nous nous engageons à améliorer continuellement nos produits en fonction de vos besoins.",
+      "part2": "En mettant en valeur et en célébrant ces réalisations, vous renforcez non seulement votre relation avec les clients, mais vous renforcez également la valeur de leurs retours, stimulant ainsi un engagement et une fidélité accrus."
+    },
+    "customer_testimonial": {
+      "heading": "TÉMOIGNAGE CLIENT"
+    },
+    "faq_heading": "QUESTIONS FRÉQUEMMENT POSÉES",
+    "text": "Un chien est un type d'animal domestiqué. Connu pour sa loyauté et sa fidélité, il peut être trouvé comme un invité bienvenu dans de nombreux foyers à travers le monde.",
+  "collapse": {
+    "label": "Ceci est l'en-tête du panneau 1"
+  }
+  }
+  

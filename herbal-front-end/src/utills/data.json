@@ -1,0 +1,88 @@
+[
+    {
+      "id": "852223931024",
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+      "price": 295000
+  
+    },
+    {
+      "id": "651263730501",
+      "name": "herbal",
+      "image": "./IMG_7871.JPG",
+      "price": 445000
+     
+    },
+    {
+      "id": "3511539610225",
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+      "price": 325000
+    },
+    {
+      "id": "2511639410001",
+     
+      "name": "sweeter",
+      "image": "./IMG_7871.JPG",
+     
+      "price": 665000
+    },
+    {
+      "id": "241163943999781",
+     
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+      "price": 265000
+    },
+    {
+      "id": "1522639490009",
+     
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+      "price": 765000
+    },
+    {
+      "id": "19639490088",
+  
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+      "price": 215000,
+      "parking": 3
+    },
+    {
+      "id": "1122459390065",
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+      "price": 845000
+    },
+    {
+      "id": "1722679430009",
+    
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+     
+      "price": 650000
+    },
+    {
+      "id": "2411639439991",
+     
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+    
+      "price": 265000
+     
+    },
+    {
+      "id": "24116394399901",
+      "name": "bitter",
+      "image": "./img/8.jpg",
+      "price": 265000
+    },
+    {
+      "id": "24116394399913",
+     
+      "name": "bitter",
+      "image": "./IMG_7871.JPG",
+      "price": 265000
+    }
+]

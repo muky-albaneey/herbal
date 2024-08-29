@@ -9,6 +9,7 @@ import CarouselComponent from './component/carousel/Carousel'
 import HomeComponent from './component/Home'
 import ProductPageComponent from './pages/product/ProductPage'
 import Admin from './pages/admin_dashboard/AdminCom'
+import ListComponent from './pages/product/Product_list'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,9 +43,17 @@ function App() {
                  path='admin' loader={async ()=>{
                 return null
               }}
-              element={<Admin />} errorElement={<ErrorElement />} />
+              element={<Admin />} 
+            indexerrorElement={<ErrorElement />}
+             />
+               <Route 
+                 path='products' loader={async ()=>{
+                return null
+              }}
+              element={<ListComponent />} 
+            indexerrorElement={<ErrorElement />}
+             />
           {/* <Route
-            index
             errorElement={<ErrorElement />}
             loader={async () => {
               return null;

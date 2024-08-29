@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import data from '../../component/utills/data.json';
+import data from '../../utills/data.json';
 import './product.css';
 import { ImCart } from 'react-icons/im';
 import { Card } from 'antd';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { sliderSettings } from '../../component/utills/common';
+import { sliderSettings } from '../../utills/common';
 
 const SliderButtons = ({side}) => {
   const swiper = useSwiper(); 

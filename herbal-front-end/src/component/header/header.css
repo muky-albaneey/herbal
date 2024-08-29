@@ -100,10 +100,11 @@ i{
     }
 }
 .header_nav .right_header{
-    width: 28%;
+    width: 30%;
     display: flex;
     justify-content: end;
-    gap: 1.3rem;
+    gap: 1rem;
+    /* background: #000; */
 }
 .cart_header_btn{
     display: flex;
@@ -112,7 +113,19 @@ i{
     gap: 3px;
 }
 
+.drop{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    /* justify-content: center; */
+    /* width: 6rem; */
+    /* font-size: 0.4rem; */
+    /* background: #000; */
+}
 
+.me-2{
+    font-size: 10px;
+}
 @media all and (max-width: 900px) {
     .header_nav{
         position: relative;

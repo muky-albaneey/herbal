@@ -113,13 +113,16 @@
   }
   
 @media (max-width: 640px) {
+
     .r-container{
         justify-content: center;
         align-items: center;
     }
+
     .r-container a{
         margin: 0 auto;
     }
+
     .r-card {
         padding: 0.5rem;
         max-width: 90%;
@@ -129,14 +132,17 @@
 
     .cardCon {
         margin: 0 auto;
-        height: 24rem; /* Increase height for better visibility on mobile */
-        width: 20rem;  /* Slightly reduce width for better fit */
+        height: 24rem; 
+        width: 20rem;
     }
+
     .r-buttons button {
         font-size: 1.2rem;
         padding: 0.3rem .4rem;
        
     }
+
+    
     .r-button button {
         font-size: 1.2rem;
         padding: 0.3rem .4rem;
