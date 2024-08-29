@@ -16,9 +16,8 @@ import { useTranslation } from 'react-i18next';
 import { FaLanguage } from 'react-icons/fa';
 
 function Header() {
-  const { setToken, lang_token } = useAuthStore();
+  const { setToken } = useAuthStore();
   const { i18n } = useTranslation();
-  const [selectedIcon, setSelectedIcon] = React.useState('');
 
   const handleSelect = (eventKey) => {
     i18n.changeLanguage(eventKey); // Change language in i18next
@@ -49,7 +48,7 @@ function Header() {
                       <section className="left_header">
                          <NavLink to="/" className='home_btn' style={{ textDecoration: 'none' }}> Home</NavLink>
                         <div className="nav_header_info">
-                          <NavLink to="/">Product {lang_token}</NavLink>
+                          <NavLink to="/">Product</NavLink>
                           <NavLink to="/">Contact us</NavLink>
                         </div>
                       </section>

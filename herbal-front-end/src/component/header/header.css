@@ -104,7 +104,7 @@ i{
     display: flex;
     justify-content: end;
     gap: 1rem;
-    /* background: #000; */
+ 
 }
 .cart_header_btn{
     display: flex;
@@ -117,10 +117,7 @@ i{
     display: flex;
     align-items: center;
     margin-top: 1rem;
-    /* justify-content: center; */
-    /* width: 6rem; */
-    /* font-size: 0.4rem; */
-    /* background: #000; */
+   
 }
 
 .me-2{
@@ -166,13 +163,15 @@ i{
         gap: 0;
     }
     .cart_header_btn{
-        width: 20rem;
-        margin-left: -9rem;
+        width: 14rem;
+        margin-left: -6rem;
+        font-size: 1.2rem;
     }
 
     .dropdown{
-        margin-top: -1rem;
+        margin-top: -2rem;
         margin-left: -2rem;
+        position: relative;
     }
     .nav_header_info{
         margin-top: -2rem;
@@ -183,6 +182,11 @@ i{
     }
     .logo{
         left: -4rem;
+    }
+    .drop{
+        width: 50rem;
+        font-size: 1.2rem;
+        margin-left: -1rem;
     }
 }
 
