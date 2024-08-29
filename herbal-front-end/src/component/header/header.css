@@ -166,6 +166,7 @@ i{
         width: 14rem;
         margin-left: -6rem;
         font-size: 1.2rem;
+        font-weight: bold;
     }
 
     .dropdown{
@@ -176,6 +177,8 @@ i{
     }
     .nav_header_info{
         margin-top: -2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
     }
     .home_btn{
         width: 17rem;
