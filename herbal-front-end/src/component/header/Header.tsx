@@ -32,18 +32,20 @@ function Header() {
         <Navbar key={expand} expand={expand} style={{ backgroundColor: 'white' }} className="bg-body-tertiary mb-3">
           <Container fluid className="mx-auto justify-content-center" style={{ backgroundColor: 'white' }}>
             <Navbar.Brand><NavLink to='/'><img src={logo} alt="" className='logo'/></NavLink></Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-              onHide={true}
-              style={{ maxWidth: '85%', textDecoration: 'none' }} 
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                </Offcanvas.Title>
-              </Offcanvas.Header>
+            <Navbar.Toggle
+  aria-controls={`offcanvasNavbar-expand-${expand}`}
+  className="ms-auto" // This will align the toggle to the right
+/>
+<Navbar.Offcanvas
+  id={`offcanvasNavbar-expand-${expand}`}
+  aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+  placement="end" // Use "end" for right alignment
+  style={{ maxWidth: '90%', textDecoration: 'none' }} 
+>
+  <Offcanvas.Header closeButton>
+    <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+    </Offcanvas.Title>
+  </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="mx-auto justify-content-center flex-grow-1 pe-3">
                   <nav className='header_nav'>
@@ -64,7 +66,7 @@ function Header() {
                       <NavLink to="fan" className='cart_header_btn' style={{ textDecoration: 'none', display:'flex' }}> <ImCart />{t('nav.cart')}</NavLink>
                       <Dropdown  onSelect={handleSelect}>
                         <Dropdown.Toggle variant="success" id="dropdown-basic" >
-                       {lang_token != null ? lang_token : 'Languages'}
+                           {lang_token != null ? lang_token : 'Languages'}
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>

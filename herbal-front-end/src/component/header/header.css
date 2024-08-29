@@ -1,6 +1,7 @@
 .navigation{
     width: 100%;
    
+   
 }
 .logo{
     width: 40%;
@@ -186,7 +187,7 @@ i{
         margin-left: -6rem;
     }
     .logo{
-        left: -4rem;
+        left: 4rem;
     }
     .drop{
         width: 50rem;
