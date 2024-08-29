@@ -169,7 +169,8 @@ i{
     }
 
     .dropdown{
-        margin-top: -2rem;
+        /* width: 30rem; */
+        margin-top: -1rem;
         margin-left: -2rem;
         position: relative;
     }

@@ -14,9 +14,10 @@ import logo from '../../assets/logo.png';
 import useAuthStore from '../../utills/store/lang.store';
 import { useTranslation } from 'react-i18next';
 import { FaLanguage } from 'react-icons/fa';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 function Header() {
-  const { setToken } = useAuthStore();
+  const { setToken, lang_token } = useAuthStore();
   const { i18n } = useTranslation();
 
   const handleSelect = (eventKey) => {
@@ -60,21 +61,18 @@ function Header() {
                       </section>
                       <section className="right_header">
                       <NavLink to="fan" className='cart_header_btn' style={{ textDecoration: 'none', display:'flex' }}> <ImCart />Cart Added</NavLink>
-                      <NavDropdown
-                      
-                         title={
-                          <div className='drop'>
-                            <FaLanguage className="me-2" /> Languages {/* Add icon here */}
-                          </div>
-                        }
-                        id={`offcanvasNavbarDropdown-expand-${expand}`}
-                        className="dropdown"
-                        onSelect={handleSelect}
-                      >
-                        <NavDropdown.Item eventKey="en">English</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item eventKey="fr">French</NavDropdown.Item>
-                      </NavDropdown>
+                      <Dropdown  onSelect={handleSelect}>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic" >
+                       {lang_token != null ? lang_token : 'Languages'}
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                          <Dropdown.Item eventKey="en">English</Dropdown.Item>
+                          <Dropdown.Divider />
+                          <Dropdown.Item eventKey="fr">French</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                     
                       </section>
                   </nav>
                 </Nav>

@@ -2,8 +2,8 @@ import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 
 type State = {
-  lang_token: string;
-  setToken: (newToken: string) => void;
+  lang_token: string | null;
+  setToken: (newToken: string | null) => void;
 };
 
 const useAuthStore = create<State>()(
