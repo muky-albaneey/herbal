@@ -17,6 +17,7 @@ import { FaLanguage } from 'react-icons/fa';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 function Header() {
+  const { t } = useTranslation();
   const { setToken, lang_token } = useAuthStore();
   const { i18n } = useTranslation();
 
@@ -47,20 +48,20 @@ function Header() {
                 <Nav className="mx-auto justify-content-center flex-grow-1 pe-3">
                   <nav className='header_nav'>
                       <section className="left_header">
-                         <NavLink to="/" className='home_btn' style={{ textDecoration: 'none' }}> Home</NavLink>
+                         <NavLink to="/" className='home_btn' style={{ textDecoration: 'none' }}> {t('nav.home')}</NavLink>
                         <div className="nav_header_info">
-                          <NavLink to="/">Product</NavLink>
-                          <NavLink to="/">Contact us</NavLink>
+                        <NavLink to="/">{t('nav.product')}</NavLink>
+                        <NavLink to="/contact" className={lang_token === 'fr' ? 'french_t': ''}>{t('nav.contact_us')}</NavLink>
                         </div>
                       </section>
                       <section className="center_header">
                       <form action="" method="post" className="d-flex justify-center items-center relative">
                           <BiSearchAlt2 className='serch_icon absolute left-0.5 lg:left-0 ' id="search_mobile"/>
-                          <input type="search" placeholder="Search for anything here" id='search_input' />
+                          <input type="search"  placeholder={t('search_placeholder')} id='search_input' />
                       </form>
                       </section>
                       <section className="right_header">
-                      <NavLink to="fan" className='cart_header_btn' style={{ textDecoration: 'none', display:'flex' }}> <ImCart />Cart Added</NavLink>
+                      <NavLink to="fan" className='cart_header_btn' style={{ textDecoration: 'none', display:'flex' }}> <ImCart />{t('nav.cart')}</NavLink>
                       <Dropdown  onSelect={handleSelect}>
                         <Dropdown.Toggle variant="success" id="dropdown-basic" >
                        {lang_token != null ? lang_token : 'Languages'}

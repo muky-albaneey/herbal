@@ -44,6 +44,13 @@
     "text": "Un chien est un type d'animal domestiqué. Connu pour sa loyauté et sa fidélité, il peut être trouvé comme un invité bienvenu dans de nombreux foyers à travers le monde.",
   "collapse": {
     "label": "Ceci est l'en-tête du panneau 1"
-  }
+  },
+  "nav": {
+    "home": "Accueil",
+    "product": "Produit",
+    "contact_us": "Contactez-nous",
+    "cart": "Panier ajouté"
+  },
+    "search_placeholder": "Rechercher quelque chose ici"
   }
   

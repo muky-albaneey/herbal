@@ -44,6 +44,13 @@
     "text": "A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.",
     "collapse": {
     "label": "This is panel header 1"
-  }
+  },
+  "nav": {
+    "home": "Home",
+    "product": "Product",
+    "contact_us": "Contact us",
+    "cart": "Cart Added"
+  },
+  "search_placeholder": "Search for anything here"
   }
   

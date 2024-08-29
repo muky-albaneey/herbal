@@ -147,8 +147,9 @@ i{
 
     }
     #search_input{
-        width: 20rem;
-        display: none;
+        width: 17rem;
+        margin-left: -2rem;
+        /* display: none; */
     }
     .serch_icon{
         display: none;
@@ -191,6 +192,10 @@ i{
         width: 50rem;
         font-size: 1.2rem;
         margin-left: -1rem;
+    }
+    .french_t{
+        
+        font-size: .8rem;
     }
 }
 
