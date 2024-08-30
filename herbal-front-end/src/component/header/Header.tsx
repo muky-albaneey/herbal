@@ -57,10 +57,32 @@ function Header() {
                         </div>
                       </section>
                       <section className="center_header">
-                      <form action="" method="post" className="d-flex justify-center items-center relative">
+
+                      <form className="max-w-md mx-auto">
+    <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div className="relative">
+        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+        
+        </div>
+        <input 
+            type="search" 
+            id="default-search" 
+            className="block w-full p-3 ps-10 text-sm text-gray-900 border border-green-300 rounded-lg bg-green-50 focus:ring-green-500 focus:border-blue-500 dark:bg-green-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+            placeholder="Search Mockups, Logos..." 
+            required 
+        />
+        <button 
+            type="submit" 
+            className="text-white absolute end-2.5 bottom-2.5 bg-green-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 dark:bg-green-600 dark:hover:bg-blue-700 dark:focus:ring-green-800" id='d-s-btn'>
+            Search
+        </button>
+    </div>
+</form>
+
+                      {/* <form action="" method="post" className="d-flex justify-center items-center relative">
                           <BiSearchAlt2 className='serch_icon absolute lg:left-0 ' id="search_mobile"/>
                           <input type="search"  placeholder={t('search_placeholder')} id='search_input' />
-                      </form>
+                      </form> */}
                       </section>
                       <section className="right_header">
                       <NavLink to="fan" className='cart_header_btn' style={{ textDecoration: 'none', display:'flex' }}> <ImCart />{t('nav.cart')}</NavLink>

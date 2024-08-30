@@ -9,8 +9,8 @@ import CarouselComponent from './component/carousel/Carousel'
 import HomeComponent from './component/Home'
 import ProductPageComponent from './pages/product/ProductPage'
 import Admin from './pages/admin_dashboard/AdminCom'
-import ListComponent from './pages/product/Product_list'
 import Example from './pages/admin_dashboard/Dashboard'
+import ProductsComponent from './pages/product/Products'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -51,7 +51,7 @@ function App() {
                  path='products' loader={async ()=>{
                 return null
               }}
-              element={<ListComponent />} 
+              element={<ProductsComponent />} 
             indexerrorElement={<ErrorElement />}
              />
           {/* <Route

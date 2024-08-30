@@ -204,6 +204,20 @@ i{
         
         font-size: .8rem;
     }
+
+    #default-search{
+        width: 20rem;
+        position: relative;
+        left: -7rem;
+    }
+    #d-s-btn{
+        right: -6rem;
+    }
+    #dropdown-basic{
+        position: relative;
+        width: 20rem;
+        left: -5rem;
+    }
 }
 
 @media all and (max-width: 340px) {

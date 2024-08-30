@@ -1,3 +1,4 @@
+/* PRODUCT DETAILS SECTION */
 .product_wrapper{
     width: 100%;
     padding: 1rem;
@@ -149,4 +150,23 @@
         width: 12%;
     }
 
+}
+
+
+/* PRODUCTS list section */
+.productListWrapper{
+    width: 100%;
+    /* background: #000; */
+    display: flex;
+}
+.house_listing{
+    width: 80%;
+}
+.filter_sec{
+    width: 20%;
+}
+#products_list_con{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
