@@ -58,7 +58,7 @@ function Header() {
                       </section>
                       <section className="center_header">
                       <form action="" method="post" className="d-flex justify-center items-center relative">
-                          <BiSearchAlt2 className='serch_icon absolute left-0.5 lg:left-0 ' id="search_mobile"/>
+                          <BiSearchAlt2 className='serch_icon absolute lg:left-0 ' id="search_mobile"/>
                           <input type="search"  placeholder={t('search_placeholder')} id='search_input' />
                       </form>
                       </section>

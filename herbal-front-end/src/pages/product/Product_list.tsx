@@ -7,9 +7,7 @@ export default function ListComponent() {
 
   return (
     <div className=''>
-      <Trans i18nKey="message">Welcome to React and react-i18next</Trans>;
-        
-        {/* {t('message')} */}
+     
     </div>
   );
 }

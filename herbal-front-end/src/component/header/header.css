@@ -82,7 +82,6 @@ i{
     width: 100%;
 }
 .serch_icon{
-    
     margin-top: 10px;
     animation-name: serch_iconanim;
     animation-duration: 10s;
@@ -150,10 +149,15 @@ i{
     #search_input{
         width: 17rem;
         margin-left: -2rem;
+        padding: .1rem;
+        margin: .6rem 0;
         /* display: none; */
     }
     .serch_icon{
-        display: none;
+        /* position: absolute; */
+        /* display: none; */
+        left: -6rem;
+        
     }
     .search_mobile{
         left: -10rem;
