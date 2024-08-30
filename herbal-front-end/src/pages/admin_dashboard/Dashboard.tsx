@@ -11,8 +11,7 @@ import { BiSearchAlt2 } from 'react-icons/bi';
 
 export default function Example() {
     const { t } = useTranslation();
-    const { setToken, lang_token } = useAuthStore();
-    const { i18n } = useTranslation();
+  
 
 
 const user = {
