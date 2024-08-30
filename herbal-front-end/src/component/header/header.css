@@ -187,7 +187,9 @@ i{
         margin-left: -6rem;
     }
     .logo{
-        left: 4rem;
+        left: -.5rem;
+        width: 7rem;
+        height: 60%;
     }
     .drop{
         width: 50rem;

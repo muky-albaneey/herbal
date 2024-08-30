@@ -10,6 +10,7 @@ import HomeComponent from './component/Home'
 import ProductPageComponent from './pages/product/ProductPage'
 import Admin from './pages/admin_dashboard/AdminCom'
 import ListComponent from './pages/product/Product_list'
+import Example from './pages/admin_dashboard/Dashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -43,7 +44,7 @@ function App() {
                  path='admin' loader={async ()=>{
                 return null
               }}
-              element={<Admin />} 
+              element={<Example />} 
             indexerrorElement={<ErrorElement />}
              />
                <Route 

@@ -3,6 +3,7 @@ import React from 'react';
 import { Outlet } from "react-router-dom"
 import Header from '../component/header/Header';
 import FooterComponent from '../component/footer/Footer';
+import Example from '../pages/admin_dashboard/Dashboard';
 
 export default function Layout() {
   return (
