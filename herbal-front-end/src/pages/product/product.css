@@ -223,9 +223,11 @@
   }
 
 @media (max-width: 640px) {
+    
     .productListWrapper{
         flex-direction: column;
     }
+
     #products_list_con{
         width: 22rem;
         /* background: #000; */
