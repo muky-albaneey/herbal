@@ -227,11 +227,11 @@
         flex-direction: column;
     }
     #products_list_con{
-        width: 24rem;
+        width: 22rem;
         /* background: #000; */
         display: flex;
         justify-content: center;
-        margin-left: -4rem;
+        margin-left: -2rem;
         
         /* flex-wrap: wrap; */
     }
