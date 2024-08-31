@@ -20,6 +20,7 @@ const ListComponent_info = React.memo(() => {
                                 <Card
                                     hoverable
                                     className='cardCon'
+                                    id='card_product'
                                     cover={<img src={card.image} alt={card.id} loading="lazy" />}
                                 >
                                     <div className="cardItemInfo">
