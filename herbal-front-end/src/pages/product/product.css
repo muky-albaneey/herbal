@@ -233,7 +233,7 @@
         /* background: #000; */
         display: flex;
         justify-content: center;
-        margin-left: -4rem;
+        margin-left: -3.7rem;
         
         /* flex-wrap: wrap; */
     }
@@ -249,7 +249,7 @@
         overflow-x: scroll;
     }
     .tags{
-        height: 17rem;
+        height: 15rem;
 
     }
     .tags a{
