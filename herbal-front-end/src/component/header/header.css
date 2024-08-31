@@ -211,7 +211,8 @@ i{
         height: 1.7rem;
     }
     #d-s-btn{
-        right: -2.3rem;
+        right: -5rem;
+        /* top: .7rem; */
     }
     #dropdown-basic{
         position: relative;
