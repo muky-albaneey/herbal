@@ -223,7 +223,7 @@
   }
 
 @media (max-width: 640px) {
-    
+
     .productListWrapper{
         flex-direction: column;
     }
@@ -233,7 +233,7 @@
         /* background: #000; */
         display: flex;
         justify-content: center;
-        margin-left: -2rem;
+        margin-left: 1rem;
         
         /* flex-wrap: wrap; */
     }
