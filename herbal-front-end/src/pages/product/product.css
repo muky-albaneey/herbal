@@ -227,7 +227,7 @@
         flex-direction: column;
     }
     #products_list_con{
-        width: 28rem;
+        width: 24rem;
         /* background: #000; */
         display: flex;
         justify-content: center;
