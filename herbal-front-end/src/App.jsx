@@ -11,6 +11,7 @@ import ProductPageComponent from './pages/product/ProductPage'
 import Admin from './pages/admin_dashboard/AdminCom'
 import Example from './pages/admin_dashboard/Dashboard'
 import ProductsComponent from './pages/product/Products'
+import CartComponent from './pages/cart/Cart'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -52,6 +53,13 @@ function App() {
                 return null
               }}
               element={<ProductsComponent />} 
+            indexerrorElement={<ErrorElement />}
+             />
+              <Route 
+                 path='products' loader={async ()=>{
+                return null
+              }}
+              element={<CartComponent />} 
             indexerrorElement={<ErrorElement />}
              />
           {/* <Route

@@ -1,0 +1,46 @@
+.custom-table-header .ant-table-thead > tr > th {
+    background-color: #015301; /* Unified background color */
+    color: white; /* Text color inside the header */
+    border: none; /* Remove any borders to avoid gaps */
+    border-radius: 0; /* Reset border-radius for individual cells */
+  }
+  
+  /* Apply border-radius to the first and last th elements in the header row */
+  .custom-table-header .ant-table-thead > tr > th:first-child {
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+  }
+  
+  .custom-table-header .ant-table-thead > tr > th:last-child {
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+  }
+  
+  /* Ensure the table itself doesn't override the styling */
+  .custom-table-header .ant-table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  
+  .custom-table-header .ant-table-thead > tr > th {
+    color: white; /* Text color inside the header */
+  }
+  
+  /* Ensure there's no spacing between the `th` elements */
+  .custom-table-header .ant-table-thead > tr > th {
+    border-right: none;
+  }
+  
+  /* Remove default table border spacing */
+  .custom-table-header .ant-table {
+    border-collapse: separate; /* This is needed to keep the border-radius */
+    border-spacing: 0;
+  }
+  
+
+  .custom-table td {
+    border-bottom: 1px solid #d9d9d9; /* Example border color */
+  }
+  
+  

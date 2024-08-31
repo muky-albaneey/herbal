@@ -3,6 +3,8 @@ import ListComponent_info from '../../component/products/Product_list';
 import SearchWithButtonExample from '../../component/Search';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
+import TableCom from '../../component/table/Table';
+
 
 export default function ProductsComponent() {
   
@@ -21,7 +23,6 @@ export default function ProductsComponent() {
         Scroll towards bottom for more product tags
       </div>
       <div className="tags">
-    
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
@@ -70,7 +71,9 @@ export default function ProductsComponent() {
     </aside>
     <main className="house_listing">
      <ListComponent_info />
+     
     </main>
+    
     </div>
   );
 }
