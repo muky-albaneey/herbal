@@ -32,16 +32,16 @@ function Header() {
         <Navbar key={expand} expand={expand} style={{ backgroundColor: 'white' }} className="bg-body-tertiary mb-3">
           <Container fluid className="mx-auto justify-content-center" style={{ backgroundColor: 'white' }}>
             <Navbar.Brand><NavLink to='/'><img src={logo} alt="" className='logo'/></NavLink></Navbar.Brand>
-            <Navbar.Toggle
-  aria-controls={`offcanvasNavbar-expand-${expand}`}
-  className="ms-auto" // This will align the toggle to the right
-/>
-<Navbar.Offcanvas
-  id={`offcanvasNavbar-expand-${expand}`}
-  aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-  placement="end" // Use "end" for right alignment
-  style={{ maxWidth: '90%', textDecoration: 'none' }} 
->
+                        <Navbar.Toggle
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              className="ms-auto" // This will align the toggle to the right
+            />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="end" // Use "end" for right alignment
+              style={{ maxWidth: '90%', textDecoration: 'none' }} 
+            >
   <Offcanvas.Header closeButton>
     <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
     </Offcanvas.Title>
@@ -61,22 +61,22 @@ function Header() {
                       <form className="max-w-md mx-auto">
     <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
     <div className="relative">
-        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+        <div className="absolute inset-y-0 start-0 flex items-center ps-3   pointer-events-none">
         
         </div>
         <input 
             type="search" 
             id="default-search" 
-            className="block w-full p-3 ps-10 text-sm text-white-900 border border-green-300 rounded-lg bg-green-50 focus:ring-green-500 focus:border-blue-500 dark:bg-green-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-            placeholder="Search for anything you want" 
+            className="block w-full p-3 ps-10 text-sm text-white-900 border border-green-300 rounded-lg bg-green-50 focus:ring-green-500 focus:border-blue-500 dark:bg-green-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-200 dark:focus:border-blue-500" 
+            placeholder={t('search_placeholder')}
             required 
         />
-        <button 
-            type="submit" 
-            className="text-white absolute end-2.5 bottom-2.5 bg-green-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 dark:bg-green-600 dark:hover:bg-blue-700 dark:focus:ring-green-800" id='d-s-btn'>
-            Search
-        </button>
-           </div>
+              <button 
+                  type="submit" 
+                  className="text-white absolute end-2.5 bottom-2.5 bg-green-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 dark:bg-green-600 dark:hover:bg-green-400 dark:focus:ring-green-800" id='d-s-btn'>
+                    {t('search')}
+              </button>
+             </div>
           </form>
 
                       </section>

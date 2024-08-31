@@ -51,6 +51,10 @@
     "contact_us": "Contact us",
     "cart": "Cart Added"
   },
-  "search_placeholder": "Search for anything here"
+  "search_placeholder": "Search for anything here",
+    "products_heading": "PRODUCTS",
+    "product_tags_heading": "PRODUCT TAGS",
+    "search_product": "SEARCH PRODUCT",
+      "search": "Search"
   }
   

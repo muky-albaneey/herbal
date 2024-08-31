@@ -1,15 +1,70 @@
 import React from 'react';
 import ListComponent_info from '../../component/products/Product_list';
 import SearchWithButtonExample from '../../component/Search';
-
+import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 
 export default function ProductsComponent() {
+  
+  const { t } = useTranslation();
   return (
+    
     <div className='productListWrapper'>
     <aside className="filter_sec">
-      <h1>PRODUCTS</h1>
+      <h1>{t('products_heading')}</h1>
       <div className="search_product">
+        <h2>{t('search_product')}</h2>
         <SearchWithButtonExample />
+      </div>
+      <h1>{t('product_tags_heading')}</h1>
+      <div className="marquee">
+        Scroll towards bottom for more product tags
+      </div>
+      <div className="tags">
+    
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        
       </div>
       
     </aside>
@@ -19,3 +74,4 @@ export default function ProductsComponent() {
     </div>
   );
 }
+

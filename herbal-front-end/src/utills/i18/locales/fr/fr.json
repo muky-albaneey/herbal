@@ -51,6 +51,10 @@
     "contact_us": "Contactez-nous",
     "cart": "Panier ajouté"
   },
-    "search_placeholder": "Rechercher quelque chose ici"
+    "search_placeholder": "Rechercher quelque chose ici",
+     "products_heading": "PRODUITS",
+      "product_tags_heading": "TAGS DE PRODUITS",
+      "search_product": "RECHERCHE DE PRODUIT",
+        "search": "Recherche"
   }
   
