@@ -209,6 +209,7 @@
     box-sizing: border-box;
     animation: marquee 10s linear infinite;
     display: none;
+    padding: 0.5rem;
   }
   .marquee:hover {
     animation-play-state: paused; /* Pause on hover */
