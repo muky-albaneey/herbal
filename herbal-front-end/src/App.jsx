@@ -50,13 +50,13 @@ function App() {
              />
                <Route 
                  path='products' loader={async ()=>{
-                return null
+                  return null
               }}
               element={<ProductsComponent />} 
             indexerrorElement={<ErrorElement />}
              />
               <Route 
-                 path='products' loader={async ()=>{
+                 path='cart' loader={async ()=>{
                 return null
               }}
               element={<CartComponent />} 
