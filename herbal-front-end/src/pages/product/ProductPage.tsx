@@ -69,20 +69,20 @@ let product_info = [
           <section className="r-wrapper">
             <div className="r-container">
                 <Swiper {...sliderSettings}>
-                    {product_info.map((card, i) => (
+                    {find_product?.other_images.map((card, i) => (
                         <SwiperSlide key={i}>
                            {/* <Link to={`product/${card.id}`}> */}
                            <div className="flexColStart r-card">
                                 <Card
                                     hoverable
                                     className='cardCon'
-                                    cover={<img src={card.img} alt={card.id} loading="lazy" />}
+                                    cover={<img src={card.img} alt={find_product.name} loading="lazy" />}
                                 >
                                     <div className="cardItemInfo">
                                       <article>
                                         <h4>
-                                           <span> {card.area}</span> <br />
-                                            <span>{card.price}</span>
+                                           <span> {find_product.name}</span> <br />
+                                            <span>{find_product.price}</span>
                                         </h4>
                                       
                                       </article>

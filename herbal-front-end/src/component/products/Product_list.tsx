@@ -15,7 +15,7 @@ const ListComponent_info = React.memo(() => {
                
                     {data.map((card, i) => (
                        
-                           <Link to={`product/${card.id}`}>
+                           <Link to={`/product/${card.id}`}>
                            <div className="flexColStart r-card">
                                 <Card
                                     hoverable
