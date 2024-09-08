@@ -15,6 +15,7 @@ import useAuthStore from '../../utills/store/lang.store';
 import { useTranslation } from 'react-i18next';
 import { FaLanguage } from 'react-icons/fa';
 import Dropdown from 'react-bootstrap/Dropdown';
+import useCartStore from '../../utills/store/cart';
 
 function Header() {
   const { t } = useTranslation();
@@ -25,7 +26,10 @@ function Header() {
     i18n.changeLanguage(eventKey); // Change language in i18next
     setToken(eventKey); // Update Zustand store
   };
+  const cart = useCartStore((state) => state.cart);
 
+  // Calculate total quantity of items in the cart
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
   return (
     <div style={{ width: '100%', background: 'white' }}>
       {['md'].map((expand) => (
@@ -81,7 +85,16 @@ function Header() {
 
                       </section>
                       <section className="right_header">
-                      <NavLink to="fan" className='cart_header_btn' style={{ textDecoration: 'none', display:'flex' }}> <ImCart />{t('nav.cart')}</NavLink>
+                      <NavLink to="cart" className='cart_header_btn' style={{ textDecoration: 'none', display:'flex' }}> 
+                      <button type="button" className="btn btn-success position-relative flex items-center">
+                        <ImCart /> Cart
+                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                          {totalItems > 99 ? '99+' : totalItems} {}
+                          <span className="visually-hidden">items in cart</span>
+                        </span>
+                      </button>
+                      </NavLink>
+
                       <Dropdown  onSelect={handleSelect}>
                         <Dropdown.Toggle variant="success" id="dropdown-basic" >
                            {lang_token != null ? lang_token : 'Languages'}

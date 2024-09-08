@@ -130,7 +130,8 @@ export default function ProductPageComponent() {
   const find_product = data.find((products) => products.id == id);
 
   // Zustand store actions
-  const addItemToCart = useCartStore((state) => state.addItemToCart);
+  const addItemToCart = useCartStore((state) => state.addToCart);
+  const cart = useCartStore((state) => state.cart);
 
   // Local state for quantity
   const [quantity, setQuantity] = useState(0);
@@ -147,8 +148,30 @@ export default function ProductPageComponent() {
     }
   };
 
+  const totalPrice = cart.reduce((total, item) => {
+    const itemTotal = item.price * (item.quantity || 0);
+    return total + itemTotal;
+  }, 0);
+
+  
   return (
     <div className='product_wrapper'>
+      <div className="cart_page">
+      <h1>Your Cart</h1>
+      {cart.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <ul>
+          {cart.map((item) => (
+            <li key={item.id}>
+              {item.name} - ${item.price} x {item.quantity}
+            </li>
+            
+          ))}
+           <h2>Total Price: ${totalPrice.toFixed(1)}</h2>
+        </ul>
+      )}
+    </div>
       <h1>Product Details</h1>
       <section className="product_top_con">
         <aside className='product_con_left'></aside>

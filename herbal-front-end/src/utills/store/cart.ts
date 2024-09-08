@@ -1,54 +1,106 @@
-// import create from 'zustand';
+// import { create } from 'zustand';
 
-// // Define the Zustand store
-// const useCartStore = create((set) => ({
-//   cart: [], // Initial state for the cart is an empty array
+// interface CartItem {
+//   id: string;
+//   name: string;
+//   price: number;
+//   quantity: number;
+// }
 
-//   // Function to add an item to the cart
-//   addItemToCart: (item) => set((state) => ({
-//     cart: [...state.cart, item],
-//   })),
+// interface CartStore {
+//   cart: CartItem[];
+//   addToCart: (item: CartItem) => void;
+//   removeFromCart: (id: string) => void;
+//   totalPrice: () => number; 
+// }
 
-//   // Optionally, you can also add functions to remove items, clear the cart, etc.
-//   removeItemFromCart: (itemId) => set((state) => ({
-//     cart: state.cart.filter((item) => item.id !== itemId),
-//   })),
-
-//   clearCart: () => set({ cart: [] }),
+// const useCartStore = create<CartStore>((set, get) => ({
+//   cart: [],
+//   addToCart: (item) =>
+//     set((state) => {
+//       const existingItemIndex = state.cart.findIndex((cartItem) => cartItem.id === item.id);
+//       if (existingItemIndex >= 0) {
+//         // Item already exists in the cart, update its quantity
+//         const updatedCart = [...state.cart];
+//         updatedCart[existingItemIndex] = {
+//           ...updatedCart[existingItemIndex],
+//           quantity: updatedCart[existingItemIndex].quantity + item.quantity,
+//         };
+//         return { cart: updatedCart };
+//       } else {
+//         // Item does not exist, add it to the cart
+//         return { cart: [...state.cart, item] };
+//       }
+//     }),
+  
+//   removeFromCart: (id) =>
+//     set((state) => {
+//       console.log('Removing item with id:', id); // Debugging to check the id being passed
+//       const updatedCart = state.cart.filter((item) => item.id !== id);
+//       console.log('Updated cart after removal:', updatedCart); // For debugging after the cart is updated
+//       return { cart: updatedCart };
+//     }),
+//     totalPrice: () => {
+//       const { cart } = get(); // Access the cart state
+//       return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+//     },
 // }));
 
-// export default useCartStore;
-import create from 'zustand';
 
-// Define the type for a cart item
+// export default useCartStore;
+import { create } from 'zustand';
+
 interface CartItem {
   id: string;
   name: string;
   price: number;
-  quantity?: number; // Optional field if you want to track quantity
+  quantity: number;
 }
 
-// Define the type for the store's state and actions
-interface CartState {
+interface CartStore {
   cart: CartItem[];
-  addItemToCart: (item: CartItem) => void;
-  removeItemFromCart: (itemId: string) => void;
-  clearCart: () => void;
+  addToCart: (item: CartItem) => void;
+  removeFromCart: (id: string) => void;
+  totalPrice: () => number; 
 }
 
-// Create the Zustand store with TypeScript types
-const useCartStore = create<CartState>((set) => ({
+const useCartStore = create<CartStore>((set, get) => ({
   cart: [],
+  addToCart: (item) =>
+    set((state) => {
+      const existingItemIndex = state.cart.findIndex((cartItem) => cartItem.id === item.id);
+      let updatedCart;
 
-  addItemToCart: (item) => set((state) => ({
-    cart: [...state.cart, item],
-  })),
+      if (existingItemIndex >= 0) {
+        // Item already exists in the cart, update its quantity
+        updatedCart = [...state.cart];
+        updatedCart[existingItemIndex] = {
+          ...updatedCart[existingItemIndex],
+          quantity: updatedCart[existingItemIndex].quantity + item.quantity,
+        };
+      } else {
+        // Item does not exist, add it to the cart
+        updatedCart = [...state.cart, item];
+      }
 
-  removeItemFromCart: (itemId) => set((state) => ({
-    cart: state.cart.filter((item) => item.id !== itemId),
-  })),
+      // Remove any items with zero quantity
+      const filteredCart = updatedCart.filter((cartItem) => cartItem.quantity > 0);
+      
+      return { cart: filteredCart };
+    }),
 
-  clearCart: () => set({ cart: [] }),
+  removeFromCart: (id) =>
+    set((state) => {
+      console.log('Removing item with id:', id); // Debugging to check the id being passed
+      const updatedCart = state.cart.filter((item) => item.id !== id);
+      console.log('Updated cart after removal:', updatedCart); // For debugging after the cart is updated
+      return { cart: updatedCart };
+    }),
+
+  totalPrice: () => {
+    const { cart } = get(); // Access the cart state
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  },
 }));
 
 export default useCartStore;
