@@ -103,9 +103,9 @@ const CartTable: React.FC = () => {
         dataSource={dataSource} // Ensure the data source has proper 'id' and 'key'
         pagination={false}
       />
-      <div>
-        <h3>Total Price: ${totalPrice().toFixed(2)}</h3> {/* Call the function to get the total */}
-      </div>
+      {/* <div>
+        <h3>Total Price: ${totalPrice().toFixed(2)}</h3> 
+      </div> */}
     </>
   );
 };
