@@ -1,19 +1,14 @@
 import React from 'react';
 import { ImCart } from "react-icons/im"; 
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { BiSearchAlt2 } from "react-icons/bi"; 
 import { Link, NavLink } from 'react-router-dom';
 import './header.css';
 import logo from '../../assets/logo.png';
 import useAuthStore from '../../utills/store/lang.store';
 import { useTranslation } from 'react-i18next';
-import { FaLanguage } from 'react-icons/fa';
 import Dropdown from 'react-bootstrap/Dropdown';
 import useCartStore from '../../utills/store/cart';
 
@@ -95,6 +90,7 @@ function Header() {
                       </button>
                       </NavLink>
 
+                      <div>
                       <Dropdown  onSelect={handleSelect}>
                         <Dropdown.Toggle variant="success" id="dropdown-basic" >
                            {lang_token != null ? lang_token : 'Languages'}
@@ -106,6 +102,7 @@ function Header() {
                           <Dropdown.Item eventKey="fr">French</Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>
+                      </div>
                      
                       </section>
                   </nav>

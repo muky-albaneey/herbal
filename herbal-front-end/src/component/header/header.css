@@ -176,9 +176,9 @@ i{
     }
 
     .dropdown{
-        /* width: 30rem; */
-        margin-top: -1rem;
-        margin-left: -2rem;
+        width: 6rem;
+        /* margin-top: -1rem; */
+        /* margin-left: -2rem; */
         position: relative;
     }
     .nav_header_info{
@@ -215,9 +215,10 @@ i{
         /* top: .7rem; */
     }
     #dropdown-basic{
+        /* width: 5rem; */
         position: relative;
-        width: 20rem;
-        left: -5rem;
+        width: 18rem;
+        left: -7rem;
     }
 }
 
