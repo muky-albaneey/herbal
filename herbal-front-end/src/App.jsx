@@ -1,17 +1,14 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import ErrorElement from './ErrorElement'
 import Layout from './layout/MainLayout'
 import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from 'react-router-dom';
-import CarouselComponent from './component/carousel/Carousel'
 import HomeComponent from './component/Home'
 import ProductPageComponent from './pages/product/ProductPage'
-import Admin from './pages/admin_dashboard/AdminCom'
-import Example from './pages/admin_dashboard/Dashboard'
 import ProductsComponent from './pages/product/Products'
 import CartComponent from './pages/cart/Cart'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,13 +38,13 @@ function App() {
                 return null
               }}
               element={<ProductPageComponent />} errorElement={<ErrorElement />} />
-              <Route 
+              {/* <Route 
                  path='admin' loader={async ()=>{
                 return null
               }}
               element={<Example />} 
             indexerrorElement={<ErrorElement />}
-             />
+             /> */}
                <Route 
                  path='products' loader={async ()=>{
                   return null
@@ -62,6 +59,8 @@ function App() {
               element={<CartComponent />} 
             indexerrorElement={<ErrorElement />}
              />
+
+       
           {/* <Route
             errorElement={<ErrorElement />}
             loader={async () => {

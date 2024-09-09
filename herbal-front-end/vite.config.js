@@ -9,13 +9,20 @@
 // })
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   build: {
-    outDir: 'dist', // Ensure the build output is in the 'dist' directory
+    outDir: 'dist', // Output in the 'dist' folder
   },
   optimizeDeps: {
-    exclude: ['react-icons'], // Exclude react-icons from Vite's dependency optimizer
+    exclude: ['react-icons'],
   },
 });
+
