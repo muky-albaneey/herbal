@@ -6,6 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import   './utills/i18'
 import './index.css'
 
+
+// import './css/satoshi.css';
+// import 'jsvectormap/dist/css/jsvectormap.css';
+// import 'flatpickr/dist/flatpickr.min.css';
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />

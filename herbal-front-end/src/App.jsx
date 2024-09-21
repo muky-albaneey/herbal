@@ -10,8 +10,8 @@ import ProductsComponent from './pages/product/Products'
 import CartComponent from './pages/cart/Cart'
 
 
+
 function App() {
-  const [count, setCount] = useState(0)
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
@@ -59,6 +59,7 @@ function App() {
               element={<CartComponent />} 
             indexerrorElement={<ErrorElement />}
              />
+             
 
        
           {/* <Route
