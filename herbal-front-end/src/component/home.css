@@ -253,7 +253,7 @@ article{
         width: 100%;
         flex-direction: column-reverse;
         top: 0rem;
-        height: 60rem;
+        height: 45rem;
         background-color: white;
         color: black;
 
@@ -262,6 +262,7 @@ article{
     .about_con .about_con_right, 
     .about_con .about_con_left{
         width: 96%;
+        height: 50%;
         color: #001601;
         text-align: center;
         
@@ -274,10 +275,11 @@ article{
         flex-direction: column;
         gap: 1rem;
         padding: 14px;
-       
-        font-size: 1rem;
+        line-height: 1.4;
+        font-size: .9rem;
        
     }
+
     .about_header{
         display: flex;
         justify-content: center;
