@@ -83,16 +83,7 @@ import './residence.css';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
-export type Product = {
-  product_image: string;
-  name: string;
-  category: string;
-  price: number;
-  quantity: number;
-  description: string;
-  createdAt: string;
-};
+import { Product } from '../../types/product'; // Adjust import path based on your project structure
 
 const SliderButtons = ({ side }: { side: boolean }) => {
   const swiper = useSwiper();
@@ -133,6 +124,11 @@ const Residence = ({ message }: { message: { choice: string; popular: string } }
   if (loading) return <div>Loading products...</div>;
   if (error) return <div>{error}</div>;
 
+  // Check if there are no products available
+  if (products.length === 0) {
+    return <div>No products available</div>;
+  }
+
   return (
     <section className="r-wrapper">
       <div className="r-container">
@@ -144,13 +140,26 @@ const Residence = ({ message }: { message: { choice: string; popular: string } }
                   <Card
                     hoverable
                     className='cardCon'
-                    cover={<img src={product.product_image} alt={product.name} loading="lazy" />}
+                    cover={
+                      product.product_image?.base64 ? (
+                        <img
+                          src={`data:image/${product.product_image.ext};base64,${product.product_image.base64}`}
+                          alt={product.name}
+                          loading="lazy"
+                          className="object-cover w-full h-40"
+                        />
+                      ) : (
+                        <div className="w-full h-40 bg-gray-200 flex items-center justify-center">
+                          No Image
+                        </div>
+                      )
+                    }
                   >
                     <div className="cardItemInfo">
                       <article>
                         <h4>
                           <span>{product.name}</span> <br />
-                          <span>{product.price}</span>
+                          <span>${product.price}</span>
                         </h4>
                       </article>
                       <div className="add-to-cart">
