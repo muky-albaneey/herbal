@@ -8,6 +8,16 @@ import { sliderSettings } from '../utills/common';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 
+export type Product = {
+    product_image: string;
+    name: string;
+    category: string;
+    price: number;
+    quantity: number;
+    description: number;
+    createdAt: number;
+  };
+   
 const SliderButtons = ({side}) => {
 
 
