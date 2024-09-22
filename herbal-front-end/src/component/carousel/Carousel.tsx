@@ -153,7 +153,7 @@ const CarouselComponent: React.FC = () => {
         <div className="item-6" id="item">
           <div id="items_con">
             <article className="item_content">
-              <h1>
+              {/* <h1>
                 <TypeAnimation
                   sequence={[
                     t('item_2_heading'),
@@ -167,7 +167,7 @@ const CarouselComponent: React.FC = () => {
                   repeat={Infinity}
                   className="text_typing"
                 />
-              </h1>
+              </h1> */}
               <p>
                 <span>{t('carousel.description')}</span>
               </p>
