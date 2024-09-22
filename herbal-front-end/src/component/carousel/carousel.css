@@ -135,6 +135,7 @@
 
     @media all and (max-width: 900px) {
         #item{
+            height: 30rem;
             /* height: 43rem; */
         }
         .item_content h1{
