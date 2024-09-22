@@ -76,7 +76,15 @@ const Residence = React.memo(({ message }) => {
                                 <Card
                                     hoverable
                                     className='cardCon'
-                                    cover={<img src={card.image} alt={card.id} loading="lazy" />}
+                                    cover={
+                                        <img
+                                                                  src={`data:image/${product.product_image.ext};base64,${product.product_image.base64}`}
+                                                                  alt={product.name}
+                                                                  loading="lazy"
+                                                                  className="object-cover w-full h-40"
+                                                                />
+                                }
+                                    
                                 >
                                     <div className="cardItemInfo">
                                       <article>
