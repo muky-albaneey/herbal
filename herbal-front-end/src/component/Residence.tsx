@@ -7,6 +7,7 @@ import data from '../utills/data.json';
 import { sliderSettings } from '../utills/common';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export type Product = {
     product_image: string;
