@@ -78,11 +78,11 @@ const Residence = React.memo(({ message }) => {
                                     className='cardCon'
                                     cover={
                                         <img
-                                                                  src={`data:image/${product.product_image.ext};base64,${product.product_image.base64}`}
-                                                                  alt={product.name}
-                                                                  loading="lazy"
-                                                                  className="object-cover w-full h-40"
-                                                                />
+                                            src={`data:image/${card.product_image.ext};base64,${card.product_image.base64}`}
+                                            alt={card.name}
+                                            loading="lazy"
+                                            className="object-cover w-full h-40"
+                                        />
                                 }
                                     
                                 >
