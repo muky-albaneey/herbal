@@ -57,8 +57,7 @@ const Residence = React.memo(({ message }) => {
     const [products, setProducts] = React.useState<Product[]>([]);
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState<string | null>(null);
-    const [isLoadingImage, setIsLoadingImage] = React.useState(true);
-    
+  
     React.useEffect(() => {
       const fetchProducts = async () => {
         try {
