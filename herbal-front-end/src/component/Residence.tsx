@@ -67,6 +67,8 @@ const Residence = React.memo(({ message }) => {
               'Cache-Control': 'no-cache',
             },
           });
+          console.log(response.data);
+          
           setProducts(response.data);
         } catch (err) {
           setError('Error fetching products');
