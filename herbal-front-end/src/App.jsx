@@ -62,11 +62,11 @@ function App() {
              />
              
 
-             <Route
+             {/* <Route
             path='admin'
             errorElement={<ErrorElement />}
             element={<ProductUpload />}
-          />
+          /> */}
             {/* <Route
               index
               errorElement={<ErrorElement />}
