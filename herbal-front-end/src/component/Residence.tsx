@@ -57,7 +57,8 @@ const Residence = React.memo(({ message }) => {
     const [products, setProducts] = React.useState<Product[]>([]);
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState<string | null>(null);
-  
+    const [isLoadingImage, setIsLoadingImage] = React.useState(true);
+
     React.useEffect(() => {
       const fetchProducts = async () => {
         try {
@@ -97,11 +98,28 @@ const Residence = React.memo(({ message }) => {
                         <SwiperSlide key={i}>
                            <Link to={`product/${card.id}`}>
                            <div className="flexColStart r-card">
-                                <Card
+                                {/* <Card
                                     hoverable
                                     className='cardCon'
                                     cover={
                                     <img  src={`https://${card.product_image.url}`} alt={card.id} loading="lazy" />}
+                                > */}
+                                 <Card
+                                    hoverable
+                                    className='cardCon'
+                                    cover={
+                                        isLoadingImage ? (
+                                            <div className="skeleton" style={{ height: '200px', backgroundColor: '#e0e0e0' }} />
+                                        ) : (
+                                            <img
+                                                src={`https://${card.product_image.url}`}
+                                                alt={card.id}
+                                                loading="lazy"
+                                                onLoad={() => setIsLoadingImage(false)}
+                                                onError={() => setIsLoadingImage(false)} // Handle error
+                                            />
+                                        )
+                                    }
                                 >
                                     <div className="cardItemInfo">
                                       <article>
