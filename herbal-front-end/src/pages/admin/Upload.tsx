@@ -162,19 +162,20 @@ const Product = () => {
             }`}
             key={product.id}
           >
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              {product.product_image?.base64 ? (
-                <img
-                  src={`data:image/${product.product_image.ext};base64,${product.product_image.base64}`}
-                  alt={product.name}
-                  className="w-16 h-16 object-cover"
-                />
-              ) : (
-                <div className="w-16 h-16 bg-gray-200 flex items-center justify-center">
-                  No Image
+                <div className="flex items-center justify-center p-2.5 xl:p-5">
+                    {product.product_image?.url ? (
+                        <img
+                        src={`https://${product.product_image.url}`} // Ensure the URL starts with "http://" or "https://"
+                        alt={product.name}
+                        className="w-16 h-16 object-cover"
+                        />
+                    ) : (
+                        <div className="w-16 h-16 bg-gray-200 flex items-center justify-center">
+                        No Image
+                        </div>
+                    )}
                 </div>
-              )}
-            </div>
+
 
             <div className="flex items-center p-2.5 xl:p-5">
               <p className="text-black dark:text-white">{product.name}</p>
