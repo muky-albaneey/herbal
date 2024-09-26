@@ -8,6 +8,7 @@ import HomeComponent from './component/Home'
 import ProductPageComponent from './pages/product/ProductPage'
 import ProductsComponent from './pages/product/Products'
 import CartComponent from './pages/cart/Cart'
+import ProductUpload from './pages/admin/Upload';
 
 
 
@@ -64,8 +65,8 @@ function App() {
              <Route
             path='admin'
             errorElement={<ErrorElement />}
-            element={<Blogging />}
-          >
+            element={<ProductUpload />}
+          />
             {/* <Route
               index
               errorElement={<ErrorElement />}
@@ -89,7 +90,7 @@ function App() {
           /> */}
  
               
-          </Route>
+          {/* </Route> */}
           {/* <Route
             errorElement={<ErrorElement />}
             loader={async () => {
