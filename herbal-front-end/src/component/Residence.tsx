@@ -9,15 +9,37 @@ import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+export type ProductImage = {
+  id: string;
+  name: string;
+  url: string;
+  ext: string;
+};
+
+export type User = {
+  id: string;
+  full_name: string;
+  email: string;
+  phone_num: string | null;
+  password: string;
+  location: string | null;
+  rememberToken: string | null;
+  role: string;
+  profile_image: string | null;
+};
+
 export type Product = {
-    product_image: string;
-    name: string;
-    category: string;
-    price: number;
-    quantity: number;
-    description: number;
-    createdAt: number;
-  };
+  id: string;
+  name: string;
+  price: string;  // Price is a string in your response
+  quantity: string;  // Quantity is a string in your response
+  category: string;
+  description: string;
+  product_image: ProductImage;  // Nested object for product image details
+  user: User;  // Nested object for user details
+  createdAt: string;  // ISO date string
+};
+
    
 const SliderButtons = ({side}) => {
 
@@ -77,7 +99,7 @@ const Residence = React.memo(({ message }) => {
                                     hoverable
                                     className='cardCon'
                                     cover={
-                                    <img  src={`data:image/${product.product_image.ext};base64,${product.product_image.base64}`} alt={card.id} loading="lazy" />}
+                                    <img  src={card.product_image.url} alt={card.id} loading="lazy" />}
                                 >
                                     <div className="cardItemInfo">
                                       <article>
