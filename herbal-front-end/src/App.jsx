@@ -61,7 +61,35 @@ function App() {
              />
              
 
-       
+             <Route
+            path='admin'
+            errorElement={<ErrorElement />}
+            element={<Blogging />}
+          >
+            {/* <Route
+              index
+              errorElement={<ErrorElement />}
+              element={<Fixture />}
+            />
+          </Route>
+          <Route
+            path='contact'
+            errorElement={<ErrorElement />}
+            element={<Contact />}
+          />
+          <Route
+            path='kit'
+            errorElement={<ErrorElement />}
+            element={<Kit />}
+          />
+            <Route
+            path='customize'
+            errorElement={<ErrorElement />}
+            element={<Customize />}
+          /> */}
+ 
+              
+          </Route>
           {/* <Route
             errorElement={<ErrorElement />}
             loader={async () => {
@@ -106,47 +134,8 @@ function App() {
             errorElement={<ErrorElement />}
             element={<Customize />}
           />
-             <Route
-            path='continueCheckOut'
-            errorElement={<ErrorElement />}
-            element={<ContinueCheckOut />}
-          />
-            <Route
-            path='partners'
-            errorElement={<ErrorElement />}
-            element={<Partners />}
-          />
-          <Route
-            path='shop'
-            errorElement={<ErrorElement />}
-            element={<Shop />}
-          />
-               <Route
-            path='checkout'
-            errorElement={<ErrorElement />}
-            element={<Checkout />}
-          />
-           <Route
-            path='AllCart'
-            errorElement={<ErrorElement />}
-            element={<AllCart />}
-          />
-           <Route
-            path='club_fixtures'
-            errorElement={<ErrorElement />}
-            element={<Club_fixtures />}>
-
-            <Route
-                index
-                errorElement={<ErrorElement />}
-                element={<Features_page />}
-              />
-
-              <Route
-                path='standing_page'
-                errorElement={<ErrorElement />}
-                element={<Standing_page />}
-              />              
+ 
+              
           </Route>
           <Route
                 path='payment'

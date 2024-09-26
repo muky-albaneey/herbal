@@ -3,7 +3,7 @@ import axios from 'axios';
 // import { Product } from '../../types/product'; // Adjust import path based on your project structure
 import { Link } from 'react-router-dom';
 
-const Product = () => {
+const ProductUpload = () => {
 
     interface Product {
         id: string; // Assuming UUID is a string
@@ -104,7 +104,7 @@ const Product = () => {
         file: null,
       });
       // Re-fetch products after successful upload
-      await fetchProducts();
+    //   await fetchProducts();
     } catch (err) {
       console.error(err);
       setError('Error creating product');
@@ -199,4 +199,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductUpload;
