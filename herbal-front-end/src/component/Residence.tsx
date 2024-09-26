@@ -101,10 +101,7 @@ const Residence = React.memo(({ message }) => {
                                     hoverable
                                     className='cardCon'
                                     cover={
-                                      <img src={`https://us-ord-1.linodeobjects.com/kezny/kezny/1727353755757-ceo_caro_3.jpg`} alt={card.id} loading="lazy" />
-
-                                    // <img  src={`us-ord-1.linodeobjects.com/kezny/kezny/1727353755757-ceo_caro_3.jpg`} alt={card.id} loading="lazy" />
-                                    }
+                                    <img  src={`https://${card.product_image.url}`} alt={card.id} loading="lazy" />}
                                 >
                                     <div className="cardItemInfo">
                                       <article>
