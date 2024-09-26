@@ -24,7 +24,7 @@
 }
 
 .product_con_left{
-    background-image: url(../../../public/IMG_7871.JPG);
+    background-image: url(/IMG_7871.JPG);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

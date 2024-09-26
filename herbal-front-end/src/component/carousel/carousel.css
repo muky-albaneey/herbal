@@ -19,44 +19,44 @@
 
 .item-1{
     
-    background: url(../../../public/ceo_caro.jpg) no-repeat center;
+    background: url(/ceo_caro.jpg) no-repeat center;
    
 }
 .item-2{
     
-    background: url(../../../public/ceo_caro_2.JPG) no-repeat center;
+    background: url(/ceo_caro_2.JPG) no-repeat center;
    
 }
 .item-3{
     
-    background: url(../../../public/ceo_caro_3.jpg) no-repeat center;
+    background: url(/ceo_caro_3.jpg) no-repeat center;
    
 }
 .item-4{
     
-    background: url(../../../public/caro5.JPG) no-repeat center;
+    background: url(/caro5.JPG) no-repeat center;
    
 }
 .item-5{
     
-    background: url(../../../public/caro6.JPG) no-repeat center;
+    background: url(/caro6.JPG) no-repeat center;
    
 }
 
 .item-6{
     
-    background: url(../../../public/drug_1.JPG) no-repeat center;
+    background: url(/drug_1.JPG) no-repeat center;
    
 }
 
 .item-7{
     
-    background: url(../../../public/drug_2.jpg) no-repeat center;
+    background: url(/drug_2.jpg) no-repeat center;
    
 }
 .item-8{
     
-    background: url(../../../public/drug_3.jpg) no-repeat center;
+    background: url(/drug_3.jpg) no-repeat center;
    
 }
 #items_con{

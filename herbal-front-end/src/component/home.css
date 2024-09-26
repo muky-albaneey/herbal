@@ -51,7 +51,7 @@ color: white;
 .about_con .about_con_left{
     width: 30%;
     height: 70%;
-    background-image: url(../../public/IMG_7862.JPG);
+    background-image: url(/IMG_7862.JPG);
     background-size: contain;
     background-position: center;
     
