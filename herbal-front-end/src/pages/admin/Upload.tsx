@@ -1,37 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { Product } from '../../types/product'; // Adjust import path based on your project structure
 import { Link } from 'react-router-dom';
 
 const ProductUpload = () => {
+  interface Product {
+    id: string; // Assuming UUID is a string
+    name: string;
+    price: string; // Change to number if prices are numeric
+    quantity: string; // Change to number if quantities are numeric
+    category: string;
+    description: string;
+    createdAt: Date;
+    product_image?: ProductImage; // Optional if a product can exist without an image
+    user: User; // Define the User interface if needed
+  }
 
-    interface Product {
-        id: string; // Assuming UUID is a string
-        name: string;
-        price: string; // Change to number if prices are numeric
-        quantity: string; // Change to number if quantities are numeric
-        category: string;
-        description: string;
-        createdAt: Date;
-        product_image?: ProductImage; // Optional if a product can exist without an image
-        user: User; // Define the User interface if needed
-      }
-      
-      interface ProductImage {
-        id: string; // UUID for ProductImage
-        name: string;
-        url: string; // URL of the uploaded image
-        ext: string; // File extension
-      }
-      
-      // If you have a User interface, define it as well
-      interface User {
-        id: string; // Assuming UUID is a string
-        // Add other relevant user properties
-      }
-      
-   // Then, you can use the interface with your state
-  const [products, setProducts] = useState<Product[]>([]);      
+  interface ProductImage {
+    id: string; // UUID for ProductImage
+    name: string;
+    url: string; // URL of the uploaded image
+    ext: string; // File extension
+  }
+
+  interface User {
+    id: string; // Assuming UUID is a string
+    // Add other relevant user properties
+  }
+
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [newProduct, setNewProduct] = useState({
@@ -71,15 +67,23 @@ const ProductUpload = () => {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
+      console.log('File selected:', e.target.files[0]); // Debug log
       setNewProduct((prev) => ({ ...prev, file: e.target.files[0] }));
+    } else {
+      console.log('No file selected'); // Debug log
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!newProduct.file) {
+      setError('Please upload a file.');
+      return; // Early exit if no file is selected
+    }
+
     const formData = new FormData();
-    
-    formData.append('file', newProduct.file!); // Ensure the file is present
+    formData.append('file', newProduct.file); // Ensure the file is present
     formData.append('name', newProduct.name);
     formData.append('price', newProduct.price);
     formData.append('quantity', newProduct.quantity);
@@ -103,8 +107,8 @@ const ProductUpload = () => {
         description: '',
         file: null,
       });
-      // Re-fetch products after successful upload
-    //   await fetchProducts();
+      // Optionally, re-fetch products after successful upload
+      // await fetchProducts();
     } catch (err) {
       console.error(err);
       setError('Error creating product');
@@ -125,11 +129,45 @@ const ProductUpload = () => {
 
       <form onSubmit={handleSubmit} className="mb-6">
         <div className="grid grid-cols-1 gap-4">
-          <input type="text" name="name" placeholder="Product Name" value={newProduct.name} onChange={handleInputChange} required />
-          <input type="text" name="price" placeholder="Price" value={newProduct.price} onChange={handleInputChange} required />
-          <input type="text" name="quantity" placeholder="Quantity" value={newProduct.quantity} onChange={handleInputChange} required />
-          <input type="text" name="category" placeholder="Category" value={newProduct.category} onChange={handleInputChange} required />
-          <textarea name="description" placeholder="Description" value={newProduct.description} onChange={handleInputChange} required />
+          <input
+            type="text"
+            name="name"
+            placeholder="Product Name"
+            value={newProduct.name}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            type="text"
+            name="price"
+            placeholder="Price"
+            value={newProduct.price}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            type="text"
+            name="quantity"
+            placeholder="Quantity"
+            value={newProduct.quantity}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            type="text"
+            name="category"
+            placeholder="Category"
+            value={newProduct.category}
+            onChange={handleInputChange}
+            required
+          />
+          <textarea
+            name="description"
+            placeholder="Description"
+            value={newProduct.description}
+            onChange={handleInputChange}
+            required
+          />
           <input type="file" onChange={handleFileChange} required />
           <button type="submit" className="mt-4 p-2 bg-blue-500 text-white">Upload Product</button>
         </div>
@@ -162,20 +200,19 @@ const ProductUpload = () => {
             }`}
             key={product.id}
           >
-                <div className="flex items-center justify-center p-2.5 xl:p-5">
-                    {product.product_image?.url ? (
-                        <img
-                        src={`https://${product.product_image.url}`} // Ensure the URL starts with "http://" or "https://"
-                        alt={product.name}
-                        className="w-16 h-16 object-cover"
-                        />
-                    ) : (
-                        <div className="w-16 h-16 bg-gray-200 flex items-center justify-center">
-                        No Image
-                        </div>
-                    )}
+            <div className="flex items-center justify-center p-2.5 xl:p-5">
+              {product.product_image?.url ? (
+                <img
+                  src={`https://${product.product_image.url}`} // Ensure the URL starts with "http://" or "https://"
+                  alt={product.name}
+                  className="w-16 h-16 object-cover"
+                />
+              ) : (
+                <div className="w-16 h-16 bg-gray-200 flex items-center justify-center">
+                  No Image
                 </div>
-
+              )}
+            </div>
 
             <div className="flex items-center p-2.5 xl:p-5">
               <p className="text-black dark:text-white">{product.name}</p>
