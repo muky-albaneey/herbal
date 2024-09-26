@@ -3,7 +3,6 @@ import { ImCart} from "react-icons/im";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import './residence.css';
-import data from '../utills/data.json';
 import { sliderSettings } from '../utills/common';
 import { Card } from 'antd';
 import { Link } from 'react-router-dom';
