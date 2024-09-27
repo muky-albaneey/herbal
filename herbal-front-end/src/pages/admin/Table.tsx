@@ -13,7 +13,7 @@ const AdminDashboard = () => {
     const fetchDashboardData = async () => {
       try {
         const [productResponse, userResponse, orderResponse] = await Promise.all([
-          axios.get('https://backend-herbal.onrender.com/products'),
+          axios.get('https://backend-herbal.onrender.com/products/all'),
           axios.get('https://backend-herbal.onrender.com/users'),
           axios.get('https://backend-herbal.onrender.com/orders'),
         ]);
