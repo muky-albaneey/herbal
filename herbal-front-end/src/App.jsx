@@ -9,6 +9,7 @@ import ProductPageComponent from './pages/product/ProductPage'
 import ProductsComponent from './pages/product/Products'
 import CartComponent from './pages/cart/Cart'
 import ProductUpload from './pages/admin/Upload';
+import AdminProductTable from './pages/admin/Table';
 
 
 
@@ -66,7 +67,14 @@ function App() {
             path='admin'
             errorElement={<ErrorElement />}
             element={<ProductUpload />}
-          />
+          >
+            <Route
+              index
+              errorElement={<ErrorElement />}
+              element={<AdminProductTable />}
+            />
+
+          </Route>
             {/* <Route
               index
               errorElement={<ErrorElement />}
