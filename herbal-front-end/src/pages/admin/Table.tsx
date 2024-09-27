@@ -8,43 +8,43 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(''); // Error state
 
-  // Fetch the counts for users, products, and orders
-  useEffect(() => {
-    const fetchDashboardData = async () => {
-      try {
-        const [productResponse, userResponse, orderResponse] = await Promise.all([
-          axios.get('https://backend-herbal.onrender.com/products/all'),
-          axios.get('https://backend-herbal.onrender.com/user/count'),
-          axios.get('https://backend-herbal.onrender.com/products/count'),
-        ]);
-        
-        setProducts(productResponse.data);
-        console.log(productResponse.data);
+    // Fetch the counts for users, products, and orders
+    useEffect(() => {
+      const fetchDashboardData = async () => {
+        try {
+          const [productResponse, userResponse, orderResponse] = await Promise.all([
+            axios.get('https://backend-herbal.onrender.com/products/all'),
+            axios.get('https://backend-herbal.onrender.com/user/count'),
+            axios.get('https://backend-herbal.onrender.com/products/count'),
+          ]);
+          
+          setProducts(productResponse.data);
+          console.log(productResponse.data);
 
-        setUsers(userResponse.data.totalUsers);
-        console.log(userResponse.data);
+          setUsers(userResponse.data.totalUsers);
+          console.log(userResponse.data);
 
-        setOrders(orderResponse.data);
-        console.log(orderResponse.data);
+          setOrders(orderResponse.data);
+          console.log(orderResponse.data);
 
-      } catch (err) {
-        setError('Error fetching data.');
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
+        } catch (err) {
+          setError('Error fetching data.');
+          console.error(err);
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    fetchDashboardData();
-  }, []);
+      fetchDashboardData();
+    }, []);
 
-  if (loading) {
-    return <div className="text-center mt-6">Loading dashboard data...</div>;
-  }
+    if (loading) {
+      return <div className="text-center mt-6">Loading dashboard data...</div>;
+    }
 
-  if (error) {
-    return <div className="text-center text-red-600 mt-6">{error}</div>;
-  }
+    if (error) {
+      return <div className="text-center text-red-600 mt-6">{error}</div>;
+    }
 
   return (
     <div className="container mx-auto p-6">

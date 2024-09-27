@@ -1,9 +1,52 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 // import AdminNavBar from './AdminNavBar'; // Import the navigation component
 import { Outlet } from 'react-router-dom';
 import AdminNavBar from './AdminNavBar';
+import axios from 'axios';
 
 export default function AdminLayout() {
+    const [products, setProducts] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(''); // Error state
+      // Fetch the counts for users, products, and orders
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const [userResponse, orderResponse] = await Promise.all([
+        //   axios.get('https://backend-herbal.onrender.com/products/all'),
+          axios.get('https://backend-herbal.onrender.com/user/count'),
+          axios.get('https://backend-herbal.onrender.com/products/count'),
+        ]);
+        
+        // setProducts(productResponse.data);
+        // console.log(productResponse.data);
+
+        setUsers(userResponse.data.totalUsers);
+        console.log(userResponse.data);
+
+        setOrders(orderResponse.data);
+        console.log(orderResponse.data);
+
+      } catch (err) {
+        setError('Error fetching data.');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+  if (loading) {
+    return <div className="text-center mt-6">Loading dashboard data...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center text-red-600 mt-6">{error}</div>;
+  }
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Admin navigation at the top */}
@@ -21,15 +64,15 @@ export default function AdminLayout() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="p-4 bg-white rounded-lg shadow-md">
               <h2 className="text-lg font-semibold">Total Users</h2>
-              <p className="text-3xl">150</p>
+              <p className="text-3xl">{users}</p>
             </div>
             <div className="p-4 bg-white rounded-lg shadow-md">
               <h2 className="text-lg font-semibold">Total Orders</h2>
-              <p className="text-3xl">350</p>
+              <p className="text-3xl">{orders}</p>
             </div>
             <div className="p-4 bg-white rounded-lg shadow-md">
               <h2 className="text-lg font-semibold">Total Products</h2>
-              <p className="text-3xl">50</p>
+              <p className="text-3xl">{orders}</p>
             </div>
           </div>
 
