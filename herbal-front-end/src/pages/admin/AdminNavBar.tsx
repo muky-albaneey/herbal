@@ -84,29 +84,29 @@ export default function AdminNavBar() {
       {isOpen && (
         <div className="sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
+          <Link
               to="/admin"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
               Dashboard
             </Link>
-            <Link
-              to="/admin/upload"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            {/* <Link
+              to="/admin/users"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
-              upload product
-            </Link>
-            <Link
+              Users
+            </Link> */}
+            {/* <Link
               to="/admin/orders"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
               Orders
-            </Link>
+            </Link> */}
             <Link
-              to="/admin/products"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              to="/admin/upload"
+              className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
-              Products
+              Products upload
             </Link>
           </div>
         </div>
