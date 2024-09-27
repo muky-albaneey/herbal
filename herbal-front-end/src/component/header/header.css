@@ -1,4 +1,4 @@
-.navigation{
+/* .navigation{
     width: 100%;
    
    
@@ -151,11 +151,9 @@ i{
         margin-left: -2rem;
         padding: .1rem;
         margin: .6rem 0;
-        /* display: none; */
     }
     .serch_icon{
-        /* position: absolute; */
-        /* display: none; */
+       
         left: -6rem;
         
     }
@@ -177,8 +175,6 @@ i{
 
     .dropdown{
         width: 6rem;
-        /* margin-top: -1rem; */
-        /* margin-left: -2rem; */
         position: relative;
     }
     .nav_header_info{
@@ -212,10 +208,8 @@ i{
     }
     #d-s-btn{
         right: -5rem;
-        /* top: .7rem; */
     }
     #dropdown-basic{
-        /* width: 5rem; */
         position: relative;
         width: 18rem;
         left: -7rem;
@@ -231,4 +225,101 @@ i{
  
      }
     
-}
+} */
+
+.logo {
+    width: 30%;
+    height: 2.4rem;
+  }
+  
+  .header_nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header_nav section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left_header, .center_header, .right_header {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav_header_info {
+    display: flex;
+    gap: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .home_btn {
+    background-color: #008103;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .center_header form {
+    display: flex;
+    width: 100%;
+  }
+  
+  .search-btn {
+    margin-left: 0.5rem;
+  }
+  
+  .right_header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .profile-dropdown .dropdown-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  @media (max-width: 900px) {
+    .header_nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .logo {
+      width: 50%;
+    }
+  
+    .home_btn, .nav_header_info, .cart_header_btn, .lang-dropdown, .profile-dropdown {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .center_header form {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .right_header {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 340px) {
+    .header_nav {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .profile-dropdown {
+      width: 100%;
+    }
+  }
+  
