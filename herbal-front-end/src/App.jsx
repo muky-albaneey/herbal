@@ -11,6 +11,7 @@ import CartComponent from './pages/cart/Cart'
 import ProductUpload from './pages/admin/Upload';
 import AdminDashboard from './pages/admin/Table';
 import AdminLayout from './pages/admin/AdminLayout';
+import ProductImageEdit from './pages/admin/Edit';
 
 
 
@@ -57,7 +58,7 @@ function App() {
              />
               <Route 
                  path='cart' loader={async ()=>{
-                return null
+                return null 
               }}
               element={<CartComponent />} 
             indexerrorElement={<ErrorElement />}
@@ -77,10 +78,16 @@ function App() {
                 errorElement={<ErrorElement />}
                 element={<AdminDashboard />}
               />
+              
                <Route
               path='upload'
               errorElement={<ErrorElement />}
               element={<ProductUpload />}
+            />
+            <Route
+              path=':id/edit'
+              errorElement={<ErrorElement />}
+              element={<ProductImageEdit />}
             />
             </Route>
 
