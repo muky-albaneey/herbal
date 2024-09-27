@@ -285,7 +285,10 @@ i{
   .user-icon {
     font-size: 1.5rem;
     margin-right: 0.5rem;
-    
+
+  }
+  .cart_header_btn{
+    padding: 0 2rem;
   }
   
   @media (max-width: 900px) {
