@@ -53,28 +53,28 @@ export default function AdminNavBar() {
           {/* Desktop Menu */}
           <div className="hidden sm:flex sm:items-center sm:ml-6">
             <Link
-              to="/admin/dashboard"
+              to="/admin"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
               Dashboard
             </Link>
-            <Link
+            {/* <Link
               to="/admin/users"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
               Users
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               to="/admin/orders"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
               Orders
-            </Link>
+            </Link> */}
             <Link
-              to="/admin/products"
+              to="/admin/upload"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
-              Products
+              Products upload
             </Link>
           </div>
         </div>
