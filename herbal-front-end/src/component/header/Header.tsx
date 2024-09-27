@@ -193,15 +193,19 @@ function Header() {
                       </form>
                     </section>
                     <section className="right_header">
-                      <NavLink to="cart" className='cart_header_btn' style={{ textDecoration: 'none', display:'flex' }}> 
-                        <button type="button" className="btn btn-success position-relative flex items-center">
-                          <ImCart /> Cart
-                          <span className="badge position-absolute top-0 start-100 translate-middle bg-secondary">
-                            {totalItems > 99 ? '99+' : totalItems} {}
-                            <span className="visually-hidden">items in cart</span>
-                          </span>
-                        </button>
-                      </NavLink>
+                    <NavLink to="cart" className='cart_header_btn' style={{ textDecoration: 'none', display: 'flex' }}>
+                      <button 
+                        type="button" 
+                        className="btn btn-success position-relative flex items-center cart_btn"
+                      >
+                        <ImCart /> Cart
+                        <span className="badge position-absolute top-0 start-100 translate-middle bg-secondary">
+                          {totalItems > 99 ? '99+' : totalItems} {}
+                          <span className="visually-hidden">items in cart</span>
+                        </span>
+                      </button>
+                    </NavLink>
+
                       
                       <Dropdown onSelect={handleSelect} className="lang-dropdown">
                         <Dropdown.Toggle variant="success">

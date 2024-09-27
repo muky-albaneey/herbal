@@ -289,7 +289,9 @@ i{
   }
   .cart_header_btn{
     padding: 0 2rem;
-    width: 5rem;
+  }
+  .cart_btn {
+    width: 10rem; /* Set your desired width */
   }
   
   @media (max-width: 900px) {
