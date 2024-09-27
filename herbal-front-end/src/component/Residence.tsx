@@ -108,7 +108,7 @@ const Residence = React.memo(({ message }) => {
                                            <span> {card.name}</span> <br />
                                             <span>{card.price}</span>
                                         </h4>
-                                      
+                                     
                                       </article>
                                       <div className="add-to-cart">
                                         <ImCart />
