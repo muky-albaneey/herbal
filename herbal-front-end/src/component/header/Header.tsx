@@ -214,7 +214,7 @@ function Header() {
                         </Dropdown.Menu>
                       </Dropdown>
 
-                      <Dropdown className="profile-dropdown">
+                      <Dropdown className="profile-dropdown" style={{ color:'#008103' }}>
                         <Dropdown.Toggle id="dropdown-basic">
                           <FaUserCircle className="user-icon" /> Profile
                         </Dropdown.Toggle>
