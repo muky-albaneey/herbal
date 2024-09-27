@@ -291,7 +291,10 @@ i{
     padding: 0 2rem;
   }
   .cart_btn {
-    width: 10rem; /* Set your desired width */
+    width: 5rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   @media (max-width: 900px) {
