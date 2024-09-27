@@ -263,7 +263,7 @@ const ProductUpload = () => {
             name="name"
             value={productData.name}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
         </div>
@@ -275,7 +275,7 @@ const ProductUpload = () => {
             name="price"
             value={productData.price}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
         </div>
@@ -287,7 +287,7 @@ const ProductUpload = () => {
             name="quantity"
             value={productData.quantity}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
         </div>
@@ -299,7 +299,7 @@ const ProductUpload = () => {
             name="category"
             value={productData.category}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
         </div>
@@ -310,7 +310,7 @@ const ProductUpload = () => {
             name="description"
             value={productData.description}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
         </div>
@@ -322,7 +322,7 @@ const ProductUpload = () => {
             name="userId"
             value={productData.userId}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="w-full border-b-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
         </div>
