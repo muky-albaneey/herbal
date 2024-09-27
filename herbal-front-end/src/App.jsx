@@ -85,7 +85,7 @@ function App() {
               element={<ProductUpload />}
             />
             <Route
-              path=':id/  edit'
+              path=':id/edit'
               errorElement={<ErrorElement />}
               element={<ProductImageEdit />}
             />
