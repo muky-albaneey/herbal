@@ -86,7 +86,7 @@ const AdminDashboard = () => {
               <tr key={product.id} className="border-b border-gray-200 hover:bg-gray-100">
                 <td className="py-3 px-6 text-center">
                   <img
-                    src={`https://${product.product_image.url}`}
+                    src={url.startsWith('https://') ? `${product.product_image.url}`:`https://${product.product_image.url} `}
                     alt={product.product_image.name}
                     className="h-16 w-16 rounded-full object-cover"
                   />
