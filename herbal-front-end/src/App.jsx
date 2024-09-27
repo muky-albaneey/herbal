@@ -10,6 +10,7 @@ import ProductsComponent from './pages/product/Products'
 import CartComponent from './pages/cart/Cart'
 import ProductUpload from './pages/admin/Upload';
 import AdminDashboard from './pages/admin/Table';
+import AdminLayout from './pages/admin/AdminLayout';
 
 
 
@@ -62,21 +63,27 @@ function App() {
             indexerrorElement={<ErrorElement />}
              />
              
-
-             <Route
-            path='admin'
-            errorElement={<ErrorElement />}
-            element={<ProductUpload />}
-          >
-            <Route
-               path='dashboard' loader={async ()=>{
-                return null
-              }}
+              <Route
+              path='admin'
               errorElement={<ErrorElement />}
-              element={<AdminDashboard />}
+              element={<AdminLayout />}
+            >
+              {/* Nested Route */}
+              <Route
+                index
+                loader={async () => {
+                  return null;
+                }}
+                errorElement={<ErrorElement />}
+                element={<AdminDashboard />}
+              />
+               <Route
+              path='upload'
+              errorElement={<ErrorElement />}
+              element={<ProductUpload />}
             />
+            </Route>
 
-          </Route>
             {/* <Route
               index
               errorElement={<ErrorElement />}
