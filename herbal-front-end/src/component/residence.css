@@ -111,6 +111,12 @@
     align-items: center;
     overflow: hidden;
   }
+
+  .add-to-cart{
+    padding: 0.8rem;
+    background-color: antiquewhite;
+    border-radius: 50%;
+  }
   
 @media (max-width: 640px) {
 

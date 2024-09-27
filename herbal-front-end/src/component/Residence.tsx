@@ -94,7 +94,7 @@ const Residence = React.memo(({ message }) => {
                 <Swiper {...sliderSettings}>
                     {products.map((card, i) => (
                         <SwiperSlide key={i}>
-                           <Link to={`product/${card.id}`}>
+                           <Link to={`product/${card.id}`} style={{ textDecoration:'none' }}>
                            <div className="flexColStart r-card">
                                 <Card
                                     hoverable
