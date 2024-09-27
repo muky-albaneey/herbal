@@ -1,239 +1,169 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import axios from 'axios';
 
-// const ProductUpload = () => {
-//   interface Product {
-//     id: string; // Assuming UUID is a string
-//     name: string;
-//     price: string; // Change to number if prices are numeric
-//     quantity: string; // Change to number if quantities are numeric
-//     category: string;
-//     description: string;
-//     createdAt: Date;
-//     product_image?: ProductImage; // Optional if a product can exist without an image
-//     user: User; // Define the User interface if needed
-//   }
+const ProductUpload = () => {
+  // Define state for form data
+  const [productData, setProductData] = useState({
+    name: '',
+    price: '',
+    quantity: '',
+    category: '',
+    description: '',
+    userId: '', // Assuming the user is already authenticated and you have the userId
+  });
 
-//   interface ProductImage {
-//     id: string; // UUID for ProductImage
-//     name: string;
-//     url: string; // URL of the uploaded image
-//     ext: string; // File extension
-//   }
+  const [file, setFile] = useState(null); // State for the file
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
-//   interface User {
-//     id: string; // Assuming UUID is a string
-//     // Add other relevant user properties
-//   }
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setProductData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
-//   const [products, setProducts] = useState<Product[]>([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState<string | null>(null);
-//   const [newProduct, setNewProduct] = useState({
-//     name: '',
-//     price: '',
-//     quantity: '',
-//     category: '',
-//     description: '',
-//     file: null as File | null,
-//   });
+  // Handle file change
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setFile(e.target.files[0]);
+    }
+  };
 
-//   useEffect(() => {
-//     const fetchProducts = async () => {
-//       try {
-//         const response = await axios.get('https://backend-herbal.onrender.com/products/all', {
-//           withCredentials: true,
-//           headers: {
-//             'Cache-Control': 'no-cache', // Prevent caching of the response
-//           },
-//         });
-//         setProducts(response.data);
-//       } catch (err) {
-//         setError('Error fetching products');
-//         console.error(err);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Ensure that all fields are filled and a file is selected
+    if (!file || !productData.name || !productData.price || !productData.quantity || !productData.category || !productData.description || !productData.userId) {
+      setError('All fields are required including the image.');
+      return;
+    }
 
-//     fetchProducts();
-//   }, []);
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('name', productData.name);
+    formData.append('price', productData.price);
+    formData.append('quantity', productData.quantity);
+    formData.append('category', productData.category);
+    formData.append('description', productData.description);
+    formData.append('userId', productData.userId);
 
-//   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-//     const { name, value } = e.target;
-//     setNewProduct((prev) => ({ ...prev, [name]: value }));
-//   };
+    try {
+      const response = await axios.post('https://backend-herbal.onrender.com/products', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      
+      setSuccess('Product uploaded successfully!');
+      setError('');
+      
+      // Reset form after successful upload
+      setProductData({
+        name: '',
+        price: '',
+        quantity: '',
+        category: '',
+        description: '',
+        userId: '', // Reset the userId field as necessary
+      });
+      setFile(null);
+    } catch (err) {
+      console.error(err);
+      setError('Error uploading product. Please try again.');
+      setSuccess('');
+    }
+  };
 
-//   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     if (e.target.files && e.target.files[0]) {
-//       console.log('File selected:', e.target.files[0]); // Debug log
-//       setNewProduct((prev) => ({ ...prev, file: e.target.files[0] }));
-//     } else {
-//       console.log('No file selected'); // Debug log
-//     }
-//   };
+  return (
+    <div className="product-upload">
+      <h1>Upload New Product</h1>
+      
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {success && <p style={{ color: 'green' }}>{success}</p>}
+      
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div>
+          <label>Product Name</label>
+          <input 
+            type="text" 
+            name="name" 
+            value={productData.name} 
+            onChange={handleInputChange} 
+            required 
+          />
+        </div>
+        
+        <div>
+          <label>Price</label>
+          <input 
+            type="text" 
+            name="price" 
+            value={productData.price} 
+            onChange={handleInputChange} 
+            required 
+          />
+        </div>
+        
+        <div>
+          <label>Quantity</label>
+          <input 
+            type="text" 
+            name="quantity" 
+            value={productData.quantity} 
+            onChange={handleInputChange} 
+            required 
+          />
+        </div>
+        
+        <div>
+          <label>Category</label>
+          <input 
+            type="text" 
+            name="category" 
+            value={productData.category} 
+            onChange={handleInputChange} 
+            required 
+          />
+        </div>
+        
+        <div>
+          <label>Description</label>
+          <textarea 
+            name="description" 
+            value={productData.description} 
+            onChange={handleInputChange} 
+            required 
+          />
+        </div>
+        
+        <div>
+          <label>User ID</label>
+          <input 
+            type="text" 
+            name="userId" 
+            value={productData.userId} 
+            onChange={handleInputChange} 
+            required 
+          />
+        </div>
+        
+        <div>
+          <label>Product Image</label>
+          <input 
+            type="file" 
+            onChange={handleFileChange} 
+            accept=".jpg,.jpeg,.png,.gif"
+            required 
+          />
+        </div>
+        
+        <div>
+          <button type="submit">Upload Product</button>
+        </div>
+      </form>
+    </div>
+  );
+};
 
-//   const handleSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault();
-
-//     if (!newProduct.file) {
-//       setError('Please upload a file.');
-//       return; // Early exit if no file is selected
-//     }
-
-//     const formData = new FormData();
-//     formData.append('file', newProduct.file); // Ensure the file is present
-//     formData.append('name', newProduct.name);
-//     formData.append('price', newProduct.price);
-//     formData.append('quantity', newProduct.quantity);
-//     formData.append('category', newProduct.category);
-//     formData.append('description', newProduct.description);
-//     formData.append('userId', 'your-user-id'); // Add the appropriate user ID
-
-//     try {
-//       await axios.post('https://backend-herbal.onrender.com/products', formData, {
-//         withCredentials: true,
-//         headers: {
-//           'Content-Type': 'multipart/form-data',
-//         },
-//       });
-//       // Reset the form
-//       setNewProduct({
-//         name: '',
-//         price: '',
-//         quantity: '',
-//         category: '',
-//         description: '',
-//         file: null,
-//       });
-//       // Optionally, re-fetch products after successful upload
-//       // await fetchProducts();
-//     } catch (err) {
-//       console.error(err);
-//       setError('Error creating product');
-//     }
-//   };
-
-//   if (loading) return <div>Loading products...</div>;
-//   if (error) return <div>{error}</div>;
-
-//   // Check if there are no products available
-//   if (products.length === 0) {
-//     return <div>No products available</div>;
-//   }
-
-//   return (
-//     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-//       <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">Products</h4>
-
-//       <form onSubmit={handleSubmit} className="mb-6">
-//         <div className="grid grid-cols-1 gap-4">
-//           <input
-//             type="text"
-//             name="name"
-//             placeholder="Product Name"
-//             value={newProduct.name}
-//             onChange={handleInputChange}
-//             required
-//           />
-//           <input
-//             type="text"
-//             name="price"
-//             placeholder="Price"
-//             value={newProduct.price}
-//             onChange={handleInputChange}
-//             required
-//           />
-//           <input
-//             type="text"
-//             name="quantity"
-//             placeholder="Quantity"
-//             value={newProduct.quantity}
-//             onChange={handleInputChange}
-//             required
-//           />
-//           <input
-//             type="text"
-//             name="category"
-//             placeholder="Category"
-//             value={newProduct.category}
-//             onChange={handleInputChange}
-//             required
-//           />
-//           <textarea
-//             name="description"
-//             placeholder="Description"
-//             value={newProduct.description}
-//             onChange={handleInputChange}
-//             required
-//           />
-//           <input type="file" onChange={handleFileChange} required />
-//           <button type="submit" className="mt-4 p-2 bg-blue-500 text-white">Upload Product</button>
-//         </div>
-//       </form>
-
-//       <div className="flex flex-col">
-//         <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
-//           <div className="p-2.5 xl:p-5">
-//             <h5 className="text-sm font-medium uppercase xsm:text-base">Image</h5>
-//           </div>
-//           <div className="p-2.5 xl:p-5">
-//             <h5 className="text-sm font-medium uppercase xsm:text-base">Name</h5>
-//           </div>
-//           <div className="p-2.5 text-center xl:p-5">
-//             <h5 className="text-sm font-medium uppercase xsm:text-base">Price</h5>
-//           </div>
-//           <div className="p-2.5 text-center xl:p-5">
-//             <h5 className="text-sm font-medium uppercase xsm:text-base">Quantity</h5>
-//           </div>
-//           <div className="hidden p-2.5 text-center sm:block xl:p-5">
-//             <h5 className="text-sm font-medium uppercase xsm:text-base">Category</h5>
-//           </div>
-//         </div>
-
-//         {products.map((product, key) => (
-//           <Link
-//             to={`/${product.id}/product`}
-//             className={`grid grid-cols-3 sm:grid-cols-5 ${
-//               key === products.length - 1 ? '' : 'border-b border-stroke dark:border-strokedark'
-//             }`}
-//             key={product.id}
-//           >
-//             <div className="flex items-center justify-center p-2.5 xl:p-5">
-//               {product.product_image?.url ? (
-//                 <img
-//                   src={`https://${product.product_image.url}`} // Ensure the URL starts with "http://" or "https://"
-//                   alt={product.name}
-//                   className="w-16 h-16 object-cover"
-//                 />
-//               ) : (
-//                 <div className="w-16 h-16 bg-gray-200 flex items-center justify-center">
-//                   No Image
-//                 </div>
-//               )}
-//             </div>
-
-//             <div className="flex items-center p-2.5 xl:p-5">
-//               <p className="text-black dark:text-white">{product.name}</p>
-//             </div>
-
-//             <div className="flex items-center justify-center p-2.5 xl:p-5">
-//               <p className="text-black dark:text-white">${product.price}</p>
-//             </div>
-
-//             <div className="flex items-center justify-center p-2.5 xl:p-5">
-//               <p className="text-black dark:text-white">{product.quantity}</p>
-//             </div>
-
-//             <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-//               <p className="text-black dark:text-white">{product.category}</p>
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductUpload;
+export default ProductUpload;
