@@ -19,8 +19,14 @@ const AdminDashboard = () => {
         ]);
         
         setProducts(productResponse.data);
+        console.log(productResponse.data);
+
         setUsers(userResponse.data);
+        console.log(userResponse.data);
+        
         setOrders(orderResponse.data);
+        console.log(orderResponse.data);
+
       } catch (err) {
         setError('Error fetching data.');
         console.error(err);
