@@ -14,7 +14,7 @@ export default function AdminNavBar() {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/admin/dashboard" className="text-xl font-bold">
+            <Link to="/admin/upload" className="text-xl font-bold">
               Admin Dashboard
             </Link>
           </div>
@@ -85,16 +85,16 @@ export default function AdminNavBar() {
         <div className="sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
-              to="/admin/dashboard"
+              to="/admin"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
               Dashboard
             </Link>
             <Link
-              to="/admin/users"
+              to="/admin/upload"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
-              Users
+              upload product
             </Link>
             <Link
               to="/admin/orders"

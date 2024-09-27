@@ -115,7 +115,7 @@ const AdminDashboard = () => {
                 <td className="py-3 px-6">{product.description}</td>
                 <td className="py-3 px-6">{new Date(product.createdAt).toLocaleDateString()}</td>
                 <td className="py-3 px-6 text-center">
-                  <Link to={`${product.id}/edit`} className="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600">
+                  <Link to={`/admin/${product.id}/edit`} className="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600">
                     Edit
                   </Link>
                   <button className="bg-red-500 text-white px-3 py-1 ml-2 rounded-full hover:bg-red-600">
