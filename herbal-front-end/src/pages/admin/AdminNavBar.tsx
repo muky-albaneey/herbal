@@ -14,7 +14,7 @@ export default function AdminNavBar() {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/admin/upload" className="text-xl font-bold">
+            <Link to="/admin" className="text-xl font-bold">
               Admin Dashboard
             </Link>
           </div>
