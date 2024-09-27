@@ -66,7 +66,7 @@ function App() {
              <Route
             path='admin'
             errorElement={<ErrorElement />}
-            // element={<ProductUpload />}
+            element={<ProductUpload />}
           >
             <Route
               index
