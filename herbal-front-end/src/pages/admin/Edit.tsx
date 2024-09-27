@@ -12,37 +12,80 @@ const ProductImageEdit = () => {
         userId: '', // Assuming the user is already authenticated and you have the userId
   });
   const [file, setFile] = useState(null);
-  const [productId, setProductId] = useState('');
-  const [productName, setProductName] = useState('');
+  // const [productId, setProductId] = useState('');
+  // const [productName, setProductName] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
+  const [products, setProducts] = useState([]);
+  const [loadingFetch, setLoadingFetch] = useState(true); // Loading state
+  const [errorFetch, setErrorFetch] = useState(''); // Error state
   const {id} = useParams()
 
   console.log(id)
-  const handleInputChange = (e) => {
+
+React.useEffect(() => {
+   
+  const fetchDashboardData = async () => {
+    try {
+      const [productResponse] = await Promise.all([
+          axios.get(`https://backend-herbal.onrender.com/products/${id}`),
+      ]);
+        
+      setProducts(productResponse.data);
+      console.log(productResponse.data);
+
+       
+
+      } catch (err) {
+        setErrorFetch('Error fetching data.');
+        console.error(err);
+      } finally {
+        setLoadingFetch(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+  if (loadingFetch) {
+    return <div className="text-center mt-6">Loading dashboard data...</div>;
+  }
+
+  if (errorFetch) {
+    return <div className="text-center text-red-600 mt-6">{errorFetch}</div>;
+  }
+
+
+
+
+
+
+
+
+const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProductData((prevData) => ({ ...prevData, [name]: value }));
-  };
+};
 
-  const handleFileChange = (e) => {
+const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setFile(e.target.files[0]);
     }
-  };
+};
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!file || !productData.name || !productData.price || !productData.quantity || !productData.category || !productData.description || !productData.userId) {
-        setError('All fields are required including the image.');
-        return;
-      }
+  if (!file || !productData.name || !productData.price || !productData.quantity || !productData.category || !productData.description || !productData.userId) {
+    setError('All fields are required including the image.');
+      return;
+}
 
-    setLoading(true);
-    setMessage('');
+setLoading(true);
+setMessage('');
 
     // Prepare form data
     const formData = new FormData();
@@ -82,7 +125,7 @@ const ProductImageEdit = () => {
           <input
             type="text"
             name="name"
-            value={productData.name}
+            value={productData.name ?? products.name}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -94,7 +137,7 @@ const ProductImageEdit = () => {
           <input
             type="text"
             name="price"
-            value={productData.price}
+            value={productData.price?? products.price}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -106,19 +149,20 @@ const ProductImageEdit = () => {
           <input
             type="text"
             name="quantity"
-            value={productData.quantity}
+            value={productData.quantity ?? products.quantity}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
           />
         </div>
-
+        
+        
         <div className="mb-4">
           <label className="block text-gray-700">Category</label>
           <input
             type="text"
             name="category"
-            value={productData.category}
+            value={productData.category ?? products.category}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -129,7 +173,7 @@ const ProductImageEdit = () => {
           <label className="block text-gray-700">Description</label>
           <textarea
             name="description"
-            value={productData.description}
+            value={productData.description ?? products.description}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -141,7 +185,7 @@ const ProductImageEdit = () => {
           <input
             type="text"
             name="userId"
-            value={productData.userId}
+            value={products?.userId}
             onChange={handleInputChange}
             className="w-full border-b-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
