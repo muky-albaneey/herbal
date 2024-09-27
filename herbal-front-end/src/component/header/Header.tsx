@@ -214,17 +214,18 @@ function Header() {
                         </Dropdown.Menu>
                       </Dropdown>
 
-                      <Dropdown className="profile-dropdown" style={{ color:'#008103' }}>
-                        <Dropdown.Toggle id="dropdown-basic">
-                          <FaUserCircle className="user-icon" /> Profile
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                          <Dropdown.Item as={NavLink} to="/profile">Profile</Dropdown.Item>
-                          <Dropdown.Item as={NavLink} to="/settings">Settings</Dropdown.Item>
-                          <Dropdown.Divider />
-                          <Dropdown.Item as={NavLink} to="/logout">Logout</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
+                        <Dropdown className="profile-dropdown" style={{ background: 'green' }}>
+                          <Dropdown.Toggle id="dropdown-basic" style={{ background: 'green', borderColor: 'green' }}>
+                            <FaUserCircle className="user-icon" /> Profile
+                          </Dropdown.Toggle>
+                          <Dropdown.Menu>
+                            <Dropdown.Item as={NavLink} to="/profile">Profile</Dropdown.Item>
+                            <Dropdown.Item as={NavLink} to="/settings">Settings</Dropdown.Item>
+                            <Dropdown.Divider />
+                            <Dropdown.Item as={NavLink} to="/logout">Logout</Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
+
                     </section>
                   </nav>
                 </Nav>
