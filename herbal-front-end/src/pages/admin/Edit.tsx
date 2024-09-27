@@ -25,29 +25,47 @@ const ProductImageEdit = () => {
 
   console.log(id)
 
+
 React.useEffect(() => {
-   
   const fetchDashboardData = async () => {
     try {
-      const [productResponse] = await Promise.all([
-          axios.get(`https://backend-herbal.onrender.com/products/${id}`),
-      ]);
+      const productResponse = await axios.get(`https://backend-herbal.onrender.com/products/${id}`);
+      setProductData(productResponse.data); // Populate productData instead
+    } catch (err) {
+      setErrorFetch('Error fetching data.');
+      console.error(err);
+    } finally {
+      setLoadingFetch(false);
+    }
+  };
+
+  fetchDashboardData();
+}, [id]);
+
+  
+// React.useEffect(() => {
+   
+//   const fetchDashboardData = async () => {
+//     try {
+//       const [productResponse] = await Promise.all([
+//           axios.get(`https://backend-herbal.onrender.com/products/${id}`),
+//       ]);
         
-      setProducts(productResponse.data);
-      console.log(productResponse.data);
+//       setProducts(productResponse.data);
+//       console.log(productResponse.data);
 
        
 
-      } catch (err) {
-        setErrorFetch('Error fetching data.');
-        console.error(err);
-      } finally {
-        setLoadingFetch(false);
-      }
-    };
+//       } catch (err) {
+//         setErrorFetch('Error fetching data.');
+//         console.error(err);
+//       } finally {
+//         setLoadingFetch(false);
+//       }
+//     };
 
-    fetchDashboardData();
-  }, []);
+//     fetchDashboardData();
+//   }, []);
 
   if (loadingFetch) {
     return <div className="text-center mt-6">Loading dashboard data...</div>;
@@ -125,7 +143,7 @@ setMessage('');
           <input
             type="text"
             name="name"
-            value={productData.name ?? products.name}
+            value={productData.name}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -137,7 +155,7 @@ setMessage('');
           <input
             type="text"
             name="price"
-            value={productData.price?? products.price}
+            value={productData.price}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -149,7 +167,7 @@ setMessage('');
           <input
             type="text"
             name="quantity"
-            value={productData.quantity ?? products.quantity}
+            value={productData.quantity}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -162,7 +180,7 @@ setMessage('');
           <input
             type="text"
             name="category"
-            value={productData.category ?? products.category}
+            value={productData.category}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -173,7 +191,7 @@ setMessage('');
           <label className="block text-gray-700">Description</label>
           <textarea
             name="description"
-            value={productData.description ?? products.description}
+            value={productData.description}
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
@@ -185,7 +203,7 @@ setMessage('');
           <input
             type="text"
             name="userId"
-            value={products?.userId}
+            value={productData.userId}
             onChange={handleInputChange}
             className="w-full border-b-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
