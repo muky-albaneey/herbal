@@ -180,13 +180,13 @@ function Header() {
                         <input
                           type="search"
                           id="default-search"
-                          className="block w-full p-3 ps-10 text-sm border border-green-300 rounded-lg bg-green-50 focus:ring-green-500 focus:border-green-500"
+                          className="block w-full p-2 ps-10 text-sm border border-green-300 rounded-lg bg-green-50 focus:ring-green-500 focus:border-green-500"
                           placeholder={t('search_placeholder')}
                           required
                         />
                         <button
                           type="submit"
-                          className="search-btn text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2"
+                          className="search-btn text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-2 py-1"
                         >
                           {t('search')}
                         </button>
