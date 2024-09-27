@@ -14,8 +14,8 @@ const AdminDashboard = () => {
       try {
         const [productResponse, userResponse, orderResponse] = await Promise.all([
           axios.get('https://backend-herbal.onrender.com/products/all'),
-          axios.get('https://backend-herbal.onrender.com/users'),
-          axios.get('https://backend-herbal.onrender.com/orders'),
+          axios.get('https://backend-herbal.onrender.com/user/count'),
+          axios.get('https://backend-herbal.onrender.com/products/count'),
         ]);
         
         setProducts(productResponse.data);
@@ -48,15 +48,15 @@ const AdminDashboard = () => {
       <div className="flex justify-between mb-8">
         <div className="bg-blue-500 text-white rounded-lg p-6 shadow-md text-center">
           <h3 className="text-lg font-semibold">Total Users</h3>
-          <p className="text-2xl font-bold mt-2">{users.length}</p>
+          <p className="text-2xl font-bold mt-2">{users}</p>
         </div>
         <div className="bg-green-500 text-white rounded-lg p-6 shadow-md text-center">
           <h3 className="text-lg font-semibold">Total Products</h3>
-          <p className="text-2xl font-bold mt-2">{products.length}</p>
+          <p className="text-2xl font-bold mt-2">{orders}</p>
         </div>
         <div className="bg-yellow-500 text-white rounded-lg p-6 shadow-md text-center">
           <h3 className="text-lg font-semibold">Total Orders</h3>
-          <p className="text-2xl font-bold mt-2">{orders.length}</p>
+          <p className="text-2xl font-bold mt-2">{orders}</p>
         </div>
       </div>
 
