@@ -9,7 +9,7 @@ import ProductPageComponent from './pages/product/ProductPage'
 import ProductsComponent from './pages/product/Products'
 import CartComponent from './pages/cart/Cart'
 import ProductUpload from './pages/admin/Upload';
-import AdminProductTable from './pages/admin/Table';
+import AdminDashboard from './pages/admin/Table';
 
 
 
@@ -73,7 +73,7 @@ function App() {
                 return null
               }}
               errorElement={<ErrorElement />}
-              element={<AdminProductTable />}
+              element={<AdminDashboard />}
             />
 
           </Route>
