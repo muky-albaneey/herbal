@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const ProductImageEdit = () => {
  const [productData, setProductData] = useState({
@@ -17,6 +18,9 @@ const ProductImageEdit = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
+  const {id} = useParams()
+
+  console.log(id)
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProductData((prevData) => ({ ...prevData, [name]: value }));
