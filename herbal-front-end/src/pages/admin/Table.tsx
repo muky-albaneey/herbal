@@ -21,9 +21,9 @@ const AdminDashboard = () => {
         setProducts(productResponse.data);
         console.log(productResponse.data);
 
-        setUsers(userResponse.data);
+        setUsers(userResponse.data.totalUsers);
         console.log(userResponse.data);
-        
+
         setOrders(orderResponse.data);
         console.log(orderResponse.data);
 
