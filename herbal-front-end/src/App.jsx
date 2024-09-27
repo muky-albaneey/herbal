@@ -69,7 +69,9 @@ function App() {
             element={<ProductUpload />}
           >
             <Route
-              index
+               path='dashboard' loader={async ()=>{
+                return null
+              }}
               errorElement={<ErrorElement />}
               element={<AdminProductTable />}
             />
