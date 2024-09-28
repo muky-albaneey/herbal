@@ -119,25 +119,25 @@ const SliderButtons = ({ side }) => {
 
 export default function ProductPageComponent() {
   const { id } = useParams();
-  const [productInfo, setProductInfo] = useState(null);
+  const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch product details
+    // Fetch product data
     const fetchProduct = async () => {
       try {
         const response = await fetch(`https://backend-herbal.onrender.com/products/${id}`);
         const data = await response.json();
-        setProductInfo(data);
+        setProduct(data);
       } catch (error) {
-        console.error('Error fetching product details:', error);
+        console.error('Error fetching product:', error);
       }
     };
 
-    // Fetch related products by category
+    // Fetch related products
     const fetchRelatedProducts = async () => {
       try {
-        const response = await fetch(`https://backend-herbal.onrender.com/products/category/${productInfo?.category}`);
+        const response = await fetch(`https://backend-herbal.onrender.com/products/category/${product?.category}`);
         const data = await response.json();
         setRelatedProducts(data);
       } catch (error) {
@@ -148,28 +148,27 @@ export default function ProductPageComponent() {
     fetchProduct();
   }, [id]);
 
-  // Fetch related products once productInfo is available
   useEffect(() => {
-    if (productInfo) {
+    if (product) {
       fetchRelatedProducts();
     }
-  }, [productInfo]);
+  }, [product]);
 
   return (
     <div className='product_wrapper'>
       <h1>Product Details</h1>
-      {productInfo ? (
+      {product && (
         <section className="product_top_con">
           <aside className='product_con_left'>
-            <img src={productInfo.product_image.url} alt={productInfo.name} loading="lazy" />
+            <img src={product.product_image.url} alt={product.name} loading="lazy" />
           </aside>
           <aside className='product_con_right'>
             <div className="product_price_con">
-              <h3>{productInfo.name}</h3>
-              <p>${productInfo.price}</p>
+              <h3>{product.name}</h3>
+              <p>${product.price}</p>
             </div>
             <section className="product_desc">
-              {productInfo.description}
+              {product.description}
             </section>
             <div className="control_products">
               <button>+</button>
@@ -186,41 +185,35 @@ export default function ProductPageComponent() {
             </div>
           </aside>
         </section>
-      ) : (
-        <p>Loading product details...</p>
       )}
       <section className="place_order">
         <h1>Popular Order</h1>
         <section className="r-wrapper">
           <div className="r-container">
             <Swiper {...sliderSettings}>
-              {relatedProducts.length > 0 ? (
-                relatedProducts.map((card, i) => (
-                  <SwiperSlide key={i}>
-                    <div className="flexColStart r-card">
-                      <Card
-                        hoverable
-                        className='cardCon'
-                        cover={<img src={card.product_image.url} alt={card.name} loading="lazy" />}
-                      >
-                        <div className="cardItemInfo">
-                          <article>
-                            <h4>
-                              <span>{card.name}</span> <br />
-                              <span>${card.price}</span>
-                            </h4>
-                          </article>
-                          <div className="add-to-cart">
-                            <ImCart />
-                          </div>
+              {relatedProducts.map((relatedProduct, i) => (
+                <SwiperSlide key={i}>
+                  <div className="flexColStart r-card">
+                    <Card
+                      hoverable
+                      className='cardCon'
+                      cover={<img src={relatedProduct.product_image.url} alt={relatedProduct.name} loading="lazy" />}
+                    >
+                      <div className="cardItemInfo">
+                        <article>
+                          <h4>
+                            <span>{relatedProduct.name}</span> <br />
+                            <span>${relatedProduct.price}</span>
+                          </h4>
+                        </article>
+                        <div className="add-to-cart">
+                          <ImCart />
                         </div>
-                      </Card>
-                    </div>
-                  </SwiperSlide>
-                ))
-              ) : (
-                <p>No related products found.</p>
-              )}
+                      </div>
+                    </Card>
+                  </div>
+                </SwiperSlide>
+              ))}
               <SliderButtons side={true} />
             </Swiper>
           </div>
