@@ -107,6 +107,8 @@
     }
     .mobile_cart{
       display: flex;
+      font-size: 0.3rem;
+      width: 4rem;
     }
   }
   
@@ -121,6 +123,8 @@
     }
     .mobile_cart{
       display: flex;
+      font-size: 0.3rem;
+      width: 4rem;
     }
   }
   
