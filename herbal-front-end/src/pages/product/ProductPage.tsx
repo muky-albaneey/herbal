@@ -179,13 +179,14 @@
 // }
 import React, { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import axios from 'axios';
+import data from '../../utills/data.json';
+import './product.css';
 import { ImCart } from 'react-icons/im';
 import { Card } from 'antd';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { sliderSettings } from '../../utills/common';
 import useCartStore from '../../utills/store/cart';
-import './product.css';
+import axios from 'axios';
 
 const SliderButtons = ({ side }) => {
   const swiper = useSwiper();
@@ -199,12 +200,12 @@ const SliderButtons = ({ side }) => {
 
 export default function ProductPageComponent() {
   const { id } = useParams();
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState({});
   const [category, setCategory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  // Fetch product and category data
+  // Fetch the product and category data
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
@@ -213,12 +214,10 @@ export default function ProductPageComponent() {
           axios.get(`https://backend-herbal.onrender.com/products/category/booster`),
         ]);
 
-        // Set product data
         if (productResponse.data) {
           setProducts(productResponse.data);
         }
 
-        // Set category data
         if (categoryResponse.data) {
           setCategory(categoryResponse.data);
         }
@@ -233,14 +232,11 @@ export default function ProductPageComponent() {
     fetchDashboardData();
   }, [id]);
 
-  // Logging for debugging
+  // Log the products state whenever it updates
   useEffect(() => {
-    if (products) {
-      console.log('Product data:', products);
-    }
+    console.log('Product data:', products);
   }, [products]);
 
-  // Loading and error states
   if (loading) {
     return <div className="text-center mt-6">Loading dashboard data...</div>;
   }
@@ -249,19 +245,17 @@ export default function ProductPageComponent() {
     return <div className="text-center text-red-600 mt-6">{error}</div>;
   }
 
-  // Zustand store for cart
   const addItemToCart = useCartStore((state) => state.addToCart);
   const cart = useCartStore((state) => state.cart);
-  const [quantity, setQuantity] = useState(1); // Default quantity to 1
+  const [quantity, setQuantity] = useState(0);
 
-  // Handle adding product to cart
   const handleAddToCart = () => {
     if (products) {
       addItemToCart({
         id: products.id,
         name: products.name,
         price: products.price,
-        quantity: quantity, // Use the selected quantity
+        quantity: quantity, // Use local quantity state
       });
     }
   };
@@ -284,11 +278,10 @@ export default function ProductPageComponent() {
                 {item.name} - ${item.price} x {item.quantity}
               </li>
             ))}
-            <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
+            <h2>Total Price: ${totalPrice.toFixed(1)}</h2>
           </ul>
         )}
       </div>
-
       <h1>Product Details</h1>
       <section className="product_top_con">
         <aside className='product_con_left'></aside>
@@ -298,13 +291,12 @@ export default function ProductPageComponent() {
             <p>${products.price}</p>
           </div>
           <section className="product_desc">
-            These are concentrated forms of herbs meant to provide specific health benefits. For example, Ashwagandha capsules can help reduce stress, while Turmeric supplements may offer anti-inflammatory benefits.
-            Supplements are usually taken daily, often as part of a health regimen.
+            {products.description || "Description not available."}
           </section>
           <div className="control_products">
-            <button onClick={() => setQuantity(prev => Math.max(prev + 1, 1))}>+</button>
+            <button onClick={() => setQuantity(prev => prev + 1)}>+</button>
             <h2>{quantity}</h2>
-            <button onClick={() => setQuantity(prev => Math.max(prev - 1, 1))}>-</button>
+            <button onClick={() => setQuantity(prev => prev - 1)}>-</button>
           </div>
           <div className="product_add_cart">
             <button className='product_cart_btn' onClick={handleAddToCart}>
@@ -316,13 +308,12 @@ export default function ProductPageComponent() {
           </div>
         </aside>
       </section>
-
       <section className="place_order">
         <h1>Popular Order</h1>
         <section className="r-wrapper">
           <div className="r-container">
             <Swiper {...sliderSettings}>
-              {category?.map((card, i) => (
+              {category.map((card, i) => (
                 <SwiperSlide key={i}>
                   <div className="flexColStart r-card">
                     <Card
@@ -334,7 +325,7 @@ export default function ProductPageComponent() {
                         <article>
                           <h4>
                             <span>{card.name}</span> <br />
-                            <span>${card.price}</span>
+                            <span>{card.price}</span>
                           </h4>
                         </article>
                         <div className="add-to-cart" onClick={handleAddToCart}>
