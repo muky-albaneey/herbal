@@ -69,6 +69,7 @@ export default function ProductPageComponent() {
         quantity: quantity, // Pass the current quantity
       });
     }
+    setQuantity(1)
   };
 
   return (
@@ -106,101 +107,7 @@ export default function ProductPageComponent() {
             </div>
           </aside>
         </section>
-  // useEffect(() => {
-  //   // Fetch product data
-  //   const fetchProduct = async () => {
-  //     try {
-  //       const response = await fetch(`https://backend-herbal.onrender.com/products/${id}`);
-  //       const data = await response.json();
-  //       setProduct(data);
-  //     } catch (error) {
-  //       console.error('Error fetching product:', error);
-  //     }
-  //   };
   
-  //   fetchProduct();
-  // }, [id]);
-  
-  // // Move fetchRelatedProducts outside of the first useEffect
-  // const fetchRelatedProducts = async () => {
-  //   try {
-  //     const response = await fetch(`https://backend-herbal.onrender.com/products/category/${product?.category}`);
-  //     const data = await response.json();
-  //     setRelatedProducts(data);
-  //   } catch (error) {
-  //     console.error('Error fetching related products:', error);
-  //   }
-  // };
-  
-  // // Now you can call fetchRelatedProducts in the second useEffect
-  // useEffect(() => {
-  //   if (product) {
-  //     fetchRelatedProducts();
-  //   }
-  // }, [product]);
-  
-  // // Zustand store actions
-  // const addItemToCart = useCartStore((state) => state.addToCart);
-  // const cart = useCartStore((state) => state.cart);
-
-  // // Local state for quantity
-  // const [quantity, setQuantity] = useState(0);
-
-  // // Handle adding product to cart
-  // const handleAddToCart = () => {
-  //   if (product) {
-  //     addItemToCart({
-  //       id: product.id,
-  //       name: product.name,
-  //       price: product.price,
-  //       quantity: product.quantity,
-  //     });
-  //   }
-  // };
-
-  // const totalPrice = cart.reduce((total, item) => {
-  //   const itemTotal = item.price * (item.quantity || 0);
-  //   return total + itemTotal;
-  // }, 0);
-
-
-  // return (
-  //   <div className='product_wrapper'>
-  //     <h1>Product Details</h1>
-  //     {product && (
-  //       <section className="product_top_con">
-  //         <aside className='product_con_left'>
-  //           {/* <img src={product.product_image.url} alt={product.name} loading="lazy" /> */}
-  //           <img 
-  //               src={product.product_image.url.startsWith('https://') ? product.product_image.url : `https://${product.product_image.url}`} 
-  //               alt={product.id} 
-  //               loading="lazy" 
-  //             />
-
-  //         </aside>
-  //         <aside className='product_con_right'>
-  //           <div className="product_price_con">
-  //             <h3>{product.name}</h3>
-  //             <p>${product.price}</p>
-  //           </div>
-  //           <section className="product_desc">
-  //             {product.description}
-  //           </section>
-  //           <div className="control_products">
-  //           <button onClick={() => setQuantity(prev => prev + 1)}>+</button>
-  //           <h2>{quantity}</h2>
-  //           <button onClick={() => setQuantity(prev => prev - 1)}>-</button>
-  //           </div>
-  //           <div className="product_add_cart">
-  //             <button  className='product_cart_btn' style={{ textDecoration: 'none', display: 'flex' }} onClick={handleAddToCart}>
-  //               <ImCart /> Cart Added
-  //             </button>
-  //             <NavLink to="fan" className='product_cart_btn_2' style={{ textDecoration: 'none', display: 'flex' }}>
-  //               <ImCart /> Buy now
-  //             </NavLink>
-  //           </div>
-  //         </aside>
-  //       </section>
       )}
       <section className="place_order">
         <h1>Popular Order</h1>
