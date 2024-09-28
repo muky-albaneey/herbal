@@ -14,6 +14,7 @@ import AdminLayout from './pages/admin/AdminLayout';
 import ProductImageEdit from './pages/admin/Edit';
 import CheckoutName from './pages/cart/Checkout';
 import PaymentName from './pages/cart/Payment';
+import PaymentSuccess from './pages/cart/Verify';
 
 
 
@@ -44,13 +45,13 @@ function App() {
                 return null
               }}
               element={<ProductPageComponent />} errorElement={<ErrorElement />} />
-              {/* <Route 
-                 path='admin' loader={async ()=>{
+              <Route 
+                 path='payment-success' loader={async ()=>{
                 return null
               }}
-              element={<Example />} 
+              element={<PaymentSuccess />} 
             indexerrorElement={<ErrorElement />}
-             /> */}
+             />
                <Route 
                  path='products' loader={async ()=>{
                   return null
