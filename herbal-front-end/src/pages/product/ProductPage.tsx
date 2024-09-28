@@ -235,9 +235,9 @@ export default function ProductPageComponent() {
               {product.description}
             </section>
             <div className="control_products">
-              <button>+</button>
-              <h2>1</h2>
-              <button>-</button>
+            <button onClick={() => setQuantity(prev => prev + 1)}>+</button>
+            <h2>{quantity}</h2>
+            <button onClick={() => setQuantity(prev => prev - 1)}>-</button>
             </div>
             <div className="product_add_cart">
               <button  className='product_cart_btn' style={{ textDecoration: 'none', display: 'flex' }} onClick={handleAddToCart}>
