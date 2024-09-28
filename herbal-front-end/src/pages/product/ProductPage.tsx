@@ -215,6 +215,7 @@ export default function ProductPageComponent() {
         ]);
 
         if (productResponse.data) {
+          console.log(productResponse.data)
           setProducts(productResponse.data);
         }
 
