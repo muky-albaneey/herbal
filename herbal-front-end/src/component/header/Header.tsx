@@ -159,7 +159,7 @@ function Header() {
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end" // Use "end" for right alignment
+              placement="end" 
               style={{ maxWidth: '90%', textDecoration: 'none' }}
             >
               <Offcanvas.Header closeButton>

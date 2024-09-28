@@ -9,6 +9,7 @@ import TableCom from '../../component/table/Table';
 export default function ProductsComponent() {
   
   const { t } = useTranslation();
+  const category = 'new bitter';
   return (
     
     <div className='productListWrapper'>
@@ -70,7 +71,7 @@ export default function ProductsComponent() {
       
     </aside>
     <main className="house_listing">
-     <ListComponent_info />
+    <ListComponent_info category={category} />
      
     </main>
     
