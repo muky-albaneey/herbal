@@ -136,6 +136,11 @@ export default function PaymentName() {
         email: formData.email,
         amount: formData.amount,
         currency: formData.currency,
+      },{
+        withCredentials: true,
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
       });
 
       if (response.data.status === 'success') {
