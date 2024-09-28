@@ -26,7 +26,7 @@ export default function CheckoutName() {
       const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form Data:', formData);
-        navigate('pay'); 
+        navigate('/pay'); 
       };
   return (
     <div className='checkoutCon'>

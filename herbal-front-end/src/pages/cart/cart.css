@@ -30,9 +30,9 @@
 
 .cart_header,.cart_foo{
     width: 95%;
-    padding: .7rem .8rem;
+    padding: .5rem .6rem;
     background-color: rgb(9, 124, 9);
-    border-radius: 2rem;
+    border-radius: 1.2rem;
     color: white;
     text-align: center;
 }
@@ -41,7 +41,7 @@
 }
 
 .pricing{
-    padding: 1rem;
+    padding: .7rem;
     display: flex;
     gap: 1rem;
     justify-content: space-around;
@@ -58,5 +58,12 @@
 
     .cartRight{
         width: 100%;
+    }
+    .cart_header,.cart_foo{
+ 
+        padding: .4rem .5rem;
+      
+        border-radius: .8rem;
+     
     }
 }
