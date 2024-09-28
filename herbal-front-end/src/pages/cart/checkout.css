@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: space-around;
     gap: 1rem;
-
+    text-align: center;
 }
 .order_items{
     width: 100%;
@@ -65,6 +65,7 @@
     flex-direction: column;
     justify-content: space-around;
     gap: 1rem;
+    text-align: center;
 }
 
 @media (max-width: 640px) {
