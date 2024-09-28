@@ -15,7 +15,7 @@ type AuthState = {
   logout: () => void; // Added logout method to the type
 };
 
-export const useAuthStore = create<AuthState>()(
+export const useAuthStoreUser = create<AuthState>()(
   persist(
     (set) => ({
       jwtToken: null,
