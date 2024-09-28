@@ -127,8 +127,8 @@ function Header() {
                             <FaUserCircle className="user-icon" /> Profile
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
-                            <Dropdown.Item as={NavLink} to="/profile">Profile</Dropdown.Item>
-                            <Dropdown.Item as={NavLink} to="/settings">Settings</Dropdown.Item>
+                            {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Profile</Dropdown.Item>}
+                            {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Settings</Dropdown.Item>}
                             <Dropdown.Divider />
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Logout</Dropdown.Item>}
                             {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Register</Dropdown.Item>}
