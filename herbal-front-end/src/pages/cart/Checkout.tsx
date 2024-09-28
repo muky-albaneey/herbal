@@ -6,6 +6,13 @@ import { useNavigate } from 'react-router-dom';
 export default function CheckoutName() {
     const cart = useCartStore((state) => state.cart)
     const navigate = useNavigate();
+
+    // React.useEffect(() => {
+  //   if (!isAuthenticated) {
+  //     navigate('/auth/signup');
+  //   }
+  // }, [isAuthenticated, navigate]);
+  
     const [formData, setFormData] = React.useState({
         firstName: '',
         lastName: '',
@@ -28,6 +35,8 @@ export default function CheckoutName() {
         console.log('Form Data:', formData);
         navigate('/pay'); 
       };
+
+
   return (
     <div className='checkoutCon'>
          {/* <header className='checkoutHead'>

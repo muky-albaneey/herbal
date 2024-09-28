@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table, Space, Button, InputNumber } from 'antd';
 import useCartStore from '../../utills/store/cart';
+import { useNavigate } from 'react-router-dom';
 
 interface CartItem {
   id: string;
@@ -13,7 +14,13 @@ const CartTable: React.FC = () => {
   const cart = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const addToCart = useCartStore((state) => state.addToCart);
+  const navigate = useNavigate();
 
+  // React.useEffect(() => {
+//   if (!isAuthenticated) {
+//     navigate('/auth/signup');
+//   }
+// }, [isAuthenticated, navigate]);
   const columns = [
     {
       title: 'Name',

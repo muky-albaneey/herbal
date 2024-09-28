@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 // import AdminNavBar from './AdminNavBar'; // Import the navigation component
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import AdminNavBar from './AdminNavBar';
 import axios from 'axios';
 
@@ -10,7 +10,16 @@ export default function AdminLayout() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(''); // Error state
+
+  const navigate = useNavigate();
+
+  // React.useEffect(() => {
+//   if (!isAuthenticated) {
+//     navigate('/auth/signup');
+//   }
+// }, [isAuthenticated, navigate]);
       // Fetch the counts for users, products, and orders
+
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
