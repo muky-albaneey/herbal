@@ -41,7 +41,7 @@ export default function ProductPageComponent() {
           // Ensure that the API returns data in the expected format
           if (productResponse.data) {
             setProducts(productResponse.data);
-            // console.log(productResponse.data);
+            console.log(productResponse.data);
             console.log(products);
           }
     
