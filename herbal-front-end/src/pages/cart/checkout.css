@@ -66,3 +66,12 @@
     justify-content: space-around;
     gap: 1rem;
 }
+
+@media (max-width: 640px) {
+    .productSec,.orderSec{
+        width: 100%;
+    }
+    .checkoutCon{
+        flex-direction: column;
+    }
+}

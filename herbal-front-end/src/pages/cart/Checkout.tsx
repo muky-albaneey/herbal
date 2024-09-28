@@ -63,7 +63,7 @@ export default function CheckoutName() {
          </section>
         <section className="productSec">
         <h1>Product Details</h1>
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md w-full">
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">First Name</label>
         <input
