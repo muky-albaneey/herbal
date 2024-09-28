@@ -108,7 +108,7 @@ export default function PaymentName() {
   const cart = useCartStore((state) => state.cart);
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
   const navigate = useNavigate();
-  
+
   const [formData, setFormData] = useState({
     amount: totalPrice,
     currency: '',
@@ -147,7 +147,8 @@ export default function PaymentName() {
 
       if (response.data.status === 'success') {
         setSuccess('Payment initialized successfully!');
-        navigate(response.data.authorization_url)
+        // navigate(response.data.authorization_url)
+        window.location.href = response.data.data.authorization_url; 
         // Handle payment redirection or next steps based on Paystack response
       } else {
         setError('Error initializing payment.');
