@@ -38,9 +38,9 @@ const CarouselComponent: React.FC = () => {
                   repeat={Infinity}
                 />
               </h1> */}
-              <p>
+              {/* <p>
                 <span>{t('carousel.description')}</span>
-              </p>
+              </p> */}
               <button>{t('carousel.shop_now')}</button>
             </article>
           </div>
@@ -64,9 +64,9 @@ const CarouselComponent: React.FC = () => {
                   className="text_typing"
                 />
               </h1> */}
-              <p>
+              {/* <p>
                 <span>{t('carousel.description')}</span>
-              </p>
+              </p> */}
               <button>{t('carousel.shop_now')}</button>
             </article>
           </div>
@@ -90,9 +90,9 @@ const CarouselComponent: React.FC = () => {
                   className="text_typing"
                 />
               </h1> */}
-              <p>
+              {/* <p>
                 <span>{t('carousel.description')}</span>
-              </p>
+              </p> */}
               <button>{t('carousel.shop_now')}</button>
             </article>
           </div>
@@ -116,9 +116,9 @@ const CarouselComponent: React.FC = () => {
                   className="text_typing"
                 />
               </h1>
-              <p>
-                <span>{t('carousel.description')}</span>
-              </p>
+              // <p>
+              //   <span>{t('carousel.description')}</span>
+              // </p>
               <button>{t('carousel.shop_now')}</button>
             </article> */}
           </div>
@@ -168,9 +168,9 @@ const CarouselComponent: React.FC = () => {
                   className="text_typing"
                 />
               </h1> */}
-              <p>
+              {/* <p>
                 <span>{t('carousel.description')}</span>
-              </p>
+              </p> */}
               <button>{t('carousel.shop_now')}</button>
             </article>
           </div>
@@ -194,9 +194,9 @@ const CarouselComponent: React.FC = () => {
                   className="text_typing"
                 />
               </h1> */}
-              <p>
+              {/* <p>
                 <span>{t('carousel.description')}</span>
-              </p>
+              </p> */}
               <button>{t('carousel.shop_now')}</button>
             </article>
           </div>
@@ -219,9 +219,9 @@ const CarouselComponent: React.FC = () => {
                   className="text_typing"
                 />
               </h1> */}
-              <p>
+              {/* <p>
                 <span>{t('carousel.description')}</span>
-              </p>
+              </p> */}
               <button>{t('carousel.shop_now')}</button>
             </article>
           </div>

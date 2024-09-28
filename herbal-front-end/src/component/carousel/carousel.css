@@ -1,18 +1,16 @@
-
+/* 
 
 .carousel{
     width: 80%;
-    /* height: 30rem; */
   margin: 0 auto;
 }
 
 #item{
     width: 100rem;
-    /* width: 100%; */
     height: 50rem;
     margin: 0;
-    background-size: 100% 100%; /* Makes the image cover the full width while maintaining its aspect ratio */
-    background-position:center; /* Positions the image at the top center */
+    background-size: 100% 100%; 
+    background-position:center; 
  
     color: rgb(2, 27, 7);
 }
@@ -92,7 +90,7 @@
    font-family: sans-serif;
 }
 .text_typing{
-    /* font-size: 7em; */
+  
     font-variant: small-caps;
     font-family: sans-serif;
 }
@@ -107,36 +105,36 @@
     font-weight: bold;
     border-radius: 2px;
 }
-/* Customizing dot colors */
+
 .ant-carousel .slick-dots li button {
-    background-color: #0af10a; /* Inactive dot color */
+    background-color: #0af10a; 
     font-weight: bold;
     font-size: 12rem;
   }
   
   .ant-carousel .slick-dots li.slick-active button {
-    background-color: #010c05; /* Active dot color */
+    background-color: #010c05; 
   }
   
-  /* Customizing arrow colors */
+
   .ant-carousel .slick-prev, 
   .ant-carousel .slick-next {
-    color: #033b07; /* Arrow color */
-    font-size: 54px; /* Adjust arrow size */
-    z-index: 10; /* Ensure arrows are above content */
+    color: #033b07; 
+    font-size: 54px;
+    z-index: 10; 
   }
   
-  /* Optionally, customize the hover state */
+
   .ant-carousel .slick-prev:hover, 
   .ant-carousel .slick-next:hover {
-    color: #031e03; /* Arrow hover color */
+    color: #031e03; 
   }
   
 
     @media all and (max-width: 900px) {
         #item{
             height: 30rem;
-            /* height: 43rem; */
+      
         }
         .item_content h1{
             font-size: 3em;
@@ -149,7 +147,7 @@
         }
         .carousel{
             width: 100%;
-            /* height: 30rem; */
+           
         }
     }
 
@@ -158,4 +156,135 @@
         #item{
             
         }
+    } */
+    .carousel {
+        width: 80%;
+        margin: 0 auto;
     }
+    
+    #item {
+        width: 100%;
+        height: 50rem;
+        margin: 0;
+        background-size: cover; /* Maintain aspect ratio */
+        background-position: center;
+        color: rgb(2, 27, 7);
+    }
+    
+    .item-1 {
+        background: url(/ceo_caro.jpg) no-repeat center;
+    }
+    .item-2 {
+        background: url(/ceo_caro_2.JPG) no-repeat center;
+    }
+    .item-3 {
+        background: url(/ceo_caro_3.jpg) no-repeat center;
+    }
+    .item-4 {
+        background: url(/caro5.JPG) no-repeat center;
+    }
+    .item-5 {
+        background: url(/caro6.JPG) no-repeat center;
+    }
+    .item-6 {
+        background: url(/drug_1.JPG) no-repeat center;
+    }
+    .item-7 {
+        background: url(/drug_2.jpg) no-repeat center;
+    }
+    .item-8 {
+        background: url(/drug_3.jpg) no-repeat center;
+    }
+    
+    #items_con {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(5, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #items_con .item_content {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-direction: column;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .item_content h1 {
+        font-size: 5em;
+        font-variant: small-caps;
+        font-family: sans-serif;
+        font-family: monospace;
+        font-weight: bold;
+    }
+    
+    .item_content p {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        font-variant: small-caps;
+        font-family: sans-serif;
+    }
+    
+    .item_content button {
+        width: 15rem;
+        padding: 0.9rem;
+        background-color: #04620a;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 2px;
+    }
+    
+    .ant-carousel .slick-dots li button {
+        background-color: #0af10a;
+        font-weight: bold;
+        font-size: 12rem;
+    }
+    
+    .ant-carousel .slick-dots li.slick-active button {
+        background-color: #010c05;
+    }
+    
+    .ant-carousel .slick-prev,
+    .ant-carousel .slick-next {
+        color: #033b07;
+        font-size: 54px;
+        z-index: 10;
+    }
+    
+    .ant-carousel .slick-prev:hover,
+    .ant-carousel .slick-next:hover {
+        color: #031e03;
+    }
+    
+    @media all and (max-width: 900px) {
+        #item {
+            height: 30rem;
+        }
+        .item_content h1 {
+            font-size: 3em;
+            font-variant: small-caps;
+            font-family: sans-serif;
+        }
+        .item_content p {
+            width: 100%;
+        }
+        .carousel {
+            width: 100%;
+        }
+    }
+    
+    @media all and (max-width: 390px) {
+        #item {
+            height: 20rem; /* Adjust for small screens */
+        }
+    }
+    
