@@ -81,7 +81,7 @@
 .r-buttons, .r-button {
     position: absolute;
     gap: 1rem;
-    top: -2rem;
+    top: 1rem;
     z-index: 999;
     display: flex;
     justify-content: center;
@@ -105,6 +105,7 @@
     background-color: rgb(37, 79, 5);
     cursor: pointer;
     transition: background-color 0.3s ease;
+
 }
 
 .r-buttons button:hover, .r-button button:hover {
