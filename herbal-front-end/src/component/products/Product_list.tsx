@@ -64,10 +64,24 @@ const ListComponent_info = React.memo(({ category }) => {
 
                 // If category is provided and not null, fetch from category-specific API
                 if (category) {
-                    response = await axios.get(`https://backend-herbal.onrender.com/products/category/${category}`);
+                    response = await axios.get(`https://backend-herbal.onrender.com/products/category/${category}`,
+                        {
+                            withCredentials: true,
+                            headers: {
+                              'Cache-Control': 'no-cache',
+                            },
+                          }
+                    );
                 } else {
                     // Fetch all products if no category is provided
-                    response = await axios.get('https://backend-herbal.onrender.com/products/all');
+                    response = await axios.get('https://backend-herbal.onrender.com/products/all',
+                        {
+                            withCredentials: true,
+                            headers: {
+                              'Cache-Control': 'no-cache',
+                            },
+                          }
+                    );
                 }
 
                 const data = response.data;
