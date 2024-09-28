@@ -61,16 +61,19 @@ const ListComponent_info = React.memo(({ category }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('https://backend-herbal.onrender.com/products/all');
-                const data = await response.json();
+                let response;
 
-                // If category is provided, filter the products by category
+                // If category is provided and not null, fetch from category-specific API
                 if (category) {
-                    const filteredProducts = data.filter(product => product.category === category);
-                    setProducts(filteredProducts);
+                    response = await fetch(`https://backend-herbal.onrender.com/products/category/${category}`);
                 } else {
-                    setProducts(data); // If no category is provided, show all products
+                    // Fetch all products if no category is provided
+                    response = await fetch('https://backend-herbal.onrender.com/products/all');
                 }
+
+                const data = await response.json();
+                setProducts(data); // Set the fetched data to state
+
             } catch (error) {
                 console.error("Error fetching the products:", error);
             }
