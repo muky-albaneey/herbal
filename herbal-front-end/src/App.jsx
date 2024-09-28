@@ -13,6 +13,7 @@ import AdminDashboard from './pages/admin/Table';
 import AdminLayout from './pages/admin/AdminLayout';
 import ProductImageEdit from './pages/admin/Edit';
 import CheckoutName from './pages/cart/Checkout';
+import PaymentName from './pages/cart/Payment';
 
 
 
@@ -65,6 +66,14 @@ function App() {
             indexerrorElement={<ErrorElement />}
              />
 
+
+              <Route 
+                 path='pay' loader={async ()=>{
+                return null 
+              }}
+              element={<PaymentName />} 
+            indexerrorElement={<ErrorElement />}
+             />
 
               <Route 
                  path='cart' loader={async ()=>{
