@@ -44,7 +44,7 @@ const PaymentSuccess = () => {
     <div>
       <h1>Payment Successful!</h1>
       {paymentStatus ? (
-        <p>Your payment has been confirmed. Reference: {paymentStatus.reference}</p>
+        <p>Your payment has been confirmed. Reference: {paymentStatus.data.reference}</p>
       ) : (
         <p>Verifying your payment...</p>
       )}
