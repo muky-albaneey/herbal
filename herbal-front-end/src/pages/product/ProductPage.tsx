@@ -113,6 +113,7 @@ import { Card } from 'antd';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { sliderSettings } from '../../utills/common';
 import useCartStore from '../../utills/store/cart';
+import axios from 'axios';
 // import useCartStore from '../../store/useCartStore'; 
 
 const SliderButtons = ({ side }: { side: boolean }) => {
@@ -126,8 +127,47 @@ const SliderButtons = ({ side }: { side: boolean }) => {
 };
 
 export default function ProductPageComponent() {
-  const { id } = useParams();
-  const find_product = data.find((products) => products.id == id);
+  // const { id } = useParams();
+  // const find_product = data.find((products) => products.id == id);
+  const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(''); // Error state
+
+    // Fetch the counts for users, products, and orders
+    React.useEffect(() => {
+      const fetchDashboardData = async () => {
+        try {
+          const [productResponse, categgory] = await Promise.all([
+            axios.get(`https://backend-herbal.onrender.com/products/${id}`),
+            axios.get(`https://backend-herbal.onrender.com/products/category/booster`),
+          ]);
+          
+          setProducts(productResponse.data);
+          console.log(productResponse.data);
+
+          setCategory(categgory.data.totalUsers);
+          console.log(categgory.data);
+
+        } catch (err) {
+          setError('Error fetching data.');
+          console.error(err);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchDashboardData();
+    }, []);
+
+    if (loading) {
+      return <div className="text-center mt-6">Loading dashboard data...</div>;
+    }
+
+    if (error) {
+      return <div className="text-center text-red-600 mt-6">{error}</div>;
+    }
 
   // Zustand store actions
   const addItemToCart = useCartStore((state) => state.addToCart);
@@ -138,12 +178,12 @@ export default function ProductPageComponent() {
 
   // Handle adding product to cart
   const handleAddToCart = () => {
-    if (find_product) {
+    if (products) {
       addItemToCart({
-        id: find_product.id,
-        name: find_product.name,
-        price: find_product.price,
-        quantity,
+        id: products.id,
+        name: products.name,
+        price: products.price,
+        quantity: products.quantity,
       });
     }
   };
@@ -177,8 +217,8 @@ export default function ProductPageComponent() {
         <aside className='product_con_left'></aside>
         <aside className='product_con_right'>
           <div className="product_price_con">
-            <h3>Herbal Supplements</h3>
-            <p>$450.00</p>
+            <h3>{products.name}</h3>
+            <p>${products.price}</p>
           </div>
           <section className="product_desc">
             These are concentrated forms of herbs meant to provide specific health benefits. For example, Ashwagandha capsules can help reduce stress, while Turmeric supplements may offer anti-inflammatory benefits.
@@ -205,19 +245,19 @@ export default function ProductPageComponent() {
         <section className="r-wrapper">
           <div className="r-container">
             <Swiper {...sliderSettings}>
-              {find_product?.other_images.map((card, i) => (
+              {category?.map((card, i) => (
                 <SwiperSlide key={i}>
                   <div className="flexColStart r-card">
                     <Card
                       hoverable
                       className='cardCon'
-                      cover={<img src={card.img} alt={find_product.name} loading="lazy" />}
+                      cover={<img src={card.product_image.url} alt={card.name} loading="lazy" />}
                     >
                       <div className="cardItemInfo">
                         <article>
                           <h4>
-                            <span>{find_product.name}</span> <br />
-                            <span>{find_product.price}</span>
+                            <span>{card.name}</span> <br />
+                            <span>{card.price}</span>
                           </h4>
                         </article>
                         <div className="add-to-cart" onClick={handleAddToCart}>
