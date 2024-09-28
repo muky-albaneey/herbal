@@ -45,10 +45,9 @@
 //         </section>
 //     );
 // });
-
-// export default ListComponent_info;
 import React, { useEffect, useState } from 'react';
 import { ImCart } from "react-icons/im";
+import axios from 'axios';
 import '../../component/residence.css';
 import '../../pages/product/product.css';
 import { Card } from 'antd';
@@ -65,15 +64,23 @@ const ListComponent_info = React.memo(({ category }) => {
 
                 // If category is provided and not null, fetch from category-specific API
                 if (category) {
-                    response = await fetch(`https://backend-herbal.onrender.com/products/category/${category}`);
+                    response = await axios.get(`https://backend-herbal.onrender.com/products/category/${category}`);
                 } else {
                     // Fetch all products if no category is provided
-                    response = await fetch('https://backend-herbal.onrender.com/products/all');
+                    response = await axios.get('https://backend-herbal.onrender.com/products/all');
                 }
 
-                const data = await response.json();
-                setProducts(data); // Set the fetched data to state
+                const data = response.data;
 
+                // Log data to verify the response
+                console.log('Fetched products:', data);
+
+                if (Array.isArray(data)) {
+                    setProducts(data); // Set the fetched data to state
+                } else {
+                    console.error("Invalid data format:", data);
+                    setProducts([]); // If data is not an array, set an empty array
+                }
             } catch (error) {
                 console.error("Error fetching the products:", error);
             }
@@ -95,7 +102,9 @@ const ListComponent_info = React.memo(({ category }) => {
                                     id='card_product'
                                     cover={
                                         <img 
-                                            src={product.product_image.url.startsWith('https') ? product.product_image.url : `https://${product.product_image.url}`} 
+                                            src={product.product_image.url.startsWith('https') 
+                                                ? product.product_image.url 
+                                                : `https://${product.product_image.url}`} 
                                             alt={product.name} 
                                             loading="lazy" 
                                         />
