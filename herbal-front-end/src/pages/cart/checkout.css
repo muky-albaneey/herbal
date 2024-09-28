@@ -53,6 +53,8 @@
 .top_foo_checkout{
     width: 100%;
     padding: 1rem;
+    color: white;
+    font-weight: bold;
     background-color: rgba(103, 235, 103,.8);
 }
 

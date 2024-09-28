@@ -49,7 +49,7 @@ export default function CheckoutName() {
             ))
         }
         <section className="foo_checkout">
-            <div className="top_foo_checkout"></div>
+            <div className="top_foo_checkout">Total for Product</div>
             <div className="foo_checkout_items"></div>
             <div className="foo_checkout_items"></div>
             <div className="foo_checkout_items"></div>
@@ -146,7 +146,7 @@ export default function CheckoutName() {
 
       <button
         type="submit"
-        className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+        className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
       >
         Submit
       </button>
