@@ -27,7 +27,7 @@ export default function CheckoutName() {
       };
   return (
     <div className='checkoutCon'>
-         <header>
+         <header className='checkoutHead'>
             <h1>Your Order</h1>
             <h1>Product Details</h1>
         </header>
