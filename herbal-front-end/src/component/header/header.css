@@ -75,6 +75,7 @@
     justify-content: center;
     align-items: center;
     background-color: #1f0404;
+    gap: 0.6rem;
   }
   @media (max-width: 900px) {
     .header_nav {
