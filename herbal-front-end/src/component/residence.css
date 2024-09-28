@@ -92,9 +92,6 @@
     right: 1rem;
 }
 
-.r-button {
-    left: 1rem;
-}
 
 .r-buttons button, .r-button button {
     font-size: 1.2rem;
@@ -106,6 +103,10 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 
+}
+.r-button {
+    left: 1rem;
+    top: 1rem;
 }
 
 .r-buttons button:hover, .r-button button:hover {
@@ -123,6 +124,7 @@
     align-items: center;
     overflow: hidden;
 }
+
 
 @media (max-width: 640px) {
     .r-container {
