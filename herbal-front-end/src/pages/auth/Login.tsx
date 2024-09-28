@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 // import { useAuthStore } from '../../store/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../../utills/store/auth';
+import { useAuthStoreUser } from '../../utills/store/auth';
+
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,7 @@ const SignUpForm = () => {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const setAuthData = useAuthStore((state) => state.setAuthData);
+  const setAuthData = useAuthStoreUser((state) => state.setAuthData);
   const navigate = useNavigate();
 
   // Handle input change

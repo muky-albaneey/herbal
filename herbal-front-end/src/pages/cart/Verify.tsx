@@ -9,20 +9,6 @@ const PaymentSuccess = () => {
   const params = new URLSearchParams(location.search);
   const reference = params.get('reference'); // Get reference from the URL if included
 
-  // useEffect(() => {
-  //   const verifyPayment = async () => {
-  //     try {
-  //       const response = await axios.get(`https://backend-herbal.onrender.com/verify-payment?reference=${reference}`);
-  //       setPaymentStatus(response.data);
-  //     } catch (error) {
-  //       console.error('Payment verification failed:', error);
-  //     }
-  //   };
-
-  //   if (reference) {
-  //     verifyPayment();
-  //   }
-  // }, [reference]);
   useEffect(() => {
     const verifyPayment = async () => {
       try {
@@ -35,7 +21,7 @@ const PaymentSuccess = () => {
     }
         );
         console.log('Payment verification response:', response.data); // Log response
-        if (response.data.status === 'success') {
+        if (response.data.data.status === 'success') {
           setPaymentStatus(response.data.data);
         } else {
           setPaymentStatus(null); // Handle error
