@@ -23,7 +23,7 @@ const SliderButtons = ({ side }: { side: boolean }) => {
 export default function ProductPageComponent() {
   const { id } = useParams();
   // const find_product = data.find((products) => products.id == id);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState({});
   const [category, setCategory] = useState([]);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
