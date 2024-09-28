@@ -4,7 +4,7 @@
     width: 30%;
     height: 2.4rem;
   }
-  
+
   .header_nav {
     width: 100%;
     display: flex;
@@ -61,7 +61,9 @@
 
   }
   .cart_header_btn{
+    display: flex;
     padding: 0 2rem;
+    text-decoration: none;
   }
   .cart_btn {
     width: 8rem; 
@@ -76,6 +78,9 @@
     align-items: center;
     background-color: rgba(103, 235, 103,.8);
     gap: 0.6rem;
+  }
+  .mobile_cart{
+    display: none;
   }
   @media (max-width: 900px) {
     .header_nav {
@@ -100,6 +105,9 @@
     .right_header {
       flex-direction: column;
     }
+    .mobile_cart{
+      display: flex;
+    }
   }
   
   @media (max-width: 340px) {
@@ -110,6 +118,9 @@
   
     .profile-dropdown {
       width: 100%;
+    }
+    .mobile_cart{
+      display: flex;
     }
   }
   

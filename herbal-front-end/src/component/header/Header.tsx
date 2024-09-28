@@ -150,8 +150,20 @@ function Header() {
     <div style={{ width: '100%', background: 'white' }}>
       {['md'].map((expand) => (
         <Navbar key={expand} expand={expand} style={{ backgroundColor: 'white' }} className="bg-body-tertiary mb-3">
-          <Container fluid className="mx-auto justify-content-center" style={{ backgroundColor: 'white' }}>
+          <Container fluid className="mx-auto justify-content-center">
             <Navbar.Brand><NavLink to='/'><img src={logo} alt="" className='logo'/></NavLink></Navbar.Brand>
+            <NavLink to="cart" className='cart_header_btn mobile_cart' style={{ textDecoration: 'none'}}>
+                            <button 
+                              type="button" 
+                              className="btn btn-success position-relative flex items-center cart_btn"
+                            >
+                              <div id='add_c'><ImCart /> Cart</div>
+                              <span className="badge position-absolute top-0 start-100 translate-middle bg-secondary">
+                                {totalItems > 99 ? '99+' : totalItems.toString()} {/* Convert to string to prevent leading zeros */}
+                                <span className="visually-hidden">items in cart</span>
+                              </span>
+                            </button>
+                          </NavLink>
             <Navbar.Toggle
               aria-controls={`offcanvasNavbar-expand-${expand}`}
               className="ms-auto" // Align the toggle to the right
@@ -170,6 +182,7 @@ function Header() {
                   <nav className='header_nav'>
                     <section className="left_header">
                       <NavLink to="/" className='home_btn' style={{ textDecoration: 'none' }}> {t('nav.home')}</NavLink>
+                      
                       <div className="nav_header_info">
                         <NavLink to="/products" style={{ textDecoration:'none', color:'green', fontWeight: 'bold'}}>{t('nav.product')}</NavLink>
                         {/* <NavLink to="/contact" className={lang_token === 'fr' ? 'french_t' : ''}>{t('nav.contact_us')}</NavLink> */}
@@ -193,7 +206,7 @@ function Header() {
                       </form>
                     </section>
                     <section className="right_header">
-                        <NavLink to="cart" className='cart_header_btn' style={{ textDecoration: 'none', display: 'flex' }}>
+                        <NavLink to="cart" className='cart_header_btn' >
                             <button 
                               type="button" 
                               className="btn btn-success position-relative flex items-center cart_btn"
