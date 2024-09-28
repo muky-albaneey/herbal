@@ -127,7 +127,7 @@ const SliderButtons = ({ side }: { side: boolean }) => {
 };
 
 export default function ProductPageComponent() {
-  // const { id } = useParams();
+  const { id } = useParams();
   // const find_product = data.find((products) => products.id == id);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -159,7 +159,7 @@ export default function ProductPageComponent() {
       };
 
       fetchDashboardData();
-    }, []);
+    }, [id]);
 
     if (loading) {
       return <div className="text-center mt-6">Loading dashboard data...</div>;
