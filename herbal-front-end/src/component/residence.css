@@ -81,7 +81,7 @@
 .r-buttons, .r-button {
     position: absolute;
     gap: 1rem;
-    top: 1rem;
+    top: .7rem;
     z-index: 999;
     display: flex;
     justify-content: center;
@@ -147,12 +147,12 @@
     }
 
     .r-buttons {
-        top: -2rem;
+        /* top: -2rem; */
         right: 40rem;
     }
 
     .r-button {
-        top: -2rem;
+        /* top: -2rem; */
         left: 40rem;
     }
 }
