@@ -132,7 +132,7 @@ export default function PaymentName() {
 
     try {
       // Replace with your actual backend URL
-      const response = await axios.post('https://backend-herbal.onrender.com/initialize', {
+      const response = await axios.post('https://backend-herbal.onrender.com/paystack/initialize', {
         email: formData.email,
         amount: formData.amount,
         currency: formData.currency,
