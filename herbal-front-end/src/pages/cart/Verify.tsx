@@ -26,7 +26,14 @@ const PaymentSuccess = () => {
   useEffect(() => {
     const verifyPayment = async () => {
       try {
-        const response = await axios.get(`https://backend-herbal.onrender.com/verify-payment?reference=${reference}`);
+        const response = await axios.get(`https://backend-herbal.onrender.com/paystack/verify-payment?reference=${reference}`,
+          {
+            withCredentials: true,
+            headers: {
+              'Cache-Control': 'no-cache',
+            },
+    }
+        );
         console.log('Payment verification response:', response.data); // Log response
         if (response.data.status === 'success') {
           setPaymentStatus(response.data.data);
