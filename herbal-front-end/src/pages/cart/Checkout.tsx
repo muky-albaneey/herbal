@@ -33,6 +33,8 @@ export default function CheckoutName() {
             <div className="foo_checkout_items"></div>
             <div className="foo_checkout_items"></div>
             <div className="foo_checkout_items"></div>
+            <hr />
+            <div className="foo_checkout_items"></div>
         </section>
          </section>
         <section className="productSec"></section>
