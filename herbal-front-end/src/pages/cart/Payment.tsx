@@ -10,7 +10,7 @@ export default function PaymentName() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    amount: totalPrice,
+    amount: totalPrice == 0 ? 100 : totalPrice,
     currency: '',
     email: '', // Add an email field for payment initialization
   });
