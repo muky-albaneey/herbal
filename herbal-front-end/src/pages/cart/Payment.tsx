@@ -83,12 +83,12 @@ export default function PaymentName() {
           >
             <option value="" disabled>Select a currency</option>
             <option value="USD">🇺🇸 USD - US Dollar</option>
-            <option value="EUR">🇪🇺 EUR - Euro</option>
-            <option value="GBP">🇬🇧 GBP - British Pound</option>
-            <option value="JPY">🇯🇵 JPY - Japanese Yen</option>
+            <option value="GHS">🇬🇭 GHS - Ghanaian Cedi</option>
+            {/* <option value="GBP">🇬🇧 GBP - British Pound</option> */}
+            {/* <option value="JPY">🇯🇵 JPY - Japanese Yen</option> */}
             <option value="NGN">🇳🇬 NGN - Nigerian Naira</option>
-            <option value="INR">🇮🇳 INR - Indian Rupee</option>
-            <option value="CAD">🇨🇦 CAD - Canadian Dollar</option>
+            <option value="KES">🇰🇪 KES - Kenyan Shilling</option>
+            {/* <option value="CAD">🇨🇦 CAD - Canadian Dollar</option> */}
           </select>
         </div>
       </div>
