@@ -81,10 +81,10 @@ export default function ProductPageComponent() {
   const handleAddToCart = () => {
     if (products) {
       addItemToCart({
-        id: products.id,
-        name: products.name,
-        price: products.price,
-        quantity: products.quantity,
+        id: products?.id,
+        name: products?.name,
+        price: products?.price,
+        quantity: products?.quantity,
       });
     }
   };
@@ -103,7 +103,7 @@ export default function ProductPageComponent() {
         <p>Your cart is empty.</p>
       ) : (
         <ul>
-          {cart.map((item) => (
+          {cart?.map((item) => (
             <li key={item.id}>
               {item.name} - ${item.price} x {item.quantity}
             </li>
@@ -118,8 +118,8 @@ export default function ProductPageComponent() {
         <aside className='product_con_left'></aside>
         <aside className='product_con_right'>
           <div className="product_price_con">
-            <h3>{products.name}</h3>
-            <p>${products.price}</p>
+            <h3>{products?.name}</h3>
+            <p>${products?.price}</p>
           </div>
           <section className="product_desc">
             These are concentrated forms of herbs meant to provide specific health benefits. For example, Ashwagandha capsules can help reduce stress, while Turmeric supplements may offer anti-inflammatory benefits.
@@ -152,13 +152,13 @@ export default function ProductPageComponent() {
                     <Card
                       hoverable
                       className='cardCon'
-                      cover={<img src={card.product_image.url} alt={card.name} loading="lazy" />}
+                      cover={<img src={card?.product_image.url} alt={card?.name} loading="lazy" />}
                     >
                       <div className="cardItemInfo">
                         <article>
                           <h4>
-                            <span>{card.name}</span> <br />
-                            <span>{card.price}</span>
+                            <span>{card?.name}</span> <br />
+                            <span>{card?.price}</span>
                           </h4>
                         </article>
                         <div className="add-to-cart" onClick={handleAddToCart}>
