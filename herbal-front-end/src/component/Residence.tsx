@@ -45,7 +45,7 @@ export type Product = {
 const Residence = React.memo(({ message }) => {
 
   const SliderButtons = () => {
-
+    console.log(message.popular)
     const swiper = useSwiper(); 
         return (
             <div className={message.popular == true ? 'r-button' : 'r-buttons'}>
