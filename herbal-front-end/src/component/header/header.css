@@ -70,6 +70,10 @@
     align-items: center;
   }
   #add_c{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #1f0404;
   }
   @media (max-width: 900px) {
