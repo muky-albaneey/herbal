@@ -27,10 +27,10 @@ export default function CheckoutName() {
       };
   return (
     <div className='checkoutCon'>
-         <header className='checkoutHead'>
+         {/* <header className='checkoutHead'>
             <h1>Your Order</h1>
             <h1>Product Details</h1>
-        </header>
+        </header> */}
         <section className="orderSec">
         {
             cart.map((items, index)=>(

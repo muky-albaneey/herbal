@@ -1,7 +1,7 @@
 .checkoutCon{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -14,7 +14,7 @@
     width: 48%;
     padding: 1rem;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: space-around;
     gap: 1rem;
 
