@@ -39,20 +39,21 @@ export type Product = {
   createdAt: string;  // ISO date string
 };
 
-   
-const SliderButtons = ({side}) => {
 
-const swiper = useSwiper(); 
-    return (
-        <div className={side == true ? 'r-button' : 'r-buttons'}>
-            <button onClick={() => swiper.slidePrev()} >&lt;</button>
-            <button onClick={() => swiper.slideNext()}>&gt;</button>
-        </div>
-    );
-};
+
 
 const Residence = React.memo(({ message }) => {
 
+  const SliderButtons = () => {
+
+    const swiper = useSwiper(); 
+        return (
+            <div className={message.popular == true ? 'r-button' : 'r-buttons'}>
+                <button onClick={() => swiper.slidePrev()} >&lt;</button>
+                <button onClick={() => swiper.slideNext()}>&gt;</button>
+            </div>
+        );
+    };
     const [products, setProducts] = React.useState<Product[]>([]);
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState<string | null>(null);
