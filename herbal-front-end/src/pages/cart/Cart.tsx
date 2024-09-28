@@ -40,7 +40,7 @@ export default function CartComponent() {
               <h2>{totalPrice}</h2> 
             </div>
           </section>
-          <NavLink to='checkout' className="cart_foo">
+          <NavLink to='/checkout' className="cart_foo">
             Checkout
           </NavLink>
         </div>
