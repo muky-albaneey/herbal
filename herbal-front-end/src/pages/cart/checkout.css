@@ -11,7 +11,7 @@
     justify-content: space-around;
 }
 .orderSec{
-    width: 45%;
+    width: 48%;
     padding: 1rem;
     display: flex;
     /* flex-direction: column; */
@@ -57,5 +57,5 @@
 }
 
 .productSec{
-    width: 50%;
+    width: 48%;
 }
