@@ -7,7 +7,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs"; 
 import { FiX } from "react-icons/fi"; 
 import { AiFillFacebook } from "react-icons/ai"; 
-
+import logo from '../../assets/logo.png';
 export default function FooterComponent() {
   return (
     <>
@@ -61,10 +61,34 @@ export default function FooterComponent() {
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" className="flex items-center">
-                  <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" />
+              <section className="flex items-center">
+                  <img src={logo} className="h-8 me-3" alt="FlowBite Logo" />
                   <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"> KENZY  NATURALS</span>
-              </a>
+                </section>
+                <div className="foo_items" style={{ textAlign:'left' }}>
+                    <h1>
+                    KENZY  NATURALS
+                    </h1>
+                    <div className="foo_icon">
+                        <ImLocation />
+                        <span>
+                            165 Main Street kenzy naturals
+                        </span>
+                    
+                    </div>
+                    <div className="foo_icon">
+                    <AiOutlineMail />
+                        <span>
+                            Info@kenzy natural
+                        </span>
+                    </div>
+                    <div className="foo_icon">
+                        <BsFillTelephoneFill />
+                        <span>
+                            +234 9075643219
+                        </span>
+                    </div>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
