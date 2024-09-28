@@ -15,19 +15,25 @@ export default function CheckoutName() {
         {
             cart.map((items, index)=>(
                 
-                    <div className="order_items">
-                        <img src={``} alt="" />
-                        <article className="order_info">
-                                <div className="order_top">
-                                    <span>{items.name}</span>
-                                    <span>{items.price}</span>
-                                </div>                
-                                <p>Supplements are usually taken daily, often as part of a health regimen.</p>
-                        </article>
-                    </div>
+            <div className="order_items">
+                <img src={items.img.startsWith('https://') ? `${items.img}` : `https://${items.img}`} alt={`${items.name}`} />
+                    <article className="order_info">
+                        <div className="order_top">
+                            <span>{items.name}</span>
+                            <span>{items.price}</span>
+                     </div>                
+                <p>Supplements are usually taken daily, often as part of a health regimen.</p>
+                </article>
+            </div>
                
             ))
         }
+        <section className="foo_checkout">
+            <div className="top_foo_checkout"></div>
+            <div className="foo_checkout_items"></div>
+            <div className="foo_checkout_items"></div>
+            <div className="foo_checkout_items"></div>
+        </section>
          </section>
         <section className="productSec"></section>
     </div>

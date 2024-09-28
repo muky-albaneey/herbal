@@ -66,6 +66,7 @@ export default function ProductPageComponent() {
         id: product.id,
         name: product.name,
         price: product.price,
+        img:product.product_image.url,
         quantity: quantity, // Pass the current quantity
       });
     }
