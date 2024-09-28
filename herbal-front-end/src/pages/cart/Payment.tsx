@@ -4,8 +4,10 @@ import './checkout.css';
 
 export default function PaymentName() {
     const cart = useCartStore((state) => state.cart)
+    const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
     const [formData, setFormData] = React.useState({
-        amount: '',
+        amount: totalPrice,
         currency: '',
       });
     
@@ -66,6 +68,7 @@ export default function PaymentName() {
           value={formData.amount}
           onChange={handleChange}
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+          readOnly
         />
       </div>
 

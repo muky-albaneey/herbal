@@ -100,7 +100,7 @@ const CartTable: React.FC = () => {
         pagination={false}
       />
       <div>
-        <h3>Total Price: Naira{totalPrice.toFixed(2)}</h3>
+        {/* <h3>Total Price: Naira{totalPrice.toFixed(2)}</h3> */}
       </div>
     </>
   );
