@@ -192,7 +192,13 @@ export default function ProductPageComponent() {
       {product && (
         <section className="product_top_con">
           <aside className='product_con_left'>
-            <img src={product.product_image.url} alt={product.name} loading="lazy" />
+            {/* <img src={product.product_image.url} alt={product.name} loading="lazy" /> */}
+            <img 
+                src={product.product_image.url.startsWith('https://') ? product.product_image.url : `https://${product.product_image.url}`} 
+                alt={product.id} 
+                loading="lazy" 
+              />
+
           </aside>
           <aside className='product_con_right'>
             <div className="product_price_con">
@@ -229,7 +235,15 @@ export default function ProductPageComponent() {
                     <Card
                       hoverable
                       className='cardCon'
-                      cover={<img src={relatedProduct.product_image.url} alt={relatedProduct.name} loading="lazy" />}
+                      cover={
+                      // <img src={relatedProduct.product_image.url} alt={relatedProduct.name} loading="lazy" />
+                                              <img 
+                          src={product.product_image.url.startsWith('https://') ? product.product_image.url : `https://${product.product_image.url}`} 
+                          alt={product.id} 
+                          loading="lazy" 
+                        />
+
+                    }
                     >
                       <div className="cardItemInfo">
                         <article>

@@ -100,7 +100,14 @@ const Residence = React.memo(({ message }) => {
                                     hoverable
                                     className='cardCon'
                                     cover={
-                                    <img  src={`https://${card.product_image.url}`} alt={card.id} loading="lazy" />}
+                                    // <img  src={`https://${card.product_image.url}`} alt={card.id} loading="lazy" />
+                                                                          <img 
+                                        src={card.product_image.url.startsWith('https://') ? card.product_image.url : `https://${card.product_image.url}`} 
+                                        alt={card.id} 
+                                        loading="lazy" 
+                                      />
+
+                                  }
                                 >
                                     <div className="cardItemInfo">
                                       <article>
