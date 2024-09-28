@@ -20,7 +20,7 @@ export default function CheckoutName() {
                     <article className="order_info">
                         <div className="order_top">
                             <span>{items.name}</span>
-                            <span>{items.price}</span>
+                            <span style={{ fontWeight:'bold' }}>{items.price}</span>
                      </div>                
                 <p>Supplements are usually taken daily, often as part of a health regimen.</p>
                 </article>
