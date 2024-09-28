@@ -171,8 +171,8 @@ function Header() {
                     <section className="left_header">
                       <NavLink to="/" className='home_btn' style={{ textDecoration: 'none' }}> {t('nav.home')}</NavLink>
                       <div className="nav_header_info">
-                        <NavLink to="/products">{t('nav.product')}</NavLink>
-                        <NavLink to="/contact" className={lang_token === 'fr' ? 'french_t' : ''}>{t('nav.contact_us')}</NavLink>
+                        <NavLink to="/products" style={{ textDecoration:'none', color:'green' }}>{t('nav.product')}</NavLink>
+                        {/* <NavLink to="/contact" className={lang_token === 'fr' ? 'french_t' : ''}>{t('nav.contact_us')}</NavLink> */}
                       </div>
                     </section>
                     <section className="center_header">
