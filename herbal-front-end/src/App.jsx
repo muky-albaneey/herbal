@@ -42,13 +42,13 @@ function App() {
                 return null
               }}
               element={<ProductPageComponent />} errorElement={<ErrorElement />} />
-              {/* <Route 
-                 path='admin' loader={async ()=>{
+              <Route 
+                 path='checkout' loader={async ()=>{
                 return null
               }}
-              element={<Example />} 
+              element={<CheckoutName />} 
             indexerrorElement={<ErrorElement />}
-             /> */}
+             />
                <Route 
                  path='products' loader={async ()=>{
                   return null
