@@ -198,7 +198,7 @@ function Header() {
                         type="button" 
                         className="btn btn-success position-relative flex items-center cart_btn"
                       >
-                        <ImCart /> Cart
+                        <div id='add_c'><ImCart /> Cart</div>
                         <span className="badge position-absolute top-0 start-100 translate-middle bg-secondary">
                           {totalItems > 99 ? '99+' : totalItems} {}
                           <span className="visually-hidden">items in cart</span>
