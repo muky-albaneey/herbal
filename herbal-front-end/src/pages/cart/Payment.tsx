@@ -102,11 +102,13 @@ import React, { useState } from 'react';
 import useCartStore from '../../utills/store/cart';
 import axios from 'axios'; // Import Axios for HTTP requests
 import './checkout.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function PaymentName() {
   const cart = useCartStore((state) => state.cart);
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-
+  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     amount: totalPrice,
     currency: '',
@@ -145,6 +147,7 @@ export default function PaymentName() {
 
       if (response.data.status === 'success') {
         setSuccess('Payment initialized successfully!');
+        navigate(response.data.authorization_url)
         // Handle payment redirection or next steps based on Paystack response
       } else {
         setError('Error initializing payment.');
