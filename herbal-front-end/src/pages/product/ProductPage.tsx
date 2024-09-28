@@ -42,6 +42,7 @@ export default function ProductPageComponent() {
           if (productResponse.data) {
             setProducts(productResponse.data);
             console.log(productResponse.data);
+            console.log(products.name);
           }
     
           if (categoryResponse.data) {
