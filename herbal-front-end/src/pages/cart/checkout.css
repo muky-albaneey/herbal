@@ -60,4 +60,9 @@
 
 .productSec{
     width: 48%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
 }

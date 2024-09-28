@@ -1,9 +1,11 @@
 import React from 'react';
 import useCartStore from '../../utills/store/cart';
 import './checkout.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function CheckoutName() {
     const cart = useCartStore((state) => state.cart)
+    const navigate = useNavigate();
     const [formData, setFormData] = React.useState({
         firstName: '',
         lastName: '',
@@ -24,6 +26,7 @@ export default function CheckoutName() {
       const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form Data:', formData);
+        navigate('pay'); 
       };
   return (
     <div className='checkoutCon'>
@@ -32,6 +35,7 @@ export default function CheckoutName() {
             <h1>Product Details</h1>
         </header> */}
         <section className="orderSec">
+        <h1>Your Order</h1>
         {
             cart.map((items, index)=>(
                 
@@ -58,7 +62,7 @@ export default function CheckoutName() {
         </section>
          </section>
         <section className="productSec">
- 
+        <h1>Product Details</h1>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">First Name</label>
@@ -148,7 +152,7 @@ export default function CheckoutName() {
         type="submit"
         className="w-full py-2 px-4 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
       >
-        Submit
+        Make Payment
       </button>
     </form>
 
