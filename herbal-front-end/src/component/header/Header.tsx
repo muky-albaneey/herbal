@@ -18,8 +18,9 @@ function Header() {
   const { t } = useTranslation();
   const { setToken, lang_token } = useAuthStore();
   const { i18n } = useTranslation();
-
+  
   const isAuthenticated = useAuthStoreUser((state) => state.isAuthenticated);
+  const user = useAuthStoreUser((state) => state.user);
   const navigate = useNavigate();
 
   // React.useEffect(() => {
@@ -124,7 +125,7 @@ function Header() {
 
                         <Dropdown className="profile-dropdown" style={{ background: 'green' }}>
                           <Dropdown.Toggle id="dropdown-basic" style={{ background: 'green', borderColor: 'green' }}>
-                            <FaUserCircle className="user-icon" /> user
+                            <FaUserCircle className="user-icon" /> {user !== null ? user.email : 'user'}
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Profile</Dropdown.Item>}
