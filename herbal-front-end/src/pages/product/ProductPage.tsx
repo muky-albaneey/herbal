@@ -122,6 +122,37 @@ export default function ProductPageComponent() {
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
 
+  // useEffect(() => {
+  //   // Fetch product data
+  //   const fetchProduct = async () => {
+  //     try {
+  //       const response = await fetch(`https://backend-herbal.onrender.com/products/${id}`);
+  //       const data = await response.json();
+  //       setProduct(data);
+  //     } catch (error) {
+  //       console.error('Error fetching product:', error);
+  //     }
+  //   };
+
+  //   // Fetch related products
+  //   const fetchRelatedProducts = async () => {
+  //     try {
+  //       const response = await fetch(`https://backend-herbal.onrender.com/products/category/${product?.category}`);
+  //       const data = await response.json();
+  //       setRelatedProducts(data);
+  //     } catch (error) {
+  //       console.error('Error fetching related products:', error);
+  //     }
+  //   };
+
+  //   fetchProduct();
+  // }, [id]);
+
+  // useEffect(() => {
+  //   if (product) {
+  //     fetchRelatedProducts();
+  //   }
+  // }, [product]);
   useEffect(() => {
     // Fetch product data
     const fetchProduct = async () => {
@@ -133,27 +164,28 @@ export default function ProductPageComponent() {
         console.error('Error fetching product:', error);
       }
     };
-
-    // Fetch related products
-    const fetchRelatedProducts = async () => {
-      try {
-        const response = await fetch(`https://backend-herbal.onrender.com/products/category/${product?.category}`);
-        const data = await response.json();
-        setRelatedProducts(data);
-      } catch (error) {
-        console.error('Error fetching related products:', error);
-      }
-    };
-
+  
     fetchProduct();
   }, [id]);
-
+  
+  // Move fetchRelatedProducts outside of the first useEffect
+  const fetchRelatedProducts = async () => {
+    try {
+      const response = await fetch(`https://backend-herbal.onrender.com/products/category/${product?.category}`);
+      const data = await response.json();
+      setRelatedProducts(data);
+    } catch (error) {
+      console.error('Error fetching related products:', error);
+    }
+  };
+  
+  // Now you can call fetchRelatedProducts in the second useEffect
   useEffect(() => {
     if (product) {
       fetchRelatedProducts();
     }
   }, [product]);
-
+  
   return (
     <div className='product_wrapper'>
       <h1>Product Details</h1>
