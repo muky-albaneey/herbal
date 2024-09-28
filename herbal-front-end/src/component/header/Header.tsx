@@ -124,7 +124,7 @@ function Header() {
 
                         <Dropdown className="profile-dropdown" style={{ background: 'green' }}>
                           <Dropdown.Toggle id="dropdown-basic" style={{ background: 'green', borderColor: 'green' }}>
-                            <FaUserCircle className="user-icon" /> Profile
+                            <FaUserCircle className="user-icon" /> user
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Profile</Dropdown.Item>}
