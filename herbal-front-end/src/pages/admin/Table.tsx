@@ -39,6 +39,19 @@ const AdminDashboard = () => {
       fetchDashboardData();
     }, []);
 
+    // Handle product deletion
+    const handleDeleteProduct = async (productId) => {
+      try {
+        // Send DELETE request to remove the product
+        await axios.delete(`https://backend-herbal.onrender.com/products/${productId}`);
+        
+        // Update the state to remove the deleted product from the UI
+        setProducts(products.filter(product => product.id !== productId));
+      } catch (err) {
+        setError('Error deleting product.');
+        console.error(err);
+      }
+    };
     if (loading) {
       return <div className="text-center mt-6">Loading dashboard data...</div>;
     }
@@ -118,7 +131,9 @@ const AdminDashboard = () => {
                   <Link to={`${product.id}/edit`} className="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-600">
                     Edit
                   </Link>
-                  <button className="bg-red-500 text-white px-3 py-1 ml-2 rounded-full hover:bg-red-600">
+                  <button 
+                   onClick={() => handleDeleteProduct(product.id)}
+                  className="bg-red-500 text-white px-3 py-1 ml-2 rounded-full hover:bg-red-600">
                     Delete
                   </button>
                 </td>

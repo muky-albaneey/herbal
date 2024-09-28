@@ -43,30 +43,6 @@ React.useEffect(() => {
 }, [id]);
 
   
-// React.useEffect(() => {
-   
-//   const fetchDashboardData = async () => {
-//     try {
-//       const [productResponse] = await Promise.all([
-//           axios.get(`https://backend-herbal.onrender.com/products/${id}`),
-//       ]);
-        
-//       setProducts(productResponse.data);
-//       console.log(productResponse.data);
-
-       
-
-//       } catch (err) {
-//         setErrorFetch('Error fetching data.');
-//         console.error(err);
-//       } finally {
-//         setLoadingFetch(false);
-//       }
-//     };
-
-//     fetchDashboardData();
-//   }, []);
-
   if (loadingFetch) {
     return <div className="text-center mt-6">Loading dashboard data...</div>;
   }
@@ -74,11 +50,6 @@ React.useEffect(() => {
   if (errorFetch) {
     return <div className="text-center text-red-600 mt-6">{errorFetch}</div>;
   }
-
-
-
-
-
 
 
 
