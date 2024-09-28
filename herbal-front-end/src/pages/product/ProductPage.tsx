@@ -106,6 +106,7 @@ import { Card } from 'antd';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { sliderSettings } from '../../utills/common';
 import './product.css';
+import useCartStore from '../../utills/store/cart';
 
 const SliderButtons = ({ side }) => {
   const swiper = useSwiper();
@@ -186,6 +187,31 @@ export default function ProductPageComponent() {
     }
   }, [product]);
   
+  // Zustand store actions
+  const addItemToCart = useCartStore((state) => state.addToCart);
+  const cart = useCartStore((state) => state.cart);
+
+  // Local state for quantity
+  const [quantity, setQuantity] = useState(0);
+
+  // Handle adding product to cart
+  const handleAddToCart = () => {
+    if (product) {
+      addItemToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        quantity: product.quantity,
+      });
+    }
+  };
+
+  const totalPrice = cart.reduce((total, item) => {
+    const itemTotal = item.price * (item.quantity || 0);
+    return total + itemTotal;
+  }, 0);
+
+
   return (
     <div className='product_wrapper'>
       <h1>Product Details</h1>
@@ -214,9 +240,9 @@ export default function ProductPageComponent() {
               <button>-</button>
             </div>
             <div className="product_add_cart">
-              <NavLink to="fan" className='product_cart_btn' style={{ textDecoration: 'none', display: 'flex' }}>
+              <button  className='product_cart_btn' style={{ textDecoration: 'none', display: 'flex' }} onClick={handleAddToCart}>
                 <ImCart /> Cart Added
-              </NavLink>
+              </button>
               <NavLink to="fan" className='product_cart_btn_2' style={{ textDecoration: 'none', display: 'flex' }}>
                 <ImCart /> Buy now
               </NavLink>
