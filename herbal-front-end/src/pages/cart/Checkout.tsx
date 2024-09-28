@@ -3,6 +3,7 @@ import useCartStore from '../../utills/store/cart';
 
 export default function CheckoutName() {
     const cart = useCartStore((state) => state.cart)
+    
   return (
     <div className='checkoutCon'>
         <header>
@@ -23,6 +24,7 @@ export default function CheckoutName() {
                                 <p>Supplements are usually taken daily, often as part of a health regimen.</p>
                         </article>
                     </div>
+               
             ))
         }
          </section>

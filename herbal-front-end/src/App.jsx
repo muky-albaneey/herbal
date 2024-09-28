@@ -12,6 +12,7 @@ import ProductUpload from './pages/admin/Upload';
 import AdminDashboard from './pages/admin/Table';
 import AdminLayout from './pages/admin/AdminLayout';
 import ProductImageEdit from './pages/admin/Edit';
+import CheckoutName from './pages/cart/Checkout';
 
 
 
@@ -42,13 +43,13 @@ function App() {
                 return null
               }}
               element={<ProductPageComponent />} errorElement={<ErrorElement />} />
-              <Route 
-                 path='checkout' loader={async ()=>{
+              {/* <Route 
+                 path='admin' loader={async ()=>{
                 return null
               }}
-              element={<CheckoutName />} 
+              element={<Example />} 
             indexerrorElement={<ErrorElement />}
-             />
+             /> */}
                <Route 
                  path='products' loader={async ()=>{
                   return null
@@ -56,6 +57,15 @@ function App() {
               element={<ProductsComponent />} 
             indexerrorElement={<ErrorElement />}
              />
+             <Route 
+                 path='checkout' loader={async ()=>{
+                  return null
+              }}
+              element={<CheckoutName />} 
+            indexerrorElement={<ErrorElement />}
+             />
+
+
               <Route 
                  path='cart' loader={async ()=>{
                 return null 
