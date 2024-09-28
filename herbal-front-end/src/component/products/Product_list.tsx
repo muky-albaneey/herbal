@@ -63,38 +63,38 @@ const ListComponent_info = React.memo(({ category }) => {
                 let response;
 
                 // If category is provided and not null, fetch from category-specific API
-                if (category) {
-                    response = await axios.get(`https://backend-herbal.onrender.com/products/category/${category}`,
-                        {
+                // if (category) {
+                response = await axios.get(`https://backend-herbal.onrender.com/products/all`,
+                    {
                             withCredentials: true,
                             headers: {
                               'Cache-Control': 'no-cache',
                             },
-                          }
+                    }
                     );
-                } else {
-                    // Fetch all products if no category is provided
-                    response = await axios.get('https://backend-herbal.onrender.com/products/all',
-                        {
-                            withCredentials: true,
-                            headers: {
-                              'Cache-Control': 'no-cache',
-                            },
-                          }
-                    );
-                }
+                // } else {
+                //     // Fetch all products if no category is provided
+                //     response = await axios.get('https://backend-herbal.onrender.com/products/all',
+                //         {
+                //             withCredentials: true,
+                //             headers: {
+                //               'Cache-Control': 'no-cache',
+                //             },
+                //           }
+                //     );
+                // }
 
                 const data = response.data;
-
+                setProducts(response.data)
                 // Log data to verify the response
-                console.log('Fetched products:', data);
+                // console.log('Fetched products:', data);
 
-                if (Array.isArray(data)) {
-                    setProducts(data); // Set the fetched data to state
-                } else {
-                    console.error("Invalid data format:", data);
-                    setProducts([]); // If data is not an array, set an empty array
-                }
+                // if (Array.isArray(data)) {
+                //     setProducts(response.data); // Set the fetched data to state
+                // } else {
+                //     console.error("Invalid data format:", data);
+                //     setProducts([]); // If data is not an array, set an empty array
+                // }
             } catch (error) {
                 console.error("Error fetching the products:", error);
             }
