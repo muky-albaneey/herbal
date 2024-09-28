@@ -23,11 +23,12 @@ export default function PaymentName() {
     
   return (
     <div className='checkoutCon'>
-         <header className='checkoutHead'>
+         {/* <header className='checkoutHead'>
             <h1>Your Order</h1>
             <h1>Product Details</h1>
-        </header>
+        </header> */}
         <section className="orderSec">
+        <h1>Your Order</h1>
         {
             cart.map((items, index)=>(
                 
@@ -54,6 +55,7 @@ export default function PaymentName() {
         </section>
          </section>
         <section className="productSec">
+        <h1>Product Details</h1>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">Amount</label>
