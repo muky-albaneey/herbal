@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-
+import 'user.css'
 export default function Users() {
   const active = {
-    width:'95%',
+    // width:'14rem',
     backgroundColor: '#008103',
     color: '#fff',
     // textDecoration: 'underline',
-    fontWeight: 'bold',
-    padding: '.7rem'
+    // fontWeight: 'bold',
+    // padding: '.5rem',
   };
 
   return (
@@ -19,10 +19,10 @@ export default function Users() {
       </div>
       <div className="users_content">
       <section className="users_left">
-        <div id="users_con">
+        <div className="users_con">
           {/* NavLink for 'Fixtures' pointing to the index route */}
         <NavLink 
-          style={({ isActive }) => (isActive ? active : { color: '#008103',width:'95%',padding: '.7rem',background: 'whitesmoke',fontWeight: 'bold' })} 
+          style={({ isActive }) => (isActive ? active : { color: '#008103' })} 
           className='user_link' 
           to='.' 
           end

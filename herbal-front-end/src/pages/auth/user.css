@@ -6,13 +6,6 @@
     align-items: center;
     flex-direction: column;
 }
-.users_content{
-    width: 95%;
-    display: flex;
-    justify-content: space-around;
-   
-    /* flex-direction: column; */
-}
 .users_left{
     width: 26%;
 }
@@ -20,8 +13,17 @@
     width: 60%;
 }
 
+.users_content{
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    border: 1.7rem solid gainsboro;
+    border-radius: .4rem;
+    /* flex-direction: column; */
+}
 
-#users_con{
+
+.users_con{
     width: 95%;
     display: flex;
     flex-direction: column;
@@ -29,6 +31,13 @@
     align-items: center;
     gap: 0.6rem;
     background-color: whitesmoke;
-    border: .9rem solid gainsboro;
+    border: 1.7rem solid gainsboro;
     border-radius: .4rem;
+}
+
+.user_link{
+    width: 95%;
+    padding: .7rem;
+    background: whitesmoke;
+    font-weight: bold;
 }
