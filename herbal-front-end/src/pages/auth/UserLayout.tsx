@@ -14,8 +14,8 @@ export default function Users() {
       try {
         // const decoded = jwt.decode(token); // Decode the token
         let jwt = decode(token);
-        console.log('Decoded JWT:', jwt.payload);
-        return jwt.payload;
+        console.log('Decoded role:', jwt.payload);
+        return jwt.payload.role;
       } catch (error) {
         console.error('Failed to decode JWT:', error);
         return null;
@@ -62,7 +62,7 @@ export default function Users() {
         >
           Change password
         </NavLink>
-        {decodedToken && (
+        {decodedToken == 'admin' && (
               <NavLink 
               className='user_link' 
               to='/admin'
