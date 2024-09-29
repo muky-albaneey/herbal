@@ -15,6 +15,10 @@ import ProductImageEdit from './pages/admin/Edit';
 import CheckoutName from './pages/cart/Checkout';
 import PaymentName from './pages/cart/Payment';
 import PaymentSuccess from './pages/cart/Verify';
+import ChangePasswordComponent from './pages/auth/Profile';
+import LoignForm from './pages/auth/login';
+import SignUpForm from './pages/auth/Sign';
+import SettingsForm from './pages/auth/Settings';
 
 
 
@@ -59,6 +63,7 @@ function App() {
               element={<ProductsComponent />} 
             indexerrorElement={<ErrorElement />}
              />
+             
              <Route 
                  path='checkout' loader={async ()=>{
                   return null
@@ -83,6 +88,44 @@ function App() {
               element={<CartComponent />} 
             indexerrorElement={<ErrorElement />}
              />
+              <Route 
+                 path='user' loader={async ()=>{
+                  return null
+              }}
+              element={<Users />} 
+            indexerrorElement={<ErrorElement />}
+             >
+               <Route
+                index
+                loader={async () => {
+                  return null;
+                }}
+                errorElement={<ErrorElement />}
+                element={<ChangePasswordComponent />}
+              />
+
+              <Route
+              path='login'
+              errorElement={<ErrorElement />}
+              element={<LoignForm />}
+            />
+            <Route
+              path='register'
+              errorElement={<ErrorElement />}
+              element={<SignUpForm />}
+            />
+            <Route
+              path='profile'
+              errorElement={<ErrorElement />}
+              element={<ChangePasswordComponent />}
+            />
+            <Route
+              path='settings'
+              errorElement={<ErrorElement />}
+              element={<SettingsForm />}
+            />
+            
+             </Route>
              
               <Route
               path='admin'

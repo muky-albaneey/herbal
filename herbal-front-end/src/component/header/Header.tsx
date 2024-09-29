@@ -14,6 +14,9 @@ import useCartStore from '../../utills/store/cart';
 import { FaUserCircle } from "react-icons/fa"; // Added User Icon
 import { useAuthStoreUser } from '../../utills/store/auth';
 
+
+
+
 function Header() {
   const { t } = useTranslation();
   const { setToken, lang_token } = useAuthStore();
@@ -132,8 +135,9 @@ function Header() {
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Settings</Dropdown.Item>}
                             <Dropdown.Divider />
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Logout</Dropdown.Item>}
-                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Register</Dropdown.Item>}
-                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Login</Dropdown.Item>}
+                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/user/register">Register</Dropdown.Item>}
+                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/user/login">Login</Dropdown.Item>}
+                            
                           </Dropdown.Menu>
                         </Dropdown>
                         
