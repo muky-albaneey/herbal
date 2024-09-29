@@ -263,7 +263,7 @@
   .cardItemInfo{
       position: relative;
       z-index: 99;
-      top: 5px;
+      top: -5px;
   }
   @keyframes marquee {
     0% {
@@ -312,7 +312,7 @@
     .cardItemInfo{
       position: relative;
       z-index: 99;
-      top: 5px;
+      top: -5px;
   }
   }
   
