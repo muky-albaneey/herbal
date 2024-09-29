@@ -1,4 +1,4 @@
-
+/* 
 .home_footer{
     width: 100%;
     height: 14rem;
@@ -67,4 +67,36 @@
         font-size: 1rem;
     }
     
+} */
+
+footer {
+    background-color: #1f2937; /* Dark Gray */
+}
+
+.container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 1rem; /* Side padding */
+}
+
+h2, h3 {
+    color: #f9fafb; /* Light Gray for headers */
+}
+
+hr {
+    border: 1px solid #4b5563; /* Darker Gray for dividers */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: #e5e7eb; /* Light Gray for links */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #34d399; /* Green on hover */
 }

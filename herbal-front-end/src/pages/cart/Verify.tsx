@@ -30,7 +30,7 @@ const PaymentSuccess = () => {
       } catch (error) {
         console.error('Payment verification failed:', error);
         setPaymentStatus(null); // Set to null or handle error display
-        console.log(paymentStatus)
+        console.log(paymentStatus.data)
       }
     };
   
