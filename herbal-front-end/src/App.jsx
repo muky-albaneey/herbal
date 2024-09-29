@@ -54,14 +54,14 @@ function App() {
                 return null
               }}
               element={<PaymentSuccess />} 
-            indexerrorElement={<ErrorElement />}
+            errorElement={<ErrorElement />}
              />
                <Route 
                  path='products' loader={async ()=>{
                   return null
               }}
               element={<ProductsComponent />} 
-            indexerrorElement={<ErrorElement />}
+            errorElement={<ErrorElement />}
              />
              
              <Route 
@@ -69,7 +69,7 @@ function App() {
                   return null
               }}
               element={<CheckoutName />} 
-            indexerrorElement={<ErrorElement />}
+            errorElement={<ErrorElement />}
              />
 
 
@@ -78,7 +78,7 @@ function App() {
                 return null 
               }}
               element={<PaymentName />} 
-            indexerrorElement={<ErrorElement />}
+            errorElement={<ErrorElement />}
              />
 
               <Route 
@@ -86,14 +86,14 @@ function App() {
                 return null 
               }}
               element={<CartComponent />} 
-            indexerrorElement={<ErrorElement />}
+            errorElement={<ErrorElement />}
              />
               <Route 
                  path='user' loader={async ()=>{
                   return null
               }}
               element={<Users />} 
-            indexerrorElement={<ErrorElement />}
+            errorElement={<ErrorElement />}
              >
                <Route
                 index
