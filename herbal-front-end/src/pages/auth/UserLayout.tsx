@@ -38,7 +38,7 @@ export default function Users() {
       <section className="users_left">
         {/* NavLink for 'Fixtures' pointing to the index route */}
         <NavLink 
-          style={({ isActive }) => (isActive ? active : { color: '#FFFFFF' })} 
+          style={({ isActive }) => (isActive ? active : { color: '#008103' })} 
           className='f_link' 
           to='.' 
           end
@@ -48,7 +48,7 @@ export default function Users() {
         
         {/* NavLink for 'Table' pointing to 'profile' sub-route */}
         <NavLink 
-          style={({ isActive }) => (isActive ? active : { color: '#FFFFFF' })} 
+          style={({ isActive }) => (isActive ? active : { color: '#008103' })} 
           className='t_link' 
           to='profile'
         >
