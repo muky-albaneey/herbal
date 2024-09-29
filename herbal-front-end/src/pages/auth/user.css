@@ -21,7 +21,7 @@
 }
 
 
-.users_con{
+#users_con{
     width: 95%;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,6 @@
     align-items: center;
     gap: 0.6rem;
     background-color: whitesmoke;
-    border: 1.7rem solid gainsboro;
+    border: .9rem solid gainsboro;
     border-radius: .4rem;
 }
