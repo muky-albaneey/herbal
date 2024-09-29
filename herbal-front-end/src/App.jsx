@@ -101,7 +101,7 @@ function App() {
                   return null;
                 }}
                 errorElement={<ErrorElement />}
-                element={<ChangePasswordComponent />}
+                element={<SettingsForm />}
               />
 
               <Route
@@ -118,11 +118,6 @@ function App() {
               path='profile'
               errorElement={<ErrorElement />}
               element={<ChangePasswordComponent />}
-            />
-            <Route
-              path='settings'
-              errorElement={<ErrorElement />}
-              element={<SettingsForm />}
             />
             
              </Route>
@@ -154,82 +149,7 @@ function App() {
             />
             </Route>
 
-            {/* <Route
-              index
-              errorElement={<ErrorElement />}
-              element={<Fixture />}
-            />
-          </Route>
-          <Route
-            path='contact'
-            errorElement={<ErrorElement />}
-            element={<Contact />}
-          />
-          <Route
-            path='kit'
-            errorElement={<ErrorElement />}
-            element={<Kit />}
-          />
-            <Route
-            path='customize'
-            errorElement={<ErrorElement />}
-            element={<Customize />}
-          /> */}
- 
-              
-          {/* </Route> */}
-          {/* <Route
-            errorElement={<ErrorElement />}
-            loader={async () => {
-              return null;
-            }}
-            element={<Home />}
-          />
-  
-          <Route
-            path='about'
-            errorElement={<ErrorElement />}
-            element={<About />}
-          />
-          <Route
-            path='fan'
-            errorElement={<ErrorElement />}
-            element={<Fan />}
-          />
-          <Route
-            path='blog'
-            errorElement={<ErrorElement />}
-            element={<Blogging />}
-          >
-            <Route
-              index
-              errorElement={<ErrorElement />}
-              element={<Fixture />}
-            />
-          </Route>
-          <Route
-            path='contact'
-            errorElement={<ErrorElement />}
-            element={<Contact />}
-          />
-          <Route
-            path='kit'
-            errorElement={<ErrorElement />}
-            element={<Kit />}
-          />
-            <Route
-            path='customize'
-            errorElement={<ErrorElement />}
-            element={<Customize />}
-          />
- 
-              
-          </Route>
-          <Route
-                path='payment'
-                errorElement={<ErrorElement />}
-                element={<Payment />}
-              /> */}
+           
         </Route>
   
         {/* Separate route for the login page without the layout */}
@@ -249,7 +169,6 @@ function App() {
   return (
     <>
     <RouterProvider router={router} />      
-     {/* <Home />       */}
    </>
   )
 }
