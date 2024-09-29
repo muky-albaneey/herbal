@@ -22,7 +22,7 @@ const PaymentSuccess = () => {
         );
        
         if (response.data.status === 'success') {
-          // console.log('Payment verification response:', response.data); // Log response
+          console.log('Payment verification response:', response.data); // Log response
           setPaymentStatus(response.data.data);
           console.log(paymentStatus);
         } else {
