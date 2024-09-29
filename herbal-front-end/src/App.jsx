@@ -16,10 +16,13 @@ import CheckoutName from './pages/cart/Checkout';
 import PaymentName from './pages/cart/Payment';
 import PaymentSuccess from './pages/cart/Verify';
 import ChangePasswordComponent from './pages/auth/Profile';
-import LoignForm from './pages/auth/login';
+// import LoignForm from './pages/auth/Login';
 import SignUpForm from './pages/auth/Sign';
 import SettingsForm from './pages/auth/Settings';
 import Users from './pages/auth/UserLayout';
+import LogInForm from './pages/auth/SignIn';
+// import LogInForm from './pages/auth/login';
+// import LogInForm from './pages/auth/Login';
 
 
 
@@ -108,7 +111,7 @@ function App() {
               <Route
               path='login'
               errorElement={<ErrorElement />}
-              element={<LoignForm />}
+              element={<LogInForm />}
             />
             <Route
               path='register'

@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStoreUser } from '../../utills/store/auth';
 
 
-const LoignForm = () => {
+const LogInForm = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -131,4 +131,4 @@ const LoignForm = () => {
   );
 };
 
-export default LoignForm;
+export default LogInForm;
