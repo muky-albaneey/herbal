@@ -161,18 +161,18 @@ const decodedToken = decodeToken(jwtToken);
                             <Dropdown.Divider />
                             {/* {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Logout</Dropdown.Item>} */}
                             {isAuthenticated && (
-                              <Dropdown.Item as="div">
-                                <NavLink
-                                  to="/"
-                                  className="btn btn-danger w-100 text-center" // Add button styles using Bootstrap classes or your own
-                                  onClick={handleLogout}
-                                  style={{ textDecoration: 'none' }} // Remove underline styling from NavLink
-                                >
-                                  Logout
-                                </NavLink>
-                              </Dropdown.Item>
-                            )}
-                                                {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/register">Register</Dropdown.Item>}
+                          <Dropdown.Item as="div">
+                            <NavLink
+                              to="/"
+                              className="btn btn-danger w-100 text-center" // Add button styles using Bootstrap classes or your own
+                              onClick={handleLogout}
+                              style={{ textDecoration: 'none' }} // Remove underline styling from NavLink
+                            >
+                              Logout
+                            </NavLink>
+                          </Dropdown.Item>
+                        )}
+                                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/register">Register</Dropdown.Item>}
                             {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/login">Login</Dropdown.Item>}
                             
                           </Dropdown.Menu>
