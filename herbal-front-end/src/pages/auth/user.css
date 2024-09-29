@@ -19,9 +19,11 @@
     justify-content: space-around;
     border: 1.7rem solid gainsboro;
     border-radius: .4rem;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
-
+.users_con{
+    width: 95%;
+}
 .user_link{
     width: 95%;
     padding: .7rem;
