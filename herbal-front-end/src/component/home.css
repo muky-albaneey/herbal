@@ -271,8 +271,9 @@ article{
     
     }
 
-    .about_con .about_con_right{
-        height: 50rem;
+    .about_con .about_con_right, .about_con .about_con_right{
+        height: 35rem;
+        overflow: hidden;
     }
     article{
         width: 100%;
