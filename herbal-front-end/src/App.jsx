@@ -88,7 +88,7 @@ function App() {
               element={<CartComponent />} 
             errorElement={<ErrorElement />}
              />
-              {/* <Route 
+              <Route 
                  path='user' loader={async ()=>{
                   return null
               }}
@@ -118,7 +118,7 @@ function App() {
               path='profile'
               errorElement={<ErrorElement />}
               element={<ChangePasswordComponent />}
-            /> */}
+            />
             
              </Route>
              
@@ -151,18 +151,6 @@ function App() {
 
            
         </Route>
-  
-        {/* Separate route for the login page without the layout */}
-        {/* <Route
-          path='login'
-          errorElement={<ErrorElement />}
-          element={<Login />}
-        />
-          <Route
-          path='sign'
-          errorElement={<ErrorElement />}
-          element={<Sign />}
-        /> */}
       </>
     )
   );
