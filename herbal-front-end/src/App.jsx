@@ -92,6 +92,16 @@ function App() {
               element={<CartComponent />} 
             errorElement={<ErrorElement />}
              />
+               <Route
+              path='login'
+              errorElement={<ErrorElement />}
+              element={<LogInForm />}
+            />
+            <Route
+              path='register'
+              errorElement={<ErrorElement />}
+              element={<SignUpForm />}
+            />
               <Route 
                  path='user' loader={async ()=>{
                   return null
@@ -108,16 +118,7 @@ function App() {
                 element={<SettingsForm />}
               />
 
-              <Route
-              path='login'
-              errorElement={<ErrorElement />}
-              element={<LogInForm />}
-            />
-            <Route
-              path='register'
-              errorElement={<ErrorElement />}
-              element={<SignUpForm />}
-            />
+            
             <Route
               path='profile'
               errorElement={<ErrorElement />}

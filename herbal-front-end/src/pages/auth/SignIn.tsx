@@ -115,7 +115,7 @@ const LogInForm = () => {
         <div className="mt-4 text-center">
           <p className="text-white">
             Don't have an account?{' '}
-            <Link to="/auth/signup" className="text-green-500 hover:underline">
+            <Link to="/register" className="text-green-500 hover:underline">
               Sign Up
             </Link>
           </p>
