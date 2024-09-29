@@ -99,7 +99,7 @@ const decodedToken = decodeToken(jwtToken);
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end" 
-              style={{ maxWidth: '90%', textDecoration: 'none' }}
+              style={{ maxWidth: '60%', textDecoration: 'none' }}
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}></Offcanvas.Title>
