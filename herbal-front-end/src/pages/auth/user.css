@@ -12,12 +12,14 @@
 .user_right{
     width: 60%;
 }
+
 .users_content{
     width: 95%;
     display: flex;
     justify-content: space-around;
-    border: .7rem solid gainsboro;
+    border: 1.7rem solid gainsboro;
     border-radius: .4rem;
+    flex-direction: column;
 }
 
 .user_link{
