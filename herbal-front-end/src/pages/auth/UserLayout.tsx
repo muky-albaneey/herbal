@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import 'user.css'
+import './user.css'
 export default function Users() {
   const active = {
     // width:'14rem',
