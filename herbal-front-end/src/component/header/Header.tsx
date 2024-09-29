@@ -135,8 +135,8 @@ function Header() {
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/user/settings">Settings</Dropdown.Item>}
                             <Dropdown.Divider />
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Logout</Dropdown.Item>}
-                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/user/register">Register</Dropdown.Item>}
-                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/user/login">Login</Dropdown.Item>}
+                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/register">Register</Dropdown.Item>}
+                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/login">Login</Dropdown.Item>}
                             
                           </Dropdown.Menu>
                         </Dropdown>
