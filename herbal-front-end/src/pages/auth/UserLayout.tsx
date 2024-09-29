@@ -22,7 +22,7 @@ export default function Users() {
         <div className="users_con">
           {/* NavLink for 'Fixtures' pointing to the index route */}
         <NavLink 
-          style={({ isActive }) => (isActive ? active : { color: '#008103' })} 
+          style={({ isActive }) => (isActive ? active : { color: '#008103',width:'95%',padding: '.7rem',background: 'whitesmoke',fontWeight: 'bold' })} 
           className='user_link' 
           to='.' 
           end
