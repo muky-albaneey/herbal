@@ -42,3 +42,9 @@
     font-weight: bold;
     text-decoration: none;
 }
+
+@media (max-width: 640px) {
+    .users_content{
+        flex-direction: column;
+    }
+}
