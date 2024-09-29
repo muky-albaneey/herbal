@@ -81,7 +81,28 @@ const Residence = React.memo(({ message }) => {
       fetchProducts();
     }, []);
   
-    if (loading) return <div>Loading products...</div>;
+    if (loading && message.side == "one") return (
+    <div>
+            <button className="btn btn-primary" type="button" disabled>
+        <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span className="visually-hidden" role="status">Loading...</span>
+      </button>
+      <button className="btn btn-primary" type="button" disabled>
+        <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span role="status">Loading...</span>
+      </button>
+      <button className="btn btn-primary" type="button" disabled>
+        <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span className="visually-hidden" role="status">Loading...</span>
+      </button>
+      <button className="btn btn-primary" type="button" disabled>
+        <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span role="status">Loading...</span>
+      </button>
+    </div>
+  );
+    if (loading && message.side == "two") return <div>Loading products...</div>;
+    if (loading && message.side == "three") return <div>Loading products...</div>;
     if (error) return <div>{error}</div>;
   
     // Check if there are no products available

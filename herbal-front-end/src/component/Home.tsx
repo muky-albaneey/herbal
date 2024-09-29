@@ -57,9 +57,9 @@ const testimony = [
             </aside>
         </section>
         <section className="products_con" style={{ width:'100rem' }}>
-            <Residence message={{ choice:'', popular:'' }}/>
-            <Residence message={{ choice:'', popular:true }}/>
-            <Residence message={{ choice:'', popular:'' }}/>
+            <Residence message={{ choice:'', popular:'' , side:'one'}}/>
+            <Residence message={{ choice:'', popular:true, side:'two'}}/>
+            <Residence message={{ choice:'', popular:'', side:'three'}}/>
         </section>
         <section className='countCon'>
             <div className="countContent">
