@@ -10,7 +10,9 @@
 body {
     overflow-x: hidden;
 }
-
+.r-card{
+    position: relative;
+}
 .wrapper{
     width: 100%;
     display: flex;
