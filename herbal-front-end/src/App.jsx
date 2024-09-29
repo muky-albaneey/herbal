@@ -19,6 +19,7 @@ import ChangePasswordComponent from './pages/auth/Profile';
 import LoignForm from './pages/auth/login';
 import SignUpForm from './pages/auth/Sign';
 import SettingsForm from './pages/auth/Settings';
+import Users from './pages/auth/UserLayout';
 
 
 
