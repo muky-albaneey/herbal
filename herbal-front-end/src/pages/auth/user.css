@@ -17,7 +17,7 @@
     width: 95%;
     display: flex;
     justify-content: space-around;
-    border: 1.7rem solid gainsboro;
+    border: .7rem solid #008103;
     border-radius: .4rem;
     /* flex-direction: column; */
 }
@@ -31,7 +31,7 @@
     align-items: center;
     gap: 0.6rem;
     background-color: whitesmoke;
-    border: 1.7rem solid gainsboro;
+    border: 1rem solid gainsboro;
     border-radius: .4rem;
 }
 
@@ -40,4 +40,5 @@
     padding: .7rem;
     background: whitesmoke;
     font-weight: bold;
+    text-decoration: none;
 }
