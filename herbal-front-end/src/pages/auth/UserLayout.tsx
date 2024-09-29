@@ -27,14 +27,20 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 export default function Users() {
   const active = {
+    // width:'10rem',
     backgroundColor: '#008103',
     color: '#fff',
     textDecoration: 'underline',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    padding: '1.5rem',
   };
 
   return (
     <div>
+      <div className="users_header">
+        <h5>Profile</h5>
+        <p>Edit and enable your profile setting </p>
+      </div>
       <section className="users_left">
         {/* NavLink for 'Fixtures' pointing to the index route */}
         <NavLink 

@@ -34,7 +34,7 @@ function Header() {
       // const decoded = jwt.decode(token); // Decode the token
       let jwt = decode(token);
       console.log('Decoded JWT:', jwt.payload);
-      return jwt;
+      return jwt.payload;
     } catch (error) {
       console.error('Failed to decode JWT:', error);
       return null;
