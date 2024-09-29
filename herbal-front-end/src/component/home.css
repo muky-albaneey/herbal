@@ -255,7 +255,7 @@ article{
         width: 100%;
         flex-direction: column-reverse;
         top: 0rem;
-        height: 35rem;
+        height: 75rem;
         background-color: white;
         color: black;
 
@@ -272,7 +272,7 @@ article{
     }
 
     .about_con .about_con_right, .about_con .about_con_right{
-        height: 35rem;
+        /* height: 35rem; */
         overflow: hidden;
     }
     article{
