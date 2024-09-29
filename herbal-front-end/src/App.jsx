@@ -88,7 +88,7 @@ function App() {
               element={<CartComponent />} 
             errorElement={<ErrorElement />}
              />
-              <Route 
+              {/* <Route 
                  path='user' loader={async ()=>{
                   return null
               }}
@@ -118,7 +118,7 @@ function App() {
               path='profile'
               errorElement={<ErrorElement />}
               element={<ChangePasswordComponent />}
-            />
+            /> */}
             
              </Route>
              
