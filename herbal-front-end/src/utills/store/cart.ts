@@ -75,7 +75,8 @@ interface CartStore {
 }
 
 const useCartStore = create<CartStore>((set, get) => ({
-  cart: [],
+  // cart: [],
+  cart: JSON.parse(localStorage.getItem('cart') || '[]'),
   addToCart: (item) =>
     set((state) => {
       const existingItemIndex = state.cart.findIndex((cartItem) => cartItem.id === item.id);
@@ -94,7 +95,8 @@ const useCartStore = create<CartStore>((set, get) => ({
       }
 
       const filteredCart = updatedCart.filter((cartItem) => cartItem.quantity > 0);
-      
+      // Save the updated cart to localStorage
+      localStorage.setItem('cart', JSON.stringify(filteredCart));
       return { cart: filteredCart };
     }),
 
