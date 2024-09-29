@@ -6,7 +6,9 @@ import { decode } from 'jwt-js-decode';
 
 
 export default function Users() {
-  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+
+  const roleToken = useAuthStoreUser((state) => state.roleToken);
+
   const decodeToken = (token) => {
     if (token) {
       try {
@@ -22,7 +24,7 @@ export default function Users() {
     return null;
   };
   
-  const decodedToken = decodeToken(jwtToken);
+  const decodedToken = decodeToken(roleToken);
     const navigate = useNavigate();
   const active = {
     // width:'14rem',
@@ -32,7 +34,7 @@ export default function Users() {
     // fontWeight: 'bold',
     // padding: '.5rem',
   };
-
+  
   return (
     <div className='users_wrapper'>
       <div className="users_header">
@@ -60,12 +62,14 @@ export default function Users() {
         >
           Change password
         </NavLink>
-        <NavLink 
-          className='user_link' 
-          to='/admin'
-        >
-          Admin dasboard
-        </NavLink>
+        {decodedToken && (
+              <NavLink 
+              className='user_link' 
+              to='/admin'
+            >
+              Admin dasboard
+            </NavLink>
+        )}
         </div>
       </section>
 
