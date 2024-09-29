@@ -33,7 +33,7 @@ function Header() {
     try {
       // const decoded = jwt.decode(token); // Decode the token
       let jwt = decode(token);
-      console.log('Decoded JWT:', jwt);
+      console.log('Decoded JWT:', jwt.payload);
       return jwt;
     } catch (error) {
       console.error('Failed to decode JWT:', error);
@@ -148,7 +148,7 @@ const decodedToken = decodeToken(jwtToken);
 
                         <Dropdown className="profile-dropdown" style={{ background: 'green' }}>
                           <Dropdown.Toggle id="dropdown-basic" style={{ background: 'green', borderColor: 'green' }}>
-                            <FaUserCircle className="user-icon" /> {user !== null ? user.email : 'user'}
+                            <FaUserCircle className="user-icon" /> {user !== null ? decodedToken?.email : 'user'}
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/user">Profile</Dropdown.Item>}
