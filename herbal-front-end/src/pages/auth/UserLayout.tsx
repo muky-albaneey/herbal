@@ -3,12 +3,12 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 export default function Users() {
   const active = {
-    // width:'14rem',
+    width:'95%',
     backgroundColor: '#008103',
     color: '#fff',
     // textDecoration: 'underline',
-    // fontWeight: 'bold',
-    // padding: '.5rem',
+    fontWeight: 'bold',
+    padding: '.7rem'
   };
 
   return (
