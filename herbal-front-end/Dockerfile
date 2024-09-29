@@ -1,33 +1,31 @@
-# # Use the official Node.js image as the build stage
-# FROM node:20.15.0 AS build
+# FROM node:20.15.0
 
-# # Set the working directory
+# # Set working directory
 # WORKDIR /app
 
-# # Copy package.json and package-lock.json
+# # Copy package.json and package-lock.json to the container
 # COPY package*.json ./
 
-# # Install production dependencies
-# RUN npm install --production
+# # Install dependencies, including Vite
+# RUN npm install
 
-# # Copy the rest of your application code
+# # Ensure Vite is installed globally (optional, but recommended)
+# RUN npm install -g vite
+
+# # Copy the rest of the application to the container
 # COPY . .
 
 # # Build the React app for production
 # RUN npm run build
 
 # # Use a lightweight web server to serve the app
-# FROM nginx:alpine
+# RUN npm install -g serve
 
-# # Copy the build files to the Nginx server
-# COPY --from=build /app/build /usr/share/nginx/html
+# # Expose port 3000 to be accessible to the outside world
+# EXPOSE 3000
 
-# # Expose port 80
-# EXPOSE 80
-
-# # Start Nginx server
-# CMD ["nginx", "-g", "daemon off;"]
-# Base image
+# # Serve the build directory
+# CMD ["serve", "-s", "dist", "-l", "3000"]
 FROM node:20.15.0
 
 # Set working directory
@@ -36,11 +34,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
-# Install dependencies, including Vite
+# Install dependencies
 RUN npm install
-
-# Ensure Vite is installed globally (optional, but recommended)
-RUN npm install -g vite
 
 # Copy the rest of the application to the container
 COPY . .
@@ -48,11 +43,11 @@ COPY . .
 # Build the React app for production
 RUN npm run build
 
-# Use a lightweight web server to serve the app
+# Install serve to serve the built app
 RUN npm install -g serve
 
-# Expose port 3000 to be accessible to the outside world
+# Expose the port, but let it be dynamically set via the ENV variable
 EXPOSE 3000
 
-# Serve the build directory
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# Serve the build directory and use the PORT environment variable
+CMD ["sh", "-c", "serve -s dist -l ${PORT}"]
