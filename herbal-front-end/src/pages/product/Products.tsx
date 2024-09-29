@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ListComponent_info from '../../component/products/Product_list';
 import SearchWithButtonExample from '../../component/Search';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,7 @@ import TableCom from '../../component/table/Table';
 
 
 export default function ProductsComponent() {
-  
+  const [categories, setCategories] = useState();
   const { t } = useTranslation();
   const category = 'new bitter';
   return (
@@ -26,6 +26,7 @@ export default function ProductsComponent() {
       <div className="tags">
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        {/* <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
@@ -64,8 +65,7 @@ export default function ProductsComponent() {
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
-        <NavLink to={`product-tag/`}>new  bitter</NavLink>
-        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+        <NavLink to={`product-tag/`}>new  bitter</NavLink> */}
         
       </div>
       
