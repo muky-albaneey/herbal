@@ -26,7 +26,12 @@ function Header() {
   const isAuthenticated = useAuthStoreUser((state) => state.isAuthenticated);
   const user = useAuthStoreUser((state) => state.user);
   const jwtToken = useAuthStoreUser((state) => state.jwtToken);
-
+  const logout = useAuthStoreUser((state) => state.logout);
+  const handleLogout = () => {
+    // Call the logout function when the button is clicked
+    logout();
+    // You can also add any redirect or additional logic here, e.g., navigate to login page
+  };
   // Function to decode the JWT token
  const decodeToken = (token) => {
   if (token) {
@@ -154,8 +159,20 @@ const decodedToken = decodeToken(jwtToken);
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/user">Profile</Dropdown.Item>}
                             {/* {isAuthenticated &&<Dropdown.Item as={NavLink} to="/user/settings">Settings</Dropdown.Item>} */}
                             <Dropdown.Divider />
-                            {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Logout</Dropdown.Item>}
-                            {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/register">Register</Dropdown.Item>}
+                            {/* {isAuthenticated &&<Dropdown.Item as={NavLink} to="/logout">Logout</Dropdown.Item>} */}
+                            {isAuthenticated && (
+                              <Dropdown.Item as="div">
+                                <NavLink
+                                  to="/"
+                                  className="btn btn-danger w-100 text-center" // Add button styles using Bootstrap classes or your own
+                                  onClick={handleLogout}
+                                  style={{ textDecoration: 'none' }} // Remove underline styling from NavLink
+                                >
+                                  Logout
+                                </NavLink>
+                              </Dropdown.Item>
+                            )}
+                                                {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/register">Register</Dropdown.Item>}
                             {!isAuthenticated &&<Dropdown.Item as={NavLink} to="/login">Login</Dropdown.Item>}
                             
                           </Dropdown.Menu>
