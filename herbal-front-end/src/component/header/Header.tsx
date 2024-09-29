@@ -13,7 +13,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import useCartStore from '../../utills/store/cart';
 import { FaUserCircle } from "react-icons/fa"; // Added User Icon
 import { useAuthStoreUser } from '../../utills/store/auth';
-
+// import jwt from 'jsonwebtoken';
+import { decode } from 'jwt-js-decode';
 
 
 
@@ -24,6 +25,25 @@ function Header() {
   
   const isAuthenticated = useAuthStoreUser((state) => state.isAuthenticated);
   const user = useAuthStoreUser((state) => state.user);
+  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+
+  // Function to decode the JWT token
+ const decodeToken = (token) => {
+  if (token) {
+    try {
+      // const decoded = jwt.decode(token); // Decode the token
+      let jwt = decode(token);
+      console.log('Decoded JWT:', jwt);
+      return jwt;
+    } catch (error) {
+      console.error('Failed to decode JWT:', error);
+      return null;
+    }
+  }
+  return null;
+};
+
+const decodedToken = decodeToken(jwtToken);
   const navigate = useNavigate();
 
   // React.useEffect(() => {
