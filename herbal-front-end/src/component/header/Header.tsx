@@ -68,7 +68,8 @@ const decodedToken = decodeToken(jwtToken);
   return (
     <div style={{ width: '100%', background: 'white' }}>
       {['md'].map((expand) => (
-        <Navbar key={expand}  sticky='top' expand={expand} style={{ backgroundColor: 'white' }} className="bg-body-tertiary mb-3">
+        // <Navbar key={expand} expand={expand} style={{ backgroundColor: 'white' }} className="bg-body-tertiary mb-3">
+        <Navbar key={expand} expand={expand} style={{ backgroundColor: 'white' }} className="bg-body-tertiary mb-3 sticky-header">
           <Container fluid className="mx-auto justify-content-center">
             <Navbar.Brand><NavLink to='/'><img src={logo} alt="" className='logo'/></NavLink></Navbar.Brand>
             <NavLink to="cart" className='cart_header_btn mobile_cart' style={{ textDecoration: 'none'}}>
