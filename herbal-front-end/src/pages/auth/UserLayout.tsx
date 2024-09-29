@@ -1,7 +1,29 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import './user.css'
+import { useAuthStoreUser } from '../../utills/store/auth';
+import { decode } from 'jwt-js-decode';
+
+
 export default function Users() {
+  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+  const decodeToken = (token) => {
+    if (token) {
+      try {
+        // const decoded = jwt.decode(token); // Decode the token
+        let jwt = decode(token);
+        console.log('Decoded JWT:', jwt.payload);
+        return jwt.payload;
+      } catch (error) {
+        console.error('Failed to decode JWT:', error);
+        return null;
+      }
+    }
+    return null;
+  };
+  
+  const decodedToken = decodeToken(jwtToken);
+    const navigate = useNavigate();
   const active = {
     // width:'14rem',
     backgroundColor: '#008103',
