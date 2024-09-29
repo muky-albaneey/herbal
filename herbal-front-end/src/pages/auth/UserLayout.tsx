@@ -38,6 +38,12 @@ export default function Users() {
         >
           Change password
         </NavLink>
+        <NavLink 
+          className='user_link' 
+          to='/admin'
+        >
+          Admin dasboard
+        </NavLink>
         </div>
       </section>
 
