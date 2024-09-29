@@ -327,7 +327,7 @@ const SignUpForm = () => {
           disabled={isSubmitting}
           className="py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg w-full"
         >
-          {isSubmitting ? 'Submitting...' : 'Submit'}
+          {isSubmitting ? 'LogIng...' : 'LogIn'}
         </button>
       </form>
 
