@@ -100,3 +100,26 @@ a {
 a:hover {
     color: #34d399; /* Green on hover */
 }
+
+.foo_items {
+    margin-top: 1rem;
+  }
+  
+  .foo_icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer {
+    background-color: #f9f9f9;
+    padding: 2rem 0;
+  }
+  
+  .footer a {
+    color: #4a5568;
+  }
+  
+  .footer a:hover {
+    color: #2b6cb0;
+  }
+  
