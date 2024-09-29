@@ -24,13 +24,14 @@ const PaymentSuccess = () => {
         if (response.data.status === 'success') {
           console.log('Payment verification response:', response.data); // Log response
           setPaymentStatus(response.data.data);
+          console.log(paymentStatus.data);
         } else {
           setPaymentStatus(null); // Handle error
         }
       } catch (error) {
         console.error('Payment verification failed:', error);
         setPaymentStatus(null); // Set to null or handle error display
-        console.log(paymentStatus.data)
+        
       }
     };
   
