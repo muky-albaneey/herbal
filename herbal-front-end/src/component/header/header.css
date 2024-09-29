@@ -84,7 +84,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(103, 235, 103,.8);
+    /* background-color: rgba(103, 235, 103,.8); */
     gap: 0.6rem;
   }
   .mobile_cart{
@@ -223,7 +223,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(103, 235, 103, 0.8);
+    /* background-color: rgba(103, 235, 103, 0.8); */
     gap: 0.6rem;
   }
   

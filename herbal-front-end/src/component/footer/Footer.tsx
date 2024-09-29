@@ -1,3 +1,4 @@
+import { FaTiktok } from "react-icons/fa"; 
 import React from 'react';
 import './footer.css';
 import { BsFillTelephoneFill, BsWhatsapp, BsInstagram } from "react-icons/bs"; 
@@ -37,21 +38,21 @@ export default function FooterComponent() {
               <h2 className="mb-6 text-sm font-semibold uppercase">Resources</h2>
               <ul className="text-gray-200 font-medium">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">Flowbite</a>
+                  <a href="" className="hover:underline">Kenzy herbal</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div>
               <h2 className="mb-6 text-sm font-semibold uppercase">Follow us</h2>
               <ul className="text-gray-200 font-medium">
                 <li className="mb-4">
-                  <a href="https://github.com/themesberg/flowbite" className="hover:underline">Github</a>
+                  <a href="https://www.tiktok.com/@kenzynaturals/" className="hover:underline">Tiktok</a>
                 </li>
                 <li>
-                  <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
+                  <a href="https://www.facebook.com/profile.php?id=61555739194210&mibextid=kFxxJD" className="hover:underline">Facebook</a>
                 </li>
               </ul>
             </div>
@@ -80,23 +81,27 @@ export default function FooterComponent() {
 
         <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-200 sm:text-center">© 2023 Kenzy Naturals. All Rights Reserved.</span>
+          <span className="text-sm text-gray-200 sm:text-center">© 2024 Kenzy Naturals. All Rights Reserved powered by nava tech.</span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
-            <a href="#" className="text-gray-200 hover:text-white">
+            <a href="https://www.facebook.com/profile.php?id=61555739194210&mibextid=kFxxJD" className="text-gray-200 hover:text-white">
               <AiFillFacebook className="w-5 h-5" />
               <span className="sr-only">Facebook page</span>
             </a>
-            <a href="#" className="text-gray-200 hover:text-white ms-5">
+            <a href="https://www.instagram.com/kenzynaturals/" className="text-gray-200 hover:text-white ms-5">
               <BsInstagram className="w-5 h-5" />
               <span className="sr-only">Instagram page</span>
             </a>
-            <a href="#" className="text-gray-200 hover:text-white ms-5">
-              <BsWhatsapp className="w-5 h-5" />
-              <span className="sr-only">WhatsApp</span>
+            <a href="https://www.tiktok.com/@kenzynaturals/" className="text-gray-200 hover:text-white ms-5">
+              {/* <BsWhatsapp className="w-5 h-5" /> */}
+              <FaTiktok className="w-5 h-5"/>
+              <span className="sr-only">Tiktok</span>
             </a>
+
           </div>
         </div>
       </div>
     </footer>
+
+
   );
 }
