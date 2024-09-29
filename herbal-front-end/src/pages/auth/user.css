@@ -44,7 +44,16 @@
 }
 
 @media (max-width: 640px) {
+    .users_left{
+        width: 95%;
+    }
+    .user_right{
+        width: 95%;
+    }
     .users_content{
         flex-direction: column;
+    }
+    .users_con{
+        border: .6rem solid gainsboro;
     }
 }
