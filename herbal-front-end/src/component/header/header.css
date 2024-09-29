@@ -136,4 +136,147 @@
       width: 4rem;
     }
   }
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for a better effect */
+  }
+  
+  .logo {
+    width: 30%;
+    height: 2.4rem;
+  }
+  
+  .header_nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header_nav section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left_header, .center_header, .right_header {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav_header_info {
+    display: flex;
+    gap: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .home_btn {
+    background-color: #008103;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .center_header form {
+    display: flex;
+    width: 100%;
+  }
+  
+  .search-btn {
+    margin-left: 0.5rem;
+  }
+  
+  .right_header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .profile-dropdown .dropdown-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .cart_header_btn {
+    display: flex;
+    padding: 0 2rem;
+    text-decoration: none;
+  }
+  
+  .cart_btn {
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #add_c {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(103, 235, 103, 0.8);
+    gap: 0.6rem;
+  }
+  
+  .mobile_cart {
+    display: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .header_nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .logo {
+      width: 50%;
+    }
+  
+    .home_btn, .nav_header_info, .cart_header_btn, .lang-dropdown, .profile-dropdown {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .center_header form {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .right_header {
+      flex-direction: column;
+    }
+  
+    .mobile_cart {
+      display: flex;
+      font-size: 0.3rem;
+      width: 4rem;
+    }
+  }
+  
+  @media (max-width: 340px) {
+    .header_nav {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .profile-dropdown {
+      width: 100%;
+    }
+  
+    .mobile_cart {
+      display: flex;
+      font-size: 0.3rem;
+      width: 4rem;
+    }
+  }
   
