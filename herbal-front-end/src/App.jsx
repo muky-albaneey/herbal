@@ -102,7 +102,7 @@ function App() {
               errorElement={<ErrorElement />}
               element={<SignUpForm />}
             />
-              <Route 
+              {/* <Route 
                  path='user' loader={async ()=>{
                   return null
               }}
@@ -125,7 +125,28 @@ function App() {
               element={<ChangePasswordComponent />}
             />
             
-             </Route>
+             </Route> */}
+             <Route 
+                      path='user' 
+                      element={<Users />} 
+                      errorElement={<ErrorElement />}
+                    >
+                      {/* Index route that will show by default when accessing '/user' */}
+                      <Route
+                        index
+                        loader={async () => {
+                          return null;
+                        }}
+                        element={<SettingsForm />} // This will display on the '/user' route by default
+                        errorElement={<ErrorElement />}
+                      />
+
+                      {/* Profile route, which will display when user clicks the 'Table' NavLink */}
+                      <Route
+                        path='profile'
+                        element={<ChangePasswordComponent />} // This will display on '/user/profile'
+                        errorElement={<ErrorElement />}
+                      />
              
               <Route
               path='admin'
