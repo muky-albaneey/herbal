@@ -107,7 +107,7 @@ const LogInForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-4 bg-primary text-white rounded-lg"
+            className="w-full py-4 bg-success text-white rounded-lg"
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
