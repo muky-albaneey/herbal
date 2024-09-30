@@ -60,13 +60,17 @@ export default function CheckoutName() {
       console.log('Form Data:', formData);
       console.log(decodedToken?.sub)
       try {
-        const response = await axios.post(`https://backend-herbal.onrender.com/user/63687312-b14e-400c-9afe-af49db794cc8/address
-`, formData,{
-            withCredentials: true, 
-            headers: {
-              'Content-Type': 'application/json',
-            },
-        });
+        const response = await axios.post(
+            'https://backend-herbal.onrender.com/user/63687312-b14e-400c-9afe-af49db794cc8/address', 
+            formData,
+            {
+              withCredentials: true, 
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+          
         console.log('Address submitted successfully:', response.data);
         // Handle success (e.g., show a success message)
       } catch (error) {
