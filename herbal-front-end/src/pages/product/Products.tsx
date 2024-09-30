@@ -129,13 +129,13 @@ export default function ProductsComponent() {
         <div className="tags space-y-4">
           <button
             onClick={() => handleCategoryChange('booster')}
-            className="bg-blue-500 text-white py-1 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
+            className="bg-blue-500 text-white py-1 px-1 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
           >
             Booster
           </button>
           <button
             onClick={() => handleCategoryChange('bitter')}
-            className="bg-green-500 text-white py-1 px-4 rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 transition-all"
+            className="bg-green-500 text-white py-1 px-1 rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 transition-all"
           >
             Bitter
           </button>
