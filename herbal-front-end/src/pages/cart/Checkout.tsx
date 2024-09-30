@@ -36,11 +36,11 @@ export default function CheckoutName() {
         firstName: '',
         lastName: '',
         phoneNumber: '',
-        emailAddress: '',
-        country: 'Nigeria',
         state: '',
+        country: 'Nigeria',
+        streetName: '',
+        email:'',
         city: '',
-        streetName: ''
     });
 
     const handleChange = (e) => {
@@ -153,9 +153,9 @@ export default function CheckoutName() {
                         <label className="block text-sm font-medium text-gray-700">Email Address</label>
                         <input
                             type="email"
-                            name="emailAddress"
+                            name="state"
                             placeholder="Enter your email address"
-                            value={formData.emailAddress}
+                            value={formData.state}
                             onChange={handleChange}
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                         />
@@ -179,8 +179,8 @@ export default function CheckoutName() {
                         <label className="block text-sm font-medium text-gray-700">State</label>
                         {formData.country === 'Nigeria' ? (
                             <select
-                                name="state"
-                                value={formData.state}
+                                name="streetName"
+                                value={formData.streetName}
                                 onChange={handleChange}
                                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                             >
@@ -192,9 +192,9 @@ export default function CheckoutName() {
                         ) : (
                             <input
                                 type="text"
-                                name="state"
+                                name="email"
                                 placeholder="Enter your state"
-                                value={formData.state}
+                                value={formData.email}
                                 onChange={handleChange}
                                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                             />
@@ -211,17 +211,7 @@ export default function CheckoutName() {
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label className="block text-sm font-medium text-gray-700">Street Name</label>
-                        <input
-                            type="text"
-                            name="streetName"
-                            placeholder="Enter your street name"
-                            value={formData.streetName}
-                            onChange={handleChange}
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                        />
-                    </div>
+                   
                     <button
                         type="submit"
                         className="w-full py-2 px-4 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
