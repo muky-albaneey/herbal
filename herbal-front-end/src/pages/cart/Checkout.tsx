@@ -3,9 +3,33 @@ import useCartStore from '../../utills/store/cart';
 import './checkout.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAuthStoreUser } from '../../utills/store/auth';
+import { decode } from 'jwt-js-decode';
+
 
 export default function CheckoutName() {
     const cart = useCartStore((state) => state.cart);
+
+    const user = useAuthStoreUser((state) => state.user);
+    const decodeToken = (token) => {
+        if (token) {
+          try {
+            // const decoded = jwt.decode(token); // Decode the token
+            let jwt = decode(token);
+            console.log('Decoded JWT:', jwt.payload);
+            return jwt.payload;
+          } catch (error) {
+            console.error('Failed to decode JWT:', error);
+            return null;
+          }
+        }
+        return null;
+      };
+      
+      
+      const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+      const decodedToken = decodeToken(jwtToken);
+
     const navigate = useNavigate();
 
     const [formData, setFormData] = React.useState({
@@ -34,8 +58,9 @@ export default function CheckoutName() {
       }
 
       console.log('Form Data:', formData);
+      console.log(decodedToken?.sub)
       try {
-        const response = await axios.post('https://backend-herbal.onrender.com/user/address', formData,{
+        const response = await axios.post(`https://backend-herbal.onrender.com/${decodedToken?.sub}/user/address`, formData,{
             withCredentials: true, 
             headers: {
               'Content-Type': 'application/json',
