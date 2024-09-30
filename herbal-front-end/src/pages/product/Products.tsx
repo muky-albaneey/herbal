@@ -127,6 +127,13 @@ export default function ProductsComponent() {
           Scroll towards bottom for more product tags
         </div>
         <div className="tags space-y-4">
+        <button
+            onClick={() => handleCategoryChange('booster')}
+            className="bg-blue-500 text-white py-1 px-1 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
+            style={{ width:'45rem' }}
+          >
+            Booster
+          </button>
           <button
             onClick={() => handleCategoryChange('booster')}
             className="bg-blue-500 text-white py-1 px-1 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
