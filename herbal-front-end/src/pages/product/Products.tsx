@@ -112,11 +112,10 @@ export default function ProductsComponent() {
     alert(category);
   };
 
-  const handleCategoryRemoval= (category: Category): void => { // Specify the type for category
-    setCategories(category);
-    alert(category);
+  const handleCategoryRemoval= (): void => { // Specify the type for category
+    setCategories(null);
   };
-  
+
   const category = categories;
   
   return (
