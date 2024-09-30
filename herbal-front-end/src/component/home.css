@@ -347,7 +347,6 @@ article{
       }
 
       .testimony {
-       
         padding: 2rem;
         text-align: center;
         background: #f9f9f9;
@@ -363,5 +362,7 @@ article{
 
 
   @media all and (max-width: 390px) {
-   
+        .products_con{
+            height: 300rem;
+        }
   }
