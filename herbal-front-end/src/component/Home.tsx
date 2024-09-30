@@ -116,7 +116,7 @@ const testimony = [
         </section>
         <section className="testimony">
     <h1>{t('customer_testimonial.heading')}</h1>
-    <Swiper {...sliderSettings}>
+    {/* <Swiper {...sliderSettings}>
         {testimony.map((item, i) => (
             <SwiperSlide key={i} className="swiper-slide">
                 <div className="testimony_items">
@@ -130,7 +130,7 @@ const testimony = [
                 </div>
             </SwiperSlide>
         ))}
-    </Swiper>
+    </Swiper> */}
 </section>
 
        
