@@ -73,13 +73,14 @@ const TestimonyComponent = React.memo(() => {
                                 <Card
                                     hoverable
                                     className='cardCon'
+                                    id='cardConImg'
                                     cover={
                                    
                                         <img 
                                         src={card} 
                                         alt={`Testimony ${i + 1}`}
                                         loading="lazy" 
-                                        id='cardConImg'
+                                        
                                       />
 
                                   }
