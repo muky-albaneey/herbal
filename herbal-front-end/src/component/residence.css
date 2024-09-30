@@ -27,7 +27,10 @@
     border-radius: 10px; /* Smooth border for images */
     overflow: hidden;
 }
-
+.cardConImg{
+        
+    height: 30rem;
+   }
 .cardItemInfo {
     width: 100%;
     display: flex;
@@ -125,10 +128,7 @@
     overflow: hidden;
 }
 
-.cardConImg{
-        
-    height: 100%;
-   }
+
 @media (max-width: 640px) {
     .r-container {
         justify-content: center;
@@ -165,7 +165,7 @@
     }
     .cardConImg{
         
-        height: 100%;
+        height: 30rem;
        }
  
 }
@@ -186,7 +186,7 @@
 
     .cardConImg{
         
-        height: 100%;
+        height: 30rem;
        }
 }
 
