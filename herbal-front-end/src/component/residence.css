@@ -1,4 +1,4 @@
-/* .r-wrapper {
+.r-wrapper {
     width: 100%;
 }
 
@@ -17,14 +17,14 @@
     max-width: 100%;
     margin: auto;
     transition: all 300ms ease-in;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-    background-color: white; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+    background-color: white; /* Clean background */
 }
 
 .cardCon {
     height: 32.5rem;
     width: 23rem;
-    border-radius: 10px; 
+    border-radius: 10px; /* Smooth border for images */
     overflow: hidden;
 }
 
@@ -48,13 +48,13 @@
 .cardItemInfo h4 {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 1.2rem; 
-    color: #333; 
+    font-size: 1.2rem; /* Make the product name prominent */
+    color: #333; /* Elegant dark text */
 }
 
 .cardItemInfo span {
     font-size: 1rem;
-    color: #888; 
+    color: #888; /* Softer color for secondary text */
 }
 
 .add-to-cart {
@@ -68,8 +68,8 @@
 }
 
 .add-to-cart:hover {
-    background-color: #ececec; 
-    transform: scale(1.05); 
+    background-color: #ececec; /* Subtle hover effect */
+    transform: scale(1.05); /* Slight scale on hover for interaction feedback */
 }
 
 .r-card:hover {
@@ -149,7 +149,7 @@
     }
 
     .r-buttons {
-       
+        /* top: -2rem; */
         right: 40rem;
     }
 
@@ -159,191 +159,5 @@
     }
 }
 
-@media (max-width: 640px) {
-    .cardItemInfo {
-        top: 0; 
-    }
-
-    .cardItemInfo h4 {
-        font-size: 1rem; 
-    }
-
-    .cardItemInfo span {
-        font-size: 0.9rem; 
-    }
-} */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.r-wrapper {
-    width: 100%;
-}
-
-.r-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    padding-top: 25px;
-}
-
-.r-card {
-    gap: 0.6rem;
-    padding: 1rem;
-    border-radius: 10px;
-    max-width: 100%;
-    margin: auto;
-    transition: all 300ms ease-in;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-}
-
-.cardCon {
-    height: 30.5rem;
-    width: 23rem;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.cardItemInfo {
-    width: 100%;
-    display: flex;
-    position: relative;
-    top: -2rem;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-}
-
-.cardItemInfo article {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
-.cardItemInfo h4 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.price {
-    font-size: 1rem;
-    color: #888;
-}
-
-.add-to-cart {
-    padding: 0.8rem;
-    background-color: #f8f8f8;
-    border-radius: 50%;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.add-to-cart:hover {
-    background-color: #ececec;
-    transform: scale(1.05);
-}
-
-.r-card:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-    background: linear-gradient(90deg, rgb(24, 77, 1) 0%, rgba(220, 237, 241, 1) 55%, rgb(109, 238, 10) 100%);
-}
-
-.r-buttons, .r-button {
-    position: absolute;
-    gap: 1rem;
-    top: 0.7rem;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.r-buttons {
-    right: 1rem;
-}
-
-.r-buttons button, .r-button button {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(37, 79, 5);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.r-button {
-    left: 1rem;
-    top: 1rem;
-}
-
-.r-buttons button:hover, .r-button button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Mobile adjustments */
-@media (max-width: 640px) {
-    .r-container {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .r-card {
-        padding: 0.5rem;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-
-    .cardCon {
-        height: 20rem;
-        width: 16rem;
-    }
-
-    .r-buttons button, .r-button button {
-        font-size: 1rem;
-        padding: 0.3rem 0.4rem;
-    }
-
-    .r-buttons {
-        right: 1rem;
-    }
-
-    .r-button {
-        top: 1rem;
-        left: 1rem;
-    }
-
-    .cardItemInfo {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .cardItemInfo h4 {
-        font-size: 1rem;
-    }
-
-    .price {
-        font-size: 0.9rem;
-    }
-}
