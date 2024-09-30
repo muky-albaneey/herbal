@@ -32,7 +32,7 @@
     width: 100%;
     display: flex;
     position: relative;
-    top: 2rem;
+    top: -2rem;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
@@ -139,7 +139,7 @@
     }
 
     .cardCon {
-        height: 24rem;
+        height: 20rem;
         width: 16rem;
     }
 
@@ -161,7 +161,7 @@
 
 @media (max-width: 640px) {
     .cardItemInfo {
-        top: -4rem; /* Remove the negative top positioning for mobile */
+        top: 0; /* Remove the negative top positioning for mobile */
     }
 
     .cardItemInfo h4 {
