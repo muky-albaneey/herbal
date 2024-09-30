@@ -161,7 +161,7 @@
 
 @media (max-width: 640px) {
     .cardItemInfo {
-        top: 0; /* Remove the negative top positioning for mobile */
+        top: -4rem; /* Remove the negative top positioning for mobile */
     }
 
     .cardItemInfo h4 {
