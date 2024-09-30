@@ -140,10 +140,11 @@
         margin: 0 auto;
     }
 
-    /* .cardCon {
-        height: 16rem;
+    .cardCon {
+        height: 37.5rem;
+      
         width: 20rem;
-    } */
+    }
 
     .r-buttons button, .r-button button {
         font-size: 1rem;
@@ -159,12 +160,7 @@
         top: 1rem;
         left: 40rem;
     }
-    .cardItemInfo {
-      
-        top: 0;
-        
-        padding: 0 .8rem;
-    }
+ 
 }
 
 
@@ -175,17 +171,13 @@
         margin: 0 auto;
     }
 
-    /* .cardCon {
-        height: 14rem;
+    .cardCon {
+        height: 37.5rem;
+   
         width: 20rem;
-    } */
-
-    .cardItemInfo {
-      
-        top: 0;
-        
-        padding: 0 .7rem;
     }
+
+   
 
 }
 
