@@ -362,7 +362,7 @@ article{
 
 
   @media all and (max-width: 390px) {
-        .products_con{
+        /* .products_con{
             height: 300rem;
-        }
+        } */
   }

@@ -158,3 +158,18 @@
         left: 40rem;
     }
 }
+
+@media (max-width: 640px) {
+    .cardItemInfo {
+        top: 0; /* Remove the negative top positioning for mobile */
+    }
+
+    .cardItemInfo h4 {
+        font-size: 1rem; /* Adjust the font size for better fit on smaller screens */
+    }
+
+    .cardItemInfo span {
+        font-size: 0.9rem; /* Slightly reduce the font size of secondary text */
+    }
+}
+
