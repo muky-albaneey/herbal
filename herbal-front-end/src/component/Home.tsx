@@ -117,7 +117,7 @@ const testimony = [
         </section>
         <section className="testimony">
     <h1>{t('customer_testimonial.heading')}</h1>
-    <TestimonyComponent message={{ popular:true}}/>
+    <TestimonyComponent/>
     {/* <Swiper {...sliderSettings}>
         {testimony.map((item, i) => (
             <SwiperSlide key={i} className="swiper-slide">

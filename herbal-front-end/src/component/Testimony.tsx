@@ -47,13 +47,13 @@ const products =[
   './testimony4.jpg'
 ]
 
-const TestimonyComponent = React.memo(({ message }) => {
+const TestimonyComponent = React.memo(() => {
 
   const SliderButtons = () => {
-    console.log(message.popular)
+    
     const swiper = useSwiper(); 
         return (
-            <div className={message.popular == true ? 'r-button' : 'r-buttons'}>
+            <div className='r-buttons'>
                 <button onClick={() => swiper.slidePrev()} >&lt;</button>
                 <button onClick={() => swiper.slideNext()}>&gt;</button>
             </div>
@@ -79,6 +79,7 @@ const TestimonyComponent = React.memo(({ message }) => {
                                         src={card} 
                                         alt={`Testimony ${i + 1}`}
                                         loading="lazy" 
+                                        id='cardConImg'
                                       />
 
                                   }

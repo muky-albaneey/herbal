@@ -125,7 +125,10 @@
     overflow: hidden;
 }
 
-
+.cardConImg{
+        
+    height: 100%;
+   }
 @media (max-width: 640px) {
     .r-container {
         justify-content: center;
@@ -160,6 +163,10 @@
         top: 1rem;
         left: 40rem;
     }
+    .cardConImg{
+        
+        height: 100%;
+       }
  
 }
 
@@ -177,7 +184,9 @@
         width: 20rem;
     }
 
-   
-
+    .cardConImg{
+        
+        height: 100%;
+       }
 }
 
