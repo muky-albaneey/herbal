@@ -7,9 +7,14 @@ import TableCom from '../../component/table/Table';
 
 
 export default function ProductsComponent() {
-  const [categories, setCategories] = useState();
+  const [categories, setCategories] = useState(null);
   const { t } = useTranslation();
-  const category = 'new bitter';
+
+  const handleCategoryChange = (category) => {
+    setCategories(category);
+  };
+
+  const category = categories;
   return (
     
     <div className='productListWrapper'>
@@ -23,9 +28,19 @@ export default function ProductsComponent() {
       <div className="marquee">
         Scroll towards bottom for more product tags
       </div>
-      <div className="tags">
-        <NavLink to={`product-tag/`}>new  bitter</NavLink>
-        <NavLink to={`product-tag/`}>new  bitter</NavLink>
+      <div className="tags space-y-4">
+          <button
+            onClick={() => handleCategoryChange('booster')}
+            className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
+          >
+            Booster
+          </button>
+          <button
+            onClick={() => handleCategoryChange('bitter')}
+            className="bg-green-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 transition-all"
+          >
+            Bitter
+          </button>
         {/* <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
         <NavLink to={`product-tag/`}>new  bitter</NavLink>
