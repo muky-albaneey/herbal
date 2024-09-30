@@ -22,8 +22,8 @@
 }
 
 .cardCon {
-    height: 32.5rem;
-    width: 23rem;
+    height: 19.5rem;
+    width: 23.5rem;
     border-radius: 10px; /* Smooth border for images */
     overflow: hidden;
 }
@@ -131,16 +131,18 @@
         justify-content: center;
         align-items: center;
     }
+ 
+    
 
     .r-card {
-        padding: 0.5rem;
+        padding: 0.3rem;
         max-width: 90%;
         margin: 0 auto;
     }
 
     .cardCon {
-        height: 20rem;
-        width: 16rem;
+        height: 16rem;
+        width: 20rem;
     }
 
     .r-buttons button, .r-button button {
@@ -157,7 +159,33 @@
         top: 1rem;
         left: 40rem;
     }
+    .cardItemInfo {
+      
+        top: 0;
+        
+        padding: 0 .8rem;
+    }
 }
 
 
+@media (max-width: 390px) {
+    .r-card {
+        padding: 0.2rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .cardCon {
+        height: 14rem;
+        width: 20rem;
+    }
+
+    .cardItemInfo {
+      
+        top: 0;
+        
+        padding: 0 .7rem;
+    }
+
+}
 
