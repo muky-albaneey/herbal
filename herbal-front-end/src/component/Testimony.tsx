@@ -90,7 +90,7 @@ const TestimonyComponent = React.memo(() => {
                            </Link>
                         </SwiperSlide>
                     ))}
-                    <SliderButtons side={message.popular}/> 
+                    <SliderButtons /> 
                 </Swiper>
             </div>
         </section>
