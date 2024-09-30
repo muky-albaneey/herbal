@@ -11,6 +11,7 @@ import AccodionComponent from './acordion/Accodion';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { sliderSettings } from "../utills/common";
 import { Trans, useTranslation } from 'react-i18next'
+import TestimonyComponent from "./Testimony";
 // import IMG_7863 from '../../public/IMG_7863.JPG';
 
 export default function HomeComponent() {
@@ -116,6 +117,7 @@ const testimony = [
         </section>
         <section className="testimony">
     <h1>{t('customer_testimonial.heading')}</h1>
+    <TestimonyComponent message={{ popular:true}}/>
     {/* <Swiper {...sliderSettings}>
         {testimony.map((item, i) => (
             <SwiperSlide key={i} className="swiper-slide">
