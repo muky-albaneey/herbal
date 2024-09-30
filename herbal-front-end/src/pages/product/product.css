@@ -369,5 +369,9 @@
     font-weight: bold;
     font-size: 1.6rem; /* Decrease font size for mobile */
 }
-  
+.product_add_cart button,
+.product_add_cart a {
+  width: 30rem;
+ 
+}
 }
