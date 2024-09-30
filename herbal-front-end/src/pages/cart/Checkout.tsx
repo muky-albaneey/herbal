@@ -52,10 +52,10 @@ export default function CheckoutName() {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      if (!formData.firstName || !formData.lastName || !formData.phoneNumber ||  !formData.streetName || !formData.email || !formData.city) {
-          alert('Please fill out all fields');
-          return;
-      }
+    //   if (!formData.firstName || !formData.lastName || !formData.phoneNumber ||  !formData.streetName || !formData.email || !formData.city) {
+    //       alert('Please fill out all fields');
+    //       return;
+    //   }
 
       console.log('Form Data:', formData);
       console.log(decodedToken?.sub)
