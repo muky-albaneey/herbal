@@ -1,5 +1,4 @@
 import React from 'react';
-import { ImCart} from "react-icons/im";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import './residence.css';
@@ -59,8 +58,6 @@ const TestimonyComponent = React.memo(() => {
             </div>
         );
     };
-  // const [products, setProducts] = React.useState<Product[]>([]);
-
 
     return (
         <section className="r-wrapper">
@@ -77,6 +74,7 @@ const TestimonyComponent = React.memo(() => {
                                     cover={
                                    
                                         <img 
+                                         className="cardConImg"
                                         src={card} 
                                         alt={`Testimony ${i + 1}`}
                                         loading="lazy" 
