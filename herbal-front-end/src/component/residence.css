@@ -22,7 +22,7 @@
 }
 
 .cardCon {
-    height: 19.5rem;
+    height: 35.5rem;
     width: 23.5rem;
     border-radius: 10px; /* Smooth border for images */
     overflow: hidden;
@@ -140,10 +140,10 @@
         margin: 0 auto;
     }
 
-    .cardCon {
+    /* .cardCon {
         height: 16rem;
         width: 20rem;
-    }
+    } */
 
     .r-buttons button, .r-button button {
         font-size: 1rem;
@@ -175,10 +175,10 @@
         margin: 0 auto;
     }
 
-    .cardCon {
+    /* .cardCon {
         height: 14rem;
         width: 20rem;
-    }
+    } */
 
     .cardItemInfo {
       
