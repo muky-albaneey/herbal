@@ -112,6 +112,11 @@ export default function ProductsComponent() {
     alert(category);
   };
 
+  const handleCategoryRemoval= (category: Category): void => { // Specify the type for category
+    setCategories(category);
+    alert(category);
+  };
+  
   const category = categories;
   
   return (
@@ -128,7 +133,7 @@ export default function ProductsComponent() {
         </div>
         <div className="tags space-y-4">
         <button
-            onClick={() => handleCategoryChange('booster')}
+            onClick={() => handleCategoryRemoval('booster')}
             className="bg-blue-500 text-white py-1 px-1 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
             style={{ width:'45rem' }}
           >
