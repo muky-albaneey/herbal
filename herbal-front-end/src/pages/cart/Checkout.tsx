@@ -292,7 +292,7 @@ export default function CheckoutName() {
                 }
             );
             console.log('Address submitted successfully:', response.data);
-            navigate('/pay'); 
+            // navigate('/pay'); 
         } catch (error) {
             console.error('Error submitting address:', error.response.data);
         }
