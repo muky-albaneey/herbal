@@ -47,7 +47,7 @@ const products =[
   './testimony4.jpg'
 ]
 
-const Residence = React.memo(({ message }) => {
+const TestimonyComponent = React.memo(({ message }) => {
 
   const SliderButtons = () => {
     console.log(message.popular)
@@ -96,4 +96,4 @@ const Residence = React.memo(({ message }) => {
     );
 });
 
-export default Residence;
+export default TestimonyComponent;
