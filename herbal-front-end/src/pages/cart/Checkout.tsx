@@ -52,7 +52,7 @@ export default function CheckoutName() {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      if (!formData.firstName || !formData.lastName || !formData.phoneNumber || !formData.emailAddress || !formData.state || !formData.city || !formData.streetName) {
+      if (!formData.firstName || !formData.lastName || !formData.phoneNumber || !formData.state || !formData.country || !formData.streetName || !formData.email || !formData.city) {
           alert('Please fill out all fields');
           return;
       }
