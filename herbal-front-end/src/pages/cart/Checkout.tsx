@@ -10,7 +10,7 @@ import { decode } from 'jwt-js-decode';
 export default function CheckoutName() {
     const cart = useCartStore((state) => state.cart);
 
-    const user = useAuthStoreUser((state) => state.user);
+    const jwtToken = useAuthStoreUser((state) => state.jwtToken);
     const decodeToken = (token) => {
         if (token) {
           try {
@@ -27,7 +27,7 @@ export default function CheckoutName() {
       };
       
       
-      const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+   
       const decodedToken = decodeToken(jwtToken);
 
     const navigate = useNavigate();
@@ -60,7 +60,7 @@ export default function CheckoutName() {
       console.log('Form Data:', formData);
       console.log(decodedToken?.sub)
       try {
-        const response = await axios.post(`https://backend-herbal.onrender.com/${decodedToken?.sub}/user/address`, formData,{
+        const response = await axios.post(`https://backend-herbal.onrender.com/${'63687312-b14e-400c-9afe-af49db794cc8'}/user/address`, formData,{
             withCredentials: true, 
             headers: {
               'Content-Type': 'application/json',
