@@ -27,10 +27,9 @@
     border-radius: 10px; /* Smooth border for images */
     overflow: hidden;
 }
-.cardConImg{
-        
-    height: 28rem;
-   }
+#cardConImg{
+    height: 27rem;
+}
 .cardItemInfo {
     width: 100%;
     display: flex;
@@ -167,10 +166,9 @@
         top: 1rem;
         left: 40rem;
     }
-    .cardConImg{
-        
-        height: 28rem;
-       }
+    #cardConImg{
+        height: 27rem;
+    }
        .cardConImg {
         height: 100%;  /* Adjust for smaller screen height */
         object-fit: cover; /* Ensure image covers the card */
@@ -190,6 +188,9 @@
         height: 37.5rem;
    
         width: 20rem;
+    }
+    #cardConImg{
+        height: 27rem;
     }
 
     .cardConImg {
