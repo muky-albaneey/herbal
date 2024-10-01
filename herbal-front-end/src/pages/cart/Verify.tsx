@@ -88,7 +88,7 @@ const PaymentSuccess = () => {
   const totalPrice = useCartStore((state) => state.totalPrice()); // This will make it reactive to changes
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart); // Get the clearCart method
-
+console.log(cart)
   const [cartData, setcartData] = useState([]);
 
   const params = new URLSearchParams(location.search);
