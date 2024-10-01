@@ -29,11 +29,11 @@ console.log(2000000,cart)
         if (response.data.status === 'success') {
           console.log('Payment verification response:', response.data); // Log response
           setPaymentStatus(response.data.data);
-          setcartData(cart);
+          
 
           const order = await axios.post(
             'https://backend-herbal.onrender.com/orders/63687312-b14e-400c-9afe-af49db794cc8', 
-            cartData,
+            cart,
             {
               withCredentials: true,
               headers: {
@@ -42,6 +42,7 @@ console.log(2000000,cart)
             }
           );
           console.log('Order response:', order.data);
+          setcartData(order.data);
           console.log(100000,cartData)
           if (order.status === 200) {
             clearCart(); // Clear the cart after order is successful
