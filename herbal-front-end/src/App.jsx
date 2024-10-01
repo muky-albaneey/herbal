@@ -22,6 +22,7 @@ import SettingsForm from './pages/auth/Settings';
 import Users from './pages/auth/UserLayout';
 import LogInForm from './pages/auth/SignIn';
 import Orders from './pages/admin/Order';
+import OrderDetails from './pages/admin/OrderDetails';
 // import LogInForm from './pages/auth/login';
 // import LogInForm from './pages/auth/Login';
 
@@ -171,11 +172,23 @@ function App() {
               errorElement={<ErrorElement />}
               element={<ProductUpload />}
             />
-             <Route
+             {/* <Route
               path='orders'
               errorElement={<ErrorElement />}
               element={<Orders />}
-            />
+            /> */}
+                  <Route
+                    path='orders'
+                    errorElement={<ErrorElement />}
+                    element={<Orders />}
+                  >
+                    <Route
+                      path=':id'  // This route handles a specific order by its ID
+                      element={<OrderDetails />} // Create an OrderDetails component for specific order details
+                      errorElement={<ErrorElement />}
+                    />
+              </Route>
+
             <Route
               path=':id/edit'
               errorElement={<ErrorElement />}
