@@ -203,8 +203,8 @@ const PaymentSuccess = () => {
               clearCart(); // Clear cart after order is created
             }
           } catch (orderError) {
-            console.error('Order creation failed:', orderError);
-            setOrderError('Failed to create order. Please try again.');
+            console.error('Order creation failed:', orderError);  // This will show the full error response
+              setOrderError('Failed to create order. Please try again.');
           }
         } else {
           setPaymentStatus(null); // Handle failed payment verification
