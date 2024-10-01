@@ -119,7 +119,8 @@ const PaymentSuccess = () => {
               },
             }
           );
-
+          console.log('Order response:', order.data);
+          console.log(cartData)
           if (order.status === 200) {
             clearCart(); // Clear the cart after order is successful
           }
