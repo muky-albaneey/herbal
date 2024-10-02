@@ -164,7 +164,7 @@ function AutoPlay() {
           <div key={product.id} className="slide-item p-0 m-0"> {/* Remove padding/margin */}
             <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto"> {/* Ensure card width */}
               <img
-                className="w-full h-36 object-cover rounded-t-lg" // Full width image
+                className="w-full h-48 object-cover rounded-t-lg" // Increased height to 48
                 src={product.product_image.url}
                 alt={product.name}
               />
