@@ -40,7 +40,7 @@ export default function AdminLayout() {
         console.log(userResponse.data);
 
         setOrders(orderResponse.data.data.count);
-        console.log(orderResponse.data.count);
+        console.log(orderResponse.data.data.count);
         console.log(orderResponse.data);
 
         setProducts(productResponse.data);
@@ -91,7 +91,7 @@ export default function AdminLayout() {
               <p className="text-3xl">{orders}</p>
             </div>
           </div>
-            <Dashboard users={users} orders={products} products={products} />
+            <Dashboard users={users} orders={orders} products={products} />
           {/* Outlet where child routes render */}
           <Outlet />
         </div>
