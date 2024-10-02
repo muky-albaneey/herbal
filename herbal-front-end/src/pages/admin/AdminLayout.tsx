@@ -21,33 +21,25 @@ export default function AdminLayout() {
 // }, [isAuthenticated, navigate]);
       // Fetch the counts for users, products, and orders
       
-       
+      count orders
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [userResponse, productResponse, orderResponse] = await Promise.all([
+        const [userResponse, orderResponse] = await Promise.all([
          
           axios.get('https://backend-herbal.onrender.com/user/count'),
           axios.get('https://backend-herbal.onrender.com/products/count'),
-          axios.get('https://backend-herbal.onrender.com/orders/count'),
         ]);
         
-        
+        // setProducts(productResponse.data);
+        // console.log(productResponse.data);
 
-      //   setUsers(userResponse.data.totalUsers);
-      //   console.log(userResponse.data);
+        setUsers(userResponse.data.totalUsers);
+        console.log(userResponse.data);
 
-      //  setProducts(productResponse.data);
-      //   console.log(productResponse.data);
+        setOrders(orderResponse.data);
+        console.log(orderResponse.data);
 
-      //   setOrders(orderResponse.data);
-      //   console.log(orderResponse.data.count);
-
-      setUsers(userResponse.data || 0); // Adjust based on your response structure
-      setProducts(productResponse.data || 0); // Make sure to access the correct property
-      setOrders(orderResponse.data.count || 0); // Accessing order count
-      console.log(orderResponse.data.count);
-      console.log(orderResponse.data);
       } catch (err) {
         setError('Error fetching data.');
         console.error(err);
@@ -94,7 +86,7 @@ export default function AdminLayout() {
               <p className="text-3xl">{orders}</p>
             </div>
           </div>
-            <Dashboard users={users} orders={products} products={products} />
+            <Dashboard users={users} orders={orders} products={orders} />
           {/* Outlet where child routes render */}
           <Outlet />
         </div>
