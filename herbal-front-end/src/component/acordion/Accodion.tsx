@@ -21,10 +21,10 @@ const CustomCollapse = ({ label, children }) => {
 
 export default function AccodionComponent() {
   const { t } = useTranslation();
-  const text1 = t('text');
-  const text2 = t('text');
-  const text3 = t('text');
-  const text4 = t('text');
+  const text1 = t('text1');
+  const text2 = t('text2');
+  const text3 = t('text3');
+  const text4 = t('text4');
 
   return (
     <div className='acodion_wrapper'>
