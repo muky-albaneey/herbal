@@ -271,7 +271,7 @@ function AutoPlay() {
                 <p className="text-xs text-gray-500 mt-1">{product.description}</p>
               </div>
               <div className="p-2">
-                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded text-sm">
+                <button className="w-full bg-blue-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded text-sm">
                   Add to Cart
                 </button>
               </div>
