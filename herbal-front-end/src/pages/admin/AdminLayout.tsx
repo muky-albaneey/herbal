@@ -20,24 +20,32 @@ export default function AdminLayout() {
 //   }
 // }, [isAuthenticated, navigate]);
       // Fetch the counts for users, products, and orders
-
+      
+       
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [userResponse, orderResponse] = await Promise.all([
-        //   axios.get('https://backend-herbal.onrender.com/products/all'),
+        const [userResponse, productResponse, orderResponse] = await Promise.all([
+         
           axios.get('https://backend-herbal.onrender.com/user/count'),
           axios.get('https://backend-herbal.onrender.com/products/count'),
+          axios.get('https://backend-herbal.onrender.com/orders/count'),
         ]);
         
-        // setProducts(productResponse.data);
-        // console.log(productResponse.data);
+        
 
-        setUsers(userResponse.data.totalUsers);
-        console.log(userResponse.data);
+      //   setUsers(userResponse.data.totalUsers);
+      //   console.log(userResponse.data);
 
-        setOrders(orderResponse.data);
-        console.log(orderResponse.data);
+      //  setProducts(productResponse.data);
+      //   console.log(productResponse.data);
+
+      //   setOrders(orderResponse.data);
+      //   console.log(orderResponse.data);
+
+      setUsers(userResponse.data || 0); // Adjust based on your response structure
+      setProducts(productResponse.data || 0); // Make sure to access the correct property
+      setOrders(orderResponse.data.count || 0); // Accessing order count
 
       } catch (err) {
         setError('Error fetching data.');
