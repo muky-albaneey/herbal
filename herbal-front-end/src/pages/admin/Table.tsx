@@ -62,10 +62,10 @@ const AdminDashboard = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-6 text-center">Admin Dashboard</h2>
+      {/* <h2 className="text-2xl font-bold mb-6 text-center">Admin Dashboard</h2> */}
 
       {/* Dashboard buttons for total counts */}
-      <div className="flex justify-between mb-8">
+      {/* <div className="flex justify-between mb-8">
         <div className="bg-blue-500 text-white rounded-lg p-6 shadow-md text-center">
           <h3 className="text-lg font-semibold">Total Users</h3>
           <p className="text-2xl font-bold mt-2">{users}</p>
@@ -78,7 +78,7 @@ const AdminDashboard = () => {
           <h3 className="text-lg font-semibold">Total Orders</h3>
           <p className="text-2xl font-bold mt-2">{orders}</p>
         </div>
-      </div>
+      </div> */}
 
       {/* Product table */}
       <div className="overflow-x-auto">
