@@ -41,7 +41,6 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Output in the 'dist' folder
     rollupOptions: {
-      external: ['react-chartjs-2', 'chart.js'], // Externalize these libraries
       output: {
         manualChunks(id) {
           // Create separate chunks for node_modules
