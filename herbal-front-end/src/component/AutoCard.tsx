@@ -256,19 +256,24 @@ function AutoPlay() {
 
   return (
     <div className="slider-container p-0 m-0">
-      <Slider {...settings}>
+  <Slider {...settings}>
         {products.map((product) => (
-          <div key={product.id} className="slide-item p-0 m-0">
-            <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto">
+          <div key={product.id} className="slide-item p-0 m-0"> {/* Remove padding/margin */}
+            <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto"> {/* Ensure card width */}
               <img
-                className="w-full h-48 object-cover rounded-t-lg"
+                className="w-full h-48 object-cover rounded-t-lg" // Increased height to 48
                 src={product.product_image.url}
                 alt={product.name}
               />
-              <div className="p-2">
+              <div className="p-2"> {/* Smaller padding inside the card */}
                 <h3 className="text-lg font-bold mb-1">{product.name}</h3>
                 <p className="text-gray-700 text-sm">${product.price}</p>
                 <p className="text-xs text-gray-500 mt-1">{product.description}</p>
+              </div>
+              <div className="p-2">
+                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded text-sm">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
