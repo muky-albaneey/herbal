@@ -7,7 +7,7 @@ const OrderDetails = () => {
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+console.log(id)
   useEffect(() => {
     const fetchOrder = async () => {
       try {
