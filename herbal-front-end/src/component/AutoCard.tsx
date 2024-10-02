@@ -148,6 +148,7 @@ function AutoPlay() {
         breakpoint: 768, // Mobile
         settings: {
           slidesToShow: 1, // Show 1 image on mobile
+          arrows: false,  // Hide arrows on mobile
         },
       },
     ],
@@ -157,13 +158,13 @@ function AutoPlay() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="slider-container p-2"> {/* Reduce padding on mobile */}
+    <div className="slider-container p-0 m-0"> {/* Remove all padding/margin */}
       <Slider {...settings}>
         {products.map((product) => (
-          <div key={product.id} className="px-1"> {/* Reduce padding between items */}
+          <div key={product.id} className="slide-item p-0 m-0"> {/* Remove padding/margin */}
             <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto"> {/* Ensure card width */}
               <img
-                className="w-full h-36 object-cover rounded-t-lg max-w-full" // Constrain image width
+                className="w-full h-36 object-cover rounded-t-lg" // Full width image
                 src={product.product_image.url}
                 alt={product.name}
               />
@@ -186,3 +187,4 @@ function AutoPlay() {
 }
 
 export default AutoPlay;
+

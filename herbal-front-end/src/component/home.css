@@ -246,6 +246,21 @@ article{
 }
 
 
+/* Overriding slick-carousel default padding/margins */
+.slick-slide {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .slick-track {
+    display: flex;
+  }
+  
+  .slick-slide > div {
+    width: 100% !important; /* Ensure full-width slides */
+  }
+  
+
 @media all and (max-width: 900px) {
     .wrapper {
         max-width: 100%;
