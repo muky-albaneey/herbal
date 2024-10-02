@@ -28,7 +28,7 @@ export default function AdminLayout() {
         const [userResponse, orderResponse, productResponse] = await Promise.all([
          
           axios.get('https://backend-herbal.onrender.com/user/count'),
-          axios.get('https://backend-herbal.onrender.com/user/count'),
+          axios.get('https://backend-herbal.onrender.com/orders/count'),
           axios.get('https://backend-herbal.onrender.com/products/count'),
           
         ]);
@@ -41,6 +41,7 @@ export default function AdminLayout() {
 
         setOrders(orderResponse.data.count);
         console.log(orderResponse.data.count);
+        console.log(orderResponse.data);
 
         setProducts(productResponse.data);
         console.log(productResponse.data);
@@ -90,7 +91,7 @@ export default function AdminLayout() {
               <p className="text-3xl">{orders}</p>
             </div>
           </div>
-            <Dashboard users={users} orders={orders} products={orders} />
+            <Dashboard users={users} orders={products} products={products} />
           {/* Outlet where child routes render */}
           <Outlet />
         </div>
