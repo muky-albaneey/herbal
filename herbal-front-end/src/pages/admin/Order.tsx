@@ -93,7 +93,7 @@ const Orders = () => {
         {orders.map((order) => (
           <div key={order.id} className="bg-white shadow-lg rounded-lg p-6 border border-gray-200 hover:bg-green-50 transition duration-300">
             <h2 className="text-xl font-semibold text-gray-700">
-              <Link to={`/admin/orders/${order.id}`}>Order ID: {order.id}</Link> {/* Link to order details page */}
+              <Link to={`/admin/${order.id}/order`}>Order details: {order.id}</Link> {/* Link to order details page */}
             </h2>
             <p className="text-gray-600 mt-2">Total Amount: ${order.totalAmount}</p>
             <p className="text-gray-600 mt-2">Created At: {new Date(order.createdAt).toLocaleDateString()}</p>

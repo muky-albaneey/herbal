@@ -172,22 +172,23 @@ function App() {
               errorElement={<ErrorElement />}
               element={<ProductUpload />}
             />
-             {/* <Route
+             <Route
               path='orders'
               errorElement={<ErrorElement />}
               element={<Orders />}
-            /> */}
-                  <Route
+            />
+             <Route
+                      path=':id/order'  // This route handles a specific order by its ID
+                      element={<OrderDetails />} // Create an OrderDetails component for specific order details
+                      errorElement={<ErrorElement />}
+                    />
+                  {/* <Route
                     path='orders'
                     errorElement={<ErrorElement />}
                     element={<Orders />}
                   >
-                    <Route
-                      path=':id'  // This route handles a specific order by its ID
-                      element={<OrderDetails />} // Create an OrderDetails component for specific order details
-                      errorElement={<ErrorElement />}
-                    />
-              </Route>
+                   
+              </Route> */}
 
             <Route
               path=':id/edit'
