@@ -23,6 +23,7 @@ import Users from './pages/auth/UserLayout';
 import LogInForm from './pages/auth/SignIn';
 import Orders from './pages/admin/Order';
 import OrderDetails from './pages/admin/OrderDetails';
+import UserOrders from './pages/auth/UserOrders';
 // import LogInForm from './pages/auth/login';
 // import LogInForm from './pages/auth/Login';
 
@@ -149,6 +150,12 @@ function App() {
                     element={<ChangePasswordComponent />} // This will display on '/user/profile'
                     errorElement={<ErrorElement />}
                   />
+                <Route
+                    path='user_order'
+                    element={<UserOrders />} // This will display on '/user/profile'
+                    errorElement={<ErrorElement />}
+                  />
+
               </Route>
              
               <Route

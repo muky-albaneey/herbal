@@ -62,6 +62,13 @@ export default function Users() {
         >
           Change password
         </NavLink>
+        <NavLink 
+          style={({ isActive }) => (isActive ? active : { color: '#008103' })} 
+          className='user_link' 
+          to='user_order'
+        >
+          View orders
+        </NavLink>
         {decodedToken == 'admin' && (
               <NavLink 
               className='user_link' 
@@ -72,7 +79,7 @@ export default function Users() {
         )}
         </div>
       </section>
-
+      
       <section className="user_right">
         {/* Display the content of the selected route here */}
         <Outlet />
