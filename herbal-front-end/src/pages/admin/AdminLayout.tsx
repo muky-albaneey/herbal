@@ -21,7 +21,7 @@ export default function AdminLayout() {
 // }, [isAuthenticated, navigate]);
       // Fetch the counts for users, products, and orders
       
-      count orders
+     
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
