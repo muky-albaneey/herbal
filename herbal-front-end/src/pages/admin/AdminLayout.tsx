@@ -88,7 +88,7 @@ export default function AdminLayout() {
             </div>
             <div className="p-4 bg-white rounded-lg shadow-md">
               <h2 className="text-lg font-semibold">Total Products</h2>
-              <p className="text-3xl">{orders}</p>
+              <p className="text-3xl">{products}</p>
             </div>
           </div>
             <Dashboard users={users} orders={orders} products={products} />
