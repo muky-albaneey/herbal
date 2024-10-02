@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { sliderSettings } from "../utills/common";
 import { Trans, useTranslation } from 'react-i18next'
 import TestimonyComponent from "./Testimony";
+import AutoPlay from "./AutoCard";
 // import IMG_7863 from '../../public/IMG_7863.JPG';
 
 export default function HomeComponent() {
@@ -61,6 +62,7 @@ const testimony = [
             <Residence message={{ choice:'', popular:'' , side:'one'}}/>
             <Residence message={{ choice:'', popular:true, side:'two'}}/>
             <Residence message={{ choice:'', popular:'', side:'three'}}/>
+            <AutoPlay />
         </section>
         <section className='countCon'>
             <div className="countContent">
