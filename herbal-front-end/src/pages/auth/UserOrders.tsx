@@ -35,7 +35,7 @@ const UserOrders = () => {
       try {
         setLoading(true);
         console.log(decodedToken?.sub)
-        const response = await axios.get(`/api/user/${decodedToken?.sub}/single_user`); // Adjust the endpoint accordingly
+        const response = await axios.get(`https://backend-herbal.onrender.com/user/${decodedToken?.sub}/single_user`); // Adjust the endpoint accordingly
         setOrders(response.data.orders); // Adjust according to your API response structure
         console.log((response.data.orders))
       } catch (err) {
