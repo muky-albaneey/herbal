@@ -41,12 +41,13 @@ export default function AdminLayout() {
       //   console.log(productResponse.data);
 
       //   setOrders(orderResponse.data);
-      //   console.log(orderResponse.data);
+      //   console.log(orderResponse.data.count);
 
       setUsers(userResponse.data || 0); // Adjust based on your response structure
       setProducts(productResponse.data || 0); // Make sure to access the correct property
       setOrders(orderResponse.data.count || 0); // Accessing order count
-
+      console.log(orderResponse.data.count);
+      console.log(orderResponse.data);
       } catch (err) {
         setError('Error fetching data.');
         console.error(err);
@@ -93,7 +94,7 @@ export default function AdminLayout() {
               <p className="text-3xl">{orders}</p>
             </div>
           </div>
-            <Dashboard users={users} orders={orders} products={orders} />
+            <Dashboard users={users} orders={products} products={products} />
           {/* Outlet where child routes render */}
           <Outlet />
         </div>
