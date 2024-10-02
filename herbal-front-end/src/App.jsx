@@ -178,10 +178,10 @@ function App() {
               element={<Orders />}
             />
              <Route
-                      path=':id/order'  // This route handles a specific order by its ID
-                      element={<OrderDetails />} // Create an OrderDetails component for specific order details
-                      errorElement={<ErrorElement />}
-                    />
+                  path=':id/order'  // This route handles a specific order by its ID
+                  element={<OrderDetails />} // Create an OrderDetails component for specific order details
+                    errorElement={<ErrorElement />}
+              />
                   {/* <Route
                     path='orders'
                     errorElement={<ErrorElement />}

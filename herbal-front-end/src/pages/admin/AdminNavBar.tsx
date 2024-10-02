@@ -58,12 +58,12 @@ export default function AdminNavBar() {
             >
               Dashboard
             </Link>
-            {/* <Link
-              to="/admin/users"
+            <Link
+              to="/admin/orders"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
-              Users
-            </Link> */}
+              Orders
+            </Link>
             {/* <Link
               to="/admin/orders"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
@@ -90,12 +90,12 @@ export default function AdminNavBar() {
             >
               Dashboard
             </Link>
-            {/* <Link
-              to="/admin/users"
+            <Link
+              to="/admin/orders"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
             >
-              Users
-            </Link> */}
+              Orders
+            </Link>
             {/* <Link
               to="/admin/orders"
               className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
