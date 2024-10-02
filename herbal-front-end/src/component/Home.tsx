@@ -119,22 +119,7 @@ const testimony = [
         </section>
         <section className="testimony">
     <h1>{t('customer_testimonial.heading')}</h1>
-    <TestimonyComponent/>
-    {/* <Swiper {...sliderSettings}>
-        {testimony.map((item, i) => (
-            <SwiperSlide key={i} className="swiper-slide">
-                <div className="testimony_items">
-                    <span className="icon_testimony">{item.icon}</span>
-                    <p className="testimony_title">
-                        <span>{item.name}</span>
-                        <span>{item.title}</span>
-                    </p>
-                    <p className="testimony_comment">
-                        {item.comment}</p>
-                </div>
-            </SwiperSlide>
-        ))}
-    </Swiper> */}
+            <TestimonyComponent/>
 </section>
 
        
