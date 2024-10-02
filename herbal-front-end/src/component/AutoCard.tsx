@@ -64,23 +64,23 @@
 //   if (error) return <div>{error}</div>;
 
 //   return (
-//     <div className="slider-container">
+//     <div className="slider-container p-4">
 //       <Slider {...settings}>
 //         {products.map((product) => (
-//           <div key={product.id} className="p-4">
-//             <div className="bg-white rounded-lg shadow-lg">
+//           <div key={product.id} className="p-2 md:p-4"> {/* Adjust padding for mobile */}
+//             <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto md:max-w-sm"> {/* Limit width for mobile */}
 //               <img
-//                 className="w-full h-48 object-cover rounded-t-lg"
+//                 className="w-full h-36 object-cover rounded-t-lg md:h-48" // Adjust height for mobile
 //                 src={product.product_image.url}
 //                 alt={product.name}
 //               />
-//               <div className="p-4">
-//                 <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-//                 <p className="text-gray-700">${product.price}</p>
-//                 <p className="text-sm text-gray-500">{product.description}</p>
+//               <div className="p-3 md:p-4"> {/* Reduce padding for mobile */}
+//                 <h3 className="text-lg md:text-xl font-bold mb-2">{product.name}</h3>
+//                 <p className="text-gray-700 text-sm md:text-base">${product.price}</p>
+//                 <p className="text-xs md:text-sm text-gray-500 mt-2">{product.description}</p> {/* Smaller font on mobile */}
 //               </div>
-//               <div className="p-4">
-//                 <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+//               <div className="p-3 md:p-4">
+//                 <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm md:text-base">
 //                   Add to Cart
 //                 </button>
 //               </div>
@@ -133,7 +133,7 @@ function AutoPlay() {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 3, // Show 3 slides on larger screens
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -149,7 +149,7 @@ function AutoPlay() {
       {
         breakpoint: 768, // Mobile
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Show 1 slide on mobile
         },
       },
     ],
@@ -159,23 +159,23 @@ function AutoPlay() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="slider-container p-4">
+    <div className="slider-container p-2 md:p-4"> {/* Reduce padding for mobile */}
       <Slider {...settings}>
         {products.map((product) => (
-          <div key={product.id} className="p-2 md:p-4"> {/* Adjust padding for mobile */}
-            <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto md:max-w-sm"> {/* Limit width for mobile */}
+          <div key={product.id} className="p-1 md:p-2"> {/* Reduce padding for mobile */}
+            <div className="bg-white rounded-lg shadow-lg mx-auto max-w-xs md:max-w-sm"> {/* Center cards and reduce width */}
               <img
-                className="w-full h-36 object-cover rounded-t-lg md:h-48" // Adjust height for mobile
+                className="w-full h-36 object-cover rounded-t-lg md:h-48" // Adjust image height for mobile
                 src={product.product_image.url}
                 alt={product.name}
               />
-              <div className="p-3 md:p-4"> {/* Reduce padding for mobile */}
-                <h3 className="text-lg md:text-xl font-bold mb-2">{product.name}</h3>
-                <p className="text-gray-700 text-sm md:text-base">${product.price}</p>
-                <p className="text-xs md:text-sm text-gray-500 mt-2">{product.description}</p> {/* Smaller font on mobile */}
+              <div className="p-2 md:p-3"> {/* Reduce padding inside the card */}
+                <h3 className="text-sm md:text-lg font-bold mb-1 md:mb-2">{product.name}</h3>
+                <p className="text-gray-700 text-xs md:text-base">${product.price}</p>
+                <p className="text-xs md:text-sm text-gray-500 mt-1 md:mt-2">{product.description}</p>
               </div>
-              <div className="p-3 md:p-4">
-                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm md:text-base">
+              <div className="p-2 md:p-3">
+                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 md:py-2 rounded text-xs md:text-base">
                   Add to Cart
                 </button>
               </div>
