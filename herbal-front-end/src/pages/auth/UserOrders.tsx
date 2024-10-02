@@ -26,16 +26,18 @@ const UserOrders = () => {
   };
   const decodedToken = decodeToken(jwtToken);
     const navigate = useNavigate();
-    const userId = decodedToken?.sub
-    
-    if (!userId) return <div>loading.....</div>
+    // const userId = decodedToken?.sub
+
+    // if (!userId) return <div>loading.....</div>
 
   useEffect(() => {
     const fetchOrders = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`/api/users/${userId}/orders`); // Adjust the endpoint accordingly
+        console.log(decodedToken?.sub)
+        const response = await axios.get(`/api/users/${decodedToken?.sub}/orders`); // Adjust the endpoint accordingly
         setOrders(response.data.orders); // Adjust according to your API response structure
+        console.log((response.data.orders))
       } catch (err) {
         setError(err.message || 'Error fetching orders');
       } finally {
@@ -44,7 +46,7 @@ const UserOrders = () => {
     };
 
     fetchOrders();
-  }, [userId]);
+  }, []);
 
   if (loading) return <div className="text-center">Loading...</div>;
   if (error) return <div className="text-red-500">{error}</div>;
