@@ -131,7 +131,7 @@ function AutoPlay() {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 3, // Show 3 images on larger screens
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -141,13 +141,13 @@ function AutoPlay() {
       {
         breakpoint: 1024, // Tablet and lower
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2, // Show 2 images on tablet
         },
       },
       {
         breakpoint: 768, // Mobile
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Show 1 image on mobile
         },
       },
     ],
@@ -161,16 +161,16 @@ function AutoPlay() {
       <Slider {...settings}>
         {products.map((product) => (
           <div key={product.id} className="px-1"> {/* Reduce padding between items */}
-            <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto"> {/* No margin on mobile */}
+            <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto"> {/* Ensure card width */}
               <img
-                className="w-full h-36 object-cover rounded-t-lg" // Adjust image height
+                className="w-full h-36 object-cover rounded-t-lg max-w-full" // Constrain image width
                 src={product.product_image.url}
                 alt={product.name}
               />
               <div className="p-2"> {/* Smaller padding inside the card */}
-                <h3 className="text-lg font-bold mb-1">{product.name}</h3> {/* Less margin on mobile */}
+                <h3 className="text-lg font-bold mb-1">{product.name}</h3>
                 <p className="text-gray-700 text-sm">${product.price}</p>
-                <p className="text-xs text-gray-500 mt-1">{product.description}</p> {/* Less margin */}
+                <p className="text-xs text-gray-500 mt-1">{product.description}</p>
               </div>
               <div className="p-2">
                 <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded text-sm">
