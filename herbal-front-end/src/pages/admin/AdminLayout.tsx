@@ -85,7 +85,7 @@ export default function AdminLayout() {
               <p className="text-3xl">{orders}</p>
             </div>
           </div> */}
-            <Dashboard users={users} orders={orders} products={products} />
+            <Dashboard users={users} orders={orders} products={orders} />
           {/* Outlet where child routes render */}
           <Outlet />
         </div>
