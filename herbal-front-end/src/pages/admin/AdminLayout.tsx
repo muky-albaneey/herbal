@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import AdminNavBar from './AdminNavBar';
 import axios from 'axios';
+import Dashboard from './AdminDashCom';
 
 export default function AdminLayout() {
     const [products, setProducts] = useState([]);
@@ -70,7 +71,7 @@ export default function AdminLayout() {
           <h1 className="text-3xl font-bold mb-4">Admin Dashboard</h1>
           
           {/* Dashboard Stats - Example */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="p-4 bg-white rounded-lg shadow-md">
               <h2 className="text-lg font-semibold">Total Users</h2>
               <p className="text-3xl">{users}</p>
@@ -83,8 +84,8 @@ export default function AdminLayout() {
               <h2 className="text-lg font-semibold">Total Products</h2>
               <p className="text-3xl">{orders}</p>
             </div>
-          </div>
-
+          </div> */}
+            <Dashboard users={users} orders={orders} products={products} />
           {/* Outlet where child routes render */}
           <Outlet />
         </div>
