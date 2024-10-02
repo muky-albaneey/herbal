@@ -91,8 +91,6 @@
 //     </div>
 //   );
 // }
-
-// export default AutoPlay;
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import axios from "axios";
@@ -133,7 +131,7 @@ function AutoPlay() {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3, // Show 3 slides on larger screens
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -149,7 +147,7 @@ function AutoPlay() {
       {
         breakpoint: 768, // Mobile
         settings: {
-          slidesToShow: 1, // Show 1 slide on mobile
+          slidesToShow: 1,
         },
       },
     ],
@@ -159,23 +157,23 @@ function AutoPlay() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="slider-container p-2 md:p-4"> {/* Reduce padding for mobile */}
+    <div className="slider-container p-2"> {/* Reduce padding on mobile */}
       <Slider {...settings}>
         {products.map((product) => (
-          <div key={product.id} className="p-1 md:p-2"> {/* Reduce padding for mobile */}
-            <div className="bg-white rounded-lg shadow-lg mx-auto max-w-xs md:max-w-sm"> {/* Center cards and reduce width */}
+          <div key={product.id} className="px-1"> {/* Reduce padding between items */}
+            <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto"> {/* No margin on mobile */}
               <img
-                className="w-full h-36 object-cover rounded-t-lg md:h-48" // Adjust image height for mobile
+                className="w-full h-36 object-cover rounded-t-lg" // Adjust image height
                 src={product.product_image.url}
                 alt={product.name}
               />
-              <div className="p-2 md:p-3"> {/* Reduce padding inside the card */}
-                <h3 className="text-sm md:text-lg font-bold mb-1 md:mb-2">{product.name}</h3>
-                <p className="text-gray-700 text-xs md:text-base">${product.price}</p>
-                <p className="text-xs md:text-sm text-gray-500 mt-1 md:mt-2">{product.description}</p>
+              <div className="p-2"> {/* Smaller padding inside the card */}
+                <h3 className="text-lg font-bold mb-1">{product.name}</h3> {/* Less margin on mobile */}
+                <p className="text-gray-700 text-sm">${product.price}</p>
+                <p className="text-xs text-gray-500 mt-1">{product.description}</p> {/* Less margin */}
               </div>
-              <div className="p-2 md:p-3">
-                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 md:py-2 rounded text-xs md:text-base">
+              <div className="p-2">
+                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded text-sm">
                   Add to Cart
                 </button>
               </div>
