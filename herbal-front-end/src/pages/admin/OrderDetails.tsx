@@ -45,7 +45,6 @@ console.log(id)
               ))}
             </ul>
           </div>
-
           <div className="mt-4">
             <h3 className="font-semibold text-gray-700">Delivery Address:</h3>
             <p className="text-gray-600">{order.user?.address?.street}, {order.user?.address?.city}, {order.user?.address?.state}</p>
