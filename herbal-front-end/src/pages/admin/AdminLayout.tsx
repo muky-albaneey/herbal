@@ -25,10 +25,12 @@ export default function AdminLayout() {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [userResponse, orderResponse] = await Promise.all([
+        const [userResponse, orderResponse, productResponse] = await Promise.all([
          
           axios.get('https://backend-herbal.onrender.com/user/count'),
+          axios.get('https://backend-herbal.onrender.com/user/count'),
           axios.get('https://backend-herbal.onrender.com/products/count'),
+          
         ]);
         
         // setProducts(productResponse.data);
@@ -37,9 +39,11 @@ export default function AdminLayout() {
         setUsers(userResponse.data.totalUsers);
         console.log(userResponse.data);
 
-        setOrders(orderResponse.data);
-        console.log(orderResponse.data);
+        setOrders(orderResponse.data.count);
+        console.log(orderResponse.data.count);
 
+        setProducts(productResponse.data);
+        console.log(productResponse.data);
       } catch (err) {
         setError('Error fetching data.');
         console.error(err);
