@@ -41,10 +41,32 @@
       "heading": "TÉMOIGNAGE CLIENT"
     },
     "faq_heading": "QUESTIONS FRÉQUEMMENT POSÉES",
-    "text": "Un chien est un type d'animal domestiqué. Connu pour sa loyauté et sa fidélité, il peut être trouvé comme un invité bienvenu dans de nombreux foyers à travers le monde.",
-  "collapse": {
-    "label": "Ceci est l'en-tête du panneau 1"
-  },
+      "text1": "Nom du produit : Le 2in1 Ovulation Support. C’est un produit qui résout tous les types de problèmes de fertilité auxquels les femmes sont confrontées. Le 2in1 Ovulation Support est une formule riche et naturelle conçue pour aider les femmes à concevoir en toute confiance. Notre produit a aidé plus de 2 183 femmes heureuses à résoudre toutes sortes de problèmes de fertilité ! Beaucoup de ces femmes sont tombées enceintes en utilisant ce produit incroyable. Utiliser ce produit en tant que femme mettra fin à :\n- Cycle menstruel irrégulier / cycle d'ovulation\n- Prolactine élevée\n- SOPK\n- Mauvaise qualité des ovules\n- Infertilité/fausse couche\n- Déséquilibre hormonal\n- FIV, etc.\nNotre produit est testé et approuvé, et il est certifié par la NAFDAC 💯",
+    
+    "collapse1":{
+      "label": "J'ai besoin de plus d'informations sur le Support d'Ovulation 2 en 1"
+    }
+    ,
+    
+      "text2": "Toujours sur la question n°1\n\nNom du produit : Semen Support\n\nC'est un produit qui résout tous types de problèmes de fertilité auxquels les hommes sont confrontés.\n\nLe Semen Support est une formule riche et naturelle conçue pour aider les hommes à rendre leur femme enceinte avec confiance. Il élimine le faible nombre de spermatozoïdes, l'éjaculation précoce et la faible mobilité.\n\nC'est la seule solution dont les hommes ont besoin pour :\n✅ Augmenter vos chances de devenir papa\n✅ Améliorer votre nombre de spermatozoïdes et connaître la joie de la paternité\n✅ Améliorer votre vitalité et votre force, et redevenir comme dans votre jeunesse\n✅ Avoir un enfant qui perpétuera votre nom de famille\n✅ Sauver votre mariage et rendre votre femme heureuse.\n\nCe produit a aidé plus de 2183 hommes qui peuvent désormais satisfaire leur femme au lit et les ont également rendues enceintes en utilisant ce produit incroyable appelé « Le Semen Support ».\n\nNotre produit est testé et approuvé, et il est certifié par la NAFDAC 💯",
+    
+    "collapse2": {
+      "label": "J'ai besoin de plus d'informations sur le Soutien Seminal"
+    }
+    ,
+      "text3": "Toujours sur la question n°1\n\nNom du produit : Le Kit de Fertilité 3en1 pour Couples\n\nC'est un produit qui résout tous les problèmes de fertilité auxquels les couples sont confrontés dans leur mariage ! Le Kit de Fertilité 3en1 pour Couples est une formule riche et naturelle conçue pour aider les couples à concevoir en toute confiance.\n\nNotre produit a aidé plus de 2 183 couples heureux à résoudre tous types de problèmes de fertilité ! Beaucoup de ces couples sont tombés enceintes en utilisant ce produit incroyable.\n\nUtiliser ce produit en tant que couple mettra fin à :\n~ Cycle menstruel irrégulier / Cycle d'ovulation\n~ Faible nombre de spermatozoïdes et éjaculation précoce\n~ Taux élevé de prolactine\n~ SOPK\n~ Faible mobilité au lit\n~ Mauvaise qualité des ovules\n~ Infertilité/fausse couche\n~ Déséquilibre hormonal\n~ FIV, etc.\n\nNotre produit est testé et approuvé, et il est certifié par la NAFDAC 💯.",
+    
+    "collapse3": {
+      "label": "J'ai besoin de plus d'informations sur le Kit de Fertilité pour Couple 3 en 1"
+    }
+    ,
+      "text4": "Toujours sur la question n°1\n\nNom du produit : Fitfigure Brûleur de Graisses\n\nC'est un produit qui élimine toutes ces graisses tenaces!\n\nLe Fitfigure Brûleur de Graisses 😎 est une formule riche et naturelle conçue pour vous aider à perdre du poids naturellement sans EXERCICE INTENSE !!!\n\n~ Contrôle de l'obésité\n~ Réduction de l'excès de graisse/poids corporel\n~ Équilibre du taux de sucre dans le sang\n~ Détoxification du système corporel\n~ Réduction du cholestérol sanguin\n~ Résultats évidents en 14 jours d'utilisation régulière\n~ Aucun effet secondaire & approuvé par la NAFDAC\n\nCe produit a aidé plus de 2 183 clients satisfaits à perdre leur excès de graisses corporelles grâce à ce produit incroyable.\n\nNotre produit est testé et approuvé, et il est certifié par la NAFDAC 💯.",
+    
+    "collapse4": {
+        "label": "J'ai besoin de plus d'informations sur le Fitfigure Brûleur de Graisses"
+      
+      
+    },
   "nav": {
     "home": "Accueil",
     "product": "Produit",
