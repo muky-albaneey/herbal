@@ -39,7 +39,7 @@ export default function AdminLayout() {
         setUsers(userResponse.data.totalUsers);
         console.log(userResponse.data);
 
-        setOrders(orderResponse.data.count);
+        setOrders(orderResponse.data.data.count);
         console.log(orderResponse.data.count);
         console.log(orderResponse.data);
 
