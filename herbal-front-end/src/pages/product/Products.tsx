@@ -136,14 +136,14 @@ export default function ProductsComponent() {
             className="bg-blue-500 text-white py-1 px-1 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
             id='btn_category'
           >
-            Booster
+            clear filter
           </button>
           <button
             onClick={() => handleCategoryChange('booster')}
             className="bg-blue-500 text-white py-1 px-1 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"
             id='btn_category'
           >
-            Booster
+            Niches
           </button>
           <button
             onClick={() => handleCategoryChange('bitter')}

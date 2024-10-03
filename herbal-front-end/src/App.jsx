@@ -42,7 +42,6 @@ function App() {
           element={<Layout />}
         >
          
-          
           <Route
             index
             errorElement={<ErrorElement />}

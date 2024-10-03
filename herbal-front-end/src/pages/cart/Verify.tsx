@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import useCartStore from '../../utills/store/cart';
 import { useAuthStoreUser } from '../../utills/store/auth';
@@ -15,6 +15,7 @@ const PaymentSuccess = () => {
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
   const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+const navigate = useNavigate()
 
   const decodeToken = (token) => {
       if (token) {
@@ -97,6 +98,17 @@ const PaymentSuccess = () => {
     verifyPayment();
   }, [reference, cart, clearCart]);
 
+    // useEffect for redirection after 1 minute
+    useEffect(() => {
+      if (paymentStatus) {
+        const timer = setTimeout(() => {
+          navigate('/products'); // Replace '/some-other-page' with the desired route
+        }, 60000); // 1 minute = 60000 ms
+  
+        return () => clearTimeout(timer); // Cleanup timeout if component unmounts
+      }
+    }, [paymentStatus, navigate]);
+  
   return (
     <div>
       <h1>Payment Successful!</h1>
