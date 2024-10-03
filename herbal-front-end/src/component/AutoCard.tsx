@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "tailwindcss/tailwind.css";
 import "antd/dist/reset.css"; // Import Ant Design styles
+import { Link } from "react-router-dom";
 
 function AutoPlay() {
   const [products, setProducts] = useState([]);
@@ -100,9 +101,9 @@ function AutoPlay() {
                 <p className="text-xs md:text-sm text-gray-500 mt-2">{product.description}</p> {/* Smaller font on mobile */}
               </div>
               <div className="p-3 md:p-4">
-                <button className="w-full bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm md:text-base">
+                <Link to={`/product/${product.id}`} className="w-full bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm md:text-base">
                   Add to Cart
-                </button>
+                </Link>
               </div>
             </div>
           </div>
