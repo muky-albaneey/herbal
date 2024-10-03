@@ -46,7 +46,7 @@ const SettingsForm = () => {
 
     try {
       const response = await fetch(`https://backend-herbal.onrender.com/user/update/${userId}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
