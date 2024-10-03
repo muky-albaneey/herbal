@@ -1,15 +1,37 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useAuthStoreUser } from '../../utills/store/auth';
+import { decode } from 'jwt-js-decode';
 
 const ProductImageEdit = () => {
+
+
+  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+
+  const decodeToken = (token) => {
+      if (token) {
+          try {
+              let jwt = decode(token);
+              console.log('Decoded JWT:', jwt.payload);
+              return jwt.payload;
+          } catch (error) {
+              console.error('Failed to decode JWT:', error);
+              return null;
+          }
+      }
+      return null;
+  };
+
+  const decodedToken = decodeToken(jwtToken);
+  
  const [productData, setProductData] = useState({
         name: '',
         price: '',
         quantity: '',
         category: '',
         description: '',
-        userId: '', // Assuming the user is already authenticated and you have the userId
+        userId: `${decodedToken?.sub}`, // Assuming the user is already authenticated and you have the userId
   });
   const [file, setFile] = useState(null);
   // const [productId, setProductId] = useState('');
@@ -17,6 +39,7 @@ const ProductImageEdit = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+
 
   const [products, setProducts] = useState([]);
   const [loadingFetch, setLoadingFetch] = useState(true); // Loading state
