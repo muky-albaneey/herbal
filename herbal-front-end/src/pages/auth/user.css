@@ -49,6 +49,7 @@
     }
     .users_content{
         width: 100%;
+        border: .4rem solid #008103;
     }
     .users_left{
         width: 100%;
@@ -60,6 +61,6 @@
         flex-direction: column;
     }
     .users_con{
-        border: .6rem solid gainsboro;
+        border: .4rem solid gainsboro;
     }
 }
