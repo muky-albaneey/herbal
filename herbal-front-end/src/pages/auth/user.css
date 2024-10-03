@@ -44,11 +44,17 @@
 }
 
 @media (max-width: 640px) {
+    .users_wrapper{
+        width: 100%;
+    }
+    .users_content{
+        width: 100%;
+    }
     .users_left{
-        width: 95%;
+        width: 100%;
     }
     .user_right{
-        width: 95%;
+        width: 99%;
     }
     .users_content{
         flex-direction: column;
