@@ -1,5 +1,3 @@
-
-
 // import React, { useEffect, useState } from "react";
 // import Slider from "react-slick";
 // import axios from "axios";
@@ -11,6 +9,7 @@
 //   const [products, setProducts] = useState([]);
 //   const [loading, setLoading] = useState(true);
 //   const [error, setError] = useState(null);
+//   const sliderRef = React.useRef(null); // Ref to access the slider instance
 
 //   // API Call to fetch products
 //   useEffect(() => {
@@ -40,50 +39,63 @@
 //   const settings = {
 //     dots: true,
 //     infinite: true,
-//     slidesToShow: 1, // Show 1 image on mobile
+//     slidesToShow: 3,
 //     slidesToScroll: 1,
 //     autoplay: true,
-//     speed: 1000, // Transition speed
-//     autoplaySpeed: 2000, // Delay between slides
-//     cssEase: "ease-in-out", // Smoother transitions
+//     speed: 1000,
+//     autoplaySpeed: 1000,
+//     cssEase: "linear",
+//     pauseOnHover: true, // Automatically pause when hovering on the card
 //     responsive: [
 //       {
 //         breakpoint: 1024, // Tablet and lower
 //         settings: {
-//           slidesToShow: 2, // Show 2 images on tablet
+//           slidesToShow: 2,
 //         },
 //       },
 //       {
 //         breakpoint: 768, // Mobile
 //         settings: {
-//           slidesToShow: 1, // Show 1 image on mobile
-//           arrows: false,  // Hide arrows on mobile
+//           slidesToShow: 1,
 //         },
 //       },
 //     ],
+//   };
+
+//   const handleMouseEnter = () => {
+//     sliderRef.current.slickPause(); // Pause the slider when hovering
+//   };
+
+//   const handleMouseLeave = () => {
+//     sliderRef.current.slickPlay(); // Resume the slider when not hovering
 //   };
 
 //   if (loading) return <div>Loading products...</div>;
 //   if (error) return <div>{error}</div>;
 
 //   return (
-//     <div className="slider-container p-0 m-0">
-//   <Slider {...settings}>
+//     <div className="slider-container p-4">
+//       <Slider ref={sliderRef} {...settings}>
 //         {products.map((product) => (
-//           <div key={product.id} className="slide-item p-0 m-0"> {/* Remove padding/margin */}
-//             <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto"> {/* Ensure card width */}
+//           <div 
+//             key={product.id} 
+//             className="p-2 md:p-4" 
+//             onMouseEnter={handleMouseEnter} 
+//             onMouseLeave={handleMouseLeave} // Stop and resume slider when hovering over a card
+//           > 
+//             <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto md:max-w-sm"> {/* Limit width for mobile */}
 //               <img
-//                 className="w-full h-48 object-cover rounded-t-lg" // Increased height to 48
+//                 className="w-full h-36 object-cover rounded-t-lg md:h-48" // Adjust height for mobile
 //                 src={product.product_image.url}
 //                 alt={product.name}
 //               />
-//               <div className="p-2"> {/* Smaller padding inside the card */}
-//                 <h3 className="text-lg font-bold mb-1">{product.name}</h3>
-//                 <p className="text-gray-700 text-sm">${product.price}</p>
-//                 <p className="text-xs text-gray-500 mt-1">{product.description}</p>
+//               <div className="p-3 md:p-4"> {/* Reduce padding for mobile */}
+//                 <h3 className="text-lg md:text-xl font-bold mb-2">{product.name}</h3>
+//                 <p className="text-gray-700 text-sm md:text-base">${product.price}</p>
+//                 <p className="text-xs md:text-sm text-gray-500 mt-2">{product.description}</p> {/* Smaller font on mobile */}
 //               </div>
-//               <div className="p-2">
-//                 <button className="w-full bg-blue-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded text-sm">
+//               <div className="p-3 md:p-4">
+//                 <button className="w-full bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm md:text-base">
 //                   Add to Cart
 //                 </button>
 //               </div>
@@ -99,14 +111,17 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import axios from "axios";
+import { Rate } from "antd"; // Import Ant Design's Rate component
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "tailwindcss/tailwind.css"; // Ensure Tailwind is installed and imported
+import "tailwindcss/tailwind.css";
+import "antd/dist/reset.css"; // Import Ant Design styles
 
 function AutoPlay() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const sliderRef = React.useRef(null); // Ref to access the slider instance
 
   // API Call to fetch products
   useEffect(() => {
@@ -142,6 +157,7 @@ function AutoPlay() {
     speed: 1000,
     autoplaySpeed: 1000,
     cssEase: "linear",
+    pauseOnHover: true, // Automatically pause when hovering on the card
     responsive: [
       {
         breakpoint: 1024, // Tablet and lower
@@ -152,10 +168,18 @@ function AutoPlay() {
       {
         breakpoint: 768, // Mobile
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
     ],
+  };
+
+  const handleMouseEnter = () => {
+    sliderRef.current.slickPause(); // Pause the slider when hovering
+  };
+
+  const handleMouseLeave = () => {
+    sliderRef.current.slickPlay(); // Resume the slider when not hovering
   };
 
   if (loading) return <div>Loading products...</div>;
@@ -163,9 +187,14 @@ function AutoPlay() {
 
   return (
     <div className="slider-container p-4">
-      <Slider {...settings}>
+      <Slider ref={sliderRef} {...settings}>
         {products.map((product) => (
-          <div key={product.id} className="p-2 md:p-4"> {/* Adjust padding for mobile */}
+          <div 
+            key={product.id} 
+            className="p-2 md:p-4" 
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave} // Stop and resume slider when hovering over a card
+          > 
             <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto md:max-w-sm"> {/* Limit width for mobile */}
               <img
                 className="w-full h-36 object-cover rounded-t-lg md:h-48" // Adjust height for mobile
@@ -175,10 +204,11 @@ function AutoPlay() {
               <div className="p-3 md:p-4"> {/* Reduce padding for mobile */}
                 <h3 className="text-lg md:text-xl font-bold mb-2">{product.name}</h3>
                 <p className="text-gray-700 text-sm md:text-base">${product.price}</p>
+                <Rate disabled defaultValue={product.rating || 4} /> {/* Display rating stars */}
                 <p className="text-xs md:text-sm text-gray-500 mt-2">{product.description}</p> {/* Smaller font on mobile */}
               </div>
               <div className="p-3 md:p-4">
-                <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm md:text-base">
+                <button className="w-full bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm md:text-base">
                   Add to Cart
                 </button>
               </div>
