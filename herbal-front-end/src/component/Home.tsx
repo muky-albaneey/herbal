@@ -60,7 +60,8 @@ const testimony = [
         </section>
         <section className="products_con" style={{ width:'100rem' }}>
             <Residence message={{ choice:'', popular:'' , side:'one'}}/>
-            <Residence message={{ choice:'', popular:true, side:'two'}}/>
+            {/* <Residence message={{ choice:'', popular:true, side:'two'}}/> */}
+            <AutoPlay />
             <Residence message={{ choice:'', popular:'', side:'three'}}/>
             <AutoPlay />
         </section>

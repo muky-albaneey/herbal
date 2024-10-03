@@ -1,13 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const SettingsForm = () => {
+  const userId = '63687312-b14e-400c-9afe-af49db794cc8'; // Replace with the actual user ID or pass it as a prop
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
     location: '',
   });
-  const [profileImage, setProfileImage] = useState(null);
+  const [error, setError] = useState(null);
+  
+  // Fetch user data
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}/single_user`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch user data');
+        }
+        const userData = await response.json();
+        setFormData({
+          fullName: userData.full_name,
+          email: userData.email,
+          phone: userData.phone_num,
+          location: userData.location,
+        });
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchUserData();
+  }, [userId]);
 
   // Handle input changes
   const handleChange = (e) => {
@@ -15,50 +39,42 @@ const SettingsForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle profile image change
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileImage(reader.result); // Update the profile image state
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', { ...formData, profileImage });
-    // Add your form submission logic here, such as an API call
+    console.log('Form submitted:', { ...formData });
+
+    try {
+      const response = await fetch(`https://backend-herbal.onrender.com/user/update/${userId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          full_name: formData.fullName,
+          phone_num: formData.phone,
+          location: formData.location,
+          role: "admin" // Include other fields as necessary
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update user data');
+      }
+
+      const data = await response.json();
+      console.log('Update response:', data);
+      alert('User updated successfully!'); // Optionally handle success feedback
+    } catch (error) {
+      console.error('Update error:', error);
+      alert('Failed to update user data'); // Optionally handle error feedback
+    }
   };
 
   return (
     <div className="max-w-sm mx-auto">
       <h1 className="text-center text-2xl font-bold my-4">Edit Profile</h1>
-      <div className="flex justify-center mb-4">
-        <label htmlFor="profile-image">
-          <div
-            className="w-24 h-24 rounded-full overflow-hidden border-2 border-gray-300 flex items-center justify-center cursor-pointer"
-            style={{
-              backgroundImage: `url(${profileImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            {!profileImage && <span className="text-gray-500">Upload Image</span>}
-          </div>
-        </label>
-        <input
-          type="file"
-          id="profile-image"
-          onChange={handleImageChange}
-          accept="image/*"
-          className="hidden"
-        />
-      </div>
-
+      {error && <p className="text-red-500 text-center">{error}</p>}
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="full-name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
