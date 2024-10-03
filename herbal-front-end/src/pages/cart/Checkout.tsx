@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuthStoreUser } from '../../utills/store/auth';
 import { decode } from 'jwt-js-decode';
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 export default function CheckoutName() {
     const [loading, setLoading] = useState(false); // Loading state
@@ -103,7 +104,7 @@ export default function CheckoutName() {
                             <article className="order_info">
                                 <div className="order_top">
                                     <span>{items.name}</span>
-                                    <span style={{ fontWeight: 'bold' }}>{items.price}</span>
+                                    <span style={{ fontWeight: 'bold' }}><TbCurrencyNaira />{items.price}</span>
                                 </div>
                                 <p>Supplements are usually taken daily, often as part of a health regimen.</p>
                             </article>

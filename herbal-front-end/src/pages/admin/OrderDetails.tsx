@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 const OrderDetails = () => {
   const { id } = useParams(); // Accessing the order ID from the URL parameters
@@ -34,7 +35,7 @@ console.log(id)
       {order && (
         <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
           <h2 className="text-xl font-semibold text-gray-700">Order ID: {order.id}</h2>
-          <p className="text-gray-600 mt-2">Total Amount: ${order.totalAmount}</p>
+          <p className="text-gray-600 mt-2">Total Amount: <TbCurrencyNaira />{{order.totalAmount}</p>
           <p className="text-gray-600 mt-2">Created At: {new Date(order.createdAt).toLocaleDateString()}</p>
 
           <div className="mt-4">

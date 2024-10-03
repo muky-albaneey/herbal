@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -77,7 +78,7 @@ const Orders = () => {
             <h2 className="text-xl font-semibold text-gray-700">
               <Link to={`/admin/${order.id}/order`}>Order details: {order.id}</Link> {/* Link to order details page */}
             </h2>
-            <p className="text-gray-600 mt-2">Total Amount: ${order.totalAmount}</p>
+            <p className="text-gray-600 mt-2">Total Amount: <TbCurrencyNaira />{{order.totalAmount}</p>
             <p className="text-gray-600 mt-2">Created At: {new Date(order.createdAt).toLocaleDateString()}</p>
 
             <div className="mt-4">

@@ -3,6 +3,7 @@ import TableCom from '../../component/table/Table';
 import './cart.css';
 import useCartStore from '../../utills/store/cart';
 import { NavLink } from 'react-router-dom';
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 export default function CartComponent() {
   const totalPrice = useCartStore((state) => state.totalPrice()); // This will make it reactive to changes
@@ -22,7 +23,7 @@ export default function CartComponent() {
           <section className="cart_items">
             <div className="pricing">
               <span>Sub Total</span>
-              <h2>{totalPrice}</h2> 
+              <h2><TbCurrencyNaira />{totalPrice}</h2> 
             </div>
 
             <div className="pricing">
@@ -32,12 +33,12 @@ export default function CartComponent() {
 
             <div className="pricing">
               <span>Discount Fee</span>
-              <h2></h2>
+              <h2><TbCurrencyNaira /></h2>
             </div>
             <hr />
             <div className="pricing">
               <span>Total Amount</span>
-              <h2>{totalPrice}</h2> 
+              <h2><TbCurrencyNaira />{totalPrice}</h2> 
             </div>
           </section>
           <NavLink to='/checkout' className="cart_foo">
