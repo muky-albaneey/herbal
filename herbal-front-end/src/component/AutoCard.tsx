@@ -155,7 +155,7 @@ function AutoPlay() {
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
     pauseOnHover: true, // Automatically pause when hovering on the card
     responsive: [
@@ -197,8 +197,10 @@ function AutoPlay() {
           > 
             <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto md:max-w-sm"> {/* Limit width for mobile */}
               <img
+              
                 className="w-full h-36 object-cover rounded-t-lg md:h-48" // Adjust height for mobile
-                src={product.product_image.url}
+                // src={product.product_image.url}
+                src={product.product_image.url.startsWith('https://') ? product.product_image.url : `https://${product.product_image.url}`} 
                 alt={product.name}
               />
               <div className="p-3 md:p-4"> {/* Reduce padding for mobile */}
