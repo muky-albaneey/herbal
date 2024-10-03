@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
@@ -122,7 +123,7 @@ const AdminDashboard = () => {
                   /> */}
                 </td>
                 <td className="py-3 px-6">{product.name}</td>
-                <td className="py-3 px-6">{product.price}</td>
+                <td className="py-3 px-6"><TbCurrencyNaira />{product.price}</td>
                 <td className="py-3 px-6">{product.quantity}</td>
                 <td className="py-3 px-6">{product.category}</td>
                 <td className="py-3 px-6">{product.description}</td>

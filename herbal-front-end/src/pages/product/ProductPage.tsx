@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { sliderSettings } from '../../utills/common';
 import './product.css';
 import useCartStore from '../../utills/store/cart';
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 const SliderButtons = ({ side }) => {
   const swiper = useSwiper();
@@ -88,7 +89,7 @@ export default function ProductPageComponent() {
           <aside className='product_con_right'>
             <div className="product_price_con">
               <h3>{product.name}</h3>
-              <p>${product.price}</p>
+              <p><TbCurrencyNaira />{product.price}</p>
             </div>
             <section className="product_desc">
               {product.description}
@@ -122,8 +123,7 @@ export default function ProductPageComponent() {
                       hoverable
                       className='cardCon'
                       cover={
-                      // <img src={relatedProduct.product_image.url} alt={relatedProduct.name} loading="lazy" />
-                                              <img 
+                        <img 
                           src={product.product_image.url.startsWith('https://') ? product.product_image.url : `https://${product.product_image.url}`} 
                           alt={product.id} 
                           loading="lazy" 
@@ -135,7 +135,7 @@ export default function ProductPageComponent() {
                         <article>
                           <h4>
                             <span>{relatedProduct.name}</span> <br />
-                            <span>${relatedProduct.price}</span>
+                            <span><TbCurrencyNaira />{relatedProduct.price}</span>
                           </h4>
                         </article>
                         <div className="add-to-cart">

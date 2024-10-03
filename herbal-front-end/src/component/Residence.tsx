@@ -165,6 +165,7 @@ import { sliderSettings } from '../utills/common';
 import { Card, Rate } from 'antd'; // Import Rate from Ant Design
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { TbCurrencyNaira } from 'react-icons/tb';
 
 export type ProductImage = {
   id: string;
@@ -275,7 +276,7 @@ const Residence = React.memo(({ message }) => {
                                       <article>
                                         <h4>
                                           <span>{card.name}</span> <br />
-                                          <span>{card.price}</span>
+                                          <span><TbCurrencyNaira />{card.price}</span>
                                         </h4>
                                         {/* Add Rating below the product name and price */}
                                         <Rate disabled defaultValue={card.rating || 4} /> 

@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "tailwindcss/tailwind.css";
 import "antd/dist/reset.css"; // Import Ant Design styles
 import { Link } from "react-router-dom";
+import { TbCurrencyNaira } from "react-icons/tb";
 
 function AutoPlay() {
   const [products, setProducts] = useState([]);
@@ -96,7 +97,7 @@ function AutoPlay() {
               />
               <div className="p-3 md:p-4"> {/* Reduce padding for mobile */}
                 <h3 className="text-lg md:text-xl font-bold mb-2">{product.name}</h3>
-                <p className="text-gray-700 text-sm md:text-base">${product.price}</p>
+                <p className="text-gray-700 text-sm md:text-base"><TbCurrencyNaira />{product.price}</p>
                 <Rate disabled defaultValue={product.rating || 4} /> {/* Display rating stars */}
                 <p className="text-xs md:text-sm text-gray-500 mt-2">{product.description}</p> {/* Smaller font on mobile */}
               </div>

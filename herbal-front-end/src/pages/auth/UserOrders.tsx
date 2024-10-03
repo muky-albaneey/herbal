@@ -69,7 +69,7 @@ const UserOrders = () => {
                 <tr key={order.id} className="hover:bg-gray-50">
                   <td className="py-2 px-4 border-b">{order.id}</td>
                   <td className="py-2 px-4 border-b"><TbCurrencyNaira />{parseFloat(order.totalAmount).toFixed(2)}</td>
-                  <td className="py-2 px-4 border-b"><TbCurrencyNaira />{{parseFloat(order.deliveryFee).toFixed(2)}</td>
+                  <td className="py-2 px-4 border-b"><TbCurrencyNaira />{parseFloat(order.deliveryFee).toFixed(2)}</td>
                   <td className="py-2 px-4 border-b">{new Date(order.createdAt).toLocaleDateString()}</td>
                 </tr>
               ))
