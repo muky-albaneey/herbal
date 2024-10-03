@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import useCartStore from '../../utills/store/cart';
+import { useAuthStoreUser } from '../../utills/store/auth';
+import { decode } from 'jwt-js-decode';
 
 const PaymentSuccess = () => {
   const location = useLocation();
@@ -12,7 +14,23 @@ const PaymentSuccess = () => {
   const totalPrice = useCartStore((state) => state.totalPrice()); // Reactive total price
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
+  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
 
+  const decodeToken = (token) => {
+      if (token) {
+          try {
+              let jwt = decode(token);
+              console.log('Decoded JWT:', jwt.payload);
+              return jwt.payload;
+          } catch (error) {
+              console.error('Failed to decode JWT:', error);
+              return null;
+          }
+      }
+      return null;
+  };
+
+  const decodedToken = decodeToken(jwtToken);
   const params = new URLSearchParams(location.search);
   const reference = params.get('reference'); // Get reference from the URL if included
 
@@ -55,7 +73,7 @@ const PaymentSuccess = () => {
 
       try {
         const orderResponse = await axios.post(
-          'https://backend-herbal.onrender.com/orders/63687312-b14e-400c-9afe-af49db794cc8',
+          `https://backend-herbal.onrender.com/orders/${decodedToken?.sub}`,
           { items: cart }, // Wrapping cart data correctly
           {
             withCredentials: true,

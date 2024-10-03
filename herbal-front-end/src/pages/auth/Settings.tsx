@@ -1,7 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthStoreUser } from '../../utills/store/auth';
+import { decode } from 'jwt-js-decode';
 
 const SettingsForm = () => {
   const userId = '63687312-b14e-400c-9afe-af49db794cc8'; // Replace with the actual user ID or pass it as a prop
+  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+
+  const decodeToken = (token) => {
+      if (token) {
+          try {
+              let jwt = decode(token);
+              console.log('Decoded JWT:', jwt.payload);
+              return jwt.payload;
+          } catch (error) {
+              console.error('Failed to decode JWT:', error);
+              return null;
+          }
+      }
+      return null;
+  };
+
+  const decodedToken = decodeToken(jwtToken);
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -14,7 +34,7 @@ const SettingsForm = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}/single_user`);
+        const response = await fetch(`https://backend-herbal.onrender.com/user/${decodedToken?.sub}/single_user`);
         if (!response.ok) {
           throw new Error('Failed to fetch user data');
         }
@@ -45,7 +65,7 @@ const SettingsForm = () => {
     console.log('Form submitted:', { ...formData });
 
     try {
-      const response = await fetch(`https://backend-herbal.onrender.com/user/update/${userId}`, {
+      const response = await fetch(`https://backend-herbal.onrender.com/user/update/${decodedToken?.sub}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +74,7 @@ const SettingsForm = () => {
           full_name: formData.fullName,
           phone_num: formData.phone,
           location: formData.location,
-          role: "admin" // Include other fields as necessary
+          // role: "admin" // Include other fields as necessary
         }),
       });
 
