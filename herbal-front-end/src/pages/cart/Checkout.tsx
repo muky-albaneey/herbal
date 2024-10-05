@@ -83,9 +83,10 @@ export default function CheckoutName() {
                         role: userData.role,
                     };
                     // Assuming you have logic to retrieve these tokens
-                        const jwtToken = 'your_jwt_token';      // Replace with actual JWT token logic
-                        const roleToken = 'your_role_token';     // Replace with actual Role token logic
-                        const refreshToken = 'your_refresh_token'; // Replace with actual Refresh token logic
+                    const jwtToken = 'your_jwt_token';      // Replace with actual JWT token logic
+                    const roleToken = 'your_role_token';     // Replace with actual Role token logic
+                    const refreshToken = 'your_refresh_token'; // Replace with actual Refresh token logic
+    
                     // Logic to set tokens and user data
                     setAuthData(jwtToken, roleToken, refreshToken, user);
                     navigate('/pay'); 
@@ -110,6 +111,7 @@ export default function CheckoutName() {
             setLoading(false);  // Reset loading state
         }
     };
+    
     
     
     const handleChange = (e) => {
