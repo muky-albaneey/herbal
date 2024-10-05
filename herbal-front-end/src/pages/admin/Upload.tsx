@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useAuthStoreUser } from '../../utills/store/auth';
+import { decode } from 'jwt-js-decode';
 
 const ProductUpload = () => {
   // Define state for form data
