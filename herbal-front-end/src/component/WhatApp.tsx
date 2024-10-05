@@ -4,7 +4,7 @@ import React from 'react';
 // import './whatsapp.css';
 import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
-// import logo from '../../assets/logo.png';
+import logo from '../assets/logo.png';
 
 const Whatsapp = () => {
   return (     
@@ -14,8 +14,8 @@ const Whatsapp = () => {
       
       {/* WhatsApp Widget */}
         <WhatsAppWidget 
-      // CompanyIcon={react}
-        companyName ='Kenzy Naturals.' 
+      CompanyIcon={logo}
+      companyName ='Kenzy Naturals.' 
       phoneNumber="7060941707"
       // containerClass="whatsapp-widget-container"      
       sendButtonText = 'chart us'
