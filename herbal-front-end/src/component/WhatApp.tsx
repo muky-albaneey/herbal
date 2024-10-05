@@ -32,13 +32,13 @@ import { RiGasStationFill } from "react-icons/ri";
 import React from 'react';
 import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
-import logo from '../assets/logo.png';
+// import logo from '../assets/logo.png';
 
 const Whatsapp = () => {
   return (
     <div className="whatsapp-widget-container">
       <WhatsAppWidget 
-        CompanyIcon={logo} // Pass the imported logo here
+        // CompanyIcon={logo} // Pass the imported logo here
         companyName='Kenzy Naturals'
         phoneNumber="7060941707"
         sendButtonText='Chat us'
