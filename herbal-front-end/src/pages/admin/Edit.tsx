@@ -408,7 +408,7 @@ const ProductImageEdit = () => {
             readOnly // Set to read-only as it's populated from the API
           />
         </div>
-
+        
         <div className="mb-4">
           <label className="block text-gray-700">Product Image</label>
           <input
