@@ -43,18 +43,12 @@ export default function CheckoutName() {
         city: '',
     });
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        
         console.log('Form Data:', formData);
         console.log(decodedToken?.sub);
-    
+        
         try {
             setLoading(true); // Set loading state
             const response = await axios.post(
@@ -81,18 +75,69 @@ export default function CheckoutName() {
             
             if (response.data && response.data.statusCode) {
                 const userResponseData = useAuthStoreUser((state) => state.userResponseData);
-                console.log(userResponseData)
+                console.log(userResponseData);
                 // navigate('/pay'); 
             }
             
         } catch (error) {
-            console.error('Error submitting address:', error.response?.data);
-            setError(error.response?.data);
+            console.error('Error submitting address:', error.response?.data || error.message);
+            setError(error.response?.data?.message || 'An error occurred');
             setSuccess('');
         } finally {
             setLoading(false);  // Reset loading state
         }
     };
+    
+    // const handleChange = (e) => {
+    //     setFormData({
+    //         ...formData,
+    //         [e.target.name]: e.target.value
+    //     });
+    // };
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    
+    //     console.log('Form Data:', formData);
+    //     console.log(decodedToken?.sub);
+    
+    //     try {
+    //         setLoading(true); // Set loading state
+    //         const response = await axios.post(
+    //             `https://backend-herbal.onrender.com/user/address`, 
+    //             formData,
+    //             {
+    //                 withCredentials: true, 
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //             }
+    //         );
+            
+    //         console.log('Address submitted successfully:', response.data);
+    
+    //         // Extract and save user data from the response
+    //         const userData = response.data.data?.user;
+    //         if (userData) {
+    //             useAuthStoreUser.getState().setUserResponseData(userData);  // Save user data in the store
+    //         }
+    
+    //         setSuccess(response.data.message);
+    //         setError('');
+            
+    //         if (response.data && response.data.statusCode) {
+    //             const userResponseData = useAuthStoreUser((state) => state.userResponseData);
+    //             console.log(userResponseData)
+    //             // navigate('/pay'); 
+    //         }
+            
+    //     } catch (error) {
+    //         console.error('Error submitting address:', error.response?.data);
+    //         setError(error.response?.data);
+    //         setSuccess('');
+    //     } finally {
+    //         setLoading(false);  // Reset loading state
+    //     }
+    // };
     
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
