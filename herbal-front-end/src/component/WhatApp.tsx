@@ -15,7 +15,7 @@ const Whatsapp = () => {
       {/* WhatsApp Widget */}
         <WhatsAppWidget 
       // CompanyIcon={react}
-        companyName ='Future Exploration and Energy Development Limited.' 
+        companyName ='Kenzy Naturals.' 
       phoneNumber="7060941707"
       // containerClass="whatsapp-widget-container"      
       sendButtonText = 'chart us'
