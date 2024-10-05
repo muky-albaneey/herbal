@@ -53,10 +53,10 @@ export default function CheckoutName() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+    
         console.log('Form Data:', formData);
         console.log(decodedToken?.sub);
-        
+    
         try {
             setLoading(true); // Set loading state
             const response = await axios.post(
@@ -69,55 +69,49 @@ export default function CheckoutName() {
                     },
                 }
             );
-            
+    
             console.log('Address submitted successfully:', response.data);
     
-            // Extract and save user data from the response
-            // const userData = response.data.data?.user;
-            // if (userData) {
-            //     useAuthStoreUser.getState().setUserResponseData(userData);  // Save user data in the store
-            // }
             if (response.data.statusCode === 200) {
-                // Assuming you have logic to retrieve these tokens
-                const jwtToken = 'your_jwt_token';      // Replace with actual JWT token logic
-                const roleToken = 'your_role_token';     // Replace with actual Role token logic
-                const refreshToken = 'your_refresh_token'; // Replace with actual Refresh token logic
-            
-                const user: User = {
-                    id: response.data.user.id,
-                    full_name: response.data.user.full_name,
-                    email: response.data.user.email,
-                    role: response.data.user.role,
-                };
-            
-                setAuthData(jwtToken, roleToken, refreshToken, user);
-                navigate('/pay'); 
+                // Check if user data is available
+                const userData = response.data.user;
+                if (userData) {
+                    const user: User = {
+                        id: userData.id,         // Safely access id
+                        full_name: userData.full_name,
+                        email: userData.email,
+                        role: userData.role,
+                    };
+    
+                    // Assuming you have logic to retrieve these tokens
+                    const jwtToken = 'your_jwt_token';      // Replace with actual JWT token logic
+                    const roleToken = 'your_role_token';     // Replace with actual Role token logic
+                    const refreshToken = 'your_refresh_token'; // Replace with actual Refresh token logic
+                
+                    setAuthData(jwtToken, roleToken, refreshToken, user);
+                    navigate('/pay'); 
+                } else {
+                    // Handle case where user data is not returned
+                    console.error('User data not found in response:', response.data);
+                    setError('User data not found.');
+                }
             } else {
                 console.error('Error fetching address info:', response.data.message);
+                setError(response.data.message || 'Error fetching address info.');
             }
-
+    
             setSuccess(response.data.message);
             setError('');
-            
-            // if (response.data && response.data.statusCode) {
-            //     const userResponseData = useAuthStoreUser((state) => state.userResponseData);
-            //     console.log(userResponseData);
-            //     // navigate('/pay'); 
-            // }
-            
+    
         } catch (error) {
             console.error('Error submitting address:', error.response?.data || error);
-            if (error.response?.data) {
-                setError(error.response.data);
-            } else {
-                setError('An unexpected error occurred.');
-            }
+            setError(error.response?.data || 'An unexpected error occurred.');
             setSuccess('');
-        }
-         finally {
+        } finally {
             setLoading(false);  // Reset loading state
         }
     };
+    
     
     const handleChange = (e) => {
         setFormData({
