@@ -5,7 +5,7 @@
     position: relative;
     bottom: 10px;
     right: 20px;
-    z-index: 100;
+    z-index: 900;
     background-color: #25d366; /* WhatsApp green color */
     padding: 10px;
     border-radius: 10px;
