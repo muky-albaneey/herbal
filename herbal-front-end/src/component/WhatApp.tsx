@@ -12,7 +12,7 @@ const Whatsapp = () => {
     
     <div className="whatsapp-widget-container"> 
     <WhatsAppWidget 
-    //   CompanyIcon={logo}
+      CompanyIcon={'/logo.png'}
       companyName='Kenzy Naturals'
       phoneNumber="7060941707"
       sendButtonText='Chat us'
