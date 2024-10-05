@@ -111,7 +111,7 @@
 
 //     try {
 //       const response = await axios.patch(
-//         `http://localhost:3000/products/${productId}`, // Replace with your NestJS backend URL
+//         `https://backend-herbal.onrender.com/products/${productId}`, // Replace with your NestJS backend URL
 //         formData,
 //         {
 //           headers: {
@@ -408,7 +408,7 @@ const ProductImageEdit = () => {
             readOnly // Set to read-only as it's populated from the API
           />
         </div>
-        
+
         <div className="mb-4">
           <label className="block text-gray-700">Product Image</label>
           <input
