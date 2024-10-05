@@ -59,7 +59,7 @@ export default function CheckoutName() {
         try {
             setLoading(true); // Set loading state
             const response = await axios.post(
-                `https://backend-herbal.onrender.com/user/${decodedToken?.sub}/address`, 
+                `https://backend-herbal.onrender.com/user/address`, 
                 formData,
                 {
                     withCredentials: true, 
