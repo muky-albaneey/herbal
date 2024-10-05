@@ -28,7 +28,7 @@ export default function CartComponent() {
 
             <div className="pricing">
               <span>Delivery Fee</span>
-              <h2></h2>
+              <h2>Free delivery nationwide</h2>
             </div>
 
             <div className="pricing">

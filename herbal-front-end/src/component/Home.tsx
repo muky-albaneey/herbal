@@ -13,6 +13,7 @@ import { sliderSettings } from "../utills/common";
 import { Trans, useTranslation } from 'react-i18next'
 import TestimonyComponent from "./Testimony";
 import AutoPlay from "./AutoCard";
+import Whatsapp from "./WhatApp";
 // import IMG_7863 from '../../public/IMG_7863.JPG';
 
 export default function HomeComponent() {
@@ -110,7 +111,7 @@ const testimony = [
                 <img src='./IMG_7863.JPG' alt="" />
             </aside>
         </section>
-
+        <Whatsapp />
         <section className="accodion">
             
         <h1>{t('faq_heading')}</h1>

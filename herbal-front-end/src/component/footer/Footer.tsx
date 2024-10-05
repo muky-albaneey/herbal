@@ -20,7 +20,9 @@ export default function FooterComponent() {
               <h1 className="text-lg font-bold">Contact Us</h1>
               <div className="foo_icon flex items-center mt-2">
                 <ImLocation className="text-lg" />
-                <span className="ml-2">165 Main Street, Kenzy Naturals</span>
+                <span className="ml-2">
+                  15, Bayo Adeyemo street Oke-Ira Ogba
+                </span>
               </div>
               <div className="foo_icon flex items-center mt-2">
                 <AiOutlineMail className="text-lg" />
