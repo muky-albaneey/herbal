@@ -80,10 +80,15 @@ export default function CheckoutName() {
             }
             
         } catch (error) {
-            console.error('Error submitting address:', error.response?.data || error.message);
-            setError(error.response?.data?.message || 'An error occurred');
+            console.error('Error submitting address:', error.response?.data || error);
+            if (error.response?.data) {
+                setError(error.response.data);
+            } else {
+                setError('An unexpected error occurred.');
+            }
             setSuccess('');
-        } finally {
+        }
+         finally {
             setLoading(false);  // Reset loading state
         }
     };
