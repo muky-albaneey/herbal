@@ -17,6 +17,25 @@ const ProductUpload = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
+
+  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+
+  const decodeToken = (token) => {
+      if (token) {
+          try {
+              let jwt = decode(token);
+              console.log('Decoded JWT:', jwt.payload);
+              return jwt.payload;
+          } catch (error) {
+              console.error('Failed to decode JWT:', error);
+              return null;
+          }
+      }
+      return null;
+  };
+
+  const decodedToken = decodeToken(jwtToken);
+  
   // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -39,6 +58,7 @@ const ProductUpload = () => {
       setError('All fields are required including the image.');
       return;
     }
+
 
     const formData = new FormData();
     formData.append('file', file);
@@ -132,7 +152,7 @@ const ProductUpload = () => {
             onChange={handleInputChange}
             className="w-full px-3 py-2 border-b-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
-          />
+        />
         </div>
 
         <div className="mb-4">
