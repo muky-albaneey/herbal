@@ -197,7 +197,7 @@
 //           <input
 //             type="text"
 //             name="userId"
-//             value={decodedToken?.sub}
+//             value={productData.userId}
 //             onChange={handleInputChange}
 //             className="w-full border-b-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
 //             required
@@ -225,52 +225,43 @@
 
 // export default ProductImageEdit;
 
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useAuthStoreUser } from '../../utills/store/auth';
-import { decode } from 'jwt-js-decode';
 
 const ProductImageEdit = () => {
-  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
-
-  const decodeToken = (token) => {
-    if (token) {
-      try {
-        let jwt = decode(token);
-        console.log('Decoded JWT:', jwt.payload);
-        return jwt.payload;
-      } catch (error) {
-        console.error('Failed to decode JWT:', error);
-        return null;
-      }
-    }
-    return null;
-  };
-
-  const decodedToken = decodeToken(jwtToken);
-
   const [productData, setProductData] = useState({
     name: '',
     price: '',
     quantity: '',
     category: '',
     description: '',
-    userId: decodedToken?.sub || '', // Initialize userId from decodedToken
+    userId: '', // Will be populated from the API response
   });
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [loadingFetch, setLoadingFetch] = useState(true); // Loading state
-  const [errorFetch, setErrorFetch] = useState(''); // Error state
+  const [loadingFetch, setLoadingFetch] = useState(true);
+  const [errorFetch, setErrorFetch] = useState('');
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchDashboardData = async () => {
+    const fetchProductData = async () => {
       try {
         const productResponse = await axios.get(`https://backend-herbal.onrender.com/products/${id}`);
-        setProductData(productResponse.data); // Populate productData
+        const product = productResponse.data;
+        
+        // Set the product data including userId from the API response
+        setProductData({
+          name: product.name,
+          price: product.price,
+          quantity: product.quantity,
+          category: product.category,
+          description: product.description,
+          userId: product.user.id, // Set userId directly from the API response
+        });
       } catch (err) {
         setErrorFetch('Error fetching data.');
         console.error(err);
@@ -279,12 +270,11 @@ const ProductImageEdit = () => {
       }
     };
 
-    fetchDashboardData();
+    fetchProductData();
   }, [id]);
 
-  // Handle loading and error states
   if (loadingFetch) {
-    return <div className="text-center mt-6">Loading dashboard data...</div>;
+    return <div className="text-center mt-6">Loading product data...</div>;
   }
 
   if (errorFetch) {
@@ -305,15 +295,16 @@ const ProductImageEdit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!file || !productData.name || !productData.price || !productData.quantity || !productData.category || !productData.description || !productData.userId) {
-      setError('All fields are required including the image.');
+    // Ensure all fields are filled
+    if (!file || !productData.name || !productData.price || !productData.quantity || !productData.category || !productData.description) {
+      setError('All fields are required, including the image.');
       return;
     }
 
     setLoading(true);
     setMessage('');
+    setError('');
 
-    // Prepare form data
     const formData = new FormData();
     formData.append('file', file);
     formData.append('name', productData.name);
@@ -321,11 +312,11 @@ const ProductImageEdit = () => {
     formData.append('quantity', productData.quantity);
     formData.append('category', productData.category);
     formData.append('description', productData.description);
-    formData.append('userId', productData.userId);
+    formData.append('userId', productData.userId); // Set userId from the API response
 
     try {
       const response = await axios.patch(
-        `http://localhost:3000/products/${id}`, // Use `id` instead of `productId`
+        `https://backend-herbal.onrender.com/products/${id}`, // Ensure you're using the correct endpoint
         formData,
         {
           headers: {
@@ -333,7 +324,7 @@ const ProductImageEdit = () => {
           },
         }
       );
-      setMessage('File uploaded successfully!');
+      setMessage('Product updated successfully!');
     } catch (error) {
       setMessage('Error uploading file.');
       console.error(error);
@@ -344,7 +335,7 @@ const ProductImageEdit = () => {
 
   return (
     <div>
-      <h2>Upload Product Image</h2>
+      <h2>Update Product Information</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-700">Product Name</label>
@@ -410,11 +401,11 @@ const ProductImageEdit = () => {
           <input
             type="text"
             name="userId"
-            value={productData.userId} // Change to productData.userId
+            value={productData.userId}
             onChange={handleInputChange}
             className="w-full border-b-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             required
-            readOnly // Optional: make it read-only if you want to prevent manual changes
+            readOnly // Set to read-only as it's populated from the API
           />
         </div>
 
@@ -428,11 +419,13 @@ const ProductImageEdit = () => {
             required
           />
         </div>
+
         <button type="submit" disabled={loading}>
-          {loading ? 'Uploading...' : 'Upload Image'}
+          {loading ? 'Uploading...' : 'Update Product'}
         </button>
       </form>
       {message && <p>{message}</p>}
+      {error && <p className="text-red-600">{error}</p>}
     </div>
   );
 };
