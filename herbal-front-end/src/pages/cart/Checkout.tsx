@@ -73,21 +73,20 @@ export default function CheckoutName() {
             console.log('Address submitted successfully:', response.data);
     
             if (response.data.statusCode === 200) {
-                // Check if user data is available
-                const userData = response.data.user;
+                // Check if user data is available in the correct location
+                const userData = response.data.data?.user; 
                 if (userData) {
                     const user: User = {
-                        id: userData.id,         // Safely access id
+                        id: userData.id,
                         full_name: userData.full_name,
                         email: userData.email,
                         role: userData.role,
                     };
-    
                     // Assuming you have logic to retrieve these tokens
-                    const jwtToken = 'your_jwt_token';      // Replace with actual JWT token logic
-                    const roleToken = 'your_role_token';     // Replace with actual Role token logic
-                    const refreshToken = 'your_refresh_token'; // Replace with actual Refresh token logic
-                
+                        const jwtToken = 'your_jwt_token';      // Replace with actual JWT token logic
+                        const roleToken = 'your_role_token';     // Replace with actual Role token logic
+                        const refreshToken = 'your_refresh_token'; // Replace with actual Refresh token logic
+                    // Logic to set tokens and user data
                     setAuthData(jwtToken, roleToken, refreshToken, user);
                     navigate('/pay'); 
                 } else {
