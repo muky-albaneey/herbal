@@ -14,6 +14,7 @@ export default function CheckoutName() {
 
     const cart = useCartStore((state) => state.cart);
     const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+    const setAuthData = useAuthStoreUser((state) => state.setAuthData);
 
     const decodeToken = (token) => {
         if (token) {
@@ -43,6 +44,13 @@ export default function CheckoutName() {
         city: '',
     });
 
+    interface User {
+        id: string;           // User ID
+        full_name: string;    // Full name of the user
+        email: string;        // Email of the user
+        role: string;         // Role of the user
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -65,19 +73,37 @@ export default function CheckoutName() {
             console.log('Address submitted successfully:', response.data);
     
             // Extract and save user data from the response
-            const userData = response.data.data?.user;
-            if (userData) {
-                useAuthStoreUser.getState().setUserResponseData(userData);  // Save user data in the store
+            // const userData = response.data.data?.user;
+            // if (userData) {
+            //     useAuthStoreUser.getState().setUserResponseData(userData);  // Save user data in the store
+            // }
+            if (response.data.statusCode === 200) {
+                // Assuming you have logic to retrieve these tokens
+                const jwtToken = 'your_jwt_token';      // Replace with actual JWT token logic
+                const roleToken = 'your_role_token';     // Replace with actual Role token logic
+                const refreshToken = 'your_refresh_token'; // Replace with actual Refresh token logic
+            
+                const user: User = {
+                    id: response.data.user.id,
+                    full_name: response.data.user.full_name,
+                    email: response.data.user.email,
+                    role: response.data.user.role,
+                };
+            
+                setAuthData(jwtToken, roleToken, refreshToken, user);
+                navigate('/pay'); 
+            } else {
+                console.error('Error fetching address info:', response.data.message);
             }
-    
+
             setSuccess(response.data.message);
             setError('');
             
-            if (response.data && response.data.statusCode) {
-                const userResponseData = useAuthStoreUser((state) => state.userResponseData);
-                console.log(userResponseData);
-                // navigate('/pay'); 
-            }
+            // if (response.data && response.data.statusCode) {
+            //     const userResponseData = useAuthStoreUser((state) => state.userResponseData);
+            //     console.log(userResponseData);
+            //     // navigate('/pay'); 
+            // }
             
         } catch (error) {
             console.error('Error submitting address:', error.response?.data || error);
