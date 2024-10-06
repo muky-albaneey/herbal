@@ -359,7 +359,7 @@
     text-align: center;
     font-size: 1.3rem;
     font-weight: bold;
-    background-color: rgba(134, 129, 129,.6);
+    background-color: rgba(7, 129, 24,.6);
   }
 
   .add_list_cart{
@@ -370,7 +370,7 @@
   .add_list_cart button{
     width: 100%;
     padding: 1rem;
-    background-color: rgb(8, 130, 32);
+    background-color: rgb(8, 130, 32,.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -379,12 +379,19 @@
     flex-direction: column;
 
   }
-
+  .add_list_cart button div{
+    display: flex;
+    gap: 0.4rem;
+  }
 .circle_cart{
   padding: 0.4rem;
-  background-color: gainsboro;
+  width: 5rem;
+  height: 4rem;
+  background-color: rgb(202, 197, 197);
   border-radius: 50%;
+  color:whitesmoke;
 }
-  @media (max-width: 640px) {
+
+@media (max-width: 640px) {
    
-    }
+}

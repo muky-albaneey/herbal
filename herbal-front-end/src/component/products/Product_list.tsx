@@ -163,7 +163,8 @@ const ListComponent_info = React.memo(({ category }) => {
                                             handleAddToCart(product);
                                         }}>
                                             <h4> <span><TbCurrencyNaira />{product.price}</span></h4>
-                                            <div>Add to Cart 
+                                            <div>
+                                                Add to Cart 
                                                 <span className="circle_cart">
                                             <ImCart /></span>
                                             </div>
