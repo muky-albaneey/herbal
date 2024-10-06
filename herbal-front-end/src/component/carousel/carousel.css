@@ -51,14 +51,20 @@
         height: 100%;
         text-align: center;
         display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        justify-content: flex-end;
+        align-items: center;
         /* gap: 1rem; */
         flex-direction: column;
         color: white;
+        /* background: #000; */
         font-weight: bold;
     }
-    
+
+    #items_con .item_content button{
+        /* position: relative;
+        bottom: 0; */
+        margin-bottom:5rem;
+    }
     .item_content h1 {
         font-size: 5em;
         font-variant: small-caps;

@@ -42,7 +42,7 @@ const CarouselComponent: React.FC = () => {
               {/* <p>
                 <span>{t('carousel.description')}</span>
               </p> */}
-              <button><Link to='/products' style={{ textDecoration:'none' }}>{t('carousel.shop_now')}</Link></button>
+              <button><Link to='/products' style={{ textDecoration:'none', color:'white' }}>{t('carousel.shop_now')}</Link></button>
             </article>
           </div>
         </div>

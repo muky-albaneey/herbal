@@ -70,9 +70,9 @@ const testimony = [
             <div className="countContent">
                 <div className="countItems">
                     <h1>
-                    <CountComponent start={21} end={10000} duration={3} prefix='' suffix='+' />
+                    <CountComponent start={21} end={10000} duration={3} prefix='' suffix='+ client' />
                     </h1>
-                    <p>Serve over</p>
+                    <p>Served over</p>
                 </div>
                 {/* <div className="countItems">
                     <h1>
