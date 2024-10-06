@@ -50,7 +50,7 @@ const testimony = [
             <aside className="about_con_left"></aside>
             <aside className="about_con_right">
                 <header className="about_header">
-                    <div className='line'></div>
+                    {/* <div className='line'></div> */}
                     <h4>{t('realty.heading')}</h4>
                 </header>
                 <article>

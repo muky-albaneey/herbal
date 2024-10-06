@@ -119,7 +119,7 @@ export default function ProductsComponent() {
   const category = categories;
   
   return (
-    <div className='productListWrapper'>
+    <div className='productListWrapper' style={{ padding:'1rem', marginBottom:'.7rem' }}>
       <aside className="filter_sec">
         <h1>{t('products_heading')}</h1>
         <div className="search_product">
