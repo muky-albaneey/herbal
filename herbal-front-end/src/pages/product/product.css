@@ -358,6 +358,7 @@
     width: 100%;
     text-align: center;
     font-size: 1.3rem;
+    font-weight: bold;
     background-color: rgba(134, 129, 129,.6);
   }
 
@@ -372,10 +373,18 @@
     background-color: rgb(8, 130, 32);
     display: flex;
     justify-content: center;
+    align-items: center;
+    color:whitesmoke;
+    font-weight: bold;
+    flex-direction: column;
 
   }
 
-
+.circle_cart{
+  padding: 0.4rem;
+  background-color: gainsboro;
+  border-radius: 50%;
+}
   @media (max-width: 640px) {
    
     }
