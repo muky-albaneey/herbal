@@ -140,7 +140,7 @@ const ListComponent_info = React.memo(({ category }) => {
             <div className="r-container" id='products_list_con'>
                 {products.length > 0 ? (
                     products.map((product) => (
-                        <Link to={`/product/${product.id}`} key={product.id}>
+                        <Link to={`/product/${product.id}`} key={product.id} id='listWrapper'>
                             <div className="flexColStart r-card">
                                 <img 
                                     src={product.product_image.url.startsWith('https') 
