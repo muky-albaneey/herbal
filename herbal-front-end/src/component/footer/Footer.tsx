@@ -21,7 +21,7 @@ export default function FooterComponent() {
               <div className="foo_icon flex items-center mt-2">
                 <ImLocation className="text-lg" />
                 <span className="ml-2">
-                  15, Bayo Adeyemo street Oke-Ira Ogba
+                  15, Bayo Adeyemo street Oke-Ira Ogba Lagos state Nigeria.
                 </span>
               </div>
               <div className="foo_icon flex items-center mt-2">
