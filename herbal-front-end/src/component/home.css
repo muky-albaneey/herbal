@@ -320,7 +320,7 @@ article{
     }
 
     .countCon{
-       height: 45rem;
+       height: 10rem;
        flex-direction: column;
     }
     .countContent{
