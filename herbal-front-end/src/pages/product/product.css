@@ -337,7 +337,7 @@
 
   #listCon{
     width: 31%;
-    height: 15rem;
+    height: 25rem;
   }
 
   #listCon img{
@@ -367,3 +367,8 @@
     padding: 2rem;
     background-color: lawngreen;
   }
+
+
+  @media (max-width: 640px) {
+   
+    }
