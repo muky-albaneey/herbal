@@ -70,27 +70,19 @@ const testimony = [
             <div className="countContent">
                 <div className="countItems">
                     <h1>
-                    <CountComponent start={12} end={202} duration={3} prefix='$' suffix='m' />
+                    <CountComponent start={21} end={10000} duration={3} prefix='' suffix='+' />
                     </h1>
-                    <p>
-                    Transaction
-                    </p>
+                    <p>Serve over</p>
                 </div>
-                <div className="countItems">
+                {/* <div className="countItems">
                     <h1>
-                    <CountComponent start={1} end={502} duration={3} prefix='' suffix='+' />
-                    </h1>
-                    <p>Our Customer</p>
-                </div>
-                <div className="countItems">
-                    <h1>
-                    <CountComponent start={2} end={202} duration={3} prefix='' suffix='+' />
+                    <CountComponent start={2} end={10000} duration={3} prefix='' suffix='+' />
                     </h1>
                     <p>Product</p>
-                </div>
+                </div> */}
                 <div className="countItems">
                     <h1>
-                    <CountComponent start={12} end={202} duration={3} prefix='' suffix='%' />
+                    <CountComponent start={12} end={100} duration={3} prefix='' suffix='%' />
                     </h1>
                     <p>
                          Customer Satisfaction

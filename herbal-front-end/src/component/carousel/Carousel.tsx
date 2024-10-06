@@ -3,6 +3,7 @@ import { Carousel } from 'antd';
 import './carousel.css';
 import { TypeAnimation } from 'react-type-animation';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const CarouselComponent: React.FC = () => {
   const { t } = useTranslation();
@@ -41,7 +42,7 @@ const CarouselComponent: React.FC = () => {
               {/* <p>
                 <span>{t('carousel.description')}</span>
               </p> */}
-              <button>{t('carousel.shop_now')}</button>
+              <button><Link to='/products' style={{ textDecoration:'none' }}>{t('carousel.shop_now')}</Link></button>
             </article>
           </div>
         </div>
