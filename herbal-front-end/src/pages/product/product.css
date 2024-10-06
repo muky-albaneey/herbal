@@ -401,3 +401,45 @@
   height: 4rem;
   }
 }
+@media (max-width: 640px) {
+  .productListWrapper {
+    flex-direction: column;
+  }
+
+  #products_list_con {
+    width: 100%;
+    justify-content: center;
+    margin-left: -3rem;
+    display: flex;
+    flex-wrap: wrap; /* Ensure the cards wrap onto the next row */
+  }
+
+  #products_list_con #card_product {
+    width: 48%; /* Set the width to 48% to fit two cards per row with some gap */
+    height: auto;
+    margin: 1%; /* Add margin to create space between cards */
+  }
+
+  .filter_sec {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .tags {
+    height: 15rem;
+  }
+
+  .tags a {
+    font-weight: bold;
+  }
+
+  .marquee {
+    display: block;
+  }
+
+  .cardItemInfo {
+    position: relative;
+    z-index: 99;
+    top: 1px;
+  }
+}
