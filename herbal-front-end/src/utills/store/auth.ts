@@ -101,7 +101,7 @@ type AuthState = {
     email: string;
   } | null;
   isAuthenticated: boolean;
-  setAuthData: (jwtToken: string, roleToken: string, refreshToken: string, user: { full_name?: string; email: string }) => void;
+  setAuthData: (jwtToken: string, roleToken: string, refreshToken: string, user: { id:string; full_name?: string; email: string }) => void;
   
   logout: () => void; // Added logout method to the type
 };

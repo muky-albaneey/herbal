@@ -38,7 +38,8 @@ export default function PaymentName() {
         email: formData.email,
         amount: formData.amount,
         currency: formData.currency,
-         callback_url: 'https://kenzyherbals.vercel.app/payment-success'
+        callback_url: 'https://kenzyherbals.vercel.app/payment-success',
+        items: cart 
       },{
         withCredentials: true,
         headers: {

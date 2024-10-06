@@ -147,24 +147,24 @@ const PaymentSuccess = () => {
   const totalPrice = useCartStore((state) => state.totalPrice());
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
-  const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+  const user = useAuthStoreUser((state) => state.user);
   const navigate = useNavigate();
 
-  const decodeToken = (token) => {
-    if (token) {
-      try {
-        let jwt = decode(token);
-        console.log('Decoded JWT:', jwt.payload);
-        return jwt.payload;
-      } catch (error) {
-        console.error('Failed to decode JWT:', error);
-        return null;
-      }
-    }
-    return null;
-  };
+  // const decodeToken = (token) => {
+  //   if (token) {
+  //     try {
+  //       let jwt = decode(token);
+  //       console.log('Decoded JWT:', jwt.payload);
+  //       return jwt.payload;
+  //     } catch (error) {
+  //       console.error('Failed to decode JWT:', error);
+  //       return null;
+  //     }
+  //   }
+  //   return null;
+  // };
 
-  const decodedToken = decodeToken(jwtToken);
+  // const decodedToken = decodeToken(jwtToken);
   const params = new URLSearchParams(location.search);
   const reference = params.get('reference');
 
@@ -207,7 +207,7 @@ const PaymentSuccess = () => {
 
       try {
         const orderResponse = await axios.post(
-          `https://backend-herbal.onrender.com/orders/${decodedToken?.sub}`,
+          `https://backend-herbal.onrender.com/orders/${user?.id}`,
           { items: cart },
           {
             withCredentials: true,
