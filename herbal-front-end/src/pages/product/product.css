@@ -360,6 +360,8 @@
     font-size: 1.3rem;
     font-weight: bold;
     background-color: rgba(7, 129, 24,.6);
+    font-variant: small-caps;
+    color: whitesmoke;
   }
 
   .add_list_cart{
@@ -383,6 +385,11 @@
     display: flex;
     gap: 0.4rem;
   }
+  .add_list_cart button h4{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 .circle_cart{
   padding: 0.4rem;
   width: 5rem;
@@ -390,6 +397,8 @@
   background-color: rgb(202, 197, 197);
   border-radius: 50%;
   color:whitesmoke;
+  display: flex;
+  justify-content: center;align-items: center;
 }
 
 @media (max-width: 640px) {
