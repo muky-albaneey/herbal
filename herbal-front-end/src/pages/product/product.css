@@ -390,6 +390,11 @@
     display: flex;
     justify-content: center;
   }
+  .add_list_cart button h4 span{
+    display: flex;
+    gap: 0.7rem;
+    
+  }
 .circle_cart{
   padding: 0.4rem;
   width: 5rem;
