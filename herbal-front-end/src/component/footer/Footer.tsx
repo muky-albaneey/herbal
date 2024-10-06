@@ -36,17 +36,17 @@ export default function FooterComponent() {
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
+            {/* <div>
               <h2 className="mb-6 text-sm font-semibold uppercase">Resources</h2>
               <ul className="text-gray-200 font-medium">
                 <li className="mb-4">
                   <a href="" className="hover:underline">Kenzy herbal</a>
                 </li>
-                {/* <li>
+                <li>
                   <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
-                </li> */}
+                </li>
               </ul>
-            </div>
+            </div> */}
             <div>
               <h2 className="mb-6 text-sm font-semibold uppercase">Follow us</h2>
               <ul className="text-gray-200 font-medium">

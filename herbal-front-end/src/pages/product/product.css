@@ -338,6 +338,7 @@
   #listCon{
     width: 31%;
     height: 25rem;
+    text-decoration: none;
   }
 
   #listCon img{
@@ -355,6 +356,9 @@
   }
   .list__info article{
     width: 100%;
+    text-align: center;
+    font-size: 0.6rem;
+    background-color: rgba(134, 129, 129,.6);
   }
 
   .add_list_cart{
@@ -363,9 +367,12 @@
   }
 
   .add_list_cart button{
-    width: 95%;
-    padding: 2rem;
-    background-color: lawngreen;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(8, 130, 32);
+    display: flex;
+    justify-content: center;
+
   }
 
 

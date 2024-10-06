@@ -1,3 +1,4 @@
+import { TbCurrencyNaira } from "react-icons/tb"; 
 // import React, { useEffect, useState } from 'react';
 // import { ImCart } from "react-icons/im";
 // import axios from 'axios';
@@ -151,17 +152,18 @@ const ListComponent_info = React.memo(({ category }) => {
                                 />
                                 <div className="list__info">
                                     <article>
-                                        <h4>
+                                        
                                             <span>{product.name}</span> <br />
-                                            <span>${product.price}</span>
-                                        </h4>
+
+                                    
                                     </article>
                                     <div className="add_list_cart">
                                         <button onClick={(e) => {
                                             e.preventDefault(); // Prevent navigation when adding to cart
                                             handleAddToCart(product);
                                         }}>
-                                            Add to Cart <ImCart />
+                                            <h4> <span><TbCurrencyNaira />{product.price}</span></h4>
+                                            <div>Add to Cart <ImCart /></div>
                                         </button>
                                     </div>
                                 </div>
