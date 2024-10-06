@@ -104,7 +104,7 @@
 import React, { useEffect, useState } from 'react';
 import { ImCart } from "react-icons/im";
 import axios from 'axios';
-import '../../component/residence.css';
+// import '../../component/residence.css';
 import '../../pages/product/product.css';
 import { Link } from 'react-router-dom';
 
@@ -137,11 +137,11 @@ const ListComponent_info = React.memo(({ category }) => {
 
     return (
         <section className="r-wrapper">
-            <div className="r-container" id='products_list_con'>
+            <div className="r-container" id='listWrapper'>
                 {products.length > 0 ? (
                     products.map((product) => (
-                        <Link to={`/product/${product.id}`} key={product.id} id='listWrapper'>
-                            <div className="flexColStart r-card">
+                        <Link to={`/product/${product.id}`} key={product.id} id='listCon'>
+                            {/* <div className="flexColStart r-card"> */}
                                 <img 
                                     src={product.product_image.url.startsWith('https') 
                                         ? product.product_image.url 
@@ -149,14 +149,14 @@ const ListComponent_info = React.memo(({ category }) => {
                                     alt={product.name} 
                                     loading="lazy" 
                                 />
-                                <div className="cardItemInfo">
+                                <div className="list__info">
                                     <article>
                                         <h4>
                                             <span>{product.name}</span> <br />
                                             <span>${product.price}</span>
                                         </h4>
                                     </article>
-                                    <div className="add-to-cart">
+                                    <div className="add_list_cart">
                                         <button onClick={(e) => {
                                             e.preventDefault(); // Prevent navigation when adding to cart
                                             handleAddToCart(product);
@@ -165,7 +165,7 @@ const ListComponent_info = React.memo(({ category }) => {
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            {/* </div> */}
                         </Link>
                     ))
                 ) : (

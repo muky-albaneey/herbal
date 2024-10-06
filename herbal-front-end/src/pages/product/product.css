@@ -327,3 +327,37 @@
     }
   }
  
+  #listWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #listCon{
+    width: 31%;
+    height: 10rem;
+  }
+
+  #listCon img{
+    width: 100%;
+    height: 60%;
+  }
+
+  .list__info{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .list__info article{
+    width: 100%;
+  }
+
+  .add_list_cart{
+    width: 85%;
+    padding: 2rem;
+  }
