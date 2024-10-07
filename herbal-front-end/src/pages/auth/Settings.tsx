@@ -33,17 +33,40 @@ const SettingsForm = () => {
   console.log('User ID:', userId); // Add this line
   // Fetch user data
   useEffect(() => {
+    // const fetchUserData = async () => {
+    //   try {
+    //     console.log('User ID:in ', userId); // Add this line
+    //     const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}/single_user`);
+    //     if (!response.ok) {
+
+    //       throw new Error('Failed to fetch user data');
+    //     }
+    //     console.log('User info:', response); // Add this line)
+    //     const userData = await response.json();
+    //     console.log('User info:json', userData);
+    //     setFormData({
+    //       fullName: userData.full_name,
+    //       email: userData.email,
+    //       phone: userData.phone_num,
+    //       location: userData.location,
+    //     });
+    //   } catch (err) {
+    //     setError(err.message);
+    //   }
+    // };
     const fetchUserData = async () => {
       try {
-        console.log('User ID:in ', userId); // Add this line
+        console.log('Fetching data for User ID:', userId); // Log the userId before the fetch
         const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}/single_user`);
+        
+        // Check response status
+        console.log('Response status:', response.status); // Log the response status
         if (!response.ok) {
-          
-          throw new Error('Failed to fetch user data');
+          throw new Error(`Failed to fetch user data: ${response.statusText}`);
         }
-        console.log('User info:', response); // Add this line)
+        
         const userData = await response.json();
-        console.log('User info:json', userData);
+        console.log('User data fetched successfully:', userData);
         setFormData({
           fullName: userData.full_name,
           email: userData.email,
@@ -51,10 +74,11 @@ const SettingsForm = () => {
           location: userData.location,
         });
       } catch (err) {
+        console.error('Error fetching user data:', err);
         setError(err.message);
       }
     };
-
+    
     if (userId) { // Only fetch if userId is available
       fetchUserData();
       console.log('User ID: check', userId); // Add this line
