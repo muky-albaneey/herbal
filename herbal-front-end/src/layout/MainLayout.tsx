@@ -15,7 +15,7 @@ export default function Layout() {
     <div style={{ width: '100%', position: 'relative', overflow: 'visible' }}>
       <Header onSearch={handleSearch} />
       <Outlet context={{ searchResults }} /> {/* Pass search results to child components */}
-      {/* <FooterComponent /> */}
+      <FooterComponent />
     </div>
   );
 }

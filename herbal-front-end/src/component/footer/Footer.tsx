@@ -111,24 +111,25 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaTiktok } from "react-icons/fa"; 
 import './footer.css';
-import { BsFillTelephoneFill, BsWhatsapp, BsInstagram } from "react-icons/bs"; 
+import { BsFillTelephoneFill, BsInstagram } from "react-icons/bs"; 
 import { AiOutlineMail, AiFillFacebook } from "react-icons/ai"; 
 import { ImLocation } from "react-icons/im"; 
 import logo from '../../assets/logo.png';
 
-export default function FooterComponent({ searchResults }) {
+export default function FooterComponent() {
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch(`https://backend-herbal.onrender.com/products/category/${searchQuery}`);
       const data = await response.json();
+      setSearchResults(data); // Set search results state
       
-      // Navigate to the search results page and pass data through state
+      // Navigate to the search results page
       navigate('/search-results', { state: { results: data, query: searchQuery } });
-      
     } catch (error) {
       console.error('Error fetching search results:', error);
     }
