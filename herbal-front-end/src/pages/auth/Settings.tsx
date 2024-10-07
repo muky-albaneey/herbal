@@ -57,7 +57,7 @@ const SettingsForm = () => {
     const fetchUserData = async () => {
       try {
         console.log('Fetching data for User ID:', userId); // Log the userId before the fetch
-        const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}single_user`,{
+        const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}/single_user`,{
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
