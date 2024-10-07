@@ -29,7 +29,8 @@ const SettingsForm = () => {
     location: '',
   });
   const [error, setError] = useState(null);
-  
+  console.log('User ID:', userId); // Add this line
+
   // Fetch user data
   useEffect(() => {
     const fetchUserData = async () => {
@@ -50,7 +51,11 @@ const SettingsForm = () => {
       }
     };
 
-    fetchUserData();
+    if (userId) { // Only fetch if userId is available
+      fetchUserData();
+    } else {
+      console.warn('User ID is not available'); // Warn if userId is not set
+    }
   }, [userId]);
 
   // Handle input changes
