@@ -21,7 +21,7 @@ const ProductUpload = () => {
   };
 
   const decodedToken = decodeToken(jwtToken);
-
+  const user_id = useAuthStoreUser((state) => state.user?.id);
   // Define state for form data
   const [productData, setProductData] = useState({
     name: '',
@@ -29,7 +29,7 @@ const ProductUpload = () => {
     quantity: '',
     category: '',
     description: '',
-    userId: decodedToken?.sub, // Assuming the user is already authenticated and you have the userId
+    userId: user_id || decodedToken?.sub, // Assuming the user is already authenticated and you have the userId
   });
 
   const [file, setFile] = useState(null); // State for the file
