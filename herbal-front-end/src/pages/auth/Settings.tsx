@@ -73,10 +73,10 @@ const SettingsForm = () => {
         const userData = await response.json();
         console.log('User data fetched successfully:', userData);
         setFormData({
-          fullName: userData.full_name,
-          email: userData.email,
-          phone: userData.phone_num,
-          location: userData.location,
+          fullName: userData.data.full_name,
+          email: userData.data.email,
+          phone: userData.data.phone_num,
+          location: userData.data.location,
         });
       } catch (err) {
         console.error('Error fetching user data:', err);
