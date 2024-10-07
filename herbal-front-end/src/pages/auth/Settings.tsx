@@ -3,9 +3,9 @@ import { useAuthStoreUser } from '../../utills/store/auth';
 import { decode } from 'jwt-js-decode';
 
 const SettingsForm = () => {
-  const userId = '63687312-b14e-400c-9afe-af49db794cc8'; // Replace with the actual user ID or pass it as a prop
+  // Replace with the actual user ID or pass it as a prop
   const jwtToken = useAuthStoreUser((state) => state.jwtToken);
-
+  const user_id = useAuthStoreUser((state) => state.user?.id);
   const decodeToken = (token) => {
       if (token) {
           try {
@@ -21,7 +21,7 @@ const SettingsForm = () => {
   };
 
   const decodedToken = decodeToken(jwtToken);
-
+  const userId = user_id ?? decodedToken?.sub; 
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -34,7 +34,7 @@ const SettingsForm = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`https://backend-herbal.onrender.com/user/${decodedToken?.sub}/single_user`);
+        const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}/single_user`);
         if (!response.ok) {
           throw new Error('Failed to fetch user data');
         }
