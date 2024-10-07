@@ -38,6 +38,7 @@ const SettingsForm = () => {
         console.log('User ID:in ', userId); // Add this line
         const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}/single_user`);
         if (!response.ok) {
+          
           throw new Error('Failed to fetch user data');
         }
         console.log('User info:', response); // Add this line)
