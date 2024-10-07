@@ -17,6 +17,7 @@ import Whatsapp from "./WhatApp";
 import { useOutletContext } from "react-router-dom";
 import SearchResults from "./SearchResults";
 import AutoPlayVid from "./VideoTestimony";
+import SearchResultsFoo from "./FooSearch";
 // import IMG_7863 from '../../public/IMG_7863.JPG';
 
 export default function HomeComponent() {
@@ -126,7 +127,6 @@ const { searchResults } = useOutletContext();
             <TestimonyComponent/>
 </section>
 
-       
     </div>
   );
 }
