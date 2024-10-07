@@ -74,7 +74,6 @@ function SearchResults() {
   const sliderRef = React.useRef(null); // Ref to access the slider instance
 
   useEffect(() => {
-    // If needed, fetch additional data here
     setLoading(false); // Set loading to false after initial setup
   }, [searchResults]);
 
@@ -83,7 +82,7 @@ function SearchResults() {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false, // Set to false for search results
+    autoplay: false,
     speed: 1000,
     cssEase: "linear",
     responsive: [
@@ -118,10 +117,10 @@ function SearchResults() {
         <Slider ref={sliderRef} {...settings}>
           {searchResults.map((product) => (
             <div key={product.id} className="p-2 md:p-4">
-              <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto md:max-w-sm">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden"> {/* Added overflow-hidden */}
                 <Link to={`/product/${product.id}`}>
                   <img
-                    className="w-full h-36 object-cover rounded-t-lg md:h-48"
+                    className="w-full h-48 object-cover" // Adjust height to control overflow
                     src={product.product_image?.url.startsWith('https://') ? product.product_image.url : `https://${product.product_image?.url}`}
                     alt={product.name}
                   />

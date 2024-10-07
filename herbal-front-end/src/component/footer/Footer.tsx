@@ -130,7 +130,7 @@ export default function FooterComponent() {
       setSearchResults(data); // Set search results state
       
       // Navigate to the search results page
-      navigate('/search-results', { state: { results: data, query: searchQuery } });
+      // navigate('/search-results', { state: { results: data, query: searchQuery } });
     } catch (error) {
       console.error('Error fetching search results:', error);
     }

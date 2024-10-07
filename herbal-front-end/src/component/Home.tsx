@@ -54,7 +54,9 @@ const { searchResults } = useOutletContext();
 
   return (
     <div className='wrapper'> 
-        {searchResults&& <SearchResults />}
+        <section>
+            {searchResults&& <SearchResults />}
+        </section>
         <CarouselComponent />
         <section className="about_con">
             <aside className="about_con_left"></aside>
