@@ -1,6 +1,10 @@
 footer {
     background-color: #008103; /* Dark Gray */
 }
+.slider-container {
+  width: 100%; /* Ensure it takes the full width */
+  overflow: hidden; /* Prevent overflow */
+}
 
 .container {
     max-width: 1200px; /* Adjust as needed */
