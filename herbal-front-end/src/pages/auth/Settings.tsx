@@ -29,12 +29,13 @@ const SettingsForm = () => {
     location: '',
   });
   const [error, setError] = useState(null);
+ 
   console.log('User ID:', userId); // Add this line
-
   // Fetch user data
   useEffect(() => {
     const fetchUserData = async () => {
       try {
+        console.log('User ID:in ', userId); // Add this line
         const response = await fetch(`https://backend-herbal.onrender.com/user/${userId}/single_user`);
         if (!response.ok) {
           throw new Error('Failed to fetch user data');
@@ -53,6 +54,7 @@ const SettingsForm = () => {
 
     if (userId) { // Only fetch if userId is available
       fetchUserData();
+      console.log('User ID: check', userId); // Add this line
     } else {
       console.warn('User ID is not available'); // Warn if userId is not set
     }
