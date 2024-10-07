@@ -18,7 +18,7 @@ import { decode } from 'jwt-js-decode';
 
 
 
-function Header() {
+function Header({onSearch}) {
   const { t } = useTranslation();
   const { setToken, lang_token } = useAuthStore();
   const { i18n } = useTranslation();
@@ -27,7 +27,7 @@ function Header() {
   const user = useAuthStoreUser((state) => state.user);
   const jwtToken = useAuthStoreUser((state) => state.jwtToken);
   const logout = useAuthStoreUser((state) => state.logout);
-const [searchQuery, setSearchQuery] = useState('');
+const [searchQuery, setSearchQuery] = React.useState('');
 
 const handleSearch = async (e) => {
   e.preventDefault();
