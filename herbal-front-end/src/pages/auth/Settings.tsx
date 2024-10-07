@@ -70,7 +70,7 @@ const SettingsForm = () => {
     console.log('Form submitted:', { ...formData });
 
     try {
-      const response = await fetch(`https://backend-herbal.onrender.com/user/update/${decodedToken?.sub}`, {
+      const response = await fetch(`https://backend-herbal.onrender.com/user/update/${userId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
