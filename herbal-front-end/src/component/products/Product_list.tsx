@@ -34,7 +34,7 @@ const ListComponent_info = React.memo(({ category }) => {
                             withCredentials: true,
                             headers: { 'Cache-Control': 'no-cache' },
                         });
-
+                        alert(category);
                 setProducts(response.data);
             } catch (error) {
                 console.error("Error fetching the products:", error);

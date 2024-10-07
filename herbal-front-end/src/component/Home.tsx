@@ -14,37 +14,45 @@ import { Trans, useTranslation } from 'react-i18next'
 import TestimonyComponent from "./Testimony";
 import AutoPlay from "./AutoCard";
 import Whatsapp from "./WhatApp";
+import { useOutletContext } from "react-router-dom";
+import SearchResults from "./SearchResults";
 // import IMG_7863 from '../../public/IMG_7863.JPG';
 
 export default function HomeComponent() {
+   
 
+    const { t } = useTranslation();
+
+    // Function to fetch data based on the search query
 const { t } = useTranslation();
-const testimony = [
-    {
-      id: 1,
-      comment: t('testimonials.0.comment'),
-      icon: <BsQuote className="icon_testimony" />,
-      name: t('testimonials.0.name'),
-      title: t('testimonials.0.title')
-    },
-    {
-      id: 2,
-      comment: t('testimonials.1.comment'),
-      icon: <BsQuote className="icon_testimony" />,
-      name: t('testimonials.1.name'),
-      title: t('testimonials.1.title')
-    },
-    {
-      id: 3,
-      comment: t('testimonials.2.comment'),
-      icon: <BsQuote className="icon_testimony" />,
-      name: t('testimonials.2.name'),
-      title: t('testimonials.2.title')
-    }
-  ];
+const { searchResults } = useOutletContext();
+// const testimony = [
+//     {
+//       id: 1,
+//       comment: t('testimonials.0.comment'),
+//       icon: <BsQuote className="icon_testimony" />,
+//       name: t('testimonials.0.name'),
+//       title: t('testimonials.0.title')
+//     },
+//     {
+//       id: 2,
+//       comment: t('testimonials.1.comment'),
+//       icon: <BsQuote className="icon_testimony" />,
+//       name: t('testimonials.1.name'),
+//       title: t('testimonials.1.title')
+//     },
+//     {
+//       id: 3,
+//       comment: t('testimonials.2.comment'),
+//       icon: <BsQuote className="icon_testimony" />,
+//       name: t('testimonials.2.name'),
+//       title: t('testimonials.2.title')
+//     }
+//   ];
 
   return (
-    <div className='wrapper'>
+    <div className='wrapper'> 
+        {searchResults&& <SearchResults />}
         <CarouselComponent />
         <section className="about_con">
             <aside className="about_con_left"></aside>
