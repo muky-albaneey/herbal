@@ -4,22 +4,6 @@ import { useAuthStoreUser } from '../../utills/store/auth';
 import { decode } from 'jwt-js-decode';
 
 const ProductUpload = () => {
-  // Define state for form data
-  const [productData, setProductData] = useState({
-    name: '',
-    price: '',
-    quantity: '',
-    category: '',
-    description: '',
-    userId: '', // Assuming the user is already authenticated and you have the userId
-  });
-
-  const [file, setFile] = useState(null); // State for the file
-  const [loading, setLoading] = useState(false); // Loading state
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-
-
   const jwtToken = useAuthStoreUser((state) => state.jwtToken);
 
   const decodeToken = (token) => {
@@ -37,6 +21,24 @@ const ProductUpload = () => {
   };
 
   const decodedToken = decodeToken(jwtToken);
+
+  // Define state for form data
+  const [productData, setProductData] = useState({
+    name: '',
+    price: '',
+    quantity: '',
+    category: '',
+    description: '',
+    userId: decodedToken?.sub, // Assuming the user is already authenticated and you have the userId
+  });
+
+  const [file, setFile] = useState(null); // State for the file
+  const [loading, setLoading] = useState(false); // Loading state
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+
+  
   
   // Handle input changes
   const handleInputChange = (e) => {
@@ -89,7 +91,7 @@ const ProductUpload = () => {
         quantity: '',
         category: '',
         description: '',
-        userId: '',
+        userId: decodedToken?.sub,
       });
       setFile(null);
     } catch (err) {
