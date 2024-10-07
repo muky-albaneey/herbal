@@ -8,3 +8,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add this to your global CSS or appropriate styles */
+.slider-container {
+    width: 100%; /* Make sure the slider takes full width */
+    margin: 0 auto; /* Center the slider */
+    overflow: hidden; /* Hide overflow to avoid issues */
+  }
+  
+  .slick-slide {
+    display: flex; /* Ensure each slide is a flex item */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center vertically */
+  }
+  
