@@ -40,7 +40,9 @@ const SettingsForm = () => {
         if (!response.ok) {
           throw new Error('Failed to fetch user data');
         }
+        console.log('User info:', response); // Add this line)
         const userData = await response.json();
+        console.log('User info:json', userData);
         setFormData({
           fullName: userData.full_name,
           email: userData.email,
