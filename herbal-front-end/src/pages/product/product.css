@@ -407,5 +407,22 @@
 }
 
 @media (max-width: 640px) {
-   
+  #listCon{
+    width: 49%;
+    height: 15rem;
+    text-decoration: none;
+  }
+
+
+  .add_list_cart button{
+    width: 100%;
+    padding: .5rem;
+    font-weight: 600;
+    
+
+  }
+
+  .add_list_cart button h4{
+    font-size: 0.6rem;
+  }
 }
