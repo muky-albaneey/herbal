@@ -6,6 +6,10 @@
   background-color: white; /* Ensure the background remains visible */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a better visual effect */
 }
+.slider-container {
+  width: 100%; /* Ensure it takes the full width */
+  overflow: hidden; /* Prevent overflow */
+}
 
 
 .logo {
