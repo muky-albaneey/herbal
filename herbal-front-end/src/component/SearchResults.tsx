@@ -4,7 +4,8 @@ import { TbCurrencyNaira } from 'react-icons/tb';
 import { Link, useOutletContext } from 'react-router-dom';
 import '../pages/product/product.css';
 import { Rate } from 'antd';
-function SearchResults() {
+
+export default function SearchResults() {
   const { searchResults } = useOutletContext();
   const handleAddToCart = (product) => {
     console.log(`Added ${product.name} to cart.`);
