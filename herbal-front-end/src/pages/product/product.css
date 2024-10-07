@@ -166,7 +166,21 @@
     font-size: 1.4rem;
     color: #008103;
   }
-
+  .related_products_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
   @media (max-width: 640px) {
     .product_top_con {
       flex-direction: column;

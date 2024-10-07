@@ -157,21 +157,9 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { ImCart } from 'react-icons/im';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { sliderSettings } from '../../utills/common';
 import './product.css';
 import useCartStore from '../../utills/store/cart';
 import { TbCurrencyNaira } from 'react-icons/tb';
-
-const SliderButtons = ({ side }) => {
-  const swiper = useSwiper();
-  return (
-    <div className={side ? 'r-button' : 'r-buttons'}>
-      <button onClick={() => swiper.slidePrev()}>&lt;</button>
-      <button onClick={() => swiper.slideNext()}>&gt;</button>
-    </div>
-  );
-};
 
 export default function ProductPageComponent() {
   const { id } = useParams();
@@ -268,39 +256,32 @@ export default function ProductPageComponent() {
       )}
 
       <section className="place_order">
-        <h1>Popular Order</h1>
-        <section className="r-wrapper">
-          <div className="r-container">
-            <Swiper {...sliderSettings}>
-              {relatedProducts.map((relatedProduct, i) => (
-                <SwiperSlide key={i}>
-                  <div className="card" style={{ width: '18rem' }}>
-                    <img
-                      src={
-                        relatedProduct.product_image.url.startsWith('https://')
-                          ? relatedProduct.product_image.url
-                          : `https://${relatedProduct.product_image.url}`
-                      }
-                      className="card-img-top"
-                      alt={relatedProduct.name}
-                      loading="lazy"
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">{relatedProduct.name}</h5>
-                      <p className="card-text">
-                        <TbCurrencyNaira />
-                        {relatedProduct.price}
-                      </p>
-                      <a href="#" className="btn btn-primary">
-                        Go somewhere
-                      </a>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-              <SliderButtons side={true} />
-            </Swiper>
-          </div>
+        <h1>Popular Orders</h1>
+        <section className="related_products_grid">
+          {relatedProducts.map((relatedProduct, i) => (
+            <div className="card" style={{ width: '18rem' }} key={i}>
+              <img
+                src={
+                  relatedProduct.product_image.url.startsWith('https://')
+                    ? relatedProduct.product_image.url
+                    : `https://${relatedProduct.product_image.url}`
+                }
+                className="card-img-top"
+                alt={relatedProduct.name}
+                loading="lazy"
+              />
+              <div className="card-body">
+                <h5 className="card-title">{relatedProduct.name}</h5>
+                <p className="card-text">
+                  <TbCurrencyNaira />
+                  {relatedProduct.price}
+                </p>
+                <a href="#" className="btn btn-primary">
+                  Go somewhere
+                </a>
+              </div>
+            </div>
+          ))}
         </section>
       </section>
     </div>
