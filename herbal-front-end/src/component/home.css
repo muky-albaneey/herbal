@@ -303,7 +303,7 @@ article{
         font-size: .9rem;
        
     }
-    
+
     .about_header{
         display: flex;
         justify-content: center;
@@ -374,7 +374,21 @@ article{
         width: 100%;
         font-size: 1.3rem;
     }
-    
+    .countContent{
+    width: 95%;
+  
+}
+
+.countItems{
+    width: 100%;
+
+
+}
+
+.countItems h1{
+    font-weight: bold;
+    font-size: 1.9rem;
+}
   }
 
 
