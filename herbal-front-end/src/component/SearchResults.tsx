@@ -18,7 +18,7 @@ export default function SearchResults() {
         <ul>
           {searchResults.map((product) => (
             // <li key={item.id}>{item.name}</li>
-            <div key={product.id} className="p-2 md:p-4">
+            <div key={product.id} className="p-2 md:p-4" style={{ display:'flex', justifyContent:'center',alignItems:'center', overflow:'scroll' }}>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden"> {/* Added overflow-hidden */}
               <Link to={`/product/${product.id}`}>
                 <img
