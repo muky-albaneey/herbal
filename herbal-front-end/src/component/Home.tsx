@@ -16,6 +16,7 @@ import AutoPlay from "./AutoCard";
 import Whatsapp from "./WhatApp";
 import { useOutletContext } from "react-router-dom";
 import SearchResults from "./SearchResults";
+import AutoPlayVid from "./VideoTestimony";
 // import IMG_7863 from '../../public/IMG_7863.JPG';
 
 export default function HomeComponent() {
@@ -24,7 +25,7 @@ export default function HomeComponent() {
     const { t } = useTranslation();
 
     // Function to fetch data based on the search query
-const { t } = useTranslation();
+// const { t } = useTranslation();
 const { searchResults } = useOutletContext();
 // const testimony = [
 //     {
@@ -121,6 +122,7 @@ const { searchResults } = useOutletContext();
         </section>
         <section className="testimony">
     <h1>{t('customer_testimonial.heading')}</h1>
+            <AutoPlayVid />
             <TestimonyComponent/>
 </section>
 

@@ -6,10 +6,8 @@ function SearchResults() {
 
   return (
     <div>
-      <h2>Search Results</h2>
-      {searchResults.length === 0 ? (
-        <p>No results found</p>
-      ) : (
+    
+      {searchResults.length === 0 ?'' : (
         <ul>
           {searchResults.map((item) => (
             <li key={item.id}>{item.name}</li>
