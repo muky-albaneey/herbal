@@ -425,4 +425,14 @@
   .add_list_cart button h4{
     font-size: 0.6rem;
   }
+
+  .circle_cart{
+
+    width: 1.7rem;
+    height: 2rem;
+  }
+
+  .add_list_cart button div{
+    font-size: .4rem;
+  }
 }

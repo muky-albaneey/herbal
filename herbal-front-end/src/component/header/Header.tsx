@@ -26,6 +26,7 @@ function Header({onSearch}) {
   const isAuthenticated = useAuthStoreUser((state) => state.isAuthenticated);
   const user = useAuthStoreUser((state) => state.user);
   const jwtToken = useAuthStoreUser((state) => state.jwtToken);
+  const user_id = useAuthStoreUser((state) => state.user?.id);
   const logout = useAuthStoreUser((state) => state.logout);
 const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -191,7 +192,7 @@ const decodedToken = decodeToken(jwtToken);
 
                         <Dropdown className="profile-dropdown" style={{ background: 'green' }}>
                           <Dropdown.Toggle id="dropdown-basic" style={{ background: 'green', borderColor: 'green' }}>
-                            <FaUserCircle className="user-icon" /> {user !== null ? decodedToken?.email : 'user'}
+                            <FaUserCircle className="user-icon" /> {user !== null ? user?.email : 'user'}
                           </Dropdown.Toggle>
                           <Dropdown.Menu>
                             {isAuthenticated &&<Dropdown.Item as={NavLink} to="/user">Profile</Dropdown.Item>}
