@@ -68,4 +68,4 @@ function SearchResultsDisplayFoo({ results }) {
   );
 }
 
-export default SearchResultsDisplay;
+export default SearchResultsDisplayFoo;
