@@ -84,14 +84,9 @@ const { searchResults } = useOutletContext();
                     <h1>
                     <CountComponent start={21} end={10000} duration={3} prefix='' suffix='+ client' />
                     </h1>
-                    <p>Served over</p>
+                    <p>Served</p>
                 </div>
-                {/* <div className="countItems">
-                    <h1>
-                    <CountComponent start={2} end={10000} duration={3} prefix='' suffix='+' />
-                    </h1>
-                    <p>Product</p>
-                </div> */}
+               
                 <div className="countItems">
                     <h1>
                     <CountComponent start={12} end={100} duration={3} prefix='' suffix='%' />

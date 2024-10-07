@@ -12,29 +12,13 @@ const ListComponent_info = React.memo(({ category }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                // let response;
-
-            //     if(category !== ''){
-            //          response = await axios.get(`https://backend-herbal.onrender.com/products/category/${category}`, {
-            //             withCredentials: true,
-            //             headers: {
-            //                 'Cache-Control': 'no-cache',
-            //             },
-            //         });
-            //     }else{
-            //      response = await axios.get(`https://backend-herbal.onrender.com/products/all`, {
-            //         withCredentials: true,
-            //         headers: {
-            //             'Cache-Control': 'no-cache',
-            //         },
-            //     });
-            // }
+             
                         const endpoint = category ? `https://backend-herbal.onrender.com/products/category/${category}` : 'https://backend-herbal.onrender.com/products/all';
                         const response = await axios.get(endpoint, {
                             withCredentials: true,
                             headers: { 'Cache-Control': 'no-cache' },
                         });
-                        alert(category);
+                    
                 setProducts(response.data);
             } catch (error) {
                 console.error("Error fetching the products:", error);
