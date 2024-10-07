@@ -68,7 +68,7 @@ const CarouselComponent: React.FC = () => {
               {/* <p>
                 <span>{t('carousel.description')}</span>
               </p> */}
-              <button>{t('carousel.shop_now')}</button>
+               <button><Link to='/products' style={{ textDecoration:'none', color:'white' }}>{t('carousel.shop_now')}</Link></button>
             </article>
           </div>
         </div>
@@ -146,7 +146,7 @@ const CarouselComponent: React.FC = () => {
               <p>
                 <span>{t('carousel.description')}</span>
               </p>
-              <button>{t('carousel.shop_now')}</button>
+              <button><Link to='/products' style={{ textDecoration:'none', color:'white' }}>{t('carousel.shop_now')}</Link></button>
             </article>
           </div>
         </div>
@@ -198,7 +198,7 @@ const CarouselComponent: React.FC = () => {
               {/* <p>
                 <span>{t('carousel.description')}</span>
               </p> */}
-              <button>{t('carousel.shop_now')}</button>
+                <button><Link to='/products' style={{ textDecoration:'none', color:'white' }}>{t('carousel.shop_now')}</Link></button>
             </article>
           </div>
         </div>
@@ -223,7 +223,7 @@ const CarouselComponent: React.FC = () => {
               {/* <p>
                 <span>{t('carousel.description')}</span>
               </p> */}
-              <button>{t('carousel.shop_now')}</button>
+                <button><Link to='/products' style={{ textDecoration:'none', color:'white' }}>{t('carousel.shop_now')}</Link></button>
             </article>
           </div>
         </div>
