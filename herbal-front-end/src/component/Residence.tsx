@@ -319,9 +319,9 @@ const Residence = React.memo(({ message }) => {
                                 >
                                     <div className="cardItemInfo">
                                       <article>
-                                        <h4>
+                                        <h4 >
                                           <span>{card.name}</span> <br />
-                                          <span><TbCurrencyNaira />{card.price}</span>
+                                          <span style={{ display:'flex', justifyContent:'start', alignItems:'center' }}><TbCurrencyNaira />{card.price}</span>
                                         </h4>
                                         {/* Add Rating below the product name and price */}
                                         <Rate disabled defaultValue={card.rating || 4} /> 
