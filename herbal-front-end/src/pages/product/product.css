@@ -466,13 +466,13 @@
 
   @media (max-width: 640px) {
       #left_card_detail_con{
-        width: 24rem;
-          margin-left: -2.5rem;
+        width: 20rem;
+          margin-left: -4.5rem;
       }
 
       #left_card_detail_con{
-        width: 18rem;
-        margin-left: -2.5rem;
+        width: 21rem;
+        margin-left: -4.5rem;
       }
 
       .product_desc{
