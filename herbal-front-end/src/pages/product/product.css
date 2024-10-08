@@ -467,10 +467,12 @@
   @media (max-width: 640px) {
       #left_card_detail_con{
         width: 24rem;
+          margin-left: -5rem;
       }
 
       #left_card_detail_con{
         width: 23rem;
+        margin-left: -5rem;
       }
 
       .product_desc{
