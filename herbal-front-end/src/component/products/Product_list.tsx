@@ -59,7 +59,7 @@ const ListComponent_info = React.memo(({ category }) => {
                                             e.preventDefault(); // Prevent navigation when adding to cart
                                             handleAddToCart(product);
                                         }}>
-                                            <h4 > <span><TbCurrencyNaira />{product.price}</span></h4>
+                                            <h4 style={{ display:'flex',justifyContent:'flex-start', alignItems:'center' }}> <span><TbCurrencyNaira />{product.price}</span></h4>
                                             <div>
                                                 Add to Cart 
                                                 {/* <span className="circle_cart">
