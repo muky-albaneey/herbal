@@ -188,11 +188,11 @@
     .product_top_con {
       flex-direction: column;
       gap: 2rem;
-      background: #000;
+      
     }
   .product_con_left {
     width: 100rem;
-    background-color: red;
+   
   }
     .product_con_left img{
       width: 100%;
@@ -466,11 +466,11 @@
 
   @media (max-width: 640px) {
       #left_card_detail_con{
-        width: 30rem;
+        width: 24rem;
       }
 
       #left_card_detail_con{
-        width: 25rem;
+        width: 23rem;
       }
 
       .product_desc{
