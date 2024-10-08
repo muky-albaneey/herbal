@@ -466,6 +466,6 @@
 
   @media (max-width: 640px) {
       #left_card_detail_con{
-        width: 70rem;
+        width: 30rem;
       }
   }
