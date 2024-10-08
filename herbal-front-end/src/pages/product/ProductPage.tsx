@@ -165,14 +165,17 @@ export default function ProductPageComponent() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // Fetch product data
+    setLoading(true)
     const fetchProduct = async () => {
       try {
         const response = await fetch(`https://backend-herbal.onrender.com/products/${id}`);
         const data = await response.json();
         setProduct(data);
+        setLoading(false)
       } catch (error) {
         console.error('Error fetching product:', error);
       }
@@ -182,10 +185,12 @@ export default function ProductPageComponent() {
 
   // Fetch related products
   const fetchRelatedProducts = async () => {
+    setLoading(true)
     try {
       const response = await fetch(`https://backend-herbal.onrender.com/products/category/${product?.category}`);
       const data = await response.json();
       setRelatedProducts(data);
+      setLoading(false)
     } catch (error) {
       console.error('Error fetching related products:', error);
     }
@@ -216,7 +221,36 @@ export default function ProductPageComponent() {
     }
     setQuantity(1);
   };
-
+  if(loading){
+    return(
+      <>
+      <div className="spinner-grow text-primary" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-secondary" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-success" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-danger" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-warning" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-info" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-light" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-dark" role="status">
+      <span className="visually-hidden">Loading...</span>
+  </div>
+  </>
+    )
+  }
   return (
     <div className="product_wrapper">
       <h1>Product Details</h1>
