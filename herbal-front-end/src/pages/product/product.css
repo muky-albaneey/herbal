@@ -221,6 +221,10 @@
 
       height: 4rem;
       }
+
+      .product_price_con{
+        width: 100%;
+      }
   }
   
   /* PRODUCTS list section */

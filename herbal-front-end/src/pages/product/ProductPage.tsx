@@ -224,7 +224,8 @@ export default function ProductPageComponent() {
         <section className="product_top_con">
           <aside className="product_con_left">
             <img
-              src={product.product_image.url.startsWith('https://') ? product.product_image.url : `https://${product.product_image.url}`}
+              src={product.product_image.url.startsWith('https://') ? product.product_image.url : 
+                `https://${product.product_image.url}`}
               alt={product.id}
               loading="lazy"
             />
