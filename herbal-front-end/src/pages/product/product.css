@@ -189,10 +189,10 @@
       flex-direction: column;
       gap: 2rem;
     }
-  .product_con_left img{
-    width: 100%;
+  .product_con_left {
+    width: 20rem;
   }
-    .product_con_left {
+    .product_con_left img{
       width: 100%;
     }
   

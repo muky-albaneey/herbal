@@ -273,12 +273,12 @@ export default function ProductPageComponent() {
               />
               <div className="card-body">
                 <h5 className="card-title">{relatedProduct.name}</h5>
-                <p className="card-text">
+                <p className="card-text" style={{ display:'flex' }}>
                   <TbCurrencyNaira />
                   {relatedProduct.price}
                 </p>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
+                <a href="#" className="btn btn-secondary">
+                  Shop now
                 </a>
               </div>
             </div>
