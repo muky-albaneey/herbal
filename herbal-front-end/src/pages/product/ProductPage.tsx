@@ -221,8 +221,8 @@ export default function ProductPageComponent() {
     <div className="product_wrapper">
       <h1>Product Details</h1>
       {product && (
-        <section className="product_top_con">
-          <aside className="product_con_left">
+        <section className="product_top_con" >
+          <aside className="product_con_left" id='left_card_detail_con'>
             <img
               src={product.product_image.url.startsWith('https://') ? product.product_image.url : 
                 `https://${product.product_image.url}`}
