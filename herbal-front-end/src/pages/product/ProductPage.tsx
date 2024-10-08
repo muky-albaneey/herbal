@@ -248,7 +248,7 @@ export default function ProductPageComponent() {
               <button className="product_cart_btn" onClick={handleAddToCart}>
                 <ImCart /> Add to Cart
               </button>
-              <NavLink to="fan" className="product_cart_btn_2">
+              <NavLink to="#" className="product_cart_btn_2">
                 <ImCart /> Buy now
               </NavLink>
             </div>
