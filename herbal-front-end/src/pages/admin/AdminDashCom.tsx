@@ -69,7 +69,7 @@ const Dashboard = ({ users, orders, products }) => {
 
         {/* Pie Chart */}
         <div className="mb-8">
-          <h2 className="text-lg font-semibold mb-4">Overall Statistics (Pie Chart)</h2>
+          <h2 className="text-lg font-semibold mb-4">Overall Statistics (Kenzy Pie Chart)</h2>
           <div className="p-4 bg-white rounded-lg shadow-md">
             <div className="relative" style={{ height: '400px', maxWidth: '400px', margin: '0 auto' }}>
               <Pie data={pieData} options={options} />
