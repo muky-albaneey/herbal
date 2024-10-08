@@ -233,7 +233,7 @@ export default function ProductPageComponent() {
           <aside className="product_con_right">
             <div className="product_price_con">
               <h3>{product.name}</h3>
-              <p>
+              <p style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
                 <TbCurrencyNaira />
                 {product.price}
               </p>
@@ -273,7 +273,7 @@ export default function ProductPageComponent() {
               />
               <div className="card-body">
                 <h5 className="card-title">{relatedProduct.name}</h5>
-                <p className="card-text" style={{ display:'flex' }}>
+                <p className="card-text" style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
                   <TbCurrencyNaira />
                   {relatedProduct.price}
                 </p>
