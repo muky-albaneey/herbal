@@ -188,6 +188,7 @@
     .product_top_con {
       flex-direction: column;
       gap: 2rem;
+      background: #000;
     }
   .product_con_left {
     width: 20rem;
