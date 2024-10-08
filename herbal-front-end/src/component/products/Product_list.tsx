@@ -1,6 +1,5 @@
 import { TbCurrencyNaira } from "react-icons/tb"; 
 import React, { useEffect, useState } from 'react';
-import { ImCart } from "react-icons/im";
 import axios from 'axios';
 // import '../../component/residence.css';
 import '../../pages/product/product.css';
@@ -13,11 +12,11 @@ const ListComponent_info = React.memo(({ category }) => {
         const fetchProducts = async () => {
             try {
              
-                        const endpoint = category ? `https://backend-herbal.onrender.com/products/category/${category}` : 'https://backend-herbal.onrender.com/products/all';
-                        const response = await axios.get(endpoint, {
-                            withCredentials: true,
-                            headers: { 'Cache-Control': 'no-cache' },
-                        });
+                const endpoint = category ? `https://backend-herbal.onrender.com/products/category/${category}` : 'https://backend-herbal.onrender.com/products/all';
+                const response = await axios.get(endpoint, {
+                    withCredentials: true,
+                    headers: { 'Cache-Control': 'no-cache' },
+                });
                     
                 setProducts(response.data);
             } catch (error) {
