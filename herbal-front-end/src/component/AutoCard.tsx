@@ -47,7 +47,7 @@ function AutoPlay() {
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     cssEase: "linear",
     pauseOnHover: true, // Automatically pause when hovering on the card
     responsive: [
@@ -60,7 +60,7 @@ function AutoPlay() {
       {
         breakpoint: 768, // Mobile
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],
