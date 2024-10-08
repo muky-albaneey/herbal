@@ -462,7 +462,33 @@
     height: 4rem;
     }
   }
+#listWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 20px;
+}
 
+.card {
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+  
 
   @media (max-width: 640px) {
       #left_card_detail_con{
