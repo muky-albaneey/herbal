@@ -469,11 +469,11 @@
         width: 30rem;
       }
 
-      .product_cart_btn,.product_cart_btn_2{
-        width: 13rem;
+      #btn_detail{
+        width: 15rem;
       }
 
       .product_desc{
-        
+
       }
   }
