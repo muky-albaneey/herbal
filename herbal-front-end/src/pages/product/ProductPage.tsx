@@ -230,7 +230,7 @@ export default function ProductPageComponent() {
               loading="lazy"
             />
           </aside>
-          <aside className="product_con_right">
+          <aside className="product_con_right" id='left_card_detail_con'>
             <div className="product_price_con">
               <h3>{product.name}</h3>
               <p style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
