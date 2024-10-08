@@ -60,7 +60,7 @@ function AutoPlay() {
       {
         breakpoint: 768, // Mobile
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
     ],
