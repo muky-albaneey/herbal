@@ -182,6 +182,9 @@
   }
   
   @media (max-width: 640px) {
+    .product_wrapper{
+      padding: 0;
+    }
     .product_top_con {
       flex-direction: column;
       gap: 2rem;
@@ -224,6 +227,7 @@
 
       .product_price_con{
         width: 100%;
+
       }
   }
   
