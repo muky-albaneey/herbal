@@ -245,10 +245,10 @@ export default function ProductPageComponent() {
               <button onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}>-</button>
             </div>
             <div className="product_add_cart">
-              <button className="product_cart_btn" onClick={handleAddToCart}>
+              <button className="product_cart_btn" onClick={handleAddToCart} id='btn_detail'>
                 <ImCart /> Add to Cart
               </button>
-              <NavLink to="#" className="product_cart_btn_2">
+              <NavLink to="#" className="product_cart_btn_2" id='btn_detail'>
                 <ImCart /> Buy now
               </NavLink>
             </div>
