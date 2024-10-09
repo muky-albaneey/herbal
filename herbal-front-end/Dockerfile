@@ -1,24 +1,26 @@
-# Use an official Node.js image as a base
+# Use the specified Node.js version as the base image
 FROM node:20.15.0
 
-# Create and set the working directory
-WORKDIR /app
+# Create and change to the app directory
+WORKDIR /usr/src/app
 
-# Copy package.json and install dependencies
+# Copy application dependency manifests to the container image
 COPY package*.json ./
+
+# Install all dependencies
 RUN npm install
 
-# Copy the rest of your app code
+# Copy local code to the container image
 COPY . .
 
-# Build the app
+# Build the application
 RUN npm run build
 
-# Install a simple static server to serve the app
+# Install serve to serve static files
 RUN npm install -g serve
 
 # Expose port 3000
 EXPOSE 3000
 
-# Start the app using serve
+# Run the web service on container startup
 CMD ["serve", "-s", "dist"]
