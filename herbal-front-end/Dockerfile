@@ -1,32 +1,29 @@
-# Use the specified Node.js version as the base image
-FROM node:20.15.0
+# Use the official Node.js image to build the app
+FROM node:20.15.0 AS build
 
-# Create and change to the app directory
-WORKDIR /usr/src/app
+# Set the working directory to /app
+WORKDIR /app
 
-# Copy application dependency manifests to the container image
+# Copy the package.json and package-lock.json
 COPY package*.json ./
 
 # Install all dependencies
 RUN npm install
 
-# Copy the rest of the application code to the container image
+# Copy the rest of your application code
 COPY . .
 
-# Build the application (Vite will create a 'dist' folder)
+# Build the React app (this will generate the 'dist' folder)
 RUN npm run build
 
-# Prune dev dependencies to reduce image size
-RUN npm prune --production
+# Use a lightweight nginx image to serve the static files
+FROM nginx:alpine
 
-# Install 'serve' to serve the static files from the 'dist' folder
-RUN npm install -g serve
+# Copy the build output from the previous stage to the nginx web directory
+COPY --from=build /app/dist /usr/share/nginx/html
 
-# Remove source files if needed
-RUN rm -rf ./src
+# Expose port 80
+EXPOSE 80
 
-# Document that the service listens on port 3000
-EXPOSE 3000
-
-# Start the application using 'serve' to serve the 'dist' folder
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
