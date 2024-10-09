@@ -28,34 +28,13 @@ export default function HomeComponent() {
     // Function to fetch data based on the search query
 // const { t } = useTranslation();
 const { searchResults } = useOutletContext();
-// const testimony = [
-//     {
-//       id: 1,
-//       comment: t('testimonials.0.comment'),
-//       icon: <BsQuote className="icon_testimony" />,
-//       name: t('testimonials.0.name'),
-//       title: t('testimonials.0.title')
-//     },
-//     {
-//       id: 2,
-//       comment: t('testimonials.1.comment'),
-//       icon: <BsQuote className="icon_testimony" />,
-//       name: t('testimonials.1.name'),
-//       title: t('testimonials.1.title')
-//     },
-//     {
-//       id: 3,
-//       comment: t('testimonials.2.comment'),
-//       icon: <BsQuote className="icon_testimony" />,
-//       name: t('testimonials.2.name'),
-//       title: t('testimonials.2.title')
-//     }
-//   ];
 
   return (
     <div className='wrapper'> 
         <section>
-            {searchResults&& <SearchResults />}
+           <section style={{ width:'100%',position:'absolute',zIndex:1000, }}>
+             {searchResults&& <SearchResults />}
+           </section>
         </section>
         <CarouselComponent />
         <section className="about_con">
