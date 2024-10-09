@@ -1,29 +1,24 @@
-# Use the official Node.js image to build the app
-FROM node:20.15.0 AS build
+# Use an official Node.js image as a base
+FROM node:20.15.0
 
-# Set the working directory to /app
+# Create and set the working directory
 WORKDIR /app
 
-# Copy the package.json and package-lock.json
+# Copy package.json and install dependencies
 COPY package*.json ./
-
-# Install all dependencies
 RUN npm install
 
-# Copy the rest of your application code
+# Copy the rest of your app code
 COPY . .
 
-# Build the React app (this will generate the 'dist' folder)
+# Build the app
 RUN npm run build
 
-# Use a lightweight nginx image to serve the static files
-FROM nginx:alpine
+# Install a simple static server to serve the app
+RUN npm install -g serve
 
-# Copy the build output from the previous stage to the nginx web directory
-COPY --from=build /app/dist /usr/share/nginx/html
+# Expose port 3000
+EXPOSE 3000
 
-# Expose port 80
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start the app using serve
+CMD ["serve", "-s", "dist"]
