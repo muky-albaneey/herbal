@@ -20,7 +20,7 @@ function AutoPlay() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "https://backend-herbal.onrender.com/products/all",
+          "https://backend-herbal.onrender.com/products/all/desc",
           {
             withCredentials: true,
             headers: {
