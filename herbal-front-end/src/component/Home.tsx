@@ -27,13 +27,13 @@ export default function HomeComponent() {
 
     // Function to fetch data based on the search query
 // const { t } = useTranslation();
-const { searchResults } = useOutletContext();
+// const { searchResults } = useOutletContext();
 
   return (
     <div className='wrapper'> 
         <section>
            <section style={{ width:'100%',position:'absolute',zIndex:1000, }}>
-             {searchResults&& <SearchResults />}
+             {/* {searchResults&& <SearchResults />} */}
            </section>
         </section>
         <CarouselComponent />

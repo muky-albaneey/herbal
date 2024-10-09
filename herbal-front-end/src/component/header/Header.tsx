@@ -149,8 +149,8 @@ const decodedToken = decodeToken(jwtToken);
                       <input
                         type="search"
                         id="default-search"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
+                        // value={searchQuery}
+                        // onChange={(e) => setSearchQuery(e.target.value)}
                         className="block w-full p-2 ps-10 text-sm border border-green-300 rounded-lg bg-green-50 focus:ring-green-500 focus:border-green-500"
                         placeholder={t('search_placeholder')}
                         required
