@@ -1,0 +1,1 @@
+var a=function(e){return e.replace(/[A-Z]/g,function(r){return"-"+r.toLowerCase()}).toLowerCase()},o=a,n=function(e){return e.replace(/[A-Z]/g,function(r){return"-"+r.toLowerCase()}).toLowerCase()},t=n;export{t as a,o as c};

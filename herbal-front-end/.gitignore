@@ -8,10 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Dependency directories
-node_modules/
-dist
-dist-ssr
-*.local
+# node_modules/
+# dist
+# dist-ssr
+# *.local
 
 # Ignore environment variables
 .env
