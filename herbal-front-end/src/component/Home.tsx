@@ -54,9 +54,9 @@ export default function HomeComponent() {
         <section className="products_con" style={{ width:'100rem' }}>
             <Residence message={{ choice:'', popular:'' , side:'one'}}/>
             {/* <Residence message={{ choice:'', popular:true, side:'two'}}/> */}
-            {/* <Residence_2 message={{ choice:'', popular:'' , side:'one'}}/> */}
-            <Residence message={{ choice:'', popular:'', side:'three'}}/>
             <Residence_2 message={{ choice:'', popular:'' , side:'one'}}/>
+            <Residence message={{ choice:'', popular:'', side:'three'}}/>
+            {/* <Residence_2 message={{ choice:'', popular:'' , side:'one'}}/> */}
         </section>
         <section className='countCon'>
             <div className="countContent">
