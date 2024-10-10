@@ -21,23 +21,3 @@
     justify-content: center; /* Center content */
     align-items: center; /* Center vertically */
   }
-  .slick-slide {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .slick-list {
-    display: flex !important;
-    overflow: hidden;
-  }
-  
-  .slick-track {
-    display: flex !important;
-  }
-  
-  .slick-slide img {
-    display: block;
-    width: 100%;
-  }
-  
