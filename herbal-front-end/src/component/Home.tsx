@@ -18,6 +18,7 @@ import { useOutletContext } from "react-router-dom";
 import SearchResults from "./SearchResults";
 import AutoPlayVid from "./VideoTestimony";
 import SearchResultsFoo from "./FooSearch";
+import Residence_2 from "./Residence_2";
 // import IMG_7863 from '../../public/IMG_7863.JPG';
 
 export default function HomeComponent() {
@@ -53,9 +54,9 @@ export default function HomeComponent() {
         <section className="products_con" style={{ width:'100rem' }}>
             <Residence message={{ choice:'', popular:'' , side:'one'}}/>
             {/* <Residence message={{ choice:'', popular:true, side:'two'}}/> */}
-            <AutoPlay message={{ choice:'', popular:'' , side:'one'}}/>
+            <Residence_2 message={{ choice:'', popular:'' , side:'one'}}/>
             <Residence message={{ choice:'', popular:'', side:'three'}}/>
-            <AutoPlay message={{ choice:'', popular:'' , side:'one'}}/>
+            <Residence_2 message={{ choice:'', popular:'' , side:'one'}}/>
         </section>
         <section className='countCon'>
             <div className="countContent">
