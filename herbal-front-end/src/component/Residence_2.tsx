@@ -60,7 +60,7 @@ const Residence_2 = React.memo(({ message }) => {
     React.useEffect(() => {
       const fetchProducts = async () => {
         try {
-          const response = await axios.get('https://backend-herbal.onrender.com/products/all', {
+          const response = await axios.get('https://backend-herbal.onrender.com/products/all/desc', {
             withCredentials: true,
             headers: {
               'Cache-Control': 'no-cache',
