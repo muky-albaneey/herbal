@@ -140,138 +140,215 @@
 // }
 
 // export default AutoPlay;
+import React from 'react';
+import { ImCart } from "react-icons/im";
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import 'swiper/css';
+import './residence.css';
+import { sliderSettings } from '../utills/common';
+import { Card, Rate } from 'antd'; // Import Rate from Ant Design
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { TbCurrencyNaira } from 'react-icons/tb';
 
-import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import axios from "axios";
-import { Rate } from "antd";
-import { TbCurrencyNaira } from "react-icons/tb";
-import { Link } from "react-router-dom";
+export type ProductImage = {
+  id: string;
+  name: string;
+  url: string;
+  ext: string;
+};
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "tailwindcss/tailwind.css";
-import "antd/dist/reset.css";
+export type User = {
+  id: string;
+  full_name: string;
+  email: string;
+  phone_num: string | null;
+  password: string;
+  location: string | null;
+  rememberToken: string | null;
+  role: string;
+  profile_image: string | null;
+};
 
-function AutoPlay() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const sliderRef = React.useRef(null);
+export type Product = {
+  id: string;
+  name: string;
+  price: string;  // Price is a string in your response
+  quantity: string;  // Quantity is a string in your response
+  category: string;
+  description: string;
+  product_image: ProductImage;  // Nested object for product image details
+  user: User;  // Nested object for user details
+  createdAt: string;  // ISO date string
+  rating: number;  // Add rating field for product
+};
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get(
-          "https://backend-herbal.onrender.com/products/all/desc",
-          {
-            withCredentials: true,
-            headers: {
-              "Cache-Control": "no-cache",
-            },
-          }
+const Residence = React.memo(({ message }) => {
+
+  const SliderButtons = () => {
+    const swiper = useSwiper(); 
+        return (
+            <div className={message.popular === true ? 'r-button' : 'r-buttons'}>
+                <button onClick={() => swiper.slidePrev()}>&lt;</button>
+                <button onClick={() => swiper.slideNext()}>&gt;</button>
+            </div>
         );
-        setProducts(response.data);
-      } catch (err) {
-        setError("Error fetching products");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
     };
 
-    fetchProducts();
-  }, []);
+    const [products, setProducts] = React.useState<Product[]>([]);
+    const [loading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState<string | null>(null);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 10000,
-    cssEase: "linear",
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+    React.useEffect(() => {
+      const fetchProducts = async () => {
+        try {
+          const response = await axios.get('https://backend-herbal.onrender.com/products/all', {
+            withCredentials: true,
+            headers: {
+              'Cache-Control': 'no-cache',
+            },
+          });
+          setProducts(response.data);
+        } catch (err) {
+          setError('Error fetching products');
+          console.error(err);
+        } finally {
+          setLoading(false);
+        }
+      };
 
-  const handleMouseEnter = () => {
-    sliderRef.current.slickPause();
-  };
+      fetchProducts();
+    }, []);
 
-  const handleMouseLeave = () => {
-    sliderRef.current.slickPlay();
-  };
+    if (loading && message.side === "one") return (
+      <div>
+        <div className="spinner-grow text-primary" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-secondary" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-success" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-danger" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-warning" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-info" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-light" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-dark" role="status">
+      <span className="visually-hidden">Loading...</span>
+  </div>
+      </div>
+    );
+    
+    if (loading) return <div>
+       <div className="spinner-grow text-primary" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-secondary" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-success" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-danger" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-warning" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-info" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-light" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-dark" role="status">
+      <span className="visually-hidden">Loading...</span>
+  </div>
+    </div>;
+    if (error) return <div>{error}</div>;
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    // Check if there are no products available
+    if (products.length === 0) {
+      return <div>
+          <div className="spinner-grow text-primary" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-secondary" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-success" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-danger" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-warning" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-info" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-light" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </div>
+      <div className="spinner-grow text-dark" role="status">
+      <span className="visually-hidden">Loading...</span>
+  </div>
+      </div>;
+    }
 
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  return (
-    <div className="slider-container p-4">
-      <Slider ref={sliderRef} {...settings}>
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="p-2 md:p-4"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="bg-white rounded-lg shadow-lg max-w-xs mx-auto md:max-w-sm">
-              <img
-                className="w-full h-36 object-cover rounded-t-lg md:h-48"
-                src={
-                  product.product_image.url.startsWith("https://")
-                    ? product.product_image.url
-                    : `https://${product.product_image.url}`
-                }
-                alt={product.name}
-              />
-              <div className="p-3 md:p-4">
-                <h3 className="text-lg md:text-xl font-bold mb-2">
-                  {product.name}
-                </h3>
-                <p className="text-gray-700 text-sm md:text-base flex">
-                  <TbCurrencyNaira />
-                  {product.price}
-                </p>
-                <Rate disabled defaultValue={product.rating || 4} />
-                <p className="text-xs md:text-sm text-gray-500 mt-2">
-                  {product.description}
-                </p>
-              </div>
-              <div className="p-3 md:p-4">
-                <Link
-                  to={`/product/${product.id}`}
-                  className="w-full bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded text-sm md:text-base"
-                >
-                  Add to Cart
-                </Link>
-              </div>
+    return (
+        <section className="r-wrapper">
+            <div className="r-container">
+                <Swiper {...sliderSettings}>
+                    {products.map((card, i) => (
+                        <SwiperSlide key={i}>
+                           <Link to={`product/${card.id}`} style={{ textDecoration:'none' }}>
+                           <div className="flexColStart r-card">
+                                <Card
+                                    hoverable
+                                    className='cardCon'
+                                    cover={
+                                        <img 
+                                          src={card.product_image.url.startsWith('https://') ? card.product_image.url : `https://${card.product_image.url}`} 
+                                          alt={card.id} 
+                                          loading="lazy" 
+                                        />
+                                    }
+                                >
+                                    <div className="cardItemInfo">
+                                      <article>
+                                        <h4 style={{ width:'100%', textAlign:'left' }}>
+                                          <span >{card.name}</span> <br />
+                                          <span style={{ display:'flex', justifyContent:'start', alignItems:'center' }}><TbCurrencyNaira />{card.price}</span>
+                                        </h4>
+                                        {/* Add Rating below the product name and price */}
+                                        <Rate disabled defaultValue={card.rating || 4} /> 
+                                      </article>
+                                      <div className="add-to-cart">
+                                        <ImCart />
+                                      </div>
+                                    </div>
+                                </Card>
+                            </div>
+                           </Link>
+                        </SwiperSlide>
+                    ))}
+                    <SliderButtons side={message.popular}/> 
+                </Swiper>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
-  );
-}
+        </section>
+    );
+});
 
-export default AutoPlay;
+export default Residence;
