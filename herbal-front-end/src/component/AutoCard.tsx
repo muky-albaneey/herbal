@@ -183,7 +183,7 @@ export type Product = {
   rating: number;  // Add rating field for product
 };
 
-const Residence = React.memo(({ message }) => {
+const AutoPlay = React.memo(({ message }) => {
 
   const SliderButtons = () => {
     const swiper = useSwiper(); 
@@ -351,4 +351,4 @@ const Residence = React.memo(({ message }) => {
     );
 });
 
-export default Residence;
+export default AutoPlay;
