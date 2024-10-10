@@ -53,9 +53,9 @@ export default function HomeComponent() {
         <section className="products_con" style={{ width:'100rem' }}>
             <Residence message={{ choice:'', popular:'' , side:'one'}}/>
             {/* <Residence message={{ choice:'', popular:true, side:'two'}}/> */}
-            <AutoPlay />
+            <AutoPlay message={{ choice:'', popular:'' , side:'one'}}/>
             <Residence message={{ choice:'', popular:'', side:'three'}}/>
-            <AutoPlay />
+            <AutoPlay message={{ choice:'', popular:'' , side:'one'}}/>
         </section>
         <section className='countCon'>
             <div className="countContent">
