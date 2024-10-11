@@ -79,7 +79,7 @@ const Residence = React.memo(({ message }) => {
     }, []);
 
     if (loading && message.side === "one") return (
-      <div>
+      <div style={{ display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column' }}>
         <div className="spinner-grow text-primary" role="status">
       <span className="visually-hidden">Loading...</span>
       </div>

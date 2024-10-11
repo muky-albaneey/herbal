@@ -137,7 +137,7 @@ const Residence_2 = React.memo(({ message }) => {
 
     // Check if there are no products available
     if (products.length === 0) {
-      return <div>
+      return <div style={{ display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column' }}>
           <div className="spinner-grow text-primary" role="status">
       <span className="visually-hidden">Loading...</span>
       </div>
