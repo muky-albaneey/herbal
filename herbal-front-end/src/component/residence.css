@@ -275,5 +275,8 @@
         top: 1rem;
         left: 40rem;
     }
+    .cardItemInfo{
+        height: 10rem;
+    }
 }
 
