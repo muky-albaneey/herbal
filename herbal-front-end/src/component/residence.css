@@ -218,7 +218,7 @@
     .cardCon {
         height: 25rem; /* Reduced height for mobile */
         width: 16rem;  /* Reduced width for mobile */
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     #cardConImg {
@@ -242,5 +242,13 @@
     .r-button {
         top: 1rem;
         left: 40rem;
+    }
+
+    .cardItemInfo {
+       
+        top: -5rem;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
     }
 }
