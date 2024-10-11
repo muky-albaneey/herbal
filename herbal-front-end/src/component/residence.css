@@ -202,6 +202,20 @@
 }
 
 /* Mobile Styles */
+
+/* Default desktop styles (non-mobile) */
+.cardCon {
+    height: 35.5rem;
+    width: 23.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cardConImg {
+    height: 27rem;
+}
+
+/* Mobile Styles */
 @media (max-width: 640px) {
     .r-container {
         justify-content: center;
@@ -218,7 +232,9 @@
     .cardCon {
         height: 25rem; /* Reduced height for mobile */
         width: 16rem;  /* Reduced width for mobile */
-        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensure the price and ratings are always visible */
     }
 
     #cardConImg {
@@ -228,6 +244,22 @@
     .cardConImg {
         height: 100%;
         object-fit: cover; /* Ensure image covers the card */
+    }
+
+    .r-card-content {
+        padding: 0.5rem;
+        font-size: 0.9rem; /* Reduce font size for mobile */
+    }
+
+    .r-card-price {
+        font-size: 1.1rem; /* Slightly larger for emphasis */
+        font-weight: bold;
+        margin-top: 0.3rem;
+    }
+
+    .r-card-rating {
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
     }
 
     .r-buttons button, .r-button button {
@@ -243,12 +275,5 @@
         top: 1rem;
         left: 40rem;
     }
-
-    .cardItemInfo {
-       
-        top: -15rem;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
-    }
 }
+
