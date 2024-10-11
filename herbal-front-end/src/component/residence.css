@@ -234,11 +234,12 @@
         width: 16rem;  /* Reduced width for mobile */
         display: flex;
         flex-direction: column;
+        margin-bottom: 1.6rem;
         justify-content: space-between; /* Ensure the price and ratings are always visible */
     }
 
     #cardConImg {
-        height: 18rem; /* Adjust image height for mobile */
+        height: 17rem; /* Adjust image height for mobile */
     }
 
 
