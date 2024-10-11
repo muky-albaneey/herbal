@@ -201,3 +201,45 @@
 
 }
 
+/* Mobile Styles */
+@media (max-width: 640px) {
+    .r-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .r-card {
+        padding: 0.3rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Reduce card size on mobile */
+    .cardCon {
+        height: 25rem; /* Reduced height for mobile */
+        width: 16rem;  /* Reduced width for mobile */
+    }
+
+    #cardConImg {
+        height: 18rem; /* Adjust image height for mobile */
+    }
+
+    .cardConImg {
+        height: 100%;
+        object-fit: cover; /* Ensure image covers the card */
+    }
+
+    .r-buttons button, .r-button button {
+        font-size: 1rem;
+        padding: 0.3rem 0.4rem;
+    }
+
+    .r-buttons {
+        right: 40rem;
+    }
+
+    .r-button {
+        top: 1rem;
+        left: 40rem;
+    }
+}
