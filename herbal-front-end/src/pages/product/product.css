@@ -469,12 +469,12 @@
   @media (max-width: 640px) {
       #left_card_detail_con{
         width: 20rem;
-          margin-left: -2.1rem;
+          margin-left: -1.1rem;
       }
 
       #left_card_detail_con{
         width: 23rem;
-        margin-left: -3.6rem;
+        margin-left: -2.6rem;
       }
 
       .product_desc{

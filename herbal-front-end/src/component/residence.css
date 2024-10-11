@@ -241,10 +241,7 @@
         height: 18rem; /* Adjust image height for mobile */
     }
 
-    .cardConImg {
-        height: 100%;
-        object-fit: cover; /* Ensure image covers the card */
-    }
+
 
     .r-card-content {
         padding: 0.5rem;

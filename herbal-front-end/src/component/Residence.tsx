@@ -181,6 +181,7 @@ const Residence = React.memo(({ message }) => {
                                           src={card.product_image.url.startsWith('https://') ? card.product_image.url : `https://${card.product_image.url}`} 
                                           alt={card.id} 
                                           loading="lazy" 
+                                          id='cardConImg'
                                         />
                                     }
                                 >
